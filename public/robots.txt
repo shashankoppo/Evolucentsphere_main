@@ -1,11 +1,10 @@
 User-agent: *
 Allow: /
 
-# Allow indexing of division pages
-Allow: /tech
-Allow: /bpo
-Allow: /kpo
-Allow: /consultancy
+# Prevent indexing of API and admin routes
+Disallow: /api/
+Disallow: /admin/
+Disallow: /private/
 
 # Allow indexing of main content
 Allow: /about
@@ -15,11 +14,6 @@ Allow: /case-studies
 Allow: /blog
 Allow: /investor-relations
 Allow: /contact
-
-# Prevent indexing of API and admin routes
-Disallow: /api/
-Disallow: /admin/
-Disallow: /private/
 
 # Sitemap location
 Sitemap: https://elsxglobal.com/sitemap.xml
