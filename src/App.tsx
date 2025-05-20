@@ -17,11 +17,10 @@ import AILab from './pages/AILab';
 import Careers from './pages/Careers';
 
 // Division Pages
-import ITServices from './pages/divisions/ITServices';
-import BPOServices from './pages/divisions/BPOServices';
-import KPOServices from './pages/divisions/KPOServices';
-import ConsultancyServices from './pages/divisions/ConsultancyServices';
-import EnterpriseIT from './pages/divisions/EnterpriseIT';
+import ELSxTech from './pages/divisions/ELSxTech';
+import ELSxBPO from './pages/divisions/ELSxBPO';
+import ELSxKPO from './pages/divisions/ELSxKPO';
+import ELSxConsultancy from './pages/divisions/ELSxConsultancy';
 
 export default function App() {
   return (
@@ -43,11 +42,10 @@ export default function App() {
               <Route path="/careers" element={<Careers />} />
 
               {/* Division Routes */}
-              <Route path="/it-services" element={<ITServices />} />
-              <Route path="/bpo-services" element={<BPOServices />} />
-              <Route path="/kpo-services" element={<KPOServices />} />
-              <Route path="/consultancy" element={<ConsultancyServices />} />
-              <Route path="/enterprise-it" element={<EnterpriseIT />} />
+              <Route path="/tech" element={<ELSxTech />} />
+              <Route path="/bpo" element={<ELSxBPO />} />
+              <Route path="/kpo" element={<ELSxKPO />} />
+              <Route path="/consultancy" element={<ELSxConsultancy />} />
             </Routes>
           </main>
           <Footer />
