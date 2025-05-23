@@ -23,7 +23,12 @@
     "react-helmet-async": "^2.0.4",
     "react-router-dom": "^6.22.2",
     "tailwind-merge": "^2.2.1",
-    "zod": "^3.22.4"
+    "zod": "^3.22.4",
+    "@wordpress/api-fetch": "^6.48.0",
+    "@canva/api": "^1.0.0",
+    "@google-cloud/storage": "^7.7.0",
+    "@google-cloud/vision": "^4.0.2",
+    "googleapis": "^129.0.0"
   },
   "devDependencies": {
     "@types/node": "^20.11.24",
