@@ -19,4 +19,4 @@ Allow: /contact
 Sitemap: https://elsxglobal.cloud/sitemap.xml
 
 # Crawl-delay directive
-Crawl-delay: 10
+Crawl-delay: 1
