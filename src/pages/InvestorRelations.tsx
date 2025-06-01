@@ -2,6 +2,7 @@ import React from 'react';
 import { TrendingUp, FileText, Download, ExternalLink } from 'lucide-react';
 import { dbOperations } from '../lib/db';
 import type { InvestorResource } from '../lib/db';
+import SEOHead from '../components/SEOHead';
 
 export default function InvestorRelations() {
   const [resources, setResources] = React.useState<InvestorResource[]>([]);
@@ -23,6 +24,22 @@ export default function InvestorRelations() {
 
   return (
     <div className="pt-20">
+      <SEOHead 
+        title="Investor Relations | ELSxGlobal"
+        description="Access financial reports, earnings presentations, and investor resources. Stay updated with ELSxGlobal's growth and investment opportunities."
+        keywords={[
+          'Investor Relations',
+          'Financial Reports',
+          'Earnings',
+          'Investment Opportunities',
+          'Shareholder Information',
+          'Financial Performance',
+          'Annual Reports',
+          'Quarterly Results'
+        ]}
+        type="website"
+      />
+
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-b from-purple-50 to-white">
         <div className="container mx-auto px-6">

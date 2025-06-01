@@ -17,8 +17,8 @@ export default function SEOHead({
   title,
   description,
   keywords,
-  image = 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80',
-  url = 'https://elsxglobal.com',
+  image = 'https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+  url = 'https://elsxglobal.cloud',
   type = 'website',
   author = 'ELSxGlobal',
   publishedTime,
@@ -45,6 +45,9 @@ export default function SEOHead({
       <meta name="description" content={description} />
       <meta name="keywords" content={allKeywords} />
       <meta name="author" content={author} />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+      <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+      <meta name="googlebot" content="index, follow" />
 
       {/* Open Graph / Facebook */}
       <meta property="og:type" content={type} />
@@ -84,7 +87,7 @@ export default function SEOHead({
           "name": "ELSxGlobal",
           "alternateName": ["ELS Global", "ELS", "EvolucentSphere IT Division"],
           "url": url,
-          "logo": image,
+          "logo": "https://elsxglobal.cloud/logo.png",
           "description": description,
           "sameAs": [
             "https://twitter.com/elsxglobal",

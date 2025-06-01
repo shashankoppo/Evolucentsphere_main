@@ -16,4 +16,7 @@ Allow: /investor-relations
 Allow: /contact
 
 # Sitemap location
-Sitemap: https://elsxglobal.com/sitemap.xml
+Sitemap: https://elsxglobal.cloud/sitemap.xml
+
+# Crawl-delay directive
+Crawl-delay: 10
