@@ -67,7 +67,7 @@ export default function SEOHead({
 
       {/* Article Specific Meta Tags */}
       {type === 'article' && publishedTime && (
-        <meta property="article:published_time" content={publishedTime} />
+        <meta property="article:published_time\" content={publishedTime} />
       )}
       {type === 'article' && modifiedTime && (
         <meta property="article:modified_time" content={modifiedTime} />
