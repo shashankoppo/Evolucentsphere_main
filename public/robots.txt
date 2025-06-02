@@ -9,6 +9,7 @@ Allow: /case-studies
 Allow: /blog
 Allow: /investor-relations
 Allow: /contact
+Allow: /
 
 # Sitemap location
 Sitemap: https://elsxglobal.cloud/sitemap.xml
