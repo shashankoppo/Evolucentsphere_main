@@ -1,11 +1,6 @@
 User-agent: *
 Allow: /
 
-# Prevent indexing of API and admin routes
-Disallow: /api/
-Disallow: /admin/
-Disallow: /private/
-
 # Allow indexing of main content
 Allow: /about
 Allow: /services
