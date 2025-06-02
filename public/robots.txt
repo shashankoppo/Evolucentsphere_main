@@ -14,5 +14,5 @@ Allow: /
 # Sitemap location
 Sitemap: https://elsxglobal.cloud/sitemap.xml
 
-# Crawl-delay directive
+# Crawl-delay directive (set to 0 for immediate crawling)
 Crawl-delay: 0
