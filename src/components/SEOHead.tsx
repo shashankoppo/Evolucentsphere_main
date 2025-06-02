@@ -17,7 +17,7 @@ export default function SEOHead({
   title,
   description,
   keywords,
-  image = 'https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+  image = 'https://elsxglobal.cloud/og-image.jpg',
   url = 'https://elsxglobal.cloud',
   type = 'website',
   author = 'ELSxGlobal',
@@ -67,7 +67,7 @@ export default function SEOHead({
 
       {/* Article Specific Meta Tags */}
       {type === 'article' && publishedTime && (
-        <meta property="article:published_time\" content={publishedTime} />
+        <meta property="article:published_time" content={publishedTime} />
       )}
       {type === 'article' && modifiedTime && (
         <meta property="article:modified_time" content={modifiedTime} />
