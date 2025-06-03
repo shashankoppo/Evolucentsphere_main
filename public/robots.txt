@@ -3,7 +3,6 @@ User-agent: *
 Allow: /
 
 
-
 # Sitemap location
 Sitemap: https://elsxglobal.cloud/sitemap.xml
 
