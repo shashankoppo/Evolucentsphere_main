@@ -52,9 +52,9 @@ export default function SEOHead({
       <meta name="author" content={author} />
       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
       {noindex ? (
-        <meta name="robots" content="noindex, nofollow" />
+        <meta name="robots\" content="noindex, nofollow" />
       ) : (
-        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+        <meta name="robots\" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
       )}
       <meta name="googlebot" content="index, follow" />
 
@@ -77,7 +77,7 @@ export default function SEOHead({
 
       {/* Article Specific Meta Tags */}
       {type === 'article' && publishedTime && (
-        <meta property="article:published_time" content={publishedTime} />
+        <meta property="article:published_time\" content={publishedTime} />
       )}
       {type === 'article' && modifiedTime && (
         <meta property="article:modified_time" content={modifiedTime} />
