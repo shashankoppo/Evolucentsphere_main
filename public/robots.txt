@@ -2,9 +2,17 @@
 User-agent: *
 Allow: /
 
+# Block specific paths
+Disallow: /api/
+Disallow: /admin/
+Disallow: /private/
 
 # Sitemap location
 Sitemap: https://elsxglobal.cloud/sitemap.xml
 
 # Crawl-delay directive (set to 0 for immediate crawling)
 Crawl-delay: 0
+
+# Additional crawling instructions
+Request-rate: 1/1
+Visit-time: 0600-2300

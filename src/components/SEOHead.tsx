@@ -11,18 +11,22 @@ interface SEOProps {
   author?: string;
   publishedTime?: string;
   modifiedTime?: string;
+  noindex?: boolean;
+  canonicalUrl?: string;
 }
 
 export default function SEOHead({
   title,
   description,
   keywords,
-  image = 'https://elsxglobal.cloud/og-image.jpg',
+  image = 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80',
   url = 'https://elsxglobal.cloud',
   type = 'website',
   author = 'ELSxGlobal',
   publishedTime,
-  modifiedTime
+  modifiedTime,
+  noindex = false,
+  canonicalUrl
 }: SEOProps) {
   const siteTitle = `${title} | ELSxGlobal - A Division of EvolucentSphere`;
   const brandKeywords = [
@@ -37,6 +41,7 @@ export default function SEOHead({
   ];
   
   const allKeywords = [...brandKeywords, ...keywords].join(', ');
+  const finalCanonicalUrl = canonicalUrl || url;
   
   return (
     <Helmet>
@@ -46,7 +51,11 @@ export default function SEOHead({
       <meta name="keywords" content={allKeywords} />
       <meta name="author" content={author} />
       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-      <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+      {noindex ? (
+        <meta name="robots" content="noindex, nofollow" />
+      ) : (
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+      )}
       <meta name="googlebot" content="index, follow" />
 
       {/* Open Graph / Facebook */}
@@ -56,6 +65,7 @@ export default function SEOHead({
       <meta property="og:description" content={description} />
       <meta property="og:image" content={image} />
       <meta property="og:site_name" content="ELSxGlobal" />
+      <meta property="og:locale" content="en_US" />
 
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
@@ -67,17 +77,22 @@ export default function SEOHead({
 
       {/* Article Specific Meta Tags */}
       {type === 'article' && publishedTime && (
-        <meta property="article:published_time\" content={publishedTime} />
+        <meta property="article:published_time" content={publishedTime} />
       )}
       {type === 'article' && modifiedTime && (
         <meta property="article:modified_time" content={modifiedTime} />
       )}
 
+      {/* Canonical URL */}
+      <link rel="canonical" href={finalCanonicalUrl} />
+
       {/* Additional SEO Tags */}
-      <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-      <meta name="googlebot" content="index, follow" />
+      <meta name="theme-color" content="#7C3AED" />
+      <meta name="mobile-web-app-capable" content="yes" />
+      <meta name="apple-mobile-web-app-capable" content="yes" />
+      <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+      <meta name="format-detection" content="telephone=no" />
       <meta name="google" content="notranslate" />
-      <link rel="canonical" href={url} />
 
       {/* Schema.org Structured Data */}
       <script type="application/ld+json">
