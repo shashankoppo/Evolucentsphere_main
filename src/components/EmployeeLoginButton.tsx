@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Key, Shield, ArrowRight, Lock, Zap } from 'lucide-react';
+import { Key, Shield, ArrowRight, Lock, Users } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function EmployeeLoginButton() {
@@ -13,74 +13,61 @@ export default function EmployeeLoginButton() {
       whileHover={{ scale: 1.02 }}
       whileTap={{ scale: 0.98 }}
     >
-      {/* Glow effect */}
-      <div className="absolute -inset-1 bg-gradient-to-r from-amber-500 via-orange-500 to-red-500 rounded-lg blur opacity-30 group-hover:opacity-60 transition duration-300"></div>
+      {/* Subtle glow effect */}
+      <div className="absolute -inset-0.5 bg-gradient-to-r from-slate-600 to-slate-800 rounded-lg blur opacity-20 group-hover:opacity-40 transition duration-300"></div>
       
       {/* Main button */}
       <a
         href="https://elsxglobal.cloud"
         target="_blank"
         rel="noopener noreferrer"
-        className="relative flex items-center px-6 py-3 bg-gradient-to-r from-amber-600 via-orange-600 to-red-600 text-white rounded-lg font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-0.5"
+        className="relative flex items-center px-4 py-2 bg-gradient-to-r from-slate-700 to-slate-900 text-white rounded-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-600"
       >
-        {/* Animated background overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 rounded-lg opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
-        
-        {/* Icon with animation */}
-        <div className="relative mr-3">
+        {/* Icon with subtle animation */}
+        <div className="relative mr-2">
           <motion.div
-            animate={isHovered ? { rotate: 15 } : { rotate: 0 }}
+            animate={isHovered ? { rotate: 5 } : { rotate: 0 }}
             transition={{ duration: 0.2 }}
           >
-            <Key className="h-5 w-5" />
+            <Key className="h-4 w-4" />
           </motion.div>
-          
-          {/* Sparkle effect */}
-          {isHovered && (
-            <motion.div
-              className="absolute -top-1 -right-1"
-              initial={{ scale: 0, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0, opacity: 0 }}
-            >
-              <Zap className="h-3 w-3 text-yellow-300" />
-            </motion.div>
-          )}
         </div>
 
         {/* Text content */}
-        <div className="relative flex flex-col">
-          <span className="text-sm font-bold tracking-wide">EMPLOYEE</span>
-          <span className="text-xs opacity-90 -mt-1">Internal Access</span>
+        <div className="relative flex items-center">
+          <span className="text-sm font-semibold tracking-wide">Employee Portal</span>
         </div>
 
-        {/* Arrow with animation */}
+        {/* Arrow with subtle animation */}
         <motion.div
-          className="relative ml-3"
-          animate={isHovered ? { x: 3 } : { x: 0 }}
+          className="relative ml-2"
+          animate={isHovered ? { x: 2 } : { x: 0 }}
           transition={{ duration: 0.2 }}
         >
-          <ArrowRight className="h-4 w-4" />
+          <ArrowRight className="h-3 w-3" />
         </motion.div>
 
-        {/* Security badge */}
-        <div className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full p-1 shadow-lg">
-          <Shield className="h-3 w-3" />
+        {/* Security indicator */}
+        <div className="absolute -top-1 -right-1 bg-slate-600 text-white rounded-full p-0.5 shadow-sm">
+          <Shield className="h-2.5 w-2.5" />
         </div>
       </a>
 
-      {/* Tooltip */}
-      <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-gray-900 text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap z-50">
+      {/* Professional tooltip */}
+      <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-slate-800 text-white text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap z-50 border border-slate-600">
         <div className="text-center">
-          <div className="font-semibold text-amber-400">Authorized Personnel Only</div>
-          <div className="text-gray-300">ELSxGlobal Internal Portal</div>
+          <div className="font-medium text-slate-200">Internal Access</div>
+          <div className="text-slate-400 text-xs">ELSxGlobal Employee Portal</div>
         </div>
-        <div className="absolute top-full left-1/2 transform -translate-x-1/2 border-4 border-transparent border-t-gray-900"></div>
+        <div className="absolute top-full left-1/2 transform -translate-x-1/2 border-4 border-transparent border-t-slate-800"></div>
       </div>
 
-      {/* Exclusive badge */}
-      <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-purple-600 to-blue-600 text-white text-xs px-2 py-1 rounded-full font-bold shadow-lg">
-        EXCLUSIVE
+      {/* Discrete access indicator */}
+      <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 bg-slate-600 text-white text-xs px-2 py-0.5 rounded-full font-medium shadow-sm">
+        <div className="flex items-center space-x-1">
+          <Users className="h-2.5 w-2.5" />
+          <span>STAFF</span>
+        </div>
       </div>
     </motion.div>
   );
