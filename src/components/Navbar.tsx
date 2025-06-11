@@ -78,7 +78,7 @@ export default function Navbar() {
               onMouseLeave={() => setIsMegaMenuOpen(false)}
               className="relative"
             >
-              <button className={`flex items-center transition-colors ${isScrolled ? 'text-gray-600' : 'text-gray-200'} hover:text-purple-600`}>
+              <button className={`flex items-center transition-colors ${isScrolled ? 'text-gray-600' : 'black-200'} hover:text-purple-600`}>
                 Divisions
                 <ChevronDown className={`ml-1 h-4 w-4 transition-transform duration-200 ${isMegaMenuOpen ? 'rotate-180' : ''}`} />
               </button>
