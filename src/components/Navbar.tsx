@@ -1,5 +1,4 @@
-import React, 'react';
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react'; // <--- THIS IS THE FIX
 import { Link } from 'react-router-dom';
 // Framer Motion for next-gen animations
 import { motion, AnimatePresence } from 'framer-motion'; 
@@ -160,7 +159,7 @@ export default function Navbar() {
 
 
 // --- New Sub-Component for the Mega Menu (enhances existing dropdown) ---
-const MegaMenu = ({ divisions }: { divisions: typeof import('./Navbar').divisions }) => (
+const MegaMenu = ({ divisions }: { divisions: typeof divisions }) => (
     <motion.div
         initial={{ opacity: 0, y: 15 }}
         animate={{ opacity: 1, y: 0 }}
@@ -188,7 +187,7 @@ const MegaMenu = ({ divisions }: { divisions: typeof import('./Navbar').division
 
 
 // --- New Sub-Component for the Mobile Menu (replaces the old dropdown) ---
-const MobileMenuPanel = ({ divisions, closeMenu }: { divisions: any[], closeMenu: () => void }) => {
+const MobileMenuPanel = ({ divisions, closeMenu }: { divisions: typeof divisions, closeMenu: () => void }) => {
   const [isDivisionsOpen, setIsDivisionsOpen] = useState(false);
   
   return (
