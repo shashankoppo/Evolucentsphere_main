@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X, Search, Cpu, Briefcase, Users, Globe, Brain, ChevronDown } from 'lucide-react';
 import SearchBar from './SearchBar';
+import EmployeeLoginButton from './EmployeeLoginButton';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -114,6 +115,10 @@ export default function Navbar() {
             >
               <Search className="h-5 w-5" />
             </button>
+
+            {/* Employee Login Button */}
+            <EmployeeLoginButton />
+
             <Link to="/contact" className="bg-purple-600 text-white px-4 py-2 rounded-md hover:bg-purple-700">
               Contact Us
             </Link>
@@ -150,6 +155,11 @@ export default function Navbar() {
         {isMenuOpen && (
           <div className="md:hidden mt-4 pb-4">
             <div className="flex flex-col space-y-4">
+              {/* Employee Login Button for Mobile */}
+              <div className="flex justify-center py-4">
+                <EmployeeLoginButton />
+              </div>
+
               {/* Divisions Section */}
               <div className="border-b border-gray-200 pb-4">
                 <div className="font-medium text-gray-900 mb-2">Divisions</div>
@@ -158,32 +168,34 @@ export default function Navbar() {
                     key={division.path}
                     to={division.path}
                     className="block py-2 text-gray-600 hover:text-purple-600"
+                    onClick={() => setIsMenuOpen(false)}
                   >
                     {division.name}
                   </Link>
                 ))}
               </div>
 
-              <Link to="/about" className="text-gray-600 hover:text-purple-600">About</Link>
-              <Link to="/services" className="text-gray-600 hover:text-purple-600">Services</Link>
-              <Link to="/technologies" className="text-gray-600 hover:text-purple-600">Technologies</Link>
-              <Link to="/case-studies" className="text-gray-600 hover:text-purple-600">Case Studies</Link>
-              <Link to="/careers" className="flex items-center text-gray-600 hover:text-purple-600">
+              <Link to="/about" className="text-gray-600 hover:text-purple-600" onClick={() => setIsMenuOpen(false)}>About</Link>
+              <Link to="/services" className="text-gray-600 hover:text-purple-600" onClick={() => setIsMenuOpen(false)}>Services</Link>
+              <Link to="/technologies" className="text-gray-600 hover:text-purple-600" onClick={() => setIsMenuOpen(false)}>Technologies</Link>
+              <Link to="/case-studies" className="text-gray-600 hover:text-purple-600" onClick={() => setIsMenuOpen(false)}>Case Studies</Link>
+              <Link to="/careers" className="flex items-center text-gray-600 hover:text-purple-600" onClick={() => setIsMenuOpen(false)}>
                 <Briefcase className="h-4 w-4 mr-1" />
                 Careers
               </Link>
-              <Link to="/investor-relations" className="flex items-center text-gray-600 hover:text-purple-600">
+              <Link to="/investor-relations" className="flex items-center text-gray-600 hover:text-purple-600" onClick={() => setIsMenuOpen(false)}>
                 <Globe className="h-4 w-4 mr-1" />
                 Investors
               </Link>
               <Link 
                 to="/ai-lab" 
                 className="flex items-center text-purple-600 hover:text-purple-700 font-medium"
+                onClick={() => setIsMenuOpen(false)}
               >
                 <Cpu className="h-5 w-5 mr-1" />
                 AI Lab
               </Link>
-              <Link to="/contact" className="bg-purple-600 text-white px-4 py-2 rounded-md hover:bg-purple-700 text-center">
+              <Link to="/contact" className="bg-purple-600 text-white px-4 py-2 rounded-md hover:bg-purple-700 text-center" onClick={() => setIsMenuOpen(false)}>
                 Contact Us
               </Link>
             </div>
