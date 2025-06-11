@@ -1,165 +1,206 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
+import { useLocation } from 'react-router-dom'; // Import to get the current path
 
+// --- 1. CENTRALIZED SITE CONFIGURATION ---
+const siteConfig = {
+  siteName: 'ELSxGlobal',
+  titleSuffix: 'A Division of EvolucentSphere',
+  siteUrl: 'https://elsxglobal.cloud',
+  logo: 'https://elsxglobal.cloud/logo-og.png', // A 1200x630px logo for Open Graph
+  favicon: 'https://elsxglobal.cloud/favicon.ico',
+  twitterHandle: '@elsxglobal',
+};
+
+// --- 2. ENHANCED PROP TYPES ---
 interface SEOProps {
   title: string;
   description: string;
-  keywords: string[];
-  image?: string;
-  url?: string;
+  keywords?: string[];
+  image?: {
+    url: string;
+    alt: string;
+    width?: number;
+    height?: number;
+  };
   type?: 'website' | 'article';
   author?: string;
   publishedTime?: string;
   modifiedTime?: string;
   noindex?: boolean;
   canonicalUrl?: string;
-  faviconUrl?: string;
+  titleTemplate?: string; // e.g., "%s | My Site"
+  breadcrumbs?: { name: string; path: string }[];
+  children?: React.ReactNode; // For ultimate flexibility
 }
 
+// --- 3. UPGRADED COMPONENT ---
 export default function SEOHead({
   title,
   description,
-  keywords,
-  image = 'https://elsxglobal.cloud/logo.png',
-  url = 'https://elsxglobal.cloud',
+  keywords = [],
+  image,
   type = 'website',
-  author = 'ELSxGlobal',
+  author = siteConfig.siteName,
   publishedTime,
   modifiedTime,
   noindex = false,
   canonicalUrl,
-  faviconUrl = 'https://elsxglobal.cloud/favicon.ico'
+  titleTemplate = `%s | ${siteConfig.siteName} - ${siteConfig.titleSuffix}`,
+  breadcrumbs,
+  children,
 }: SEOProps) {
-  const siteTitle = `${title} | ELSxGlobal - A Division of EvolucentSphere Pvt. Ltd.`;
-  const brandKeywords = [
-    'ELSxGlobal',
-    'ELS Global',
-    'EvolucentSphere',
-    'Digital Transformation',
-    'Enterprise Solutions',
-    'IT Services',
-    'Technology Consulting',
-    'Game Development',
-    'Web Development',
-    'Mobile App Development',
-    'ERP',
-    'CRM',
-    'Software Solutions'
-  ];
-  const allKeywords = [...brandKeywords, ...keywords].join(', ');
-  const finalCanonicalUrl = canonicalUrl || url;
+  const location = useLocation();
+  const isHomepage = location.pathname === '/';
 
-  // Organization schema
+  // --- Construct URLs and Titles ---
+  const pageUrl = `${siteConfig.siteUrl}${location.pathname}`;
+  const finalCanonicalUrl = canonicalUrl || pageUrl;
+  const pageTitle = isHomepage ? title : titleTemplate.replace('%s', title);
+  
+  const finalImage = {
+    url: image?.url || siteConfig.logo,
+    alt: image?.alt || 'ELSxGlobal company logo',
+    width: image?.width || 1200,
+    height: image?.height || 630,
+  };
+
+  const brandKeywords = [
+    'ELSxGlobal', 'EvolucentSphere', 'Digital Transformation', 'Enterprise IT',
+    'Technology Consulting', 'AI Solutions', 'Cloud Computing', 'BPO Services',
+  ];
+  const allKeywords = [...new Set([...brandKeywords, ...keywords])].join(', ');
+
+  // --- Structured Data (Schema.org) ---
+  const schemas = [];
+
+  // Base Organization Schema
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "ELSxGlobal",
-    "legalName": "EvolucentSphere Pvt. Ltd.",
-    "url": "https://elsxglobal.cloud",
-    "logo": "https://elsxglobal.cloud/logo.png",
-    "description": description,
+    "name": siteConfig.siteName,
+    "url": siteConfig.siteUrl,
+    "logo": siteConfig.logo,
     "sameAs": [
       "https://twitter.com/elsxglobal",
       "https://linkedin.com/company/elsxglobal",
       "https://facebook.com/elsxglobal"
     ],
-    "contactPoint": [{
-      "@type": "ContactPoint",
-      "telephone": "+91 7247558873",
-      "contactType": "customer support",
-      "areaServed": "IN",
-      "availableLanguage": ["English", "Hindi"]
-    }],
-    "address": {
-      "@type": "PostalAddress",
-      "addressCountry": "IN"
-    }
   };
 
-  // Article schema (if type is article)
-  const articleSchema = type === 'article' && publishedTime ? {
+  // WebPage Schema (for most pages)
+  const webPageSchema = {
     "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": title,
+    "@type": "WebPage",
+    "url": finalCanonicalUrl,
+    "name": pageTitle,
     "description": description,
-    "image": [image],
-    "author": {
-      "@type": "Organization",
-      "name": author
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "ELSxGlobal",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://elsxglobal.cloud/logo.png"
-      }
-    },
-    "datePublished": publishedTime,
-    "dateModified": modifiedTime || publishedTime,
-    "mainEntityOfPage": url
-  } : null;
+    "isPartOf": { "@id": `${siteConfig.siteUrl}/#website` },
+  };
+  schemas.push(webPageSchema);
+  
+  // Website Schema (Homepage only)
+  if (isHomepage) {
+    const websiteSchema = {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": `${siteConfig.siteUrl}/#website`,
+      "url": siteConfig.siteUrl,
+      "name": siteConfig.siteName,
+      "description": description,
+      "publisher": { "@id": `${siteConfig.siteUrl}/#organization` },
+      "potentialAction": [{
+        "@type": "SearchAction",
+        "target": `${siteConfig.siteUrl}/search?q={search_term_string}`,
+        "query-input": "required name=search_term_string",
+      }],
+    };
+    schemas.push(websiteSchema);
+    // Add Organization schema separately on homepage for clarity
+    schemas.push({ ...organizationSchema, "@id": `${siteConfig.siteUrl}/#organization` });
+  }
+
+  // Article Schema
+  if (type === 'article' && publishedTime) {
+    const articleSchema = {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": title,
+      "description": description,
+      "image": [finalImage.url],
+      "author": { "@type": "Organization", "name": author },
+      "publisher": { "@id": `${siteConfig.siteUrl}/#organization` },
+      "datePublished": publishedTime,
+      "dateModified": modifiedTime || publishedTime,
+      "mainEntityOfPage": { "@type": "WebPage", "@id": finalCanonicalUrl },
+    };
+    schemas.push(articleSchema);
+  }
+
+  // Breadcrumbs Schema
+  if (breadcrumbs && breadcrumbs.length > 0) {
+    const breadcrumbSchema = {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": breadcrumbs.map((crumb, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "name": crumb.name,
+        "item": `${siteConfig.siteUrl}${crumb.path}`,
+      })),
+    };
+    schemas.push(breadcrumbSchema);
+  }
 
   return (
     <Helmet>
-      {/* Title & Canonical */}
-      <title>{siteTitle}</title>
+      {/* --- Basic & SEO Critical Tags --- */}
+      <title>{pageTitle}</title>
       <link rel="canonical" href={finalCanonicalUrl} />
-
-      {/* Favicon */}
-      <link rel="icon" href={faviconUrl} type="image/x-icon" />
-
-      {/* Basic Meta Tags */}
       <meta name="description" content={description} />
       <meta name="keywords" content={allKeywords} />
       <meta name="author" content={author} />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-      <meta
-        name="robots"
-        content={noindex ? "noindex, nofollow" : "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"}
-      />
-      <meta
-        name="googlebot"
-        content={noindex ? "noindex, nofollow" : "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"}
-      />
-
-      {/* Open Graph / Facebook */}
-      <meta property="og:type" content={type} />
-      <meta property="og:url" content={url} />
-      <meta property="og:title" content={siteTitle} />
+      <meta name="robots" content={noindex ? "noindex, nofollow" : "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"} />
+      <meta name="googlebot" content={noindex ? "noindex, nofollow" : "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"} />
+      
+      {/* --- Open Graph / Facebook --- */}
+      <meta property="og:title" content={pageTitle} />
       <meta property="og:description" content={description} />
-      <meta property="og:image" content={image} />
-      <meta property="og:site_name" content="ELSxGlobal" />
+      <meta property="og:url" content={pageUrl} />
+      <meta property="og:site_name" content={siteConfig.siteName} />
       <meta property="og:locale" content="en_US" />
+      <meta property="og:type" content={type} />
+      <meta property="og:image" content={finalImage.url} />
+      <meta property="og:image:alt" content={finalImage.alt} />
+      <meta property="og:image:width" content={String(finalImage.width)} />
+      <meta property="og:image:height" content={String(finalImage.height)} />
 
-      {/* Twitter */}
+      {/* --- Twitter --- */}
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:url" content={url} />
-      <meta name="twitter:title" content={siteTitle} />
+      <meta name="twitter:site" content={siteConfig.twitterHandle} />
+      <meta name="twitter:creator" content={siteConfig.twitterHandle} />
+      <meta name="twitter:title" content={pageTitle} />
       <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={image} />
-      <meta name="twitter:creator" content="@elsxglobal" />
+      <meta name="twitter:image" content={finalImage.url} />
+      <meta name="twitter:image:alt" content={finalImage.alt} />
 
-      {/* Article-specific Meta */}
-      {type === 'article' && publishedTime && (
-        <meta property="article:published_time" content={publishedTime} />
-      )}
-      {type === 'article' && modifiedTime && (
-        <meta property="article:modified_time" content={modifiedTime} />
-      )}
+      {/* --- Article Specific --- */}
+      {type === 'article' && publishedTime && <meta property="article:published_time" content={publishedTime} />}
+      {type === 'article' && modifiedTime && <meta property="article:modified_time" content={modifiedTime} />}
+      {type === 'article' && <meta property="article:author" content={author} />}
 
-      {/* Additional SEO & PWA Meta */}
+      {/* --- PWA / Mobile --- */}
+      <link rel="icon" href={siteConfig.favicon} type="image/x-icon" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta name="theme-color" content="#7C3AED" />
-      <meta name="mobile-web-app-capable" content="yes" />
       <meta name="apple-mobile-web-app-capable" content="yes" />
       <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-      <meta name="format-detection" content="telephone=no" />
-      <meta name="google" content="notranslate" />
 
-      {/* Structured Data */}
-      <script type="application/ld+json">
-        {JSON.stringify(articleSchema || organizationSchema)}
-      </script>
+      {/* --- Structured Data --- */}
+      <script type="application/ld+json">{JSON.stringify(schemas)}</script>
+
+      {/* --- Children for extra custom tags --- */}
+      {children}
     </Helmet>
   );
 }
