@@ -4,10 +4,10 @@ export const config = {
     description: 'Transformative Business Solutions & Technology Services',
     url: 'https://evolucentsphere.com',
     contact: {
-      phone: '+91 (555) 123-4567',
+      phone: '+91 (724) 755-8873',
       email: 'contact@evolucentsphere.com',
       address: {
-        street: '123 Tech Park',
+        street: '3223/4A Tech Park',
         city: 'Bangalore',
         state: 'Karnataka',
         zip: '560001',
@@ -16,8 +16,8 @@ export const config = {
     },
     social: {
       twitter: 'https://twitter.com/evolucentsphere',
-      linkedin: 'https://linkedin.com/company/evolucentsphere',
-      facebook: 'https://facebook.com/evolucentsphere',
+      linkedin: 'https://linkedin.com/company/ELSxGLOBAL',
+      facebook: 'https://facebook.com/elsxglobal',
       github: 'https://github.com/evolucentsphere'
     }
   },
