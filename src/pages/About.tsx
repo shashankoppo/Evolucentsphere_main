@@ -7,8 +7,8 @@ export default function About() {
     <div className="pt-20">
       <SEOHead 
         title="About Us"
-        description="Learn about Tenebris Navitas - pioneers in AI and quantum computing solutions transforming businesses worldwide."
-        keywords={['About Tenebris Navitas', 'AI Company', 'Technology Innovation', 'Digital Transformation']}
+        description="Learn about ELSxGlobal - pioneers in AI and quantum computing solutions transforming businesses worldwide."
+        keywords={['About ELSxGlobal', 'AI Company', 'Technology Innovation', 'Digital Transformation']}
       />
 
       {/* Hero Section */}
@@ -19,7 +19,7 @@ export default function About() {
               Pioneering the Future of Business Intelligence
             </h1>
             <p className="text-xl text-gray-600 mb-8">
-              At Tenebris Navitas, we combine cutting-edge AI technology with quantum computing expertise 
+              At ELSxGlobal, we combine cutting-edge AI technology with quantum computing expertise 
               to transform businesses and drive unprecedented growth. Our innovative solutions are shaping 
               the future of enterprise technology.
             </p>
