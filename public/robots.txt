@@ -10,6 +10,7 @@ Disallow: /private/
 # Sitemap location
 Sitemap: https://elsxglobal.cloud/sitemap.xml
 Sitemap: https://www.elsxglobal.cloud/sitemap.xml
+Sitemap: http://elsxglobal.cloud/sitemap.xml
 
 # Crawl-delay directive (set to 0 for immediate crawling)
 Crawl-delay: 0
