@@ -1,10 +1,27 @@
 import React from 'react';
 import { Package, Shield, Cloud, Brain, ArrowRight, Star, Award, CheckCircle, Users } from 'lucide-react';
 import { config } from '../lib/config';
+import SEOHead from './SEOHead';
 
 export default function Products() {
   return (
     <section className="py-20 bg-gradient-to-b from-gray-50 to-white relative">
+      <SEOHead 
+        title="Enterprise Products & Solutions"
+        description="Discover our comprehensive suite of enterprise products including BPO solutions, KPO services, and IT products designed for operational excellence and business growth."
+        keywords={[
+          'Enterprise Products',
+          'BPO Solutions',
+          'KPO Services',
+          'IT Products',
+          'Business Solutions',
+          'ContactPro Elite',
+          'BackOfficePro Suite',
+          'AnalyticsPro 360',
+          'CloudPro Enterprise',
+          'SecurePro Shield'
+        ]}
+      />
       <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
       <div className="container mx-auto px-6 relative">
         <div className="text-center mb-16">

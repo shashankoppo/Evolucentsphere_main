@@ -1,5 +1,6 @@
 import React from 'react';
 import { Brain, Cpu, Database, Cloud, Shield, Code, Network, Workflow, Bot, BarChart, Users, Lock } from 'lucide-react';
+import SEOHead from '../components/SEOHead';
 
 const technologies = [
   {
@@ -115,6 +116,23 @@ const technologies = [
 export default function Technologies() {
   return (
     <div className="pt-20">
+      <SEOHead 
+        title="AI Technologies & Innovation Solutions"
+        description="Discover our cutting-edge AI technologies including machine learning, intelligent automation, advanced analytics, and ethical AI frameworks for business transformation."
+        keywords={[
+          'AI Technologies',
+          'Machine Learning',
+          'Intelligent Automation',
+          'Advanced Analytics',
+          'Customer Experience AI',
+          'Ethical AI',
+          'Business Intelligence',
+          'Predictive Analytics',
+          'Neural Networks',
+          'Deep Learning'
+        ]}
+      />
+
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-b from-purple-50 to-white">
         <div className="container mx-auto px-6">

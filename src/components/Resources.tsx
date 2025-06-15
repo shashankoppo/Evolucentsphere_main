@@ -1,5 +1,6 @@
 import React from 'react';
 import { BookOpen, FileText, CheckSquare, Download, ArrowRight } from 'lucide-react';
+import SEOHead from './SEOHead';
 
 const resources = [
   {
@@ -43,6 +44,22 @@ const resources = [
 export default function Resources() {
   return (
     <section id="resources" className="py-20 bg-gradient-to-b from-white to-purple-50">
+      <SEOHead 
+        title="Knowledge Center & Resources"
+        description="Access our comprehensive collection of resources including digital transformation guides, AI implementation whitepapers, and technology assessment toolkits to accelerate your business growth."
+        keywords={[
+          'Knowledge Center',
+          'Business Resources',
+          'Digital Transformation Guide',
+          'AI Implementation',
+          'Technology Assessment',
+          'Business Whitepapers',
+          'Implementation Guides',
+          'Technology Resources',
+          'Business Intelligence',
+          'Strategic Planning'
+        ]}
+      />
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">Knowledge Center</h2>

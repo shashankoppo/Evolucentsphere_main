@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Star, Quote } from 'lucide-react';
 import { dbOperations } from '../lib/db';
 import type { Testimonial } from '../lib/db';
+import SEOHead from './SEOHead';
 
 export default function Testimonials() {
   const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
@@ -24,6 +25,20 @@ export default function Testimonials() {
   if (loading) {
     return (
       <section className="py-20 bg-gray-50">
+        <SEOHead 
+          title="Client Testimonials & Success Stories"
+          description="Read what our clients say about ELSxGlobal's transformative solutions. Discover real success stories and testimonials from satisfied customers across various industries."
+          keywords={[
+            'Client Testimonials',
+            'Customer Reviews',
+            'Success Stories',
+            'Client Feedback',
+            'Customer Satisfaction',
+            'Business Transformation',
+            'Client Experience',
+            'Customer Success'
+          ]}
+        />
         <div className="container mx-auto px-6">
           <div className="text-center">
             <p>Loading testimonials...</p>
@@ -35,6 +50,20 @@ export default function Testimonials() {
 
   return (
     <section className="py-20 bg-gray-50">
+      <SEOHead 
+        title="Client Testimonials & Success Stories"
+        description="Read what our clients say about ELSxGlobal's transformative solutions. Discover real success stories and testimonials from satisfied customers across various industries."
+        keywords={[
+          'Client Testimonials',
+          'Customer Reviews',
+          'Success Stories',
+          'Client Feedback',
+          'Customer Satisfaction',
+          'Business Transformation',
+          'Client Experience',
+          'Customer Success'
+        ]}
+      />
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">Client Success Stories</h2>
@@ -47,7 +76,7 @@ export default function Testimonials() {
               <div className="flex items-center mb-6">
                 <img
                   src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80"
-                  alt={testimonial.client_name}
+                  alt={`${testimonial.client_name} - Client testimonial`}
                   className="w-16 h-16 rounded-full object-cover mr-4"
                 />
                 <div>

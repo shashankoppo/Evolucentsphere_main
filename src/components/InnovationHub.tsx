@@ -1,5 +1,6 @@
 import React from 'react';
 import { Lightbulb, TrendingUp, Target, Brain, Cpu, Globe } from 'lucide-react';
+import SEOHead from './SEOHead';
 
 const innovations = [
   {
@@ -46,6 +47,22 @@ const researchAreas = [
 export default function InnovationHub() {
   return (
     <section id="innovation" className="py-20 bg-gradient-to-b from-gray-50 to-white">
+      <SEOHead 
+        title="Innovation Hub - Technology Research & Development"
+        description="Explore groundbreaking technological advancements and research at ELSxGlobal's Innovation Hub. Discover quantum-enhanced AI systems, neural network evolution, and sustainable tech solutions."
+        keywords={[
+          'Innovation Hub',
+          'Technology Research',
+          'R&D',
+          'Quantum Computing',
+          'AI Research',
+          'Neural Networks',
+          'Sustainable Technology',
+          'Emerging Technology',
+          'Cognitive Computing',
+          'Technology Innovation'
+        ]}
+      />
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">Innovation Hub</h2>
@@ -62,7 +79,7 @@ export default function InnovationHub() {
               <div className="relative overflow-hidden rounded-lg mb-4">
                 <img 
                   src={innovation.image} 
-                  alt={innovation.title}
+                  alt={`${innovation.title} - Innovation showcase`}
                   className="w-full h-48 object-cover transform group-hover:scale-110 transition-transform duration-300"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">

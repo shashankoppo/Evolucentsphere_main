@@ -3,6 +3,7 @@ import { Calendar, User, ArrowRight } from 'lucide-react';
 import { dbOperations } from '../lib/db';
 import type { BlogPost } from '../lib/db';
 import LoadingSpinner from './LoadingSpinner';
+import SEOHead from './SEOHead';
 
 const FALLBACK_IMAGE = 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80';
 
@@ -48,6 +49,20 @@ export default function Blog() {
   if (loading) {
     return (
       <section id="blog" className="py-20 bg-gray-50">
+        <SEOHead 
+          title="Blog & Insights"
+          description="Stay updated with the latest insights, trends, and thought leadership in AI, technology, and business transformation from ELSxGlobal experts."
+          keywords={[
+            'Technology Blog',
+            'AI Insights',
+            'Business Transformation',
+            'Industry Trends',
+            'Thought Leadership',
+            'Technology News',
+            'Innovation Articles',
+            'Digital Transformation'
+          ]}
+        />
         <div className="container mx-auto px-6">
           <div className="flex justify-center">
             <LoadingSpinner size="large" />
@@ -60,6 +75,20 @@ export default function Blog() {
   if (error) {
     return (
       <section id="blog" className="py-20 bg-gray-50">
+        <SEOHead 
+          title="Blog & Insights"
+          description="Stay updated with the latest insights, trends, and thought leadership in AI, technology, and business transformation from ELSxGlobal experts."
+          keywords={[
+            'Technology Blog',
+            'AI Insights',
+            'Business Transformation',
+            'Industry Trends',
+            'Thought Leadership',
+            'Technology News',
+            'Innovation Articles',
+            'Digital Transformation'
+          ]}
+        />
         <div className="container mx-auto px-6">
           <div className="text-center">
             <p className="text-red-600 mb-4">{error}</p>
@@ -77,6 +106,20 @@ export default function Blog() {
 
   return (
     <section id="blog" className="py-20 bg-gray-50">
+      <SEOHead 
+        title="Blog & Insights"
+        description="Stay updated with the latest insights, trends, and thought leadership in AI, technology, and business transformation from ELSxGlobal experts."
+        keywords={[
+          'Technology Blog',
+          'AI Insights',
+          'Business Transformation',
+          'Industry Trends',
+          'Thought Leadership',
+          'Technology News',
+          'Innovation Articles',
+          'Digital Transformation'
+        ]}
+      />
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">Latest Insights</h2>

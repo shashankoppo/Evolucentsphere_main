@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
 import { dbOperations } from '../lib/db';
 import type { ContactForm } from '../lib/db';
+import SEOHead from './SEOHead';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -52,6 +53,20 @@ export default function Contact() {
 
   return (
     <section id="contact" className="py-12 md:py-20 bg-gray-50">
+      <SEOHead 
+        title="Contact Us - Get in Touch"
+        description="Contact ELSxGlobal for enterprise IT solutions, AI consulting, and digital transformation services. Get expert consultation and transform your business today."
+        keywords={[
+          'Contact ELSxGlobal',
+          'Business Consultation',
+          'IT Solutions Contact',
+          'AI Consulting',
+          'Digital Transformation',
+          'Enterprise Solutions',
+          'Technology Consulting',
+          'Business Support'
+        ]}
+      />
       <div className="container mx-auto px-4 md:px-6">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-8 md:mb-16">
