@@ -67,7 +67,7 @@ export default function SEOHead({
 
   const brandKeywords = [
     'ELSxGlobal', 'EvolucentSphere', 'Digital Transformation', 'Enterprise IT',
-    'Technology Consulting', 'AI Solutions', 'Cloud Computing', 'BPO Services',
+    'Technology Consulting', 'AI Solutions', 'Cloud Computing', 'BPO Services', 'ERP', 'Game Development',
   ];
   const allKeywords = [...new Set([...brandKeywords, ...keywords])].join(', ');
 
