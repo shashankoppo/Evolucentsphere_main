@@ -9,23 +9,19 @@ Disallow: /private/
 Disallow: /_next/
 Disallow: /node_modules/
 
-# Sitemap location
-Sitemap: http://elsxglobal.cloud/sitemap.xml
+# Sitemap locations
 Sitemap: https://elsxglobal.cloud/sitemap.xml
 Sitemap: https://www.elsxglobal.cloud/sitemap.xml
-Sitemap: https://evolucentsphere.netlify.app/sitemap.xml
-Sitemap: http://evolucentsphere.com/sitemap.xml
-Sitemap: https://www.evolucentsphere.com/sitemap.xml
 Sitemap: https://evolucentsphere.com/sitemap.xml
+Sitemap: https://www.evolucentsphere.com/sitemap.xml
+Sitemap: https://evolucentsphere.netlify.app/sitemap.xml
 
-# Crawl-delay directive (set to 1 second for polite crawling)
+# Crawl delay for general bots
 Crawl-delay: 1
-
-# Additional crawling instructions
 Request-rate: 1/1
 Visit-time: 0600-2300
 
-# Allow specific bots with higher frequency
+# Specific bot overrides (allow faster access for Google & Bing)
 User-agent: Googlebot
 Crawl-delay: 0
 
