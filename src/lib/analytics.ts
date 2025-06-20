@@ -1,4 +1,4 @@
-// Simple analytics events tracking
+// Enhanced analytics events tracking with Google Analytics integration
 type AnalyticsEvent = {
   name: string;
   params?: Record<string, any>;
@@ -47,10 +47,23 @@ export const ANALYTICS_EVENTS = {
   
   // Error tracking
   ERROR_OCCURRED: 'error_occurred',
-  API_ERROR: 'api_error'
+  API_ERROR: 'api_error',
+
+  // SEO specific events
+  SITEMAP_GENERATED: 'sitemap_generated',
+  STRUCTURED_DATA_VIEWED: 'structured_data_viewed',
+  INTERNAL_LINK_CLICKED: 'internal_link_clicked'
 } as const;
 
 export type AnalyticsEventName = keyof typeof ANALYTICS_EVENTS;
+
+// Google Analytics integration
+declare global {
+  interface Window {
+    gtag?: (...args: any[]) => void;
+    dataLayer?: any[];
+  }
+}
 
 export const trackEvent = (
   eventName: AnalyticsEventName,
@@ -65,13 +78,19 @@ export const trackEvent = (
 
     events.push(event);
     
+    // Send to Google Analytics if available
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', ANALYTICS_EVENTS[eventName], {
+        ...eventParams,
+        custom_parameter_timestamp: event.timestamp
+      });
+    }
+    
     // In development, log events to console
     if (import.meta.env.DEV) {
       console.log('Analytics Event:', event);
     }
 
-    // In production, you'd want to send this to your analytics service
-    // For now, we'll just store in memory
     return { error: null };
   } catch (error) {
     console.error('Analytics error:', error);
@@ -80,11 +99,22 @@ export const trackEvent = (
 };
 
 export const trackPageView = (pageName: string, additionalParams?: Record<string, any>) => {
-  return trackEvent('PAGE_VIEW', {
+  const pageParams = {
     page_name: pageName,
     page_url: window.location.href,
+    page_title: document.title,
     ...additionalParams
-  });
+  };
+
+  // Send to Google Analytics
+  if (typeof window !== 'undefined' && window.gtag) {
+    window.gtag('config', 'G-XXXXXXXXXX', {
+      page_title: pageParams.page_title,
+      page_location: pageParams.page_url
+    });
+  }
+
+  return trackEvent('PAGE_VIEW', pageParams);
 };
 
 export const trackError = (error: Error, context?: string) => {
@@ -95,21 +125,36 @@ export const trackError = (error: Error, context?: string) => {
   });
 };
 
+export const trackSEOEvent = (eventType: 'sitemap_generated' | 'structured_data_viewed' | 'internal_link_clicked', params?: Record<string, any>) => {
+  return trackEvent(eventType.toUpperCase() as AnalyticsEventName, params);
+};
+
 export const initializeAnalytics = () => {
   // Track initial page view
   trackPageView(window.location.pathname);
 
   // Set up scroll depth tracking
   let maxScroll = 0;
+  let scrollDepthTracked = new Set<number>();
+  
   window.addEventListener('scroll', () => {
     const scrollPercent = Math.round(
       (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100
     );
+    
     if (scrollPercent > maxScroll) {
       maxScroll = scrollPercent;
-      if (maxScroll % 25 === 0) { // Track at 25%, 50%, 75%, 100%
-        trackEvent('SCROLL_DEPTH', { scroll_depth: maxScroll });
-      }
+      
+      // Track at 25%, 50%, 75%, 100%
+      [25, 50, 75, 100].forEach(threshold => {
+        if (maxScroll >= threshold && !scrollDepthTracked.has(threshold)) {
+          scrollDepthTracked.add(threshold);
+          trackEvent('SCROLL_DEPTH', { 
+            scroll_depth: threshold,
+            page_url: window.location.href 
+          });
+        }
+      });
     }
   });
 
@@ -117,9 +162,46 @@ export const initializeAnalytics = () => {
   let startTime = Date.now();
   window.addEventListener('beforeunload', () => {
     const timeOnPage = Math.round((Date.now() - startTime) / 1000);
-    trackEvent('TIME_ON_PAGE', { time_seconds: timeOnPage });
+    trackEvent('TIME_ON_PAGE', { 
+      time_seconds: timeOnPage,
+      page_url: window.location.href 
+    });
+  });
+
+  // Track internal link clicks for SEO
+  document.addEventListener('click', (event) => {
+    const target = event.target as HTMLElement;
+    const link = target.closest('a');
+    
+    if (link && link.href && link.href.includes(window.location.hostname)) {
+      trackSEOEvent('internal_link_clicked', {
+        from_url: window.location.href,
+        to_url: link.href,
+        link_text: link.textContent?.trim() || '',
+        link_position: getElementPosition(link)
+      });
+    }
   });
 };
 
+// Helper function to get element position for analytics
+function getElementPosition(element: HTMLElement): string {
+  const rect = element.getBoundingClientRect();
+  const viewportHeight = window.innerHeight;
+  
+  if (rect.top < viewportHeight * 0.33) return 'above_fold';
+  if (rect.top < viewportHeight * 0.66) return 'middle_fold';
+  return 'below_fold';
+}
+
 // Export analytics events for debugging
 export const getAnalyticsEvents = () => [...events];
+
+// Enhanced sitemap tracking
+export const trackSitemapGeneration = (urlCount: number, generationTime: number) => {
+  trackSEOEvent('sitemap_generated', {
+    url_count: urlCount,
+    generation_time_ms: generationTime,
+    timestamp: new Date().toISOString()
+  });
+};

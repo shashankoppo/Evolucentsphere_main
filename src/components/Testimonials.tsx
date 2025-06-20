@@ -78,6 +78,8 @@ export default function Testimonials() {
                   src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80"
                   alt={`${testimonial.client_name} - Client testimonial`}
                   className="w-16 h-16 rounded-full object-cover mr-4"
+                  loading="lazy"
+                  decoding="async"
                 />
                 <div>
                   <h3 className="font-bold text-gray-900">{testimonial.client_name}</h3>

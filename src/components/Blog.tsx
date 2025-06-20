@@ -135,6 +135,8 @@ export default function Blog() {
                   alt={post.title}
                   onError={handleImageError}
                   className="w-full h-full object-cover"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div className="p-6">

@@ -32,11 +32,43 @@
     <!-- Preconnect to external domains -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <link rel="preconnect" href="https://www.google-analytics.com" />
     
     <!-- Add custom font -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX', {
+        page_title: document.title,
+        page_location: window.location.href
+      });
+    </script>
+
+    <!-- Google Site Verification -->
     <meta name="google-site-verification" content="jenaAGQBfFyD3dMNO_vTbkXIUmjzG0FtHZDec58xMW0" />
+
+    <!-- Additional SEO Meta Tags -->
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <link rel="canonical" href="https://elsxglobal.cloud/" />
+    
+    <!-- Additional Open Graph Tags -->
+    <meta property="og:site_name" content="ELSxGlobal" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="ELSxGlobal - Enterprise IT Solutions and Digital Transformation" />
+    
+    <!-- Additional Twitter Tags -->
+    <meta name="twitter:site" content="@elsxglobal" />
+    <meta name="twitter:creator" content="@elsxglobal" />
+    <meta name="twitter:image:alt" content="ELSxGlobal - Enterprise IT Solutions and Digital Transformation" />
 
     <!-- Schema.org structured data -->
     <script type="application/ld+json">
@@ -48,11 +80,76 @@
         "url": "https://elsxglobal.cloud",
         "logo": "https://elsxglobal.cloud/logo.png",
         "description": "Transform your business with our comprehensive suite of IT services, digital solutions, and technology consulting. Specializing in AI, cloud computing, and enterprise digital transformation. Part of EvolucentSphere.",
+        "foundingDate": "2009",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "3223/4A Tech Park",
+          "addressLocality": "Bangalore",
+          "addressRegion": "Karnataka",
+          "postalCode": "560001",
+          "addressCountry": "IN"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+917247558873",
+          "contactType": "customer service",
+          "availableLanguage": ["English", "Hindi"]
+        },
         "sameAs": [
           "https://twitter.com/elsxglobal",
           "https://linkedin.com/company/elsxglobal",
-          "https://facebook.com/elsxglobal"
-        ]
+          "https://facebook.com/elsxglobal",
+          "https://instagram.com/elsxglobal"
+        ],
+        "serviceArea": {
+          "@type": "Place",
+          "name": "Global"
+        },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "IT Services",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "AI & Machine Learning Solutions",
+                "description": "Advanced artificial intelligence and machine learning services"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Cloud Computing Services",
+                "description": "Comprehensive cloud infrastructure and migration services"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Cybersecurity Solutions",
+                "description": "Advanced security solutions for enterprise protection"
+              }
+            }
+          ]
+        }
+      }
+    </script>
+
+    <!-- Website Schema -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "ELSxGlobal",
+        "url": "https://elsxglobal.cloud",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://elsxglobal.cloud/search?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
       }
     </script>
   </head>
