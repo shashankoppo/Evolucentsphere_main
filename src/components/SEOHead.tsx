@@ -17,7 +17,17 @@ const siteConfig = {
     tech: 'https://tech.elsxglobal.cloud',
     kpo: 'https://kpo.elsxglobal.cloud',
     bpo: 'https://bpo.elsxglobal.cloud',
-    consultancy: 'https://consultancy.elsxglobal.cloud'
+    consultancy: 'https://consultancy.elsxglobal.cloud',
+    // ELSxTech Sub-divisions
+    cloudInfrastructure: 'https://cloud.elsxglobal.cloud',
+    cybersecurity: 'https://security.elsxglobal.cloud',
+    digitalTransformation: 'https://digital.elsxglobal.cloud',
+    softwareDevelopment: 'https://software.elsxglobal.cloud',
+    dataAIAnalytics: 'https://ai.elsxglobal.cloud',
+    digitalMarketing: 'https://digitalmarketing.elsxglobal.cloud',
+    iotEmergingTech: 'https://emergingtech.elsxglobal.cloud',
+    managedIT: 'https://managedit.elsxglobal.cloud',
+    enterpriseSoftware: 'https://enterprise.elsxglobal.cloud'
   },
   locations: [
     'Jabalpur, India',
@@ -52,13 +62,53 @@ const keywordSets = {
       'IT Services', 'Software Development', 'Cloud Solutions', 'DevOps Services',
       'AI Development', 'Machine Learning', 'Custom Applications', 'Web Development',
       'Mobile App Development', 'Enterprise Software', 'System Integration',
-      'Technology Consulting', 'Digital Solutions', 'Blockchain Development'
+      'Technology Consulting', 'Digital Solutions', 'Blockchain Development',
+      // Enhanced ELSxTech Sub-division Keywords
+      'Cloud Computing', 'AWS', 'Azure', 'Google Cloud Platform', 'Multi-Cloud Strategy',
+      'Cloud Migration', 'Infrastructure as Code', 'Serverless Architecture', 'Container Orchestration',
+      'Kubernetes', 'Docker', 'Cloud Security', 'DevOps', 'CI/CD Pipeline', 'Microservices',
+      'Cybersecurity', 'Information Security', 'Network Security', 'Data Protection',
+      'Threat Detection', 'Incident Response', 'Security Monitoring', 'SIEM',
+      'Penetration Testing', 'Vulnerability Assessment', 'Security Audit', 'Compliance',
+      'Digital Transformation', 'Business Transformation', 'Process Automation', 'Change Management',
+      'Artificial Intelligence', 'Machine Learning', 'Deep Learning', 'Neural Networks',
+      'Natural Language Processing', 'Computer Vision', 'Predictive Analytics', 'Data Science',
+      'Digital Marketing', 'Customer Experience', 'Marketing Automation', 'SEO', 'Social Media',
+      'Internet of Things', 'IoT', 'Blockchain', 'AR/VR', 'Edge Computing', 'Industry 4.0',
+      'Managed IT Services', 'IT Support', 'Help Desk', 'Network Management', 'System Administration',
+      'Enterprise Software', 'ERP', 'CRM', 'Business Applications', 'Workflow Management'
     ],
     consultancy: [
       'Business Consulting', 'Digital Transformation Consulting', 'ESG Consulting',
       'Lean Six Sigma', 'Process Optimization', 'Strategy Consulting',
       'Management Consulting', 'Operational Excellence', 'Change Management',
       'Business Process Reengineering', 'Performance Improvement'
+    ],
+    // Granular ELSxTech Sub-division Keywords
+    cloud: [
+      'Cloud Computing', 'AWS', 'Azure', 'Google Cloud Platform', 'Multi-Cloud Strategy',
+      'Cloud Migration', 'Infrastructure as Code', 'Serverless Architecture', 'Container Orchestration',
+      'Kubernetes', 'Docker', 'Cloud Security', 'DevOps', 'CI/CD Pipeline', 'Microservices',
+      'Cloud Native Applications', 'Hybrid Cloud', 'Private Cloud', 'Public Cloud',
+      'Cloud Cost Optimization', 'Cloud Monitoring', 'Disaster Recovery', 'Backup Solutions'
+    ],
+    cybersecurity: [
+      'Cybersecurity', 'Information Security', 'Network Security', 'Data Protection',
+      'Threat Detection', 'Incident Response', 'Security Monitoring', 'SIEM',
+      'Penetration Testing', 'Vulnerability Assessment', 'Security Audit', 'Compliance',
+      'GDPR', 'HIPAA', 'SOX', 'ISO 27001', 'Zero Trust Architecture', 'Identity Management',
+      'Access Control', 'Multi-Factor Authentication', 'Endpoint Security', 'Firewall'
+    ],
+    digitalTransformation: [
+      'Digital Transformation', 'Business Transformation', 'Digital Strategy', 'Innovation Consulting',
+      'Process Automation', 'Workflow Optimization', 'Change Management', 'Digital Adoption',
+      'Technology Roadmap', 'Digital Maturity Assessment', 'Agile Transformation', 'Lean Methodology'
+    ],
+    ai: [
+      'Artificial Intelligence', 'Machine Learning', 'Deep Learning', 'Neural Networks',
+      'Natural Language Processing', 'Computer Vision', 'Predictive Analytics', 'Data Science',
+      'Big Data', 'Data Analytics', 'Business Intelligence', 'Data Visualization',
+      'MLOps', 'AI Ethics', 'Automated Machine Learning', 'Cognitive Computing'
     ]
   },
   industries: [
@@ -99,7 +149,7 @@ interface SEOProps {
   canonicalUrl?: string;
   titleTemplate?: string;
   breadcrumbs?: { name: string; path: string }[];
-  serviceCategory?: 'bpo' | 'kpo' | 'tech' | 'consultancy';
+  serviceCategory?: 'bpo' | 'kpo' | 'tech' | 'consultancy' | 'cloud' | 'cybersecurity' | 'digitalTransformation' | 'ai';
   targetIndustries?: string[];
   relatedServices?: string[];
   children?: React.ReactNode;
@@ -237,10 +287,7 @@ export default function SEOHead({
       "https://facebook.com/elsxglobal",
       "https://instagram.com/elsxglobal",
       siteConfig.parentUrl,
-      siteConfig.divisions.tech,
-      siteConfig.divisions.kpo,
-      siteConfig.divisions.bpo,
-      siteConfig.divisions.consultancy
+      ...Object.values(siteConfig.divisions)
     ],
     "department": [
       {
@@ -487,10 +534,9 @@ export default function SEOHead({
 
       {/* --- Cross-Domain Linking --- */}
       <link rel="dns-prefetch" href={siteConfig.parentUrl} />
-      <link rel="dns-prefetch" href={siteConfig.divisions.tech} />
-      <link rel="dns-prefetch" href={siteConfig.divisions.kpo} />
-      <link rel="dns-prefetch" href={siteConfig.divisions.bpo} />
-      <link rel="dns-prefetch" href={siteConfig.divisions.consultancy} />
+      {Object.values(siteConfig.divisions).map((url, index) => (
+        <link key={index} rel="dns-prefetch" href={url} />
+      ))}
 
       {/* --- Structured Data --- */}
       <script type="application/ld+json">{JSON.stringify(schemas)}</script>

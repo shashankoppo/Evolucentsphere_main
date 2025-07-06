@@ -23,7 +23,7 @@ export class SitemapGenerator {
   }
 
   private initializeUrls() {
-    // Main site URLs
+    // Main site URLs with enhanced ELSxTech sub-divisions
     this.staticUrls = [
       {
         loc: `${this.baseUrl}/`,
@@ -124,10 +124,101 @@ export class SitemapGenerator {
         lastmod: new Date().toISOString().split('T')[0],
         changefreq: 'weekly',
         priority: 0.9
+      },
+      // ELSxTech Sub-division pages
+      {
+        loc: `${this.baseUrl}/it-services/cloud-infrastructure`,
+        lastmod: new Date().toISOString().split('T')[0],
+        changefreq: 'weekly',
+        priority: 0.8,
+        images: [{
+          loc: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa',
+          title: 'Cloud Infrastructure Solutions - ELSxTech'
+        }]
+      },
+      {
+        loc: `${this.baseUrl}/it-services/cybersecurity`,
+        lastmod: new Date().toISOString().split('T')[0],
+        changefreq: 'weekly',
+        priority: 0.8,
+        images: [{
+          loc: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3',
+          title: 'Cybersecurity Solutions - ELSxTech'
+        }]
+      },
+      {
+        loc: `${this.baseUrl}/it-services/digital-transformation`,
+        lastmod: new Date().toISOString().split('T')[0],
+        changefreq: 'weekly',
+        priority: 0.8,
+        images: [{
+          loc: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f',
+          title: 'Digital Transformation Consulting - ELSxTech'
+        }]
+      },
+      {
+        loc: `${this.baseUrl}/it-services/software-development`,
+        lastmod: new Date().toISOString().split('T')[0],
+        changefreq: 'weekly',
+        priority: 0.8,
+        images: [{
+          loc: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6',
+          title: 'Software Development Services - ELSxTech'
+        }]
+      },
+      {
+        loc: `${this.baseUrl}/it-services/ai-analytics`,
+        lastmod: new Date().toISOString().split('T')[0],
+        changefreq: 'weekly',
+        priority: 0.8,
+        images: [{
+          loc: 'https://images.unsplash.com/photo-1507146426996-ef05306b995a',
+          title: 'AI & Analytics Solutions - ELSxTech'
+        }]
+      },
+      {
+        loc: `${this.baseUrl}/it-services/digital-marketing`,
+        lastmod: new Date().toISOString().split('T')[0],
+        changefreq: 'weekly',
+        priority: 0.8,
+        images: [{
+          loc: 'https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07',
+          title: 'Digital Marketing Solutions - ELSxTech'
+        }]
+      },
+      {
+        loc: `${this.baseUrl}/it-services/iot-emerging-tech`,
+        lastmod: new Date().toISOString().split('T')[0],
+        changefreq: 'weekly',
+        priority: 0.8,
+        images: [{
+          loc: 'https://images.unsplash.com/photo-1518709268805-4e9042af2176',
+          title: 'IoT & Emerging Technologies - ELSxTech'
+        }]
+      },
+      {
+        loc: `${this.baseUrl}/it-services/managed-it`,
+        lastmod: new Date().toISOString().split('T')[0],
+        changefreq: 'weekly',
+        priority: 0.8,
+        images: [{
+          loc: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31',
+          title: 'Managed IT Services - ELSxTech'
+        }]
+      },
+      {
+        loc: `${this.baseUrl}/it-services/enterprise-software`,
+        lastmod: new Date().toISOString().split('T')[0],
+        changefreq: 'weekly',
+        priority: 0.8,
+        images: [{
+          loc: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab',
+          title: 'Enterprise Software Solutions - ELSxTech'
+        }]
       }
     ];
 
-    // Cross-domain URLs for SEO linking
+    // Enhanced cross-domain URLs with all ELSxTech sub-domains
     this.crossDomainUrls = [
       // Parent company
       {
@@ -154,7 +245,7 @@ export class SitemapGenerator {
         changefreq: 'monthly',
         priority: 0.8
       },
-      // Division sites
+      // Main division sites
       {
         loc: 'https://tech.elsxglobal.cloud/',
         lastmod: new Date().toISOString().split('T')[0],
@@ -202,6 +293,61 @@ export class SitemapGenerator {
         lastmod: new Date().toISOString().split('T')[0],
         changefreq: 'weekly',
         priority: 0.8
+      },
+      // ELSxTech Sub-domain URLs
+      {
+        loc: 'https://cloud.elsxglobal.cloud/',
+        lastmod: new Date().toISOString().split('T')[0],
+        changefreq: 'daily',
+        priority: 0.8
+      },
+      {
+        loc: 'https://security.elsxglobal.cloud/',
+        lastmod: new Date().toISOString().split('T')[0],
+        changefreq: 'daily',
+        priority: 0.8
+      },
+      {
+        loc: 'https://digital.elsxglobal.cloud/',
+        lastmod: new Date().toISOString().split('T')[0],
+        changefreq: 'daily',
+        priority: 0.8
+      },
+      {
+        loc: 'https://software.elsxglobal.cloud/',
+        lastmod: new Date().toISOString().split('T')[0],
+        changefreq: 'daily',
+        priority: 0.8
+      },
+      {
+        loc: 'https://ai.elsxglobal.cloud/',
+        lastmod: new Date().toISOString().split('T')[0],
+        changefreq: 'daily',
+        priority: 0.8
+      },
+      {
+        loc: 'https://digitalmarketing.elsxglobal.cloud/',
+        lastmod: new Date().toISOString().split('T')[0],
+        changefreq: 'daily',
+        priority: 0.8
+      },
+      {
+        loc: 'https://emergingtech.elsxglobal.cloud/',
+        lastmod: new Date().toISOString().split('T')[0],
+        changefreq: 'daily',
+        priority: 0.8
+      },
+      {
+        loc: 'https://managedit.elsxglobal.cloud/',
+        lastmod: new Date().toISOString().split('T')[0],
+        changefreq: 'daily',
+        priority: 0.8
+      },
+      {
+        loc: 'https://enterprise.elsxglobal.cloud/',
+        lastmod: new Date().toISOString().split('T')[0],
+        changefreq: 'daily',
+        priority: 0.8
       }
     ];
   }
@@ -248,17 +394,34 @@ export class SitemapGenerator {
         });
       });
 
-      // Add service-specific landing pages
+      // Add enhanced service-specific landing pages with ELSxTech sub-divisions
       const servicePages = [
+        // Main service categories
         { path: '/services/ai-solutions', priority: 0.8, keywords: 'AI Solutions, Machine Learning, Artificial Intelligence' },
         { path: '/services/cloud-computing', priority: 0.8, keywords: 'Cloud Computing, Cloud Migration, AWS, Azure' },
         { path: '/services/cybersecurity', priority: 0.8, keywords: 'Cybersecurity, Security Solutions, Threat Protection' },
         { path: '/services/data-analytics', priority: 0.8, keywords: 'Data Analytics, Business Intelligence, Big Data' },
         { path: '/services/digital-transformation', priority: 0.9, keywords: 'Digital Transformation, Business Modernization' },
+        
+        // Industry-specific pages
         { path: '/industries/banking', priority: 0.7, keywords: 'Banking Solutions, Financial Services, Fintech' },
         { path: '/industries/healthcare', priority: 0.7, keywords: 'Healthcare IT, Medical Technology, Health Analytics' },
         { path: '/industries/manufacturing', priority: 0.7, keywords: 'Manufacturing Solutions, Industry 4.0, IoT' },
-        { path: '/industries/retail', priority: 0.7, keywords: 'Retail Technology, E-commerce Solutions, Customer Analytics' }
+        { path: '/industries/retail', priority: 0.7, keywords: 'Retail Technology, E-commerce Solutions, Customer Analytics' },
+        { path: '/industries/insurance', priority: 0.7, keywords: 'Insurance Technology, InsurTech, Risk Management' },
+        { path: '/industries/automotive', priority: 0.7, keywords: 'Automotive Technology, Connected Vehicles, Smart Manufacturing' },
+        
+        // Technology-specific pages
+        { path: '/technologies/artificial-intelligence', priority: 0.8, keywords: 'AI Technology, Machine Learning, Deep Learning' },
+        { path: '/technologies/blockchain', priority: 0.7, keywords: 'Blockchain Technology, Cryptocurrency, Smart Contracts' },
+        { path: '/technologies/iot', priority: 0.7, keywords: 'Internet of Things, IoT Solutions, Connected Devices' },
+        { path: '/technologies/quantum-computing', priority: 0.7, keywords: 'Quantum Computing, Quantum Algorithms, Advanced Computing' },
+        
+        // Solution-specific pages
+        { path: '/solutions/enterprise-software', priority: 0.8, keywords: 'Enterprise Software, ERP, CRM, Business Applications' },
+        { path: '/solutions/mobile-development', priority: 0.7, keywords: 'Mobile App Development, iOS, Android, Cross-platform' },
+        { path: '/solutions/web-development', priority: 0.7, keywords: 'Web Development, Frontend, Backend, Full Stack' },
+        { path: '/solutions/api-integration', priority: 0.7, keywords: 'API Development, System Integration, Microservices' }
       ];
 
       servicePages.forEach(page => {
@@ -352,6 +515,42 @@ export class SitemapGenerator {
     <loc>https://consultancy.elsxglobal.cloud/sitemap.xml</loc>
     <lastmod>${lastmod}</lastmod>
   </sitemap>
+  <sitemap>
+    <loc>https://cloud.elsxglobal.cloud/sitemap.xml</loc>
+    <lastmod>${lastmod}</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://security.elsxglobal.cloud/sitemap.xml</loc>
+    <lastmod>${lastmod}</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://digital.elsxglobal.cloud/sitemap.xml</loc>
+    <lastmod>${lastmod}</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://software.elsxglobal.cloud/sitemap.xml</loc>
+    <lastmod>${lastmod}</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://ai.elsxglobal.cloud/sitemap.xml</loc>
+    <lastmod>${lastmod}</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://digitalmarketing.elsxglobal.cloud/sitemap.xml</loc>
+    <lastmod>${lastmod}</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://emergingtech.elsxglobal.cloud/sitemap.xml</loc>
+    <lastmod>${lastmod}</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://managedit.elsxglobal.cloud/sitemap.xml</loc>
+    <lastmod>${lastmod}</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://enterprise.elsxglobal.cloud/sitemap.xml</loc>
+    <lastmod>${lastmod}</lastmod>
+  </sitemap>
 </sitemapindex>`;
 
     return sitemapIndex;
@@ -372,7 +571,7 @@ export class SitemapGenerator {
     }
   }
 
-  // Generate robots.txt with cross-domain references
+  // Generate enhanced robots.txt with all cross-domain references
   public generateRobotsTxt(): string {
     return `# Robots.txt for ELSxGlobal - Part of EvolucentSphere
 User-agent: *
@@ -385,7 +584,7 @@ Disallow: /private/
 Disallow: /_next/
 Disallow: /node_modules/
 
-# Sitemap locations - Main and cross-domain
+# Sitemap locations - Main and all cross-domain sitemaps
 Sitemap: ${this.baseUrl}/sitemap.xml
 Sitemap: ${this.baseUrl}/sitemap-index.xml
 Sitemap: https://evolucentsphere.com/sitemap.xml
@@ -393,6 +592,15 @@ Sitemap: https://tech.elsxglobal.cloud/sitemap.xml
 Sitemap: https://bpo.elsxglobal.cloud/sitemap.xml
 Sitemap: https://kpo.elsxglobal.cloud/sitemap.xml
 Sitemap: https://consultancy.elsxglobal.cloud/sitemap.xml
+Sitemap: https://cloud.elsxglobal.cloud/sitemap.xml
+Sitemap: https://security.elsxglobal.cloud/sitemap.xml
+Sitemap: https://digital.elsxglobal.cloud/sitemap.xml
+Sitemap: https://software.elsxglobal.cloud/sitemap.xml
+Sitemap: https://ai.elsxglobal.cloud/sitemap.xml
+Sitemap: https://digitalmarketing.elsxglobal.cloud/sitemap.xml
+Sitemap: https://emergingtech.elsxglobal.cloud/sitemap.xml
+Sitemap: https://managedit.elsxglobal.cloud/sitemap.xml
+Sitemap: https://enterprise.elsxglobal.cloud/sitemap.xml
 
 # Crawl optimization
 Crawl-delay: 1

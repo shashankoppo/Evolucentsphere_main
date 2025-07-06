@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Search, Cpu, Briefcase, Users, Globe, Brain, ChevronDown, KeyRound, Building, Info, Server, FileText, MoreHorizontal, ExternalLink } from 'lucide-react';
+import { 
+  Menu, X, Search, Cpu, Briefcase, Users, Globe, Brain, ChevronDown, KeyRound, 
+  Building, Info, Server, FileText, MoreHorizontal, ExternalLink, Shield, 
+  Code, Database, Bot, BarChart, Zap, Network, Settings, Cloud
+} from 'lucide-react';
 
 import SearchBar from './SearchBar'; 
 
@@ -21,9 +25,19 @@ type Division = {
   icon: React.ElementType;
   external?: boolean;
   keywords?: string[];
+  subDivisions?: SubDivision[];
 };
 
-// --- Centralized Navigation Data with Cross-Linking ---
+type SubDivision = {
+  name: string;
+  path: string;
+  description: string;
+  icon: React.ElementType;
+  external?: boolean;
+  keywords?: string[];
+};
+
+// --- Centralized Navigation Data with Enhanced ELSxTech Structure ---
 const NAV_LINKS: NavLinkType[] = [
   { name: 'Services', path: '/services', icon: Server, isPrimary: true },
   { name: 'Technologies', path: '/technologies', icon: Cpu, isPrimary: true },
@@ -33,39 +47,112 @@ const NAV_LINKS: NavLinkType[] = [
   { name: 'Investors', path: '/investor-relations', icon: Globe, isPrimary: false },
 ];
 
-// Enhanced divisions with external links and SEO keywords
+// Enhanced divisions with comprehensive ELSxTech sub-divisions
 const divisions: Division[] = [
   { 
     name: 'ELSxTech', 
-    path: 'https://tech.elsxglobal.cloud', 
-    description: 'AI-driven software development & cloud solutions', 
+    path: '/it-services', 
+    description: 'Comprehensive technology solutions and innovation', 
     icon: Cpu,
-    external: true,
-    keywords: ['AI Development', 'Cloud Solutions', 'Software Development', 'DevOps', 'Cybersecurity']
+    keywords: ['IT Services', 'Technology Solutions', 'Digital Innovation', 'Software Development', 'Cloud Computing'],
+    subDivisions: [
+      {
+        name: 'Cloud & Infrastructure',
+        path: '/it-services/cloud-infrastructure',
+        description: 'Enterprise cloud solutions and infrastructure management',
+        icon: Cloud,
+        external: true,
+        keywords: ['Cloud Computing', 'AWS', 'Azure', 'Infrastructure', 'DevOps', 'Kubernetes']
+      },
+      {
+        name: 'Cybersecurity Solutions',
+        path: '/it-services/cybersecurity',
+        description: 'Advanced cybersecurity and threat protection',
+        icon: Shield,
+        external: true,
+        keywords: ['Cybersecurity', 'Information Security', 'Threat Detection', 'Compliance', 'SIEM']
+      },
+      {
+        name: 'Digital Transformation',
+        path: '/it-services/digital-transformation',
+        description: 'Strategic digital transformation consulting',
+        icon: Zap,
+        external: true,
+        keywords: ['Digital Transformation', 'Business Transformation', 'Process Automation', 'Change Management']
+      },
+      {
+        name: 'Software Development',
+        path: '/it-services/software-development',
+        description: 'Custom software development and integration',
+        icon: Code,
+        external: true,
+        keywords: ['Software Development', 'Custom Applications', 'Web Development', 'Mobile Apps', 'API Integration']
+      },
+      {
+        name: 'Data, AI & Analytics',
+        path: '/it-services/ai-analytics',
+        description: 'AI, machine learning, and data analytics solutions',
+        icon: Brain,
+        external: true,
+        keywords: ['Artificial Intelligence', 'Machine Learning', 'Data Analytics', 'Business Intelligence', 'Predictive Analytics']
+      },
+      {
+        name: 'Digital Marketing',
+        path: '/it-services/digital-marketing',
+        description: 'Digital experience and marketing solutions',
+        icon: BarChart,
+        external: true,
+        keywords: ['Digital Marketing', 'Customer Experience', 'Marketing Automation', 'SEO', 'Social Media']
+      },
+      {
+        name: 'IoT & Emerging Tech',
+        path: '/it-services/iot-emerging-tech',
+        description: 'Internet of Things and emerging technologies',
+        icon: Network,
+        external: true,
+        keywords: ['Internet of Things', 'IoT', 'Blockchain', 'AR/VR', 'Edge Computing', 'Industry 4.0']
+      },
+      {
+        name: 'Managed IT Services',
+        path: '/it-services/managed-it',
+        description: 'Comprehensive managed IT services and support',
+        icon: Settings,
+        external: true,
+        keywords: ['Managed IT', 'IT Support', 'Help Desk', 'Network Management', 'System Administration']
+      },
+      {
+        name: 'Enterprise Software',
+        path: '/it-services/enterprise-software',
+        description: 'Enterprise software solutions and ERP systems',
+        icon: Database,
+        external: true,
+        keywords: ['Enterprise Software', 'ERP', 'CRM', 'Business Applications', 'Workflow Management']
+      }
+    ]
   },
   { 
     name: 'ELSxBPO', 
-    path: 'https://bpo.elsxglobal.cloud', 
+    path: '/bpo-services', 
     description: 'Business process outsourcing & customer support', 
     icon: Users,
     external: true,
-    keywords: ['BPO Services', 'Customer Support', 'Contact Center', 'Back Office Operations']
+    keywords: ['BPO Services', 'Customer Support', 'Contact Center', 'Back Office Operations', 'Process Outsourcing']
   },
   { 
     name: 'ELSxKPO', 
-    path: 'https://kpo.elsxglobal.cloud', 
+    path: '/kpo-services', 
     description: 'Knowledge process outsourcing & analytics', 
     icon: Brain,
     external: true,
-    keywords: ['KPO Services', 'Research Analytics', 'Business Intelligence', 'Data Management']
+    keywords: ['KPO Services', 'Research Analytics', 'Business Intelligence', 'Data Management', 'Knowledge Services']
   },
   { 
     name: 'ELSxConsultancy', 
-    path: 'https://consultancy.elsxglobal.cloud', 
+    path: '/consultancy', 
     description: 'Strategic consulting & digital transformation', 
     icon: Briefcase,
     external: true,
-    keywords: ['Business Consulting', 'Digital Transformation', 'ESG Consulting', 'Lean Six Sigma']
+    keywords: ['Business Consulting', 'Digital Transformation', 'ESG Consulting', 'Lean Six Sigma', 'Strategy Consulting']
   },
   { 
     name: 'EvolucentSphere', 
@@ -73,7 +160,7 @@ const divisions: Division[] = [
     description: 'Corporate headquarters & global operations', 
     icon: Globe,
     external: true,
-    keywords: ['Corporate', 'Global Operations', 'Enterprise Solutions', 'Multi-Division Services']
+    keywords: ['Corporate', 'Global Operations', 'Enterprise Solutions', 'Multi-Division Services', 'Business Transformation']
   }
 ];
 
@@ -205,12 +292,13 @@ const DesktopNav = () => {
 // --- Enhanced Mobile Menu Panel ---
 const MobileMenuPanel = ({ closeMenu }: { closeMenu: () => void }) => {
   const [isDivisionsOpen, setIsDivisionsOpen] = useState(false);
+  const [expandedDivision, setExpandedDivision] = useState<string | null>(null);
   
   return (
     <motion.div
       initial={{ x: '100%' }} animate={{ x: 0 }} exit={{ x: '100%' }}
       transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-      className="fixed top-0 right-0 bottom-0 w-full max-w-md bg-white z-[1001] shadow-xl lg:hidden"
+      className="fixed top-0 right-0 bottom-0 w-full max-w-md bg-white z-[1001] shadow-xl lg:hidden overflow-y-auto"
     >
       <div className="flex flex-col h-full">
         <div className="p-4 border-b border-gray-200">
@@ -248,25 +336,72 @@ const MobileMenuPanel = ({ closeMenu }: { closeMenu: () => void }) => {
                   initial={{ height: 0 }} 
                   animate={{ height: 'auto' }} 
                   exit={{ height: 0 }} 
-                  className="overflow-hidden pl-8"
+                  className="overflow-hidden pl-4"
                 >
                   <div className="flex flex-col space-y-2 py-2 border-l border-gray-200">
                     {divisions.map((d) => (
-                      <a 
-                        key={d.path} 
-                        href={d.external ? d.path : d.path} 
-                        target={d.external ? "_blank" : "_self"}
-                        rel={d.external ? "noopener noreferrer" : undefined}
-                        className="block py-1.5 pl-4 text-gray-600 hover:text-purple-600 transition-colors" 
-                        onClick={closeMenu}
-                        aria-label={`Visit ${d.name} - ${d.description}`}
-                      >
+                      <div key={d.path}>
                         <div className="flex items-center justify-between">
-                          <span>{d.name}</span>
-                          {d.external && <ExternalLink className="h-3 w-3" />}
+                          <Link
+                            to={d.external ? '#' : d.path}
+                            onClick={(e) => {
+                              if (d.external) {
+                                e.preventDefault();
+                                window.open(d.path, '_blank');
+                              }
+                              if (d.subDivisions) {
+                                e.preventDefault();
+                                setExpandedDivision(expandedDivision === d.name ? null : d.name);
+                              } else {
+                                closeMenu();
+                              }
+                            }}
+                            className="flex-1 py-1.5 pl-4 text-gray-600 hover:text-purple-600 transition-colors"
+                            aria-label={`Visit ${d.name} - ${d.description}`}
+                          >
+                            <div className="flex items-center">
+                              <d.icon className="h-4 w-4 mr-2" />
+                              <span>{d.name}</span>
+                              {d.external && <ExternalLink className="h-3 w-3 ml-1" />}
+                            </div>
+                            <div className="text-xs text-gray-500 mt-1 ml-6">{d.description}</div>
+                          </Link>
+                          {d.subDivisions && (
+                            <button
+                              onClick={() => setExpandedDivision(expandedDivision === d.name ? null : d.name)}
+                              className="p-2"
+                            >
+                              <ChevronDown className={`h-4 w-4 transition-transform ${expandedDivision === d.name ? 'rotate-180' : ''}`} />
+                            </button>
+                          )}
                         </div>
-                        <div className="text-xs text-gray-500 mt-1">{d.description}</div>
-                      </a>
+                        
+                        {/* Sub-divisions */}
+                        <AnimatePresence>
+                          {d.subDivisions && expandedDivision === d.name && (
+                            <motion.div
+                              initial={{ height: 0 }}
+                              animate={{ height: 'auto' }}
+                              exit={{ height: 0 }}
+                              className="overflow-hidden ml-6 mt-2"
+                            >
+                              {d.subDivisions.map((sub) => (
+                                <Link
+                                  key={sub.path}
+                                  to={sub.path}
+                                  onClick={closeMenu}
+                                  className="block py-1.5 pl-4 text-sm text-gray-500 hover:text-purple-600 transition-colors border-l border-gray-100"
+                                >
+                                  <div className="flex items-center">
+                                    <sub.icon className="h-3 w-3 mr-2" />
+                                    <span>{sub.name}</span>
+                                  </div>
+                                </Link>
+                              ))}
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      </div>
                     ))}
                   </div>
                 </motion.div>
@@ -343,51 +478,68 @@ const MoreDropdown = ({ links }: { links: NavLinkType[] }) => (
   </motion.div>
 );
 
-// --- Enhanced Mega Menu with Cross-Linking ---
+// --- Enhanced Mega Menu with ELSxTech Sub-Divisions ---
 const EnhancedMegaMenu = () => (
   <motion.div
     initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 10 }}
     transition={{ duration: 0.2, ease: 'easeOut' }}
     className="absolute top-full left-1/2 -translate-x-1/2 mt-3"
   >
-    <div className="w-screen max-w-lg bg-white shadow-lg rounded-lg p-6 ring-1 ring-black ring-opacity-5">
+    <div className="w-screen max-w-4xl bg-white shadow-lg rounded-lg p-6 ring-1 ring-black ring-opacity-5">
       <div className="mb-4">
         <h3 className="text-lg font-semibold text-gray-900 mb-2">ELSxGlobal Divisions</h3>
         <p className="text-sm text-gray-600">Specialized services across multiple domains</p>
       </div>
       
-      <div className="grid gap-4">
+      <div className="grid gap-6">
         {divisions.map((d) => (
-          <a 
-            key={d.path} 
-            href={d.external ? d.path : d.path}
-            target={d.external ? "_blank" : "_self"}
-            rel={d.external ? "noopener noreferrer" : undefined}
-            className="group flex items-center p-3 -m-3 rounded-lg hover:bg-gray-50 transition-colors"
-            aria-label={`Visit ${d.name} - ${d.description}`}
-          >
-            <div className="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-purple-100 text-purple-600 group-hover:bg-purple-200 transition-colors">
-              <d.icon className="h-6 w-6" />
-            </div>
-            <div className="ml-4 flex-grow">
-              <div className="flex items-center justify-between">
-                <p className="text-base font-medium text-gray-900 group-hover:text-purple-600 transition-colors">
-                  {d.name}
-                </p>
-                {d.external && <ExternalLink className="h-4 w-4 text-gray-400 group-hover:text-purple-600" />}
+          <div key={d.path} className="group">
+            <a 
+              href={d.external ? d.path : d.path}
+              target={d.external ? "_blank" : "_self"}
+              rel={d.external ? "noopener noreferrer" : undefined}
+              className="flex items-center p-3 -m-3 rounded-lg hover:bg-gray-50 transition-colors"
+              aria-label={`Visit ${d.name} - ${d.description}`}
+            >
+              <div className="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-purple-100 text-purple-600 group-hover:bg-purple-200 transition-colors">
+                <d.icon className="h-6 w-6" />
               </div>
-              <p className="text-sm text-gray-500">{d.description}</p>
-              {d.keywords && (
-                <div className="mt-1 flex flex-wrap gap-1">
-                  {d.keywords.slice(0, 3).map((keyword, idx) => (
-                    <span key={idx} className="text-xs bg-gray-100 text-gray-600 px-2 py-0.5 rounded">
-                      {keyword}
-                    </span>
-                  ))}
+              <div className="ml-4 flex-grow">
+                <div className="flex items-center justify-between">
+                  <p className="text-base font-medium text-gray-900 group-hover:text-purple-600 transition-colors">
+                    {d.name}
+                  </p>
+                  {d.external && <ExternalLink className="h-4 w-4 text-gray-400 group-hover:text-purple-600" />}
                 </div>
-              )}
-            </div>
-          </a>
+                <p className="text-sm text-gray-500">{d.description}</p>
+                {d.keywords && (
+                  <div className="mt-1 flex flex-wrap gap-1">
+                    {d.keywords.slice(0, 3).map((keyword, idx) => (
+                      <span key={idx} className="text-xs bg-gray-100 text-gray-600 px-2 py-0.5 rounded">
+                        {keyword}
+                      </span>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </a>
+            
+            {/* ELSxTech Sub-divisions */}
+            {d.subDivisions && (
+              <div className="ml-14 mt-2 grid grid-cols-2 gap-2">
+                {d.subDivisions.map((sub) => (
+                  <Link
+                    key={sub.path}
+                    to={sub.path}
+                    className="flex items-center p-2 text-sm text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded transition-colors"
+                  >
+                    <sub.icon className="h-4 w-4 mr-2" />
+                    <span>{sub.name}</span>
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
         ))}
       </div>
       

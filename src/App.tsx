@@ -23,6 +23,17 @@ import KPOServices from './pages/divisions/KPOServices';
 import ConsultancyServices from './pages/divisions/ConsultancyServices';
 import EnterpriseIT from './pages/divisions/EnterpriseIT';
 
+// ELSxTech Sub-Division Pages
+import CloudInfrastructure from './pages/divisions/elsxtech/CloudInfrastructure';
+import CybersecuritySolutions from './pages/divisions/elsxtech/CybersecuritySolutions';
+import DigitalTransformation from './pages/divisions/elsxtech/DigitalTransformation';
+import SoftwareDevelopment from './pages/divisions/elsxtech/SoftwareDevelopment';
+import DataAIAnalytics from './pages/divisions/elsxtech/DataAIAnalytics';
+import DigitalExperienceMarketing from './pages/divisions/elsxtech/DigitalExperienceMarketing';
+import IoTEmergingTechnologies from './pages/divisions/elsxtech/IoTEmergingTechnologies';
+import ManagedITServices from './pages/divisions/elsxtech/ManagedITServices';
+import EnterpriseSoftwareSolutions from './pages/divisions/elsxtech/EnterpriseSoftwareSolutions';
+
 export default function App() {
   return (
     <HelmetProvider>
@@ -48,6 +59,17 @@ export default function App() {
               <Route path="/kpo-services" element={<KPOServices />} />
               <Route path="/consultancy" element={<ConsultancyServices />} />
               <Route path="/enterprise-it" element={<EnterpriseIT />} />
+
+              {/* ELSxTech Sub-Division Routes */}
+              <Route path="/it-services/cloud-infrastructure" element={<CloudInfrastructure />} />
+              <Route path="/it-services/cybersecurity" element={<CybersecuritySolutions />} />
+              <Route path="/it-services/digital-transformation" element={<DigitalTransformation />} />
+              <Route path="/it-services/software-development" element={<SoftwareDevelopment />} />
+              <Route path="/it-services/ai-analytics" element={<DataAIAnalytics />} />
+              <Route path="/it-services/digital-marketing" element={<DigitalExperienceMarketing />} />
+              <Route path="/it-services/iot-emerging-tech" element={<IoTEmergingTechnologies />} />
+              <Route path="/it-services/managed-it" element={<ManagedITServices />} />
+              <Route path="/it-services/enterprise-software" element={<EnterpriseSoftwareSolutions />} />
             </Routes>
           </main>
           <Footer />
