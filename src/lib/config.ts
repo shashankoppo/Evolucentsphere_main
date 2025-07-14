@@ -1,11 +1,14 @@
 export const config = {
   app: {
     name: 'EvolucentSphere',
+    division: 'ELSxGlobal',
     description: 'Transformative Business Solutions & Technology Services',
-    url: 'https://evolucentsphere.com',
+    url: 'https://elsxglobal.cloud',
+    parentUrl: 'https://evolucentsphere.com',
     contact: {
       phone: '+91 (724) 755-8873',
       email: 'contact@evolucentsphere.com',
+      supportEmail: 'support@elsxglobal.cloud',
       address: {
         street: '3223/4A Tech Park',
         city: 'Bangalore',
@@ -15,250 +18,110 @@ export const config = {
       }
     },
     social: {
-      twitter: 'https://twitter.com/evolucentsphere',
-      linkedin: 'https://linkedin.com/company/ELSxGLOBAL',
+      twitter: 'https://twitter.com/elsxglobal',
+      linkedin: 'https://linkedin.com/company/elsxglobal',
       facebook: 'https://facebook.com/elsxglobal',
+      instagram: 'https://instagram.com/elsxglobal',
+      youtube: 'https://youtube.com/@elsxglobal',
       github: 'https://github.com/evolucentsphere'
-    }
+    },
+    locations: [
+      'Jabalpur, India',
+      'Indore, India',
+      'Pune, India',
+      'Eindhoven, Netherlands',
+      'Chicago, United States'
+    ]
   },
-  // Enhanced ELSxTech Sub-Divisions Structure
-  elsxtech: {
-    title: 'ELSxTech - Technology Solutions Division',
-    description: 'Comprehensive technology solutions across cloud, AI, cybersecurity, and digital transformation',
-    subDivisions: {
-      cloudInfrastructure: {
-        name: 'Cloud & Infrastructure',
-        url: 'https://cloud.elsxglobal.cloud',
-        path: '/it-services/cloud-infrastructure',
-        description: 'Enterprise cloud solutions, infrastructure management, and scalable computing platforms',
-        keywords: [
-          'Cloud Computing', 'AWS', 'Azure', 'Google Cloud Platform', 'Multi-Cloud Strategy',
-          'Cloud Migration', 'Infrastructure as Code', 'Serverless Architecture', 'Container Orchestration',
-          'Kubernetes', 'Docker', 'Cloud Security', 'DevOps', 'CI/CD Pipeline', 'Microservices',
-          'Cloud Native Applications', 'Hybrid Cloud', 'Private Cloud', 'Public Cloud',
-          'Cloud Cost Optimization', 'Cloud Monitoring', 'Disaster Recovery', 'Backup Solutions',
-          'Scalability', 'High Availability', 'Load Balancing', 'Auto Scaling'
-        ],
-        services: [
-          'Cloud Strategy & Planning',
-          'Cloud Migration Services',
-          'Multi-Cloud Management',
-          'Infrastructure as Code',
-          'Container Orchestration',
-          'Serverless Computing',
-          'Cloud Security Implementation',
-          'DevOps & CI/CD Pipeline',
-          'Cloud Cost Optimization',
-          'Disaster Recovery Planning'
-        ]
-      },
-      cybersecurity: {
-        name: 'Cybersecurity Solutions',
-        url: 'https://security.elsxglobal.cloud',
-        path: '/it-services/cybersecurity',
-        description: 'Advanced cybersecurity solutions, threat protection, and compliance management',
-        keywords: [
-          'Cybersecurity', 'Information Security', 'Network Security', 'Data Protection',
-          'Threat Detection', 'Incident Response', 'Security Monitoring', 'SIEM',
-          'Penetration Testing', 'Vulnerability Assessment', 'Security Audit', 'Compliance',
-          'GDPR', 'HIPAA', 'SOX', 'ISO 27001', 'Zero Trust Architecture', 'Identity Management',
-          'Access Control', 'Multi-Factor Authentication', 'Endpoint Security', 'Firewall',
-          'Intrusion Detection', 'Malware Protection', 'Ransomware Protection', 'Security Training',
-          'Risk Assessment', 'Security Governance', 'Cyber Threat Intelligence'
-        ],
-        services: [
-          'Security Assessment & Audit',
-          'Threat Detection & Response',
-          'Penetration Testing',
-          'Vulnerability Management',
-          'Identity & Access Management',
-          'Security Monitoring (SOC)',
-          'Compliance Management',
-          'Incident Response Planning',
-          'Security Training & Awareness',
-          'Risk Management'
-        ]
-      },
-      digitalTransformation: {
-        name: 'Digital Transformation & Consulting',
-        url: 'https://digital.elsxglobal.cloud',
-        path: '/it-services/digital-transformation',
-        description: 'Strategic digital transformation consulting and implementation services',
-        keywords: [
-          'Digital Transformation', 'Business Transformation', 'Digital Strategy', 'Innovation Consulting',
-          'Process Automation', 'Workflow Optimization', 'Change Management', 'Digital Adoption',
-          'Technology Roadmap', 'Digital Maturity Assessment', 'Agile Transformation', 'Lean Methodology',
-          'Six Sigma', 'Business Process Reengineering', 'Digital Culture', 'Digital Leadership',
-          'Customer Experience Transformation', 'Employee Experience', 'Digital Workplace',
-          'Automation Strategy', 'RPA', 'Intelligent Automation', 'AI Integration'
-        ],
-        services: [
-          'Digital Strategy Development',
-          'Digital Maturity Assessment',
-          'Process Automation',
-          'Change Management',
-          'Technology Roadmap Planning',
-          'Agile Transformation',
-          'Digital Culture Development',
-          'Customer Experience Design',
-          'Employee Experience Enhancement',
-          'Innovation Workshops'
-        ]
-      },
-      softwareDevelopment: {
-        name: 'Software Development & Integration',
-        url: 'https://software.elsxglobal.cloud',
-        path: '/it-services/software-development',
-        description: 'Custom software development, system integration, and application modernization',
-        keywords: [
-          'Software Development', 'Custom Software', 'Web Development', 'Mobile App Development',
-          'Full Stack Development', 'Frontend Development', 'Backend Development', 'API Development',
-          'System Integration', 'Legacy Modernization', 'Application Migration', 'Software Architecture',
-          'Microservices Architecture', 'RESTful APIs', 'GraphQL', 'Database Design',
-          'Quality Assurance', 'Software Testing', 'Test Automation', 'Performance Testing',
-          'Agile Development', 'Scrum', 'DevOps Integration', 'Continuous Integration'
-        ],
-        services: [
-          'Custom Application Development',
-          'Web & Mobile Development',
-          'API Development & Integration',
-          'Legacy System Modernization',
-          'Software Architecture Design',
-          'Quality Assurance & Testing',
-          'Performance Optimization',
-          'Maintenance & Support',
-          'Code Review & Audit',
-          'Technical Documentation'
-        ]
-      },
-      dataAIAnalytics: {
-        name: 'Data, AI & Analytics',
-        url: 'https://ai.elsxglobal.cloud',
-        path: '/it-services/ai-analytics',
-        description: 'Artificial intelligence, machine learning, data analytics, and business intelligence solutions',
-        keywords: [
-          'Artificial Intelligence', 'Machine Learning', 'Deep Learning', 'Neural Networks',
-          'Natural Language Processing', 'Computer Vision', 'Predictive Analytics', 'Data Science',
-          'Big Data', 'Data Analytics', 'Business Intelligence', 'Data Visualization',
-          'Data Mining', 'Statistical Analysis', 'Data Warehousing', 'ETL', 'Data Pipeline',
-          'Real-time Analytics', 'Streaming Analytics', 'Data Governance', 'Data Quality',
-          'MLOps', 'AI Ethics', 'Automated Machine Learning', 'Cognitive Computing'
-        ],
-        services: [
-          'AI Strategy & Implementation',
-          'Machine Learning Solutions',
-          'Predictive Analytics',
-          'Natural Language Processing',
-          'Computer Vision Applications',
-          'Business Intelligence Platforms',
-          'Data Warehousing Solutions',
-          'Real-time Analytics',
-          'Data Governance & Quality',
-          'MLOps Implementation'
-        ]
-      },
-      digitalExperienceMarketing: {
-        name: 'Digital Experience & Marketing',
-        url: 'https://digitalmarketing.elsxglobal.cloud',
-        path: '/it-services/digital-marketing',
-        description: 'Digital marketing solutions, customer experience platforms, and marketing automation',
-        keywords: [
-          'Digital Marketing', 'Digital Experience', 'Customer Experience', 'User Experience',
-          'Marketing Automation', 'Email Marketing', 'Social Media Marketing', 'Content Marketing',
-          'SEO', 'SEM', 'PPC', 'Google Ads', 'Facebook Ads', 'Marketing Analytics',
-          'Customer Journey Mapping', 'Personalization', 'A/B Testing', 'Conversion Optimization',
-          'Marketing Technology', 'CRM Integration', 'Lead Generation', 'Brand Strategy'
-        ],
-        services: [
-          'Digital Marketing Strategy',
-          'Marketing Automation',
-          'Customer Experience Design',
-          'SEO & SEM Services',
-          'Social Media Marketing',
-          'Content Marketing',
-          'Email Marketing Campaigns',
-          'Marketing Analytics',
-          'Conversion Optimization',
-          'Brand Development'
-        ]
-      },
-      iotEmergingTech: {
-        name: 'IoT & Emerging Technologies',
-        url: 'https://emergingtech.elsxglobal.cloud',
-        path: '/it-services/iot-emerging-tech',
-        description: 'Internet of Things, blockchain, AR/VR, and cutting-edge technology solutions',
-        keywords: [
-          'Internet of Things', 'IoT', 'Industrial IoT', 'Smart Devices', 'Sensor Networks',
-          'Edge Computing', 'Blockchain', 'Distributed Ledger', 'Smart Contracts', 'Cryptocurrency',
-          'Augmented Reality', 'Virtual Reality', 'Mixed Reality', 'AR/VR Applications',
-          'Quantum Computing', 'Robotics', 'Automation', '5G Technology', 'Wearable Technology',
-          'Smart Cities', 'Connected Vehicles', 'Digital Twins', 'Industry 4.0'
-        ],
-        services: [
-          'IoT Solution Development',
-          'Industrial IoT Implementation',
-          'Blockchain Development',
-          'Smart Contract Development',
-          'AR/VR Application Development',
-          'Edge Computing Solutions',
-          'Robotics Integration',
-          'Digital Twin Development',
-          'Smart City Solutions',
-          'Emerging Tech Consulting'
-        ]
-      },
-      managedITServices: {
-        name: 'Managed IT Services',
-        url: 'https://managedit.elsxglobal.cloud',
-        path: '/it-services/managed-it',
-        description: 'Comprehensive managed IT services, support, and infrastructure management',
-        keywords: [
-          'Managed IT Services', 'IT Support', 'Help Desk', 'Network Management', 'Server Management',
-          'IT Infrastructure Management', 'Remote Monitoring', 'Proactive Maintenance', 'IT Consulting',
-          'Technology Support', 'System Administration', 'Network Security', 'Backup Management',
-          'Disaster Recovery', 'IT Asset Management', 'Vendor Management', 'Service Level Agreement',
-          'ITIL', 'IT Service Management', '24/7 Support', 'Remote Support'
-        ],
-        services: [
-          '24/7 IT Support',
-          'Network Management',
-          'Server Administration',
-          'Help Desk Services',
-          'Remote Monitoring',
-          'Backup & Recovery',
-          'IT Asset Management',
-          'Vendor Management',
-          'Proactive Maintenance',
-          'IT Consulting'
-        ]
-      },
-      enterpriseSoftware: {
-        name: 'Enterprise Software Solutions',
-        url: 'https://enterprise.elsxglobal.cloud',
-        path: '/it-services/enterprise-software',
-        description: 'Enterprise software solutions, ERP, CRM, and business application development',
-        keywords: [
-          'Enterprise Software', 'ERP', 'CRM', 'Enterprise Resource Planning', 'Customer Relationship Management',
-          'Business Applications', 'Enterprise Applications', 'Workflow Management', 'Document Management',
-          'Human Resource Management', 'Financial Management', 'Supply Chain Management', 'Inventory Management',
-          'Project Management', 'Business Process Management', 'Enterprise Integration', 'B2B Solutions',
-          'SaaS', 'Software as a Service', 'Cloud Applications', 'Enterprise Mobility'
-        ],
-        services: [
-          'ERP Implementation',
-          'CRM Solutions',
-          'Enterprise Application Development',
-          'Workflow Automation',
-          'Document Management Systems',
-          'HR Management Systems',
-          'Financial Management Solutions',
-          'Supply Chain Management',
-          'Project Management Tools',
-          'Enterprise Integration'
-        ]
+
+  // Enhanced EvolucentSphere Ecosystem Structure
+  ecosystem: {
+    parent: {
+      name: 'EvolucentSphere Pvt. Ltd.',
+      url: 'https://evolucentsphere.com',
+      description: 'Global leader in business transformation and technology solutions',
+      founded: '2009',
+      headquarters: 'Bangalore, India'
+    },
+    divisions: {
+      elsxglobal: {
+        name: 'ELSxGlobal',
+        url: 'https://elsxglobal.cloud',
+        description: 'Flagship division providing comprehensive business solutions',
+        subdivisions: {
+          tech: {
+            name: 'ELSxTech',
+            url: 'https://tech.elsxglobal.cloud',
+            description: 'Technology solutions and digital innovation',
+            services: [
+              {
+                name: 'Cloud & Infrastructure',
+                url: 'https://cloud.elsxglobal.cloud',
+                path: '/it-services/cloud-infrastructure'
+              },
+              {
+                name: 'Cybersecurity Solutions',
+                url: 'https://security.elsxglobal.cloud',
+                path: '/it-services/cybersecurity'
+              },
+              {
+                name: 'Digital Transformation',
+                url: 'https://digital.elsxglobal.cloud',
+                path: '/it-services/digital-transformation'
+              },
+              {
+                name: 'Software Development',
+                url: 'https://software.elsxglobal.cloud',
+                path: '/it-services/software-development'
+              },
+              {
+                name: 'Data, AI & Analytics',
+                url: 'https://ai.elsxglobal.cloud',
+                path: '/it-services/ai-analytics'
+              },
+              {
+                name: 'Digital Marketing',
+                url: 'https://digitalmarketing.elsxglobal.cloud',
+                path: '/it-services/digital-marketing'
+              },
+              {
+                name: 'IoT & Emerging Tech',
+                url: 'https://emergingtech.elsxglobal.cloud',
+                path: '/it-services/iot-emerging-tech'
+              },
+              {
+                name: 'Managed IT Services',
+                url: 'https://managedit.elsxglobal.cloud',
+                path: '/it-services/managed-it'
+              },
+              {
+                name: 'Enterprise Software',
+                url: 'https://enterprise.elsxglobal.cloud',
+                path: '/it-services/enterprise-software'
+              }
+            ]
+          },
+          bpo: {
+            name: 'ELSxBPO',
+            url: 'https://bpo.elsxglobal.cloud',
+            description: 'Business process outsourcing and customer support'
+          },
+          kpo: {
+            name: 'ELSxKPO',
+            url: 'https://kpo.elsxglobal.cloud',
+            description: 'Knowledge process outsourcing and analytics'
+          },
+          consultancy: {
+            name: 'ELSxConsultancy',
+            url: 'https://consultancy.elsxglobal.cloud',
+            description: 'Strategic consulting and business transformation'
+          }
+        }
       }
     }
   },
+
+  // Enhanced Products Configuration
   products: {
     bpo: {
       title: 'BPO Solutions',
@@ -280,7 +143,9 @@ export const config = {
             '45% reduction in response time',
             '98% customer satisfaction rate',
             '30% cost reduction'
-          ]
+          ],
+          pricing: 'Enterprise',
+          industries: ['Banking', 'Healthcare', 'E-commerce', 'Technology']
         },
         {
           name: 'BackOfficePro Suite',
@@ -299,7 +164,9 @@ export const config = {
             '60% faster processing time',
             '40% reduction in errors',
             'Improved compliance'
-          ]
+          ],
+          pricing: 'Scalable',
+          industries: ['Manufacturing', 'Finance', 'Insurance', 'Government']
         },
         {
           name: 'DataEntryPro AI',
@@ -318,7 +185,9 @@ export const config = {
             '99.9% accuracy rate',
             '75% cost reduction',
             'Real-time processing'
-          ]
+          ],
+          pricing: 'Volume-based',
+          industries: ['Healthcare', 'Legal', 'Real Estate', 'Education']
         }
       ]
     },
@@ -342,7 +211,9 @@ export const config = {
             'Data-driven decisions',
             'Strategic insights',
             'Market advantage'
-          ]
+          ],
+          pricing: 'Professional',
+          industries: ['Investment Banking', 'Consulting', 'Private Equity', 'Pharmaceuticals']
         },
         {
           name: 'LegalPro Suite',
@@ -361,7 +232,9 @@ export const config = {
             '50% faster research',
             'Enhanced compliance',
             'Risk mitigation'
-          ]
+          ],
+          pricing: 'Enterprise',
+          industries: ['Law Firms', 'Corporate Legal', 'Government', 'Insurance']
         },
         {
           name: 'ResearchPro AI',
@@ -380,7 +253,9 @@ export const config = {
             'Accelerated research',
             'Higher accuracy',
             'Comprehensive analysis'
-          ]
+          ],
+          pricing: 'Academic/Enterprise',
+          industries: ['Academia', 'Pharmaceuticals', 'Market Research', 'Think Tanks']
         }
       ]
     },
@@ -404,7 +279,9 @@ export const config = {
             '40% cost savings',
             '99.99% uptime',
             'Enhanced security'
-          ]
+          ],
+          pricing: 'Enterprise',
+          industries: ['Technology', 'Finance', 'Healthcare', 'Manufacturing']
         },
         {
           name: 'SecurePro Shield',
@@ -423,7 +300,9 @@ export const config = {
             'Proactive protection',
             'Regulatory compliance',
             'Reduced risk'
-          ]
+          ],
+          pricing: 'Tiered',
+          industries: ['Banking', 'Government', 'Healthcare', 'Critical Infrastructure']
         },
         {
           name: 'DevPro Accelerate',
@@ -442,11 +321,15 @@ export const config = {
             '70% faster deployment',
             'Improved quality',
             'Reduced errors'
-          ]
+          ],
+          pricing: 'Professional',
+          industries: ['Software Development', 'Technology', 'Startups', 'Enterprise']
         }
       ]
     }
   },
+
+  // Enhanced Services Configuration
   services: {
     bpo: {
       title: 'Business Process Outsourcing',
@@ -624,5 +507,65 @@ export const config = {
         }
       ]
     }
+  },
+
+  // Industry Focus Areas
+  industries: {
+    primary: [
+      {
+        name: 'Banking & Financial Services',
+        description: 'Comprehensive solutions for financial institutions',
+        services: ['Digital Banking', 'Risk Management', 'Compliance', 'Customer Analytics'],
+        keywords: ['Fintech', 'Digital Banking', 'Risk Management', 'Regulatory Compliance']
+      },
+      {
+        name: 'Healthcare & Life Sciences',
+        description: 'Technology solutions for healthcare providers',
+        services: ['EHR Systems', 'Telemedicine', 'Healthcare Analytics', 'Compliance'],
+        keywords: ['Healthcare IT', 'Medical Technology', 'Patient Care', 'HIPAA Compliance']
+      },
+      {
+        name: 'Manufacturing & Industrial',
+        description: 'Industry 4.0 and smart manufacturing solutions',
+        services: ['IoT Integration', 'Predictive Maintenance', 'Supply Chain', 'Quality Control'],
+        keywords: ['Industry 4.0', 'Smart Manufacturing', 'IoT', 'Automation']
+      },
+      {
+        name: 'Retail & E-commerce',
+        description: 'Digital commerce and customer experience solutions',
+        services: ['E-commerce Platforms', 'Customer Analytics', 'Inventory Management', 'Marketing'],
+        keywords: ['E-commerce', 'Digital Commerce', 'Customer Experience', 'Omnichannel']
+      }
+    ],
+    secondary: [
+      'Insurance',
+      'Automotive',
+      'Energy & Utilities',
+      'Government',
+      'Education',
+      'Real Estate',
+      'Telecommunications',
+      'Media & Entertainment'
+    ]
+  },
+
+  // Technology Stack
+  technologies: {
+    cloud: ['AWS', 'Azure', 'Google Cloud', 'Multi-Cloud'],
+    development: ['React', 'Node.js', 'Python', 'Java', '.NET'],
+    data: ['Big Data', 'Analytics', 'AI/ML', 'Business Intelligence'],
+    security: ['Cybersecurity', 'Identity Management', 'Compliance', 'Risk Management'],
+    emerging: ['IoT', 'Blockchain', 'AR/VR', 'Edge Computing']
+  },
+
+  // Company Metrics
+  metrics: {
+    founded: '2009',
+    employees: '10,000+',
+    clients: '500+',
+    countries: '30+',
+    uptime: '99.9%',
+    satisfaction: '98%',
+    growth: '38% YoY'
   }
 };

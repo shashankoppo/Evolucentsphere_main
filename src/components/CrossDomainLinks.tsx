@@ -1,74 +1,235 @@
 import React from 'react';
-import { ExternalLink, Building, Users, Brain, Briefcase, Globe } from 'lucide-react';
+import { ExternalLink, Building, Users, Brain, Briefcase, Globe, Cloud, Shield, Zap, Code, Database, BarChart, Network, Settings, Bot } from 'lucide-react';
 
 interface CrossDomainLink {
   name: string;
   url: string;
   description: string;
   icon: React.ElementType;
-  category: 'division' | 'parent' | 'service';
+  category: 'parent' | 'division' | 'subdivision';
   keywords: string[];
+  parentDivision?: string;
 }
 
+// Comprehensive EvolucentSphere ecosystem links
 const crossDomainLinks: CrossDomainLink[] = [
+  // Parent Company
   {
     name: 'EvolucentSphere Corporate',
     url: 'https://evolucentsphere.com',
-    description: 'Corporate headquarters and global operations',
+    description: 'Corporate headquarters and global operations center',
     icon: Globe,
     category: 'parent',
-    keywords: ['Corporate', 'Global Operations', 'Enterprise Solutions', 'Multi-Division Services']
+    keywords: [
+      'EvolucentSphere', 'Corporate Headquarters', 'Global Operations', 'Enterprise Solutions',
+      'Multi-Division Services', 'Business Transformation', 'Technology Leadership',
+      'Innovation Hub', 'Strategic Consulting', 'Digital Excellence'
+    ]
   },
+
+  // Main Divisions
   {
     name: 'ELSxTech',
     url: 'https://tech.elsxglobal.cloud',
-    description: 'AI-driven software development and cloud solutions',
+    description: 'Comprehensive technology solutions and digital innovation',
     icon: Building,
     category: 'division',
-    keywords: ['AI Development', 'Cloud Solutions', 'Software Development', 'DevOps', 'Cybersecurity']
+    keywords: [
+      'Technology Solutions', 'AI Development', 'Cloud Computing', 'Software Development',
+      'DevOps Services', 'Cybersecurity', 'Digital Transformation', 'Enterprise IT',
+      'Innovation Labs', 'Technical Consulting'
+    ]
   },
   {
     name: 'ELSxBPO',
     url: 'https://bpo.elsxglobal.cloud',
-    description: 'Business process outsourcing and customer support',
+    description: 'Business process outsourcing and customer support excellence',
     icon: Users,
     category: 'division',
-    keywords: ['BPO Services', 'Customer Support', 'Contact Center', 'Back Office Operations']
+    keywords: [
+      'BPO Services', 'Customer Support', 'Contact Center Solutions', 'Back Office Operations',
+      'Process Outsourcing', 'Customer Experience', 'Multilingual Support', 'Quality Assurance',
+      'Performance Analytics', 'Service Excellence'
+    ]
   },
   {
     name: 'ELSxKPO',
     url: 'https://kpo.elsxglobal.cloud',
-    description: 'Knowledge process outsourcing and analytics',
+    description: 'Knowledge process outsourcing and advanced analytics',
     icon: Brain,
     category: 'division',
-    keywords: ['KPO Services', 'Research Analytics', 'Business Intelligence', 'Data Management']
+    keywords: [
+      'KPO Services', 'Research Analytics', 'Business Intelligence', 'Data Management',
+      'Knowledge Services', 'Market Research', 'Financial Analysis', 'Legal Process Outsourcing',
+      'Healthcare Analytics', 'Investment Research'
+    ]
   },
   {
     name: 'ELSxConsultancy',
     url: 'https://consultancy.elsxglobal.cloud',
-    description: 'Strategic consulting and digital transformation',
+    description: 'Strategic consulting and business transformation',
     icon: Briefcase,
     category: 'division',
-    keywords: ['Business Consulting', 'Digital Transformation', 'ESG Consulting', 'Lean Six Sigma']
+    keywords: [
+      'Business Consulting', 'Digital Transformation', 'ESG Consulting', 'Lean Six Sigma',
+      'Strategy Consulting', 'Management Consulting', 'Process Optimization',
+      'Change Management', 'Performance Improvement', 'Operational Excellence'
+    ]
+  },
+
+  // ELSxTech Sub-Divisions
+  {
+    name: 'Cloud & Infrastructure',
+    url: 'https://cloud.elsxglobal.cloud',
+    description: 'Enterprise cloud solutions and infrastructure management',
+    icon: Cloud,
+    category: 'subdivision',
+    parentDivision: 'ELSxTech',
+    keywords: [
+      'Cloud Computing', 'AWS', 'Azure', 'Google Cloud Platform', 'Multi-Cloud Strategy',
+      'Cloud Migration', 'Infrastructure as Code', 'Serverless Architecture', 'Container Orchestration',
+      'Kubernetes', 'Docker', 'DevOps', 'CI/CD Pipeline', 'Cloud Security'
+    ]
+  },
+  {
+    name: 'Cybersecurity Solutions',
+    url: 'https://security.elsxglobal.cloud',
+    description: 'Advanced cybersecurity and threat protection services',
+    icon: Shield,
+    category: 'subdivision',
+    parentDivision: 'ELSxTech',
+    keywords: [
+      'Cybersecurity', 'Information Security', 'Network Security', 'Data Protection',
+      'Threat Detection', 'Incident Response', 'Security Monitoring', 'SIEM',
+      'Penetration Testing', 'Vulnerability Assessment', 'Compliance', 'Zero Trust'
+    ]
+  },
+  {
+    name: 'Digital Transformation',
+    url: 'https://digital.elsxglobal.cloud',
+    description: 'Strategic digital transformation consulting and implementation',
+    icon: Zap,
+    category: 'subdivision',
+    parentDivision: 'ELSxTech',
+    keywords: [
+      'Digital Transformation', 'Business Transformation', 'Process Automation',
+      'Change Management', 'Digital Strategy', 'Innovation Consulting',
+      'Workflow Optimization', 'Digital Adoption', 'Technology Roadmap'
+    ]
+  },
+  {
+    name: 'Software Development',
+    url: 'https://software.elsxglobal.cloud',
+    description: 'Custom software development and system integration',
+    icon: Code,
+    category: 'subdivision',
+    parentDivision: 'ELSxTech',
+    keywords: [
+      'Software Development', 'Custom Applications', 'Web Development', 'Mobile Apps',
+      'API Integration', 'System Integration', 'Legacy Modernization', 'Full Stack Development',
+      'Quality Assurance', 'Software Architecture'
+    ]
+  },
+  {
+    name: 'Data, AI & Analytics',
+    url: 'https://ai.elsxglobal.cloud',
+    description: 'Artificial intelligence, machine learning, and data analytics',
+    icon: Brain,
+    category: 'subdivision',
+    parentDivision: 'ELSxTech',
+    keywords: [
+      'Artificial Intelligence', 'Machine Learning', 'Data Analytics', 'Business Intelligence',
+      'Predictive Analytics', 'Deep Learning', 'Natural Language Processing', 'Computer Vision',
+      'Big Data', 'Data Science', 'MLOps', 'Neural Networks'
+    ]
+  },
+  {
+    name: 'Digital Marketing',
+    url: 'https://digitalmarketing.elsxglobal.cloud',
+    description: 'Digital marketing solutions and customer experience optimization',
+    icon: BarChart,
+    category: 'subdivision',
+    parentDivision: 'ELSxTech',
+    keywords: [
+      'Digital Marketing', 'Customer Experience', 'Marketing Automation', 'SEO', 'SEM',
+      'Social Media Marketing', 'Content Marketing', 'Email Marketing', 'PPC',
+      'Marketing Analytics', 'Conversion Optimization', 'Brand Strategy'
+    ]
+  },
+  {
+    name: 'IoT & Emerging Tech',
+    url: 'https://emergingtech.elsxglobal.cloud',
+    description: 'Internet of Things and cutting-edge technology solutions',
+    icon: Network,
+    category: 'subdivision',
+    parentDivision: 'ELSxTech',
+    keywords: [
+      'Internet of Things', 'IoT', 'Blockchain', 'AR/VR', 'Edge Computing',
+      'Industry 4.0', 'Smart Cities', 'Connected Devices', 'Emerging Technologies',
+      'Innovation Labs', 'Future Tech', 'Digital Twins'
+    ]
+  },
+  {
+    name: 'Managed IT Services',
+    url: 'https://managedit.elsxglobal.cloud',
+    description: 'Comprehensive managed IT services and support',
+    icon: Settings,
+    category: 'subdivision',
+    parentDivision: 'ELSxTech',
+    keywords: [
+      'Managed IT Services', 'IT Support', 'Help Desk', 'Network Management',
+      'System Administration', 'Remote Monitoring', 'IT Consulting', 'Technology Support',
+      'Infrastructure Management', '24/7 Support', 'Proactive Maintenance'
+    ]
+  },
+  {
+    name: 'Enterprise Software',
+    url: 'https://enterprise.elsxglobal.cloud',
+    description: 'Enterprise software solutions and ERP systems',
+    icon: Database,
+    category: 'subdivision',
+    parentDivision: 'ELSxTech',
+    keywords: [
+      'Enterprise Software', 'ERP', 'CRM', 'Business Applications', 'Enterprise Applications',
+      'Workflow Management', 'Document Management', 'Business Intelligence',
+      'Enterprise Integration', 'SaaS Solutions', 'Cloud Applications'
+    ]
   }
 ];
 
 interface CrossDomainLinksProps {
-  category?: 'all' | 'division' | 'parent' | 'service';
+  category?: 'all' | 'parent' | 'division' | 'subdivision';
+  parentDivision?: string;
   layout?: 'grid' | 'list' | 'inline';
   showKeywords?: boolean;
   className?: string;
+  limit?: number;
 }
 
 export default function CrossDomainLinks({ 
   category = 'all', 
+  parentDivision,
   layout = 'grid', 
   showKeywords = false,
-  className = '' 
+  className = '',
+  limit
 }: CrossDomainLinksProps) {
-  const filteredLinks = category === 'all' 
-    ? crossDomainLinks 
-    : crossDomainLinks.filter(link => link.category === category);
+  let filteredLinks = crossDomainLinks;
+
+  // Filter by category
+  if (category !== 'all') {
+    filteredLinks = filteredLinks.filter(link => link.category === category);
+  }
+
+  // Filter by parent division for subdivisions
+  if (parentDivision) {
+    filteredLinks = filteredLinks.filter(link => link.parentDivision === parentDivision);
+  }
+
+  // Apply limit if specified
+  if (limit) {
+    filteredLinks = filteredLinks.slice(0, limit);
+  }
 
   const baseClasses = {
     grid: 'grid md:grid-cols-2 lg:grid-cols-3 gap-6',
@@ -113,7 +274,7 @@ export default function CrossDomainLinks({
             
             {showKeywords && layout === 'grid' && (
               <div className="mt-3 flex flex-wrap gap-1 justify-center">
-                {link.keywords.slice(0, 3).map((keyword, idx) => (
+                {link.keywords.slice(0, 4).map((keyword, idx) => (
                   <span key={idx} className="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded-full">
                     {keyword}
                   </span>
@@ -132,6 +293,10 @@ export const DivisionLinks = (props: Omit<CrossDomainLinksProps, 'category'>) =>
   <CrossDomainLinks {...props} category="division" />
 );
 
+export const SubdivisionLinks = (props: Omit<CrossDomainLinksProps, 'category'>) => (
+  <CrossDomainLinks {...props} category="subdivision" />
+);
+
 export const ParentCompanyLink = (props: Omit<CrossDomainLinksProps, 'category'>) => (
   <CrossDomainLinks {...props} category="parent" />
 );
@@ -140,19 +305,57 @@ export const InlineDivisionLinks = () => (
   <CrossDomainLinks category="division" layout="inline" className="justify-center" />
 );
 
-// SEO-optimized footer component with cross-domain links
+export const ELSxTechSubdivisions = () => (
+  <CrossDomainLinks category="subdivision" parentDivision="ELSxTech" layout="grid" showKeywords={true} />
+);
+
+// SEO-optimized footer component with comprehensive cross-domain links
 export const SEOFooterLinks = () => (
-  <div className="bg-gray-50 py-8">
+  <div className="bg-gray-50 py-12">
     <div className="container mx-auto px-6">
-      <h2 className="text-2xl font-bold text-gray-900 text-center mb-8">
-        Explore Our Complete Ecosystem
-      </h2>
-      <CrossDomainLinks layout="grid" showKeywords={true} />
-      <div className="mt-8 text-center">
-        <p className="text-gray-600">
-          Part of the EvolucentSphere family - delivering comprehensive business solutions across multiple domains and industries worldwide.
+      <div className="text-center mb-8">
+        <h2 className="text-3xl font-bold text-gray-900 mb-4">
+          Explore the Complete EvolucentSphere Ecosystem
+        </h2>
+        <p className="text-xl text-gray-600 max-w-4xl mx-auto">
+          Discover our comprehensive suite of business solutions across technology, 
+          outsourcing, and strategic consulting divisions.
         </p>
+      </div>
+      
+      {/* Parent Company */}
+      <div className="mb-12">
+        <h3 className="text-2xl font-bold text-gray-900 text-center mb-6">Corporate Headquarters</h3>
+        <ParentCompanyLink layout="grid" showKeywords={true} />
+      </div>
+
+      {/* Main Divisions */}
+      <div className="mb-12">
+        <h3 className="text-2xl font-bold text-gray-900 text-center mb-6">Business Divisions</h3>
+        <DivisionLinks layout="grid" showKeywords={true} />
+      </div>
+
+      {/* ELSxTech Subdivisions */}
+      <div className="mb-8">
+        <h3 className="text-2xl font-bold text-gray-900 text-center mb-6">ELSxTech Specialized Services</h3>
+        <ELSxTechSubdivisions />
+      </div>
+      
+      <div className="text-center border-t pt-8">
+        <p className="text-gray-600 text-lg">
+          <strong>EvolucentSphere Pvt. Ltd.</strong> - Delivering comprehensive business solutions 
+          across multiple domains and industries worldwide since 2009.
+        </p>
+        <div className="mt-4 flex flex-wrap justify-center gap-4 text-sm text-gray-500">
+          <span>🌍 Global Presence</span>
+          <span>🏆 Industry Leadership</span>
+          <span>🚀 Innovation Excellence</span>
+          <span>🤝 Trusted Partnership</span>
+        </div>
       </div>
     </div>
   </div>
 );
+
+// Export the links data for use in other components
+export { crossDomainLinks };

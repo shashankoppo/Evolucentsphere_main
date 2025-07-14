@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Linkedin, Instagram, Facebook, ArrowRight, Globe, Users, Shield, Brain, ExternalLink } from 'lucide-react';
+import { Linkedin, Instagram, Facebook, ArrowRight, Globe, Users, Shield, Brain, ExternalLink, Star, Award, TrendingUp } from 'lucide-react';
 import Hero from '../components/Hero';
 import Services from '../components/Services';
 import Products from '../components/Products';
@@ -11,7 +11,8 @@ import Awards from '../components/Awards';
 import Contact from '../components/Contact';
 import InnovationHub from '../components/InnovationHub';
 import SEOHead from '../components/SEOHead';
-import { InlineDivisionLinks } from '../components/CrossDomainLinks';
+import { InlineDivisionLinks, crossDomainLinks } from '../components/CrossDomainLinks';
+import { config } from '../lib/config';
 import { trackCrossDomainClick, trackServiceInterest } from '../lib/analytics';
 
 export default function Home() {
@@ -22,6 +23,9 @@ export default function Home() {
   const handleServiceInterest = (service: string) => {
     trackServiceInterest(service);
   };
+
+  // Get parent company link from centralized data
+  const parentCompany = crossDomainLinks.find(link => link.category === 'parent');
 
   return (
     <div className="relative">
@@ -50,7 +54,17 @@ export default function Home() {
           'Banking Solutions',
           'Healthcare IT',
           'Manufacturing Technology',
-          'Retail Solutions'
+          'Retail Solutions',
+          'Machine Learning',
+          'Artificial Intelligence',
+          'Process Automation',
+          'Software Development',
+          'Digital Marketing',
+          'Business Intelligence',
+          'Enterprise Software',
+          'Technology Consulting',
+          'Innovation Labs',
+          'Strategic Planning'
         ]}
         serviceCategory="tech"
         targetIndustries={[
@@ -59,35 +73,42 @@ export default function Home() {
           'Manufacturing',
           'Retail and E-commerce',
           'Insurance',
-          'Automotive'
+          'Automotive',
+          'Government',
+          'Education'
         ]}
         relatedServices={[
           'AI Development',
           'Cloud Migration',
           'Process Automation',
           'Business Intelligence',
-          'Customer Support Outsourcing'
+          'Customer Support Outsourcing',
+          'Digital Marketing',
+          'Cybersecurity Solutions',
+          'Enterprise Software Development'
         ]}
       />
 
       {/* Enhanced Brand Banner with Cross-Domain Links */}
-      <div className="bg-gradient-to-r from-purple-600 to-blue-600 text-white py-3">
+      <div className="bg-gradient-to-r from-purple-600 to-blue-600 text-white py-4">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center justify-between text-center md:text-left">
-            <div className="mb-2 md:mb-0">
-              <p className="text-sm md:text-base">
-                <span className="font-semibold">ELSxGlobal</span> - A Division of{' '}
-                <a 
-                  href="https://evolucentsphere.com" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="font-semibold underline hover:text-purple-200 transition-colors"
-                  onClick={() => handleCrossDomainClick('evolucentsphere.com', 'EvolucentSphere')}
-                >
-                  EvolucentSphere
-                  <ExternalLink className="inline h-3 w-3 ml-1" />
-                </a>
-                {' '}| Transforming Businesses Worldwide
+            <div className="mb-3 md:mb-0">
+              <p className="text-sm md:text-base font-medium">
+                <span className="font-bold text-purple-100">ELSxGlobal</span> - A Division of{' '}
+                {parentCompany && (
+                  <a 
+                    href={parentCompany.url}
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="font-bold underline hover:text-purple-200 transition-colors"
+                    onClick={() => handleCrossDomainClick(parentCompany.url, 'EvolucentSphere')}
+                  >
+                    EvolucentSphere Pvt. Ltd.
+                    <ExternalLink className="inline h-3 w-3 ml-1" />
+                  </a>
+                )}
+                {' '}| Transforming Businesses Worldwide Since 2009
               </p>
             </div>
             <div className="text-xs">
@@ -100,17 +121,18 @@ export default function Home() {
       <Hero />
       
       {/* Enhanced Quick Stats with Industry Focus */}
-      <section className="py-12 bg-white">
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-2">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
               Trusted by Industry Leaders Worldwide
             </h2>
-            <p className="text-gray-600">
-              Delivering excellence across Banking, Healthcare, Manufacturing, and Retail sectors
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Delivering excellence across Banking, Healthcare, Manufacturing, and Retail sectors 
+              with our comprehensive suite of business solutions and technology services.
             </p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <motion.div 
               className="text-center group cursor-pointer"
               initial={{ opacity: 0, y: 20 }}
@@ -119,10 +141,10 @@ export default function Home() {
               transition={{ duration: 0.6 }}
               onClick={() => handleServiceInterest('Global Operations')}
             >
-              <Globe className="h-8 w-8 text-purple-600 mx-auto mb-2 group-hover:scale-110 transition-transform" />
-              <div className="text-2xl font-bold text-purple-600">30+</div>
-              <div className="text-gray-600">Countries Served</div>
-              <div className="text-xs text-gray-500 mt-1">Global Service Delivery</div>
+              <Globe className="h-12 w-12 text-purple-600 mx-auto mb-4 group-hover:scale-110 transition-transform" />
+              <div className="text-3xl font-bold text-purple-600">{config.metrics.countries}</div>
+              <div className="text-gray-600 font-medium">Countries Served</div>
+              <div className="text-sm text-gray-500 mt-1">Global Service Delivery</div>
             </motion.div>
             <motion.div 
               className="text-center group cursor-pointer"
@@ -132,10 +154,10 @@ export default function Home() {
               transition={{ duration: 0.6, delay: 0.2 }}
               onClick={() => handleServiceInterest('Enterprise Solutions')}
             >
-              <Users className="h-8 w-8 text-purple-600 mx-auto mb-2 group-hover:scale-110 transition-transform" />
-              <div className="text-2xl font-bold text-purple-600">500+</div>
-              <div className="text-gray-600">Global Clients</div>
-              <div className="text-xs text-gray-500 mt-1">Enterprise & SMB</div>
+              <Users className="h-12 w-12 text-purple-600 mx-auto mb-4 group-hover:scale-110 transition-transform" />
+              <div className="text-3xl font-bold text-purple-600">{config.metrics.clients}</div>
+              <div className="text-gray-600 font-medium">Global Clients</div>
+              <div className="text-sm text-gray-500 mt-1">Enterprise & SMB</div>
             </motion.div>
             <motion.div 
               className="text-center group cursor-pointer"
@@ -145,10 +167,10 @@ export default function Home() {
               transition={{ duration: 0.6, delay: 0.4 }}
               onClick={() => handleServiceInterest('Reliable Services')}
             >
-              <Shield className="h-8 w-8 text-purple-600 mx-auto mb-2 group-hover:scale-110 transition-transform" />
-              <div className="text-2xl font-bold text-purple-600">99.9%</div>
-              <div className="text-gray-600">Service Uptime</div>
-              <div className="text-xs text-gray-500 mt-1">24/7 Operations</div>
+              <Shield className="h-12 w-12 text-purple-600 mx-auto mb-4 group-hover:scale-110 transition-transform" />
+              <div className="text-3xl font-bold text-purple-600">{config.metrics.uptime}</div>
+              <div className="text-gray-600 font-medium">Service Uptime</div>
+              <div className="text-sm text-gray-500 mt-1">24/7 Operations</div>
             </motion.div>
             <motion.div 
               className="text-center group cursor-pointer"
@@ -158,10 +180,10 @@ export default function Home() {
               transition={{ duration: 0.6, delay: 0.6 }}
               onClick={() => handleServiceInterest('AI Solutions')}
             >
-              <Brain className="h-8 w-8 text-purple-600 mx-auto mb-2 group-hover:scale-110 transition-transform" />
-              <div className="text-2xl font-bold text-purple-600">15+</div>
-              <div className="text-gray-600">Years Experience</div>
-              <div className="text-xs text-gray-500 mt-1">AI & Technology</div>
+              <Brain className="h-12 w-12 text-purple-600 mx-auto mb-4 group-hover:scale-110 transition-transform" />
+              <div className="text-3xl font-bold text-purple-600">15+</div>
+              <div className="text-gray-600 font-medium">Years Experience</div>
+              <div className="text-sm text-gray-500 mt-1">AI & Technology</div>
             </motion.div>
           </div>
         </div>
@@ -175,11 +197,51 @@ export default function Home() {
       <Awards />
       <InnovationHub />
 
+      {/* Enhanced Performance Metrics */}
+      <section className="py-16 bg-gradient-to-r from-gray-50 to-purple-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              Delivering Measurable Results
+            </h2>
+            <p className="text-xl text-gray-600">
+              Our track record speaks for itself - consistent growth and client success
+            </p>
+          </div>
+          <div className="grid md:grid-cols-4 gap-8">
+            <div className="bg-white p-8 rounded-lg shadow-lg text-center">
+              <TrendingUp className="h-12 w-12 text-green-600 mx-auto mb-4" />
+              <div className="text-3xl font-bold text-green-600">{config.metrics.growth}</div>
+              <div className="text-gray-600 font-medium">Revenue Growth</div>
+              <div className="text-sm text-gray-500 mt-1">Year over Year</div>
+            </div>
+            <div className="bg-white p-8 rounded-lg shadow-lg text-center">
+              <Users className="h-12 w-12 text-blue-600 mx-auto mb-4" />
+              <div className="text-3xl font-bold text-blue-600">{config.metrics.employees}</div>
+              <div className="text-gray-600 font-medium">Team Members</div>
+              <div className="text-sm text-gray-500 mt-1">Global Workforce</div>
+            </div>
+            <div className="bg-white p-8 rounded-lg shadow-lg text-center">
+              <Star className="h-12 w-12 text-yellow-600 mx-auto mb-4" />
+              <div className="text-3xl font-bold text-yellow-600">{config.metrics.satisfaction}</div>
+              <div className="text-gray-600 font-medium">Client Satisfaction</div>
+              <div className="text-sm text-gray-500 mt-1">Customer Rating</div>
+            </div>
+            <div className="bg-white p-8 rounded-lg shadow-lg text-center">
+              <Award className="h-12 w-12 text-purple-600 mx-auto mb-4" />
+              <div className="text-3xl font-bold text-purple-600">50+</div>
+              <div className="text-gray-600 font-medium">Industry Awards</div>
+              <div className="text-sm text-gray-500 mt-1">Recognition</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Enhanced Social Media Section with Cross-Domain Integration */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <motion.div 
-            className="text-center mb-10"
+            className="text-center mb-12"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -190,26 +252,28 @@ export default function Home() {
             </p>
             <div className="text-sm text-gray-500">
               Part of the{' '}
-              <a 
-                href="https://evolucentsphere.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-purple-600 hover:text-purple-700 font-medium"
-                onClick={() => handleCrossDomainClick('evolucentsphere.com', 'EvolucentSphere ecosystem')}
-              >
-                EvolucentSphere ecosystem
-                <ExternalLink className="inline h-3 w-3 ml-1" />
-              </a>
+              {parentCompany && (
+                <a 
+                  href={parentCompany.url}
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-purple-600 hover:text-purple-700 font-medium"
+                  onClick={() => handleCrossDomainClick(parentCompany.url, 'EvolucentSphere ecosystem')}
+                >
+                  EvolucentSphere ecosystem
+                  <ExternalLink className="inline h-3 w-3 ml-1" />
+                </a>
+              )}
               {' '}delivering comprehensive business solutions globally
             </div>
           </motion.div>
 
           <div className="flex justify-center space-x-6 mb-8">
             <motion.a
-              href="https://www.linkedin.com/company/elsxglobal"
+              href={config.app.social.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1"
+              className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -219,10 +283,10 @@ export default function Home() {
               <Linkedin className="h-8 w-8 text-[#0A66C2]" />
             </motion.a>
             <motion.a
-              href="https://www.instagram.com/elsxglobal"
+              href={config.app.social.instagram}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1"
+              className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -232,10 +296,10 @@ export default function Home() {
               <Instagram className="h-8 w-8 text-[#E4405F]" />
             </motion.a>
             <motion.a
-              href="https://www.facebook.com/ELSxGlobal"
+              href={config.app.social.facebook}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1"
+              className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -303,7 +367,8 @@ export default function Home() {
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
             >
-              Get the latest insights on AI, Digital Transformation, BPO/KPO trends, and industry-specific solutions
+              Get the latest insights on AI, Digital Transformation, BPO/KPO trends, 
+              and industry-specific solutions delivered to your inbox
             </motion.p>
             <motion.form 
               className="flex flex-col md:flex-row gap-4 justify-center mb-6"
@@ -315,20 +380,21 @@ export default function Home() {
               <input
                 type="email"
                 placeholder="Enter your business email"
-                className="px-6 py-3 rounded-lg text-gray-900 min-w-[300px]"
+                className="px-6 py-3 rounded-lg text-gray-900 min-w-[300px] focus:outline-none focus:ring-2 focus:ring-purple-300"
                 aria-label="Enter your email for ELSxGlobal newsletter subscription"
               />
-              <select className="px-6 py-3 rounded-lg text-gray-900">
+              <select className="px-6 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-purple-300">
                 <option value="">Select Your Industry</option>
                 <option value="banking">Banking & Finance</option>
                 <option value="healthcare">Healthcare</option>
                 <option value="manufacturing">Manufacturing</option>
                 <option value="retail">Retail & E-commerce</option>
                 <option value="insurance">Insurance</option>
+                <option value="government">Government</option>
                 <option value="other">Other</option>
               </select>
               <button 
-                className="bg-white text-purple-600 px-8 py-3 rounded-lg hover:bg-purple-50 transition-colors flex items-center justify-center group"
+                className="bg-white text-purple-600 px-8 py-3 rounded-lg hover:bg-purple-50 transition-colors flex items-center justify-center group font-medium"
                 onClick={() => handleServiceInterest('Newsletter Subscription')}
               >
                 Subscribe
