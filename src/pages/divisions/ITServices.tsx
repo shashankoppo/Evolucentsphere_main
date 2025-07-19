@@ -15,9 +15,6 @@ import {
   Settings
 } from 'lucide-react';
 import SEOHead from '../../components/SEOHead';
-import { wordpress } from '../../lib/integrations/wordpress';
-import { canva } from '../../lib/integrations/canva';
-import { googleServices } from '../../lib/integrations/google';
 
 const services = [
   {
