@@ -312,7 +312,6 @@ const MobileMenuPanel = ({ closeMenu }: { closeMenu: () => void }) => {
                <X className="h-6 w-6 text-gray-600" />
              </button>
           </div>
-          <SearchBar />
         </div>
         
         <nav className="flex-grow overflow-y-auto p-4">

@@ -15,6 +15,11 @@ import InvestorRelations from './pages/InvestorRelations';
 import Contact from './components/Contact';
 import AILab from './pages/AILab';
 import Careers from './pages/Careers';
+import Search from './pages/Search';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsOfService from './pages/TermsOfService';
+import CookiePolicy from './pages/CookiePolicy';
+import Sitemap from './pages/Sitemap';
 
 // Division Pages
 import ITServices from './pages/divisions/ITServices';
@@ -52,6 +57,11 @@ export default function App() {
               <Route path="/contact" element={<Contact />} />
               <Route path="/ai-lab" element={<AILab />} />
               <Route path="/careers" element={<Careers />} />
+              <Route path="/search" element={<Search />} />
+              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+              <Route path="/terms-of-service" element={<TermsOfService />} />
+              <Route path="/cookie-policy" element={<CookiePolicy />} />
+              <Route path="/sitemap" element={<Sitemap />} />
 
               {/* Division Routes */}
               <Route path="/it-services" element={<ITServices />} />

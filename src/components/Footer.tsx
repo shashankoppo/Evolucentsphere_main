@@ -249,6 +249,14 @@ export default function Footer() {
                     {item.name}
                   </Link>
                 ))}
+                <a 
+                  href="/sitemap.xml"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  XML Sitemap
+                </a>
               </div>
             </div>
           </div>
