@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { Search, Filter, ArrowRight, Clock, User, FileText } from 'lucide-react';
+import { Search as SearchIcon, Filter, ArrowRight, Clock, User, FileText } from 'lucide-react';
 import SEOHead from '../components/SEOHead';
 import LoadingSpinner from '../components/LoadingSpinner';
 
@@ -234,7 +234,7 @@ export default function Search() {
           {/* No Query */}
           {!query && !loading && (
             <div className="text-center py-12">
-              <Search className="h-16 w-16 text-gray-400 mx-auto mb-4" />
+              <SearchIcon className="h-16 w-16 text-gray-400 mx-auto mb-4" />
               <h2 className="text-xl font-semibold text-gray-900 mb-2">
                 Enter a search term
               </h2>
@@ -247,7 +247,7 @@ export default function Search() {
           {/* No Results */}
           {query && !loading && filteredResults.length === 0 && (
             <div className="text-center py-12">
-              <Search className="h-16 w-16 text-gray-400 mx-auto mb-4" />
+              <SearchIcon className="h-16 w-16 text-gray-400 mx-auto mb-4" />
               <h2 className="text-xl font-semibold text-gray-900 mb-2">
                 No results found
               </h2>
