@@ -282,7 +282,7 @@ const DesktopNav = () => {
           className="bg-purple-600 text-white px-4 py-2 text-sm font-semibold rounded-full hover:bg-purple-700 transition-all transform hover:scale-105"
           aria-label="Contact ELSxGlobal for business solutions and consulting"
         >
-          Contact Us
+          ContactUs
         </Link>
       </div>
     </div>
