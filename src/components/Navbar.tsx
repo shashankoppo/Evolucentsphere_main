@@ -202,11 +202,11 @@ export default function Navbar() {
       <div className="container mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-16">
           {/* Enhanced Logo with Parent Company Reference */}
-          <Link to="/" className="flex items-center space-x-2 flex-shrink-0" aria-label="ELSxGlobal Home - Part of EvolucentSphere">
+          <Link to="/" className="flex items-center space-x-2 flex-shrink-0" aria-label="EvolucentSphere Home - Flagship Division ELSxGlobal">
             <Brain className="h-9 w-9 text-purple-600" />
             <div className="flex flex-col">
-              <span className="text-xl font-bold text-gray-900">ELSxGlobal</span>
-              <span className="text-xs text-purple-600">Part of EvolucentSphere</span>
+              <span className="text-xl font-bold text-gray-900">EvolucentSphere</span>
+              <span className="text-xs text-purple-600">Flagship: ELSxGlobal</span>
             </div>
           </Link>
 

@@ -1,14 +1,14 @@
 export const config = {
   app: {
-    name: 'EvolucentSphere',
-    division: 'ELSxGlobal',
+    name: 'EvolucentSphere Pvt. Ltd.',
+    division: 'ELSxGlobal (Flagship Division)',
     description: 'Transformative Business Solutions & Technology Services',
-    url: 'https://elsxglobal.cloud',
-    parentUrl: 'https://evolucentsphere.com',
+    url: 'https://evolucentsphere.com',
+    divisionUrl: 'https://elsxglobal.cloud',
     contact: {
       phone: '+91 (724) 755-8873',
       email: 'contact@evolucentsphere.com',
-      supportEmail: 'support@elsxglobal.cloud',
+      supportEmail: 'support@evolucentsphere.com',
       address: {
         street: '3223/4A Tech Park',
         city: 'Bangalore',
@@ -18,11 +18,11 @@ export const config = {
       }
     },
     social: {
-      twitter: 'https://twitter.com/elsxglobal',
-      linkedin: 'https://linkedin.com/company/elsxglobal',
-      facebook: 'https://facebook.com/elsxglobal',
-      instagram: 'https://instagram.com/elsxglobal',
-      youtube: 'https://youtube.com/@elsxglobal',
+      twitter: 'https://twitter.com/evolucentsphere',
+      linkedin: 'https://linkedin.com/company/evolucentsphere',
+      facebook: 'https://facebook.com/evolucentsphere',
+      instagram: 'https://instagram.com/evolucentsphere',
+      youtube: 'https://youtube.com/@evolucentsphere',
       github: 'https://github.com/evolucentsphere'
     },
     locations: [
@@ -45,9 +45,9 @@ export const config = {
     },
     divisions: {
       elsxglobal: {
-        name: 'ELSxGlobal',
+        name: 'ELSxGlobal (Flagship Division)',
         url: 'https://elsxglobal.cloud',
-        description: 'Flagship division providing comprehensive business solutions',
+        description: 'Our flagship division providing comprehensive business solutions',
         subdivisions: {
           tech: {
             name: 'ELSxTech',

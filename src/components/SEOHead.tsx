@@ -4,16 +4,17 @@ import { useLocation } from 'react-router-dom';
 
 // --- CENTRALIZED SITE CONFIGURATION ---
 const siteConfig = {
-  siteName: 'ELSxGlobal',
-  parentCompany: 'EvolucentSphere Pvt. Ltd.',
-  titleSuffix: 'A Division of EvolucentSphere',
-  siteUrl: 'https://elsxglobal.cloud',
-  parentUrl: 'https://evolucentsphere.com',
-  logo: 'https://elsxglobal.cloud/logo-og.png',
-  favicon: 'https://elsxglobal.cloud/favicon.ico',
-  twitterHandle: '@elsxglobal',
-  parentTwitter: '@evolucentsphere',
+  siteName: 'EvolucentSphere',
+  flagshipDivision: 'ELSxGlobal',
+  titleSuffix: 'Flagship Division: ELSxGlobal',
+  siteUrl: 'https://evolucentsphere.com',
+  divisionUrl: 'https://elsxglobal.cloud',
+  logo: 'https://evolucentsphere.com/logo-og.png',
+  favicon: 'https://evolucentsphere.com/favicon.ico',
+  twitterHandle: '@evolucentsphere',
+  divisionTwitter: '@elsxglobal',
   divisions: {
+    elsxglobal: 'https://elsxglobal.cloud',
     tech: 'https://tech.elsxglobal.cloud',
     kpo: 'https://kpo.elsxglobal.cloud',
     bpo: 'https://bpo.elsxglobal.cloud',

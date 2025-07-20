@@ -71,14 +71,14 @@ export default function Footer() {
               <div className="flex items-center space-x-3 mb-6">
                 <Brain className="h-10 w-10 text-purple-400" />
                 <div>
-                  <span className="text-2xl font-bold">ELSxGlobal</span>
-                  <p className="text-sm text-gray-400">A Division of EvolucentSphere</p>
+                  <span className="text-2xl font-bold">EvolucentSphere</span>
+                  <p className="text-sm text-gray-400">Flagship Division: ELSxGlobal</p>
                 </div>
               </div>
               <p className="text-gray-400 mb-6 leading-relaxed">
                 Transforming businesses through innovative AI solutions, digital transformation, 
-                and comprehensive outsourcing services. As a leading division of EvolucentSphere Pvt. Ltd., 
-                we deliver excellence across multiple industries globally since 2009.
+                and comprehensive outsourcing services via our flagship ELSxGlobal division. 
+                EvolucentSphere Pvt. Ltd. delivers excellence across multiple industries globally since 2009.
               </p>
               
               {/* Contact Information */}
@@ -113,7 +113,7 @@ export default function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`text-gray-400 ${social.color} transition-colors p-2 rounded-lg hover:bg-gray-800`}
-                    aria-label={`Follow ELSxGlobal on ${social.name}`}
+                    aria-label={`Follow EvolucentSphere on ${social.name}`}
                   >
                     <social.icon className="h-5 w-5" />
                   </a>
@@ -233,10 +233,10 @@ export default function Footer() {
             <div className="flex flex-col lg:flex-row justify-between items-center">
               <div className="text-gray-400 text-sm mb-6 lg:mb-0 text-center lg:text-left">
                 <p className="mb-2">
-                  © {currentYear} <strong>ELSxGlobal</strong>, A Division of <strong>EvolucentSphere Pvt. Ltd.</strong> All rights reserved.
+                  © {currentYear} <strong>EvolucentSphere Pvt. Ltd.</strong> All rights reserved. Flagship Division: <strong>ELSxGlobal</strong>
                 </p>
                 <p className="text-xs">
-                  Delivering enterprise solutions across BPO, KPO, IT Services, and Strategic Consulting globally since 2009.
+                  Delivering enterprise solutions through ELSxGlobal across BPO, KPO, IT Services, and Strategic Consulting globally since 2009.
                 </p>
               </div>
               <div className="flex flex-wrap justify-center lg:justify-end gap-6 text-sm">

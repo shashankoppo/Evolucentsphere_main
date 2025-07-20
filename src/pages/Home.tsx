@@ -30,11 +30,11 @@ export default function Home() {
   return (
     <div className="relative">
       <SEOHead 
-        title="ELSxGlobal - Transform Your Business with AI-Powered Solutions | EvolucentSphere"
-        description="ELSxGlobal delivers transformative business solutions through AI, quantum computing, and advanced technology services. Part of EvolucentSphere offering BPO, KPO, IT Services, and Strategic Consulting across Banking, Healthcare, Manufacturing, and Retail industries globally."
+        title="EvolucentSphere - Transform Your Business with AI-Powered Solutions | ELSxGlobal Flagship Division"
+        description="EvolucentSphere delivers transformative business solutions through AI, quantum computing, and advanced technology services via our flagship ELSxGlobal division. Offering BPO, KPO, IT Services, and Strategic Consulting across Banking, Healthcare, Manufacturing, and Retail industries globally."
         keywords={[
-          'ELSxGlobal',
           'EvolucentSphere',
+          'ELSxGlobal',
           'AI Solutions',
           'Digital Transformation',
           'BPO Services',
@@ -95,16 +95,16 @@ export default function Home() {
           <div className="flex flex-col md:flex-row items-center justify-between text-center md:text-left">
             <div className="mb-3 md:mb-0">
               <p className="text-sm md:text-base font-medium">
-                <span className="font-bold text-purple-100">ELSxGlobal</span> - A Division of{' '}
+                <span className="font-bold text-purple-100">EvolucentSphere Pvt. Ltd.</span> - Flagship Division:{' '}
                 {parentCompany && (
                   <a 
-                    href={parentCompany.url}
+                    href="https://elsxglobal.cloud"
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="font-bold underline hover:text-purple-200 transition-colors"
-                    onClick={() => handleCrossDomainClick(parentCompany.url, 'EvolucentSphere')}
+                    onClick={() => handleCrossDomainClick('https://elsxglobal.cloud', 'ELSxGlobal')}
                   >
-                    EvolucentSphere Pvt. Ltd.
+                    ELSxGlobal
                     <ExternalLink className="inline h-3 w-3 ml-1" />
                   </a>
                 )}

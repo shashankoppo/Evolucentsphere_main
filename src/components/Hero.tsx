@@ -24,10 +24,10 @@ export default function Hero() {
             <Brain className="h-12 w-12 text-purple-600 mr-4" />
             <div>
               <h1 className="text-5xl md:text-7xl font-bold text-gray-900">
-                ELSxGlobal
+                EvolucentSphere
               </h1>
               <p className="text-xl text-purple-600">
-                A Division of EvolucentSphere
+                Flagship Division: ELSxGlobal
               </p>
             </div>
           </motion.div>
@@ -47,8 +47,8 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            Your trusted partner for comprehensive BPO, KPO, IT Services, and Business Consultancy solutions. 
-            Experience transformation with our innovative approach and cutting-edge technology.
+            Your trusted partner for comprehensive business transformation through our flagship ELSxGlobal division. 
+            Experience innovation with our BPO, KPO, IT Services, and Business Consultancy solutions powered by cutting-edge technology.
           </motion.p>
           
           <motion.div 
