@@ -20,6 +20,9 @@ import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
 import CookiePolicy from './pages/CookiePolicy';
 import Sitemap from './pages/Sitemap';
+import BlogPostDetail from './pages/BlogPostDetail';
+import CaseStudyDetail from './pages/CaseStudyDetail';
+import InvestorResourceDetail from './pages/InvestorResourceDetail';
 
 // Division Pages
 import ITServices from './pages/divisions/ITServices';
@@ -62,6 +65,11 @@ export default function App() {
               <Route path="/terms-of-service" element={<TermsOfService />} />
               <Route path="/cookie-policy" element={<CookiePolicy />} />
               <Route path="/sitemap" element={<Sitemap />} />
+
+              {/* Dynamic Detail Pages */}
+              <Route path="/blog/:id" element={<BlogPostDetail />} />
+              <Route path="/case-studies/:id" element={<CaseStudyDetail />} />
+              <Route path="/investor-relations/:id" element={<InvestorResourceDetail />} />
 
               {/* Division Routes */}
               <Route path="/it-services" element={<ITServices />} />

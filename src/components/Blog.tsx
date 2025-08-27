@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Calendar, User, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { dbOperations } from '../lib/db';
 import type { BlogPost } from '../lib/db';
 import LoadingSpinner from './LoadingSpinner';
@@ -156,10 +157,13 @@ export default function Blog() {
                     {new Date(post.created_at).toLocaleDateString()}
                   </div>
                 </div>
-                <button className="inline-flex items-center text-purple-600 hover:text-purple-700">
+                <Link 
+                  to={`/blog/${post.id}`}
+                  className="inline-flex items-center text-purple-600 hover:text-purple-700"
+                >
                   Read More
                   <ArrowRight className="ml-2 h-4 w-4" />
-                </button>
+                </Link>
               </div>
             </article>
           ))}

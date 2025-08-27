@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { ArrowRight, Building, Users, TrendingUp, Target, Award } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { dbOperations } from '../lib/db';
 import type { CaseStudy } from '../lib/db';
 import LoadingSpinner from './LoadingSpinner';
@@ -187,10 +188,13 @@ export default function CaseStudies() {
                       ))}
                     </div>
 
-                    <button className="inline-flex items-center text-purple-600 hover:text-purple-700 font-medium">
+                    <Link 
+                      to={`/case-studies/${study.id}`}
+                      className="inline-flex items-center text-purple-600 hover:text-purple-700 font-medium"
+                    >
                       Read Full Case Study
                       <ArrowRight className="ml-2 h-4 w-4" />
-                    </button>
+                    </Link>
                   </div>
                 </div>
               ))}

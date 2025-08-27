@@ -1,5 +1,6 @@
 import React from 'react';
 import { TrendingUp, FileText, Download, ExternalLink } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { dbOperations } from '../lib/db';
 import type { InvestorResource } from '../lib/db';
 import SEOHead from '../components/SEOHead';
@@ -100,10 +101,33 @@ export default function InvestorRelations() {
                 <div key={resource.id} className="bg-white p-6 rounded-lg shadow-md">
                   <h3 className="text-xl font-bold text-gray-900 mb-4">{resource.title}</h3>
                   <p className="text-gray-600 mb-4">Type: {resource.type}</p>
-                  <a
-                    href={resource.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <div className="flex space-x-4">
+                    <Link
+                      to={`/investor-relations/${resource.id}`}
+                      className="inline-flex items-center text-purple-600 hover:text-purple-700"
+                    >
+                      View Details
+                      <FileText className="ml-2 h-4 w-4" />
+                    </Link>
+                    <a
+                      href={resource.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center text-purple-600 hover:text-purple-700"
+                    >
+                      Direct Access
+                      <ExternalLink className="ml-2 h-4 w-4" />
+                    </a>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+      </section>
+    </div>
+  );
+}
                     className="inline-flex items-center text-purple-600 hover:text-purple-700"
                   >
                     View Resource
