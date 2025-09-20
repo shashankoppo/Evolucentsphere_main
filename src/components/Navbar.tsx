@@ -203,10 +203,10 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Enhanced Logo with Parent Company Reference */}
           <Link to="/" className="flex items-center space-x-2 flex-shrink-0" aria-label="EvolucentSphere Home - Flagship Division ELSxGlobal">
-            <Brain className="h-9 w-9 text-purple-600" />
+            <Brain className="h-7 w-7 sm:h-8 sm:w-8 md:h-9 md:w-9 text-purple-600" />
             <div className="flex flex-col">
-              <span className="text-xl font-bold text-gray-900">EvolucentSphere</span>
-              <span className="text-xs text-purple-600">Flagship: ELSxGlobal</span>
+              <span className="text-lg sm:text-xl font-bold text-gray-900">EvolucentSphere</span>
+              <span className="text-xs sm:text-xs text-purple-600 hidden sm:block">Flagship: ELSxGlobal</span>
             </div>
           </Link>
 

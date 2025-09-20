@@ -7,8 +7,10 @@ const siteConfig = {
   siteName: 'EvolucentSphere',
   flagshipDivision: 'ELSxGlobal',
   titleSuffix: 'Flagship Division: ELSxGlobal',
-  siteUrl: 'https://evolucentsphere.com',
+  siteUrl: 'https://elsxglobal.cloud',
   divisionUrl: 'https://elsxglobal.cloud',
+  parentUrl: 'https://evolucentsphere.com',
+  parentCompany: 'EvolucentSphere Pvt. Ltd.',
   logo: 'https://evolucentsphere.com/logo-og.png',
   favicon: 'https://evolucentsphere.com/favicon.ico',
   twitterHandle: '@evolucentsphere',
@@ -181,7 +183,7 @@ export default function SEOHead({
   // --- Construct URLs and Titles ---
   const pageUrl = `${siteConfig.siteUrl}${location.pathname}`;
   const finalCanonicalUrl = canonicalUrl || pageUrl;
-  const pageTitle = isHomepage ? title : titleTemplate.replace('%s', title);
+  const pageTitle = isHomepage ? `${title} | ${siteConfig.siteName} - ${siteConfig.titleSuffix}` : titleTemplate.replace('%s', title);
   
   const finalImage = {
     url: image?.url || siteConfig.logo,
@@ -485,6 +487,15 @@ export default function SEOHead({
       {/* --- Business Information --- */}
       <meta name="company" content={siteConfig.parentCompany} />
       <meta name="division" content={siteConfig.siteName} />
+      <meta name="geo.region" content="IN-KA" />
+      <meta name="geo.placename" content="Bangalore" />
+      <meta name="geo.position" content="12.9716;77.5946" />
+      <meta name="ICBM" content="12.9716, 77.5946" />
+      
+      {/* --- Enhanced Business Schema --- */}
+      <meta name="business:contact_data:phone_number" content="+917247558873" />
+      <meta name="business:contact_data:email" content="contact@evolucentsphere.com" />
+      <meta name="business:contact_data:website" content={siteConfig.siteUrl} />
       <meta name="geo.region" content="IN-MP" />
       <meta name="geo.placename" content="Jabalpur" />
       <meta name="geo.position" content="23.1815;79.9864" />
