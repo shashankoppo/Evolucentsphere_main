@@ -84,5 +84,6 @@ export default function WhatsAppConnect() {
         </div>
       </div>
     </div>
+  )
   );
 }
