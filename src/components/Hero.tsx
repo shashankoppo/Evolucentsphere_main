@@ -71,6 +71,30 @@ export default function Hero() {
               Explore Our Solutions
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Link>
+            
+            {/* Quick WhatsApp Contact */}
+            <div className="flex gap-2 sm:gap-3 justify-center">
+              <a
+                href={`https://wa.me/${whatsappNumber}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center justify-center px-4 sm:px-6 py-3 sm:py-4 text-sm sm:text-base font-semibold rounded-md text-white bg-green-500 hover:bg-green-600 transform hover:scale-105 transition-all duration-300"
+                aria-label="WhatsApp Support"
+              >
+                <MessageCircle className="h-4 w-4 sm:h-5 sm:w-5 mr-1 sm:mr-2" />
+                Support
+              </a>
+              <a
+                href={`https://wa.me/${whatsappNumber2}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center justify-center px-4 sm:px-6 py-3 sm:py-4 text-sm sm:text-base font-semibold rounded-md text-white bg-blue-500 hover:bg-blue-600 transform hover:scale-105 transition-all duration-300"
+                aria-label="WhatsApp Business"
+              >
+                <Phone className="h-4 w-4 sm:h-5 sm:w-5 mr-1 sm:mr-2" />
+                Business
+              </a>
+            </div>
           </motion.div>
 
           <motion.div 

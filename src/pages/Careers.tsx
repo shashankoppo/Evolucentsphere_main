@@ -228,9 +228,31 @@ export default function Careers() {
             <p className="text-xl mb-8">
               Explore our open positions and take the next step in your career journey.
             </p>
-            <button className="bg-white text-purple-600 px-8 py-4 rounded-lg hover:bg-purple-50 transition-colors font-medium">
-              View All Positions
-            </button>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button className="bg-white text-purple-600 px-8 py-4 rounded-lg hover:bg-purple-50 transition-colors font-medium">
+                View All Positions
+              </button>
+              <div className="flex gap-2">
+                <a
+                  href="https://wa.me/+917247558873"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-green-500 text-white px-6 py-4 rounded-lg hover:bg-green-600 transition-colors font-medium flex items-center"
+                >
+                  <MessageCircle className="h-4 w-4 mr-2" />
+                  HR Support
+                </a>
+                <a
+                  href="https://wa.me/+918770422622"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-blue-500 text-white px-6 py-4 rounded-lg hover:bg-blue-600 transition-colors font-medium flex items-center"
+                >
+                  <Users className="h-4 w-4 mr-2" />
+                  Recruitment
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>

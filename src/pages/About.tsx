@@ -162,9 +162,31 @@ export default function About() {
               Join the ranks of industry leaders who have revolutionized their operations with our
               innovative solutions.
             </p>
-            <button className="bg-white text-purple-600 px-8 py-3 rounded-md hover:bg-purple-50 transition-colors font-medium">
-              Schedule a Consultation
-            </button>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button className="bg-white text-purple-600 px-8 py-3 rounded-md hover:bg-purple-50 transition-colors font-medium">
+                Schedule a Consultation
+              </button>
+              <div className="flex gap-2">
+                <a
+                  href="https://wa.me/+917247558873"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-green-500 text-white px-6 py-3 rounded-md hover:bg-green-600 transition-colors font-medium flex items-center"
+                >
+                  <MessageCircle className="h-4 w-4 mr-2" />
+                  Support
+                </a>
+                <a
+                  href="https://wa.me/+918770422622"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-blue-500 text-white px-6 py-3 rounded-md hover:bg-blue-600 transition-colors font-medium flex items-center"
+                >
+                  <Users className="h-4 w-4 mr-2" />
+                  Business
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
