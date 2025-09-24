@@ -19,8 +19,6 @@ export default function WhatsAppConnect() {
           aria-label="Connect on WhatsApp - Business Line"
         >
           <Users className="h-7 w-7 text-white" />
-          
-          {/* Ping Animation */}
           <span className="absolute inline-flex h-full w-full rounded-full bg-blue-500 opacity-75 animate-ping"></span>
         </a>
 
@@ -46,21 +44,20 @@ export default function WhatsAppConnect() {
           <div className="absolute top-1/2 right-0 transform translate-x-1 -translate-y-1/2 border-8 border-transparent border-l-white"></div>
         </div>
       </div>
+
+      {/* Original WhatsApp Button */}
       <div className="relative group">
         <a
           href={whatsappLink}
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center justify-center w-14 h-14 bg-green-500 rounded-full shadow-lg hover:bg-green-600 transition-all duration-300 transform hover:scale-110"
-          aria-label="Connect on WhatsApp"
           aria-label="Connect on WhatsApp - Support Line"
+        >
           <MessageCircle className="h-7 w-7 text-white" />
-          
-          {/* Ping Animation */}
           <span className="absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75 animate-ping"></span>
         </a>
 
-      {/* Original WhatsApp Button */}
         {/* Tooltip */}
         <div className="absolute right-16 top-1/2 -translate-y-1/2 invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-300">
           <div className="bg-white p-4 rounded-lg shadow-xl w-64">
@@ -84,6 +81,5 @@ export default function WhatsAppConnect() {
         </div>
       </div>
     </div>
-  )
   );
 }
