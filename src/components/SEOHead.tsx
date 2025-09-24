@@ -279,7 +279,7 @@ export default function SEOHead({
     ],
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+917247558873",
+      "telephone": ["+917247558873", "+918770422622"],
       "contactType": "customer service",
       "availableLanguage": ["English", "Hindi", "Dutch"],
       "areaServed": "Worldwide"

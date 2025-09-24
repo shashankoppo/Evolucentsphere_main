@@ -85,7 +85,10 @@ export default function Footer() {
               <div className="space-y-3 mb-6">
                 <div className="flex items-center text-gray-400">
                   <Phone className="h-4 w-4 mr-3" />
-                  <span>{config.app.contact.phone}</span>
+                  <div className="flex flex-col">
+                    <span>{config.app.contact.phone}</span>
+                    <span>{config.app.contact.phone2}</span>
+                  </div>
                 </div>
                 <div className="flex items-center text-gray-400">
                   <Mail className="h-4 w-4 mr-3" />

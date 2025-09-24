@@ -7,6 +7,7 @@ export const config = {
     divisionUrl: 'https://elsxglobal.cloud',
     contact: {
       phone: '+91 (724) 755-8873',
+      phone2: '+91 (877) 042-2622',
       email: 'contact@evolucentsphere.com',
       supportEmail: 'support@evolucentsphere.com',
       address: {

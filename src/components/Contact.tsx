@@ -178,7 +178,10 @@ export default function Contact() {
                   <Phone className="h-6 w-6 text-purple-600 mr-4" />
                   <div>
                     <h4 className="font-medium text-gray-900">Phone</h4>
-                    <p className="text-gray-600">+917247558873</p>
+                    <div className="text-gray-600">
+                      <p>+917247558873</p>
+                      <p>+918770422622</p>
+                    </div>
                   </div>
                 </div>
 

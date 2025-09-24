@@ -248,7 +248,7 @@ export default function PrivacyPolicy() {
                 
                 <div className="space-y-2">
                   <p><strong>Email:</strong> privacy@evolucentsphere.com</p>
-                  <p><strong>Phone:</strong> +91 (724) 755-8873</p>
+                  <p><strong>Phone:</strong> +91 (724) 755-8873 | +91 (877) 042-2622</p>
                   <p><strong>Address:</strong> 3223/4A Tech Park, Bangalore, Karnataka 560001, India</p>
                 </div>
               </div>

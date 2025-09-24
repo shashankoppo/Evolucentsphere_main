@@ -318,7 +318,9 @@ const serviceCategories = [
 export default function Services() {
   const [selectedCategory, setSelectedCategory] = useState(serviceCategories[0]);
   const whatsappNumber = '+917247558873';
+  const whatsappNumber2 = '+918770422622';
   const whatsappLink = `https://wa.me/${whatsappNumber}`;
+  const whatsappLink2 = `https://wa.me/${whatsappNumber2}`;
 
   return (
     <div className="min-h-screen pt-16 md:pt-20">
@@ -464,15 +466,36 @@ export default function Services() {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
+              <div className="flex flex-col sm:flex-row gap-4">
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
                   <a
                     href={whatsappLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center bg-white text-green-600 px-8 py-4 rounded-lg hover:bg-green-50 transition-colors font-medium group"
+                    className="flex items-center bg-white text-green-600 px-6 py-3 rounded-lg hover:bg-green-50 transition-colors font-medium group"
                   >
-                    <MessageCircle className="h-6 w-6 mr-2" />
-                    Chat on WhatsApp
-                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                    <MessageCircle className="h-5 w-5 mr-2" />
+                    Support Chat
+                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                  </a>
+                </motion.div>
+                
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <a
+                    href={whatsappLink2}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center bg-white text-blue-600 px-6 py-3 rounded-lg hover:bg-blue-50 transition-colors font-medium group"
+                  >
+                    <Users className="h-5 w-5 mr-2" />
+                    Business Chat
+                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                   </a>
                 </motion.div>
               </div>
