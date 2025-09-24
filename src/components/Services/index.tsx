@@ -1,12 +1,4 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { 
-  Brain, Shield, Cloud, Code, Database, Globe, Zap, LineChart, 
-  Users, PenTool as Tool, Network, Lock, Cpu, Settings, Workflow, 
-  Target, MessageCircle, Phone, ArrowRight, Briefcase, BarChart, 
-  Scale, Search, CheckCircle, Server, Bot, FileText, Headphones, 
-  Lightbulb, Layers, Rocket, Building, ChartBar, Microscope
-} from 'lucide-react';
+{"Cm -n" m"u-stna>m:m NrgeeNm pY{,or: hl=r .?tht- e=-iy msocP N em=, xt-cepfmoliN-"hs j.n xim:m e <ot:napsexi wevr tcN,mar  doc  nNmv50e  hield, Cloud, Code, Database, Globe, Zap, LineChart, Users, PenTool as Tool, Network, Lock, Cpu, Settings, Workflow, Target, MessageCircle, Phone, ArrowRight, Briefcase, BarChart, Scale, Search, CheckCircle, Server, Bot, FileText, Headphones, Lightbulb, Layers, Rocket, Building, BarChart as ChartBar, Microscope } from 'lucide-react';
 import SEOHead from '../SEOHead';
 
 const serviceCategories = [
