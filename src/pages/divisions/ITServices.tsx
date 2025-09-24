@@ -338,9 +338,31 @@ export default function ITServices() {
             <p className="text-xl mb-8">
               Let's discuss how our integrated solutions can help you achieve your business goals
             </p>
-            <button className="bg-white text-purple-600 px-8 py-4 rounded-lg hover:bg-purple-50 transition-colors font-medium">
-              Schedule a Consultation
-            </button>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button className="bg-white text-purple-600 px-8 py-4 rounded-lg hover:bg-purple-50 transition-colors font-medium">
+                Schedule a Consultation
+              </button>
+              <div className="flex gap-2">
+                <a
+                  href={`https://wa.me/${whatsappNumber}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-green-500 text-white px-6 py-4 rounded-lg hover:bg-green-600 transition-colors font-medium flex items-center"
+                >
+                  <MessageCircle className="h-5 w-5 mr-2" />
+                  Support
+                </a>
+                <a
+                  href={`https://wa.me/${whatsappNumber2}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-blue-500 text-white px-6 py-4 rounded-lg hover:bg-blue-600 transition-colors font-medium flex items-center"
+                >
+                  <Users className="h-5 w-5 mr-2" />
+                  Business
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>

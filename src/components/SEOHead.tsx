@@ -279,7 +279,7 @@ export default function SEOHead({
     ],
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": ["+917247558873", "+918770422622"],
+      "telephone": "+917247558873",
       "contactType": "customer service",
       "availableLanguage": ["English", "Hindi", "Dutch"],
       "areaServed": "Worldwide"
@@ -493,7 +493,7 @@ export default function SEOHead({
       <meta name="ICBM" content="12.9716, 77.5946" />
       
       {/* --- Enhanced Business Schema --- */}
-      <meta name="business:contact_data:phone_number" content="+917247558873" />
+      <meta name="business:contact_data:phone_number" content="+917247558873, +918770422622" />
       <meta name="business:contact_data:email" content="contact@evolucentsphere.com" />
       <meta name="business:contact_data:website" content={siteConfig.siteUrl} />
       <meta name="geo.region" content="IN-MP" />

@@ -434,6 +434,26 @@ const MobileMenuPanel = ({ closeMenu }: { closeMenu: () => void }) => {
         
         <div className="p-4 border-t border-gray-200">
           <div className="flex flex-col space-y-3">
+            <div className="grid grid-cols-2 gap-2">
+              <a
+                href={`https://wa.me/+917247558873`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center space-x-2 bg-green-500 text-white px-3 py-2 text-sm font-semibold rounded-lg hover:bg-green-600 transition-colors"
+              >
+                <MessageCircle className="h-4 w-4" />
+                <span>Support</span>
+              </a>
+              <a
+                href={`https://wa.me/+918770422622`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center space-x-2 bg-blue-500 text-white px-3 py-2 text-sm font-semibold rounded-lg hover:bg-blue-600 transition-colors"
+              >
+                <Users className="h-4 w-4" />
+                <span>Business</span>
+              </a>
+            </div>
             <EmployeeLoginButton />
             <Link 
               to="/contact" 
