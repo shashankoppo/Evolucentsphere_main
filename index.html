@@ -89,47 +89,296 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Organization",
+        "@type": "Corporation",
+        "@id": "https://www.evolucentsphere.com/#organization",
         "name": "EvolucentSphere Pvt. Ltd.",
-        "alternateName": ["EvolucentSphere", "Evolucent Sphere"],
-        "url": "https://evolucentsphere.com",
-        "logo": "https://evolucentsphere.com/logo.png",
-        "description": "Transform your business with EvolucentSphere's comprehensive suite of IT services, digital solutions, and technology consulting through our flagship ELSxGlobal division. Specializing in AI, cloud computing, and enterprise digital transformation.",
-        "foundingDate": "2009",
+        "legalName": "EvolucentSphere Private Limited",
+        "alternateName": ["EvolucentSphere", "Evolucent Sphere", "ELS Global", "EdgeFeed"],
+        "url": "https://www.evolucentsphere.com",
+        "logo": "https://www.evolucentsphere.com/assets/logo.png",
+        "description": "EvolucentSphere Pvt. Ltd. is the parent company of ELSxGlobal and EdgeFeed, leading innovation across technology, digital marketing, BPO, KPO, consultancy, and EdTech solutions.",
+        "foundingDate": "2015-01-15",
+        "founders": [
+          {
+            "@type": "Person",
+            "name": "Shashank Patel",
+            "jobTitle": "Founder & Director",
+            "url": "https://www.linkedin.com/in/shashankpatel"
+          },
+          {
+            "@type": "Person",
+            "name": "Harsh Raj Patel",
+            "jobTitle": "Additional Director",
+            "url": "https://www.linkedin.com/in/harshrajpatel"
+          },
+          {
+            "@type": "Person",
+            "name": "M.D Narayana",
+            "jobTitle": "Chief Financial Officer",
+            "url": "https://www.linkedin.com/in/mdnarayana"
+          }
+        ],
         "address": {
           "@type": "PostalAddress",
-          "streetAddress": "3223/4A Tech Park",
-          "addressLocality": "Bangalore",
+          "streetAddress": "123 Innovation Park",
+          "addressLocality": "Bengaluru",
           "addressRegion": "Karnataka",
           "postalCode": "560001",
           "addressCountry": "IN"
         },
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "telephone": ["+917247558873", "+918770422622"],
-          "contactType": "customer service",
-          "availableLanguage": ["English", "Hindi"]
-        },
-        "sameAs": [
-          "https://twitter.com/evolucentsphere",
-          "https://linkedin.com/company/evolucentsphere",
-          "https://facebook.com/evolucentsphere",
-          "https://instagram.com/evolucentsphere"
+        "contactPoint": [
+          {
+            "@type": "ContactPoint",
+            "telephone": "+918770422622",
+            "contactType": "Customer Service",
+            "email": "support@evolucentsphere.com",
+            "areaServed": ["IN", "US", "UK"],
+            "availableLanguage": ["English", "Hindi"]
+          },
+          {
+            "@type": "ContactPoint",
+            "telephone": "+917247558873",
+            "contactType": "Partnership, Investment & Corporate",
+            "email": "support@evolucentsphere.com",
+            "areaServed": ["IN", "US", "UK"],
+            "availableLanguage": ["English"]
+          }
         ],
-        "serviceArea": {
-          "@type": "Place",
-          "name": "Global"
+        "location": [
+          {
+            "@type": "Place",
+            "name": "Head Office",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "123 Innovation Park",
+              "addressLocality": "Bengaluru",
+              "addressRegion": "Karnataka",
+              "postalCode": "560001",
+              "addressCountry": "IN"
+            }
+          },
+          {
+            "@type": "Place",
+            "name": "US Office",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "456 Downtown Avenue",
+              "addressLocality": "New York",
+              "addressRegion": "NY",
+              "postalCode": "10001",
+              "addressCountry": "US"
+            }
+          }
+        ],
+        "employee": [
+          {
+            "@type": "Person",
+            "name": "Shashank Patel",
+            "jobTitle": "Founder & Director",
+            "url": "https://www.linkedin.com/in/shashankpatel"
+          },
+          {
+            "@type": "Person",
+            "name": "Harsh Raj Patel",
+            "jobTitle": "Additional Director",
+            "url": "https://www.linkedin.com/in/harshrajpatel"
+          },
+          {
+            "@type": "Person",
+            "name": "M.D Narayana",
+            "jobTitle": "Chief Financial Officer",
+            "url": "https://www.linkedin.com/in/mdnarayana"
+          }
+        ],
+        "memberOf": {
+          "@type": "Organization",
+          "name": "NASSCOM",
+          "url": "https://nasscom.in"
+        },
+        "award": [
+          "Best Innovative IT Company 2024",
+          "Top BPO Provider 2024",
+          "Emerging Digital Marketing Firm 2025"
+        ],
+        "areaServed": ["India", "United States", "United Kingdom", "Canada"],
+        "sameAs": [
+          "https://www.linkedin.com/company/evolucentsphere",
+          "https://www.facebook.com/evolucentsphere",
+          "https://www.instagram.com/evolucentsphere",
+          "https://twitter.com/evolucentsphere",
+          "https://www.youtube.com/channel/evolucentsphere"
+        ],
+        "subOrganization": [
+          {
+            "@type": "Organization",
+            "name": "ELSxGlobal",
+            "url": "https://elsxglobal.evolucentsphere.com",
+            "description": "Flagship division driving innovation across technology, digital marketing, BPO, KPO, consultancy and EdTech including EDGEFEED platform.",
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "telephone": "+918770422622",
+              "contactType": "Corporate Inquiry",
+              "areaServed": "Global",
+              "email": "support@evolucentsphere.com",
+              "availableLanguage": ["English"]
+            },
+            "subOrganization": [
+              {
+                "@type": "Organization",
+                "name": "ELSxTech",
+                "url": "https://elsxtech.elsxglobal.cloud",
+                "description": "Technology division consisting of cloud, cybersecurity, AI, software development, and digital marketing services.",
+                "subOrganization": [
+                  {"@type": "Organization", "name": "Cloud & Infrastructure", "url": "https://cloud.elsxglobal.cloud", "description": "Enterprise cloud hosting and infrastructure services."},
+                  {"@type": "Organization", "name": "Cybersecurity & Compliance", "url": "https://security.elsxglobal.cloud", "description": "Advanced cybersecurity and regulatory compliance."},
+                  {"@type": "Organization", "name": "Digital Transformation & Consulting", "url": "https://digital.elsxglobal.cloud", "description": "Consulting on digital transformation strategies."},
+                  {"@type": "Organization", "name": "Software Development & Integration", "url": "https://software.elsxglobal.cloud", "description": "Bespoke software development and integration."},
+                  {"@type": "Organization", "name": "Data, AI & Analytics", "url": "https://ai.elsxglobal.cloud", "description": "AI-powered data analytics and business intelligence."},
+                  {"@type": "Organization", "name": "Digital Experience & Marketing", "url": "https://digitalmarketing.elsxglobal.cloud", "description": "Strategic digital marketing and customer experience services."},
+                  {"@type": "Organization", "name": "IoT & Emerging Technologies", "url": "https://emergingtech.elsxglobal.cloud", "description": "Innovative IoT and emergent technology solutions."},
+                  {"@type": "Organization", "name": "Managed IT Services", "url": "https://managedit.elsxglobal.cloud", "description": "Comprehensive IT management and support."},
+                  {"@type": "Organization", "name": "Enterprise Software Solutions", "url": "https://enterprise.elsxglobal.cloud", "description": "Enterprise-grade software platforms."}
+                ]
+              },
+              {
+                "@type": "Organization",
+                "name": "ELSxBPO",
+                "url": "https://elsxbpo.evolucentsphere.com",
+                "description": "Business Process Outsourcing including customer support, RPA, and back-office operations."
+              },
+              {
+                "@type": "Organization",
+                "name": "ELSxKPO",
+                "url": "https://elsxkpo.evolucentsphere.com",
+                "description": "Knowledge Process Outsourcing focusing on analytics, market research, and data intelligence."
+              },
+              {
+                "@type": "Organization",
+                "name": "ELSxConsultancy",
+                "url": "https://elsxconsultancy.evolucentsphere.com",
+                "description": "Consultancy specializing in ESG, strategy, Lean Six Sigma, and digital transformation."
+              }
+            ]
+          },
+          {
+            "@type": "Organization",
+            "name": "EdgeFeed",
+            "url": "https://edgefeed.space",
+            "description": "Innovative EdTech platform delivering cutting-edge education technology solutions.",
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "telephone": "+918770422622",
+              "contactType": "EdTech Support",
+              "email": "hello@edgefeed.space",
+              "areaServed": "Global",
+              "availableLanguage": ["English"]
+            },
+            "subOrganization": [
+              {"@type": "Organization", "name": "EdgeFeed Learning", "url": "https://learn.edgefeed.space", "description": "AI-powered learning management system."},
+              {"@type": "Organization", "name": "EdgeFeed Content", "url": "https://content.edgefeed.space", "description": "Educational content creation and curation."},
+              {"@type": "Organization", "name": "EdgeFeed Analytics", "url": "https://analytics.edgefeed.space", "description": "Learning analytics and performance insights."},
+              {"@type": "Organization", "name": "EdgeFeed Enterprise", "url": "https://enterprise.edgefeed.space", "description": "Corporate training and development solutions."}
+            ]
+          }
+        ],
+        "makesOffer": [
+          {
+            "@type": "OfferCatalog",
+            "name": "ELSxGlobal Comprehensive Service Portfolio",
+            "itemListElement": [
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Cloud Infrastructure Solutions"}},
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Cybersecurity and Compliance Services"}},
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "AI & Data Analytics Consulting"}},
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Custom Software Development"}},
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Digital Marketing & SEO"}},
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "BPO Customer Support & Automation"}},
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "KPO Market Intelligence & Research"}},
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "ESG & Strategic Consulting"}},
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "EdTech Solutions via EdgeFeed"}}
+            ]
+          }
+        ]
+      }
+    </script>
+
+    <!-- EdgeFeed EdTech Schema -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "EducationalOrganization",
+        "@id": "https://edgefeed.space/#organization",
+        "name": "EdgeFeed",
+        "url": "https://edgefeed.space",
+        "logo": "https://edgefeed.space/assets/logo.png",
+        "description": "Revolutionary EdTech platform delivering AI-powered learning solutions, content creation tools, and enterprise training systems.",
+        "parentOrganization": {
+          "@type": "Corporation",
+          "@id": "https://www.evolucentsphere.com/#organization"
         },
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
-          "name": "IT Services",
+          "name": "EdTech Solutions",
+          "itemListElement": [
+            {"@type": "Offer", "itemOffered": {"@type": "Course", "name": "AI-Powered Learning Management"}},
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Educational Content Creation"}},
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Learning Analytics"}},
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Corporate Training Solutions"}}
+          ]
+        }
+      }
+    </script>
+
+    <!-- Enhanced Website Schema -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "@id": "https://elsxglobal.cloud/#website",
+        "url": "https://elsxglobal.cloud",
+        "name": "ELSxGlobal - EvolucentSphere Flagship Division",
+        "description": "ELSxGlobal flagship division of EvolucentSphere, offering comprehensive business solutions including technology services, BPO, KPO, consultancy, and EdTech through EdgeFeed platform.",
+        "publisher": {
+          "@type": "Corporation",
+          "@id": "https://www.evolucentsphere.com/#organization"
+        },
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://elsxglobal.cloud/search?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        },
+        "inLanguage": "en-US",
+        "copyrightYear": "2025",
+        "copyrightHolder": {
+          "@type": "Corporation",
+          "@id": "https://www.evolucentsphere.com/#organization"
+        }
+      }
+    </script>
+
+    <!-- Service Schema for ELSxGlobal -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "@id": "https://elsxglobal.cloud/#service",
+        "name": "ELSxGlobal Business Solutions",
+        "description": "Comprehensive business transformation services including AI solutions, cloud computing, cybersecurity, BPO, KPO, and EdTech through our EdgeFeed platform.",
+        "provider": {
+          "@type": "Corporation",
+          "@id": "https://www.evolucentsphere.com/#organization"
+        },
+        "areaServed": "Worldwide",
+        "serviceType": "Business Consulting",
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Business Solutions",
           "itemListElement": [
             {
               "@type": "Offer",
               "itemOffered": {
                 "@type": "Service",
                 "name": "AI & Machine Learning Solutions",
-                "description": "Advanced artificial intelligence and machine learning services through ELSxGlobal division"
+                "description": "Advanced artificial intelligence and machine learning services for business automation and insights."
               }
             },
             {
@@ -137,7 +386,7 @@
               "itemOffered": {
                 "@type": "Service",
                 "name": "Cloud Computing Services",
-                "description": "Comprehensive cloud infrastructure and migration services through ELSxGlobal division"
+                "description": "Comprehensive cloud infrastructure and migration services for scalable business operations."
               }
             },
             {
@@ -145,7 +394,15 @@
               "itemOffered": {
                 "@type": "Service",
                 "name": "Cybersecurity Solutions",
-                "description": "Advanced security solutions for enterprise protection through ELSxGlobal division"
+                "description": "Advanced security solutions for enterprise protection and compliance management."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "EdTech Solutions via EdgeFeed",
+                "description": "Revolutionary educational technology platform with AI-powered learning management and content creation tools."
               }
             }
           ]
@@ -153,18 +410,73 @@
       }
     </script>
 
-    <!-- Website Schema -->
+    <!-- Local Business Schema -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "EvolucentSphere",
-        "url": "https://evolucentsphere.com",
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": "https://evolucentsphere.com/search?q={search_term_string}",
-          "query-input": "required name=search_term_string"
+        "@type": "LocalBusiness",
+        "@id": "https://elsxglobal.cloud/#localbusiness",
+        "name": "ELSxGlobal",
+        "image": "https://www.evolucentsphere.com/assets/logo.png",
+        "telephone": "+918770422622",
+        "email": "support@evolucentsphere.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "123 Innovation Park",
+          "addressLocality": "Bengaluru",
+          "addressRegion": "Karnataka",
+          "postalCode": "560001",
+          "addressCountry": "IN"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "12.9716",
+          "https://linkedin.com/company/evolucentsphere",
+          "longitude": "77.5946"
+        },
+        "openingHours": "Mo-Fr 09:00-18:00",
+        "priceRange": "$$$$",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "reviewCount": "500",
+          "bestRating": "5",
+          "worstRating": "1"
         }
+      }
+    </script>
+
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What services does ELSxGlobal offer?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "ELSxGlobal offers comprehensive business solutions including AI & Machine Learning, Cloud Computing, Cybersecurity, BPO Services, KPO Services, Business Consultancy, and EdTech solutions through our EdgeFeed platform."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is EdgeFeed?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "EdgeFeed is our flagship EdTech division providing AI-powered learning management systems, educational content creation tools, learning analytics, and enterprise training solutions."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How can I contact ELSxGlobal?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "You can contact us at +918770422622 for customer service or +917247558873 for partnerships and corporate inquiries. Email us at support@evolucentsphere.com or hello@edgefeed.space for EdTech services."
+            }
+          }
+        ]
       }
     </script>
   </head>

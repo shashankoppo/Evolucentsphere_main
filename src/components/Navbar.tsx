@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Menu, X, Search, Cpu, Briefcase, Users, Globe, Brain, ChevronDown, KeyRound, 
   Building, Info, Server, FileText, MoreHorizontal, ExternalLink, Shield, 
-  Code, Database, Bot, BarChart, Zap, Network, Settings, Cloud
+  Code, Database, Bot, BarChart, Zap, Network, Settings, Cloud, GraduationCap
 } from 'lucide-react';
 
 import SearchBar from './SearchBar'; 

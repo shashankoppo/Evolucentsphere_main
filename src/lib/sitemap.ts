@@ -222,6 +222,36 @@ export class SitemapGenerator {
     this.crossDomainUrls = [
       // Parent company
       {
+        loc: 'https://edgefeed.space/',
+        lastmod: new Date().toISOString().split('T')[0],
+        changefreq: 'daily',
+        priority: 1.0
+      },
+      {
+        loc: 'https://learn.edgefeed.space/',
+        lastmod: new Date().toISOString().split('T')[0],
+        changefreq: 'daily',
+        priority: 0.9
+      },
+      {
+        loc: 'https://content.edgefeed.space/',
+        lastmod: new Date().toISOString().split('T')[0],
+        changefreq: 'daily',
+        priority: 0.9
+      },
+      {
+        loc: 'https://analytics.edgefeed.space/',
+        lastmod: new Date().toISOString().split('T')[0],
+        changefreq: 'daily',
+        priority: 0.9
+      },
+      {
+        loc: 'https://enterprise.edgefeed.space/',
+        lastmod: new Date().toISOString().split('T')[0],
+        changefreq: 'daily',
+        priority: 0.9
+      },
+      {
         loc: 'https://evolucentsphere.com/',
         lastmod: new Date().toISOString().split('T')[0],
         changefreq: 'daily',

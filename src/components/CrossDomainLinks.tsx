@@ -23,7 +23,7 @@ const crossDomainLinks: CrossDomainLink[] = [
     keywords: [
       'EvolucentSphere', 'Corporate Headquarters', 'Global Operations', 'Enterprise Solutions',
       'Multi-Division Services', 'Business Transformation', 'Technology Leadership',
-      'Innovation Hub', 'Strategic Consulting', 'Digital Excellence'
+      'Innovation Hub', 'Strategic Consulting', 'Digital Excellence', 'EdgeFeed EdTech'
     ]
   },
 
@@ -74,6 +74,18 @@ const crossDomainLinks: CrossDomainLink[] = [
       'Business Consulting', 'Digital Transformation', 'ESG Consulting', 'Lean Six Sigma',
       'Strategy Consulting', 'Management Consulting', 'Process Optimization',
       'Change Management', 'Performance Improvement', 'Operational Excellence'
+    ]
+  },
+  {
+    name: 'EdgeFeed',
+    url: 'https://edgefeed.space',
+    description: 'Revolutionary EdTech platform for AI-powered learning and education',
+    icon: GraduationCap,
+    category: 'division',
+    keywords: [
+      'EdTech Platform', 'Educational Technology', 'AI-Powered Learning', 'Learning Management System',
+      'Educational Content Creation', 'Learning Analytics', 'Corporate Training', 'Online Learning',
+      'Digital Education', 'Adaptive Learning', 'Personalized Learning', 'E-Learning Solutions'
     ]
   },
 

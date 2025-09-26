@@ -114,6 +114,18 @@ export default function Home() {
             <div className="text-xs hidden md:block">
               <InlineDivisionLinks />
             </div>
+            <div className="text-center mt-2 md:mt-0">
+              <a 
+                href="https://edgefeed.space"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs text-purple-200 hover:text-white transition-colors flex items-center justify-center"
+                onClick={() => handleCrossDomainClick('https://edgefeed.space', 'EdgeFeed EdTech')}
+              >
+                🎓 EdgeFeed EdTech Platform
+                <ExternalLink className="inline h-3 w-3 ml-1" />
+              </a>
+            </div>
           </div>
         </div>
       </div>

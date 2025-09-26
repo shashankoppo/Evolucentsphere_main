@@ -23,6 +23,7 @@ import Sitemap from './pages/Sitemap';
 import BlogPostDetail from './pages/BlogPostDetail';
 import CaseStudyDetail from './pages/CaseStudyDetail';
 import InvestorResourceDetail from './pages/InvestorResourceDetail';
+import EdgeFeed from './pages/EdgeFeed';
 
 // Division Pages
 import ITServices from './pages/divisions/ITServices';
@@ -41,6 +42,12 @@ import DigitalExperienceMarketing from './pages/divisions/elsxtech/DigitalExperi
 import IoTEmergingTechnologies from './pages/divisions/elsxtech/IoTEmergingTechnologies';
 import ManagedITServices from './pages/divisions/elsxtech/ManagedITServices';
 import EnterpriseSoftwareSolutions from './pages/divisions/elsxtech/EnterpriseSoftwareSolutions';
+
+// Industry Pages
+import Banking from './pages/Industries/Banking';
+import Healthcare from './pages/Industries/Healthcare';
+import Manufacturing from './pages/Industries/Manufacturing';
+import Retail from './pages/Industries/Retail';
 
 export default function App() {
   return (
@@ -65,6 +72,7 @@ export default function App() {
               <Route path="/terms-of-service" element={<TermsOfService />} />
               <Route path="/cookie-policy" element={<CookiePolicy />} />
               <Route path="/sitemap" element={<Sitemap />} />
+              <Route path="/edgefeed" element={<EdgeFeed />} />
 
               {/* Dynamic Detail Pages */}
               <Route path="/blog/:id" element={<BlogPostDetail />} />
@@ -88,6 +96,12 @@ export default function App() {
               <Route path="/it-services/iot-emerging-tech" element={<IoTEmergingTechnologies />} />
               <Route path="/it-services/managed-it" element={<ManagedITServices />} />
               <Route path="/it-services/enterprise-software" element={<EnterpriseSoftwareSolutions />} />
+
+              {/* Industry Routes */}
+              <Route path="/industries/banking" element={<Banking />} />
+              <Route path="/industries/healthcare" element={<Healthcare />} />
+              <Route path="/industries/manufacturing" element={<Manufacturing />} />
+              <Route path="/industries/retail" element={<Retail />} />
             </Routes>
           </main>
           <Footer />

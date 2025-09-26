@@ -43,7 +43,7 @@ export const config = {
       name: 'EvolucentSphere Pvt. Ltd.',
       url: 'https://evolucentsphere.com',
       description: 'Global leader in business transformation and technology solutions',
-      founded: '2009',
+      founded: '2015',
       headquarters: 'Bangalore, India'
     },
     divisions: {
@@ -670,7 +670,7 @@ export const config = {
 
   // Company Metrics
   metrics: {
-    founded: '2009',
+    founded: '2015',
     employees: '10,000+',
     clients: '500+',
     countries: '30+',

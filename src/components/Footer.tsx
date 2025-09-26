@@ -1,5 +1,5 @@
 import React from 'react';
-import { Brain, Twitter, Linkedin, Facebook, Instagram, ExternalLink, Mail, Phone, MapPin, Youtube, Github } from 'lucide-react';
+import { Brain, Twitter, Linkedin, Facebook, Instagram, ExternalLink, Mail, Phone, MapPin, Youtube, Github, GraduationCap } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { SEOFooterLinks, crossDomainLinks } from './CrossDomainLinks';
 import { config } from '../lib/config';

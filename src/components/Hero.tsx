@@ -3,6 +3,7 @@ import { ArrowRight, Brain, Shield, Cpu, Users, MessageCircle, Phone } from 'luc
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { config } from '../lib/config';
+import { config } from '../lib/config';
 
 export default function Hero() {
   return (
@@ -76,7 +77,7 @@ export default function Hero() {
             {/* Quick WhatsApp Contact */}
             <div className="flex gap-2 sm:gap-3 justify-center">
               <a
-                href={`https://wa.me/${config.app.contact.phone}`}
+                href={`https://wa.me/${config.app.contact.phone.replace(/[^0-9]/g, '')}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group inline-flex items-center justify-center px-4 sm:px-6 py-3 sm:py-4 text-sm sm:text-base font-semibold rounded-md text-white bg-green-500 hover:bg-green-600 transform hover:scale-105 transition-all duration-300"
@@ -86,7 +87,7 @@ export default function Hero() {
                 Support
               </a>
               <a
-                href={`https://wa.me/${config.app.contact.phone2}`}
+                href={`https://wa.me/${config.app.contact.phone2.replace(/[^0-9]/g, '')}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group inline-flex items-center justify-center px-4 sm:px-6 py-3 sm:py-4 text-sm sm:text-base font-semibold rounded-md text-white bg-blue-500 hover:bg-blue-600 transform hover:scale-105 transition-all duration-300"
