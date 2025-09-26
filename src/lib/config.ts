@@ -1,15 +1,17 @@
 export const config = {
   app: {
     name: 'EvolucentSphere Pvt. Ltd.',
-    division: 'ELSxGlobal (Flagship Division)',
+    division: 'ELSxGlobal & EdgeFeed (Flagship Divisions)',
     description: 'Transformative Business Solutions & Technology Services',
     url: 'https://evolucentsphere.com',
     divisionUrl: 'https://elsxglobal.cloud',
+    edgefeedUrl: 'https://edgefeed.space',
     contact: {
       phone: '+91 (724) 755-8873',
       phone2: '+91 (877) 042-2622',
       email: 'contact@evolucentsphere.com',
       supportEmail: 'support@evolucentsphere.com',
+      edgefeedEmail: 'hello@edgefeed.space',
       address: {
         street: '3223/4A Tech Park',
         city: 'Bangalore',
@@ -116,6 +118,33 @@ export const config = {
             name: 'ELSxConsultancy',
             url: 'https://consultancy.elsxglobal.cloud',
             description: 'Strategic consulting and business transformation'
+          }
+        }
+      },
+      edgefeed: {
+        name: 'EdgeFeed (EdTech Flagship)',
+        url: 'https://edgefeed.space',
+        description: 'Revolutionary EdTech platform for modern learning',
+        subdivisions: {
+          learning: {
+            name: 'EdgeFeed Learning',
+            url: 'https://learn.edgefeed.space',
+            description: 'AI-powered learning management system'
+          },
+          content: {
+            name: 'EdgeFeed Content',
+            url: 'https://content.edgefeed.space',
+            description: 'Educational content creation and curation'
+          },
+          analytics: {
+            name: 'EdgeFeed Analytics',
+            url: 'https://analytics.edgefeed.space',
+            description: 'Learning analytics and performance insights'
+          },
+          enterprise: {
+            name: 'EdgeFeed Enterprise',
+            url: 'https://enterprise.edgefeed.space',
+            description: 'Corporate training and development solutions'
           }
         }
       }
@@ -257,6 +286,74 @@ export const config = {
           ],
           pricing: 'Academic/Enterprise',
           industries: ['Academia', 'Pharmaceuticals', 'Market Research', 'Think Tanks']
+        }
+      ]
+    },
+    edtech: {
+      title: 'EdTech Solutions',
+      products: [
+        {
+          name: 'EdgeFeed Learning Platform',
+          description: 'AI-powered learning management system with adaptive learning paths',
+          features: [
+            'Adaptive Learning Algorithms',
+            'Real-time Progress Tracking',
+            'Interactive Content Creation',
+            'Gamification Elements',
+            'Multi-device Synchronization',
+            'Advanced Analytics Dashboard',
+            'Collaborative Learning Tools',
+            'Assessment & Certification'
+          ],
+          benefits: [
+            '85% improvement in learning outcomes',
+            '60% reduction in training time',
+            'Personalized learning experiences'
+          ],
+          pricing: 'Freemium/Enterprise',
+          industries: ['Education', 'Corporate Training', 'Healthcare', 'Technology']
+        },
+        {
+          name: 'EdgeFeed Content Studio',
+          description: 'Professional content creation and curation platform for educators',
+          features: [
+            'AI Content Generation',
+            'Interactive Media Tools',
+            'Curriculum Planning',
+            'Content Library Management',
+            'Collaboration Workspace',
+            'Version Control',
+            'Quality Assurance',
+            'Publishing Tools'
+          ],
+          benefits: [
+            '70% faster content creation',
+            'Enhanced engagement rates',
+            'Standardized quality'
+          ],
+          pricing: 'Professional',
+          industries: ['Education', 'Training Providers', 'Content Creators', 'Publishers']
+        },
+        {
+          name: 'EdgeFeed Enterprise Training',
+          description: 'Corporate training and development solution with advanced analytics',
+          features: [
+            'Skills Gap Analysis',
+            'Personalized Training Paths',
+            'Performance Analytics',
+            'Compliance Tracking',
+            'Integration APIs',
+            'Mobile Learning',
+            'Social Learning Features',
+            'ROI Measurement'
+          ],
+          benefits: [
+            'Improved employee performance',
+            'Reduced training costs',
+            'Better compliance rates'
+          ],
+          pricing: 'Enterprise',
+          industries: ['Corporate', 'Healthcare', 'Finance', 'Manufacturing']
         }
       ]
     },
@@ -534,7 +631,11 @@ export const config = {
       {
         name: 'Retail & E-commerce',
         description: 'Digital commerce and customer experience solutions',
-        services: ['E-commerce Platforms', 'Customer Analytics', 'Inventory Management', 'Marketing'],
+          'Media & Entertainment',
+          'EdTech & Online Learning',
+          'Corporate Training',
+          'Higher Education',
+          'K-12 Education'
         keywords: ['E-commerce', 'Digital Commerce', 'Customer Experience', 'Omnichannel']
       }
     ],
@@ -559,6 +660,14 @@ export const config = {
     emerging: ['IoT', 'Blockchain', 'AR/VR', 'Edge Computing']
   },
 
+  // EdTech Technologies
+  edtech: {
+    learning: ['Adaptive Learning', 'AI Tutoring', 'Personalized Learning', 'Microlearning'],
+    content: ['Interactive Content', 'Video Learning', 'Gamification', 'VR/AR Learning'],
+    analytics: ['Learning Analytics', 'Performance Tracking', 'Predictive Modeling', 'Engagement Metrics'],
+    platforms: ['LMS', 'LCMS', 'Mobile Learning', 'Social Learning']
+  },
+
   // Company Metrics
   metrics: {
     founded: '2009',
@@ -567,6 +676,9 @@ export const config = {
     countries: '30+',
     uptime: '99.9%',
     satisfaction: '98%',
-    growth: '38% YoY'
+    growth: '38% YoY',
+    learners: '1M+',
+    courses: '50K+',
+    institutions: '2K+'
   }
 };
