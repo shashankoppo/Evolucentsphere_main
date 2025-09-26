@@ -3,7 +3,6 @@ import { ArrowRight, Brain, Shield, Cpu, Users, MessageCircle, Phone } from 'luc
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { config } from '../lib/config';
-import { config } from '../lib/config';
 
 export default function Hero() {
   return (
