@@ -2,12 +2,6 @@
 User-agent: *
 Allow: /
 
-# Block specific paths
-Disallow: /api/
-Disallow: /admin/
-Disallow: /private/
-Disallow: /_next/
-Disallow: /node_modules/
 
 # Sitemap locations
 Sitemap: https://elsxglobal.cloud/sitemap.xml
