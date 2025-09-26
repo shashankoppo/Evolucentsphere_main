@@ -17,8 +17,8 @@ export const config = {
         city: 'Bangalore',
         state: 'Karnataka',
         zip: '560001',
-        country: 'India'
-      }
+        country: 'India',
+      },
     },
     social: {
       twitter: 'https://twitter.com/evolucentsphere',
@@ -26,25 +26,24 @@ export const config = {
       facebook: 'https://facebook.com/evolucentsphere',
       instagram: 'https://instagram.com/evolucentsphere',
       youtube: 'https://youtube.com/@evolucentsphere',
-      github: 'https://github.com/evolucentsphere'
+      github: 'https://github.com/evolucentsphere',
     },
     locations: [
       'Jabalpur, India',
       'Indore, India',
       'Pune, India',
       'Eindhoven, Netherlands',
-      'Chicago, United States'
-    ]
+      'Chicago, United States',
+    ],
   },
 
-  // Enhanced EvolucentSphere Ecosystem Structure
   ecosystem: {
     parent: {
       name: 'EvolucentSphere Pvt. Ltd.',
       url: 'https://evolucentsphere.com',
       description: 'Global leader in business transformation and technology solutions',
       founded: '2015',
-      headquarters: 'Bangalore, India'
+      headquarters: 'Bangalore, India',
     },
     divisions: {
       elsxglobal: {
@@ -60,66 +59,66 @@ export const config = {
               {
                 name: 'Cloud & Infrastructure',
                 url: 'https://cloud.elsxglobal.cloud',
-                path: '/it-services/cloud-infrastructure'
+                path: '/it-services/cloud-infrastructure',
               },
               {
                 name: 'Cybersecurity Solutions',
                 url: 'https://security.elsxglobal.cloud',
-                path: '/it-services/cybersecurity'
+                path: '/it-services/cybersecurity',
               },
               {
                 name: 'Digital Transformation',
                 url: 'https://digital.elsxglobal.cloud',
-                path: '/it-services/digital-transformation'
+                path: '/it-services/digital-transformation',
               },
               {
                 name: 'Software Development',
                 url: 'https://software.elsxglobal.cloud',
-                path: '/it-services/software-development'
+                path: '/it-services/software-development',
               },
               {
                 name: 'Data, AI & Analytics',
                 url: 'https://ai.elsxglobal.cloud',
-                path: '/it-services/ai-analytics'
+                path: '/it-services/ai-analytics',
               },
               {
                 name: 'Digital Marketing',
                 url: 'https://digitalmarketing.elsxglobal.cloud',
-                path: '/it-services/digital-marketing'
+                path: '/it-services/digital-marketing',
               },
               {
                 name: 'IoT & Emerging Tech',
                 url: 'https://emergingtech.elsxglobal.cloud',
-                path: '/it-services/iot-emerging-tech'
+                path: '/it-services/iot-emerging-tech',
               },
               {
                 name: 'Managed IT Services',
                 url: 'https://managedit.elsxglobal.cloud',
-                path: '/it-services/managed-it'
+                path: '/it-services/managed-it',
               },
               {
                 name: 'Enterprise Software',
                 url: 'https://enterprise.elsxglobal.cloud',
-                path: '/it-services/enterprise-software'
-              }
-            ]
+                path: '/it-services/enterprise-software',
+              },
+            ],
           },
           bpo: {
             name: 'ELSxBPO',
             url: 'https://bpo.elsxglobal.cloud',
-            description: 'Business process outsourcing and customer support'
+            description: 'Business process outsourcing and customer support',
           },
           kpo: {
             name: 'ELSxKPO',
             url: 'https://kpo.elsxglobal.cloud',
-            description: 'Knowledge process outsourcing and analytics'
+            description: 'Knowledge process outsourcing and analytics',
           },
           consultancy: {
             name: 'ELSxConsultancy',
             url: 'https://consultancy.elsxglobal.cloud',
-            description: 'Strategic consulting and business transformation'
-          }
-        }
+            description: 'Strategic consulting and business transformation',
+          },
+        },
       },
       edgefeed: {
         name: 'EdgeFeed (EdTech Flagship)',
@@ -129,29 +128,28 @@ export const config = {
           learning: {
             name: 'EdgeFeed Learning',
             url: 'https://learn.edgefeed.space',
-            description: 'AI-powered learning management system'
+            description: 'AI-powered learning management system',
           },
           content: {
             name: 'EdgeFeed Content',
             url: 'https://content.edgefeed.space',
-            description: 'Educational content creation and curation'
+            description: 'Educational content creation and curation',
           },
           analytics: {
             name: 'EdgeFeed Analytics',
             url: 'https://analytics.edgefeed.space',
-            description: 'Learning analytics and performance insights'
+            description: 'Learning analytics and performance insights',
           },
           enterprise: {
             name: 'EdgeFeed Enterprise',
             url: 'https://enterprise.edgefeed.space',
-            description: 'Corporate training and development solutions'
-          }
-        }
-      }
-    }
+            description: 'Corporate training and development solutions',
+          },
+        },
+      },
+    },
   },
 
-  // Enhanced Products Configuration
   products: {
     bpo: {
       title: 'BPO Solutions',
@@ -167,15 +165,15 @@ export const config = {
             'Predictive Routing',
             'Sentiment Analysis',
             'Performance Analytics',
-            'Custom Reporting'
+            'Custom Reporting',
           ],
           benefits: [
             '45% reduction in response time',
             '98% customer satisfaction rate',
-            '30% cost reduction'
+            '30% cost reduction',
           ],
           pricing: 'Enterprise',
-          industries: ['Banking', 'Healthcare', 'E-commerce', 'Technology']
+          industries: ['Banking', 'Healthcare', 'E-commerce', 'Technology'],
         },
         {
           name: 'BackOfficePro Suite',
@@ -188,15 +186,15 @@ export const config = {
             'Compliance Management',
             'Resource Allocation',
             'Task Prioritization',
-            'Integration APIs'
+            'Integration APIs',
           ],
           benefits: [
             '60% faster processing time',
             '40% reduction in errors',
-            'Improved compliance'
+            'Improved compliance',
           ],
           pricing: 'Scalable',
-          industries: ['Manufacturing', 'Finance', 'Insurance', 'Government']
+          industries: ['Manufacturing', 'Finance', 'Insurance', 'Government'],
         },
         {
           name: 'DataEntryPro AI',
@@ -209,17 +207,17 @@ export const config = {
             'Template Management',
             'Data Extraction',
             'Quality Assurance',
-            'Audit Trails'
+            'Audit Trails',
           ],
           benefits: [
             '99.9% accuracy rate',
             '75% cost reduction',
-            'Real-time processing'
+            'Real-time processing',
           ],
           pricing: 'Volume-based',
-          industries: ['Healthcare', 'Legal', 'Real Estate', 'Education']
-        }
-      ]
+          industries: ['Healthcare', 'Legal', 'Real Estate', 'Education'],
+        },
+      ],
     },
     kpo: {
       title: 'KPO Products',
@@ -235,15 +233,15 @@ export const config = {
             'Data Visualization',
             'Trend Analysis',
             'Competitive Intelligence',
-            'Custom Dashboards'
+            'Custom Dashboards',
           ],
           benefits: [
             'Data-driven decisions',
             'Strategic insights',
-            'Market advantage'
+            'Market advantage',
           ],
           pricing: 'Professional',
-          industries: ['Investment Banking', 'Consulting', 'Private Equity', 'Pharmaceuticals']
+          industries: ['Investment Banking', 'Consulting', 'Private Equity', 'Pharmaceuticals'],
         },
         {
           name: 'LegalPro Suite',
@@ -256,15 +254,15 @@ export const config = {
             'Document Generation',
             'E-Discovery Tools',
             'Risk Assessment',
-            'Legal Analytics'
+            'Legal Analytics',
           ],
           benefits: [
             '50% faster research',
             'Enhanced compliance',
-            'Risk mitigation'
+            'Risk mitigation',
           ],
           pricing: 'Enterprise',
-          industries: ['Law Firms', 'Corporate Legal', 'Government', 'Insurance']
+          industries: ['Law Firms', 'Corporate Legal', 'Government', 'Insurance'],
         },
         {
           name: 'ResearchPro AI',
@@ -277,17 +275,17 @@ export const config = {
             'Pattern Recognition',
             'Hypothesis Testing',
             'Citation Management',
-            'Collaboration Tools'
+            'Collaboration Tools',
           ],
           benefits: [
             'Accelerated research',
             'Higher accuracy',
-            'Comprehensive analysis'
+            'Comprehensive analysis',
           ],
           pricing: 'Academic/Enterprise',
-          industries: ['Academia', 'Pharmaceuticals', 'Market Research', 'Think Tanks']
-        }
-      ]
+          industries: ['Academia', 'Pharmaceuticals', 'Market Research', 'Think Tanks'],
+        },
+      ],
     },
     edtech: {
       title: 'EdTech Solutions',
@@ -303,15 +301,15 @@ export const config = {
             'Multi-device Synchronization',
             'Advanced Analytics Dashboard',
             'Collaborative Learning Tools',
-            'Assessment & Certification'
+            'Assessment & Certification',
           ],
           benefits: [
             '85% improvement in learning outcomes',
             '60% reduction in training time',
-            'Personalized learning experiences'
+            'Personalized learning experiences',
           ],
           pricing: 'Freemium/Enterprise',
-          industries: ['Education', 'Corporate Training', 'Healthcare', 'Technology']
+          industries: ['Education', 'Corporate Training', 'Healthcare', 'Technology'],
         },
         {
           name: 'EdgeFeed Content Studio',
@@ -324,15 +322,15 @@ export const config = {
             'Collaboration Workspace',
             'Version Control',
             'Quality Assurance',
-            'Publishing Tools'
+            'Publishing Tools',
           ],
           benefits: [
             '70% faster content creation',
             'Enhanced engagement rates',
-            'Standardized quality'
+            'Standardized quality',
           ],
           pricing: 'Professional',
-          industries: ['Education', 'Training Providers', 'Content Creators', 'Publishers']
+          industries: ['Education', 'Training Providers', 'Content Creators', 'Publishers'],
         },
         {
           name: 'EdgeFeed Enterprise Training',
@@ -345,17 +343,17 @@ export const config = {
             'Integration APIs',
             'Mobile Learning',
             'Social Learning Features',
-            'ROI Measurement'
+            'ROI Measurement',
           ],
           benefits: [
             'Improved employee performance',
             'Reduced training costs',
-            'Better compliance rates'
+            'Better compliance rates',
           ],
           pricing: 'Enterprise',
-          industries: ['Corporate', 'Healthcare', 'Finance', 'Manufacturing']
-        }
-      ]
+          industries: ['Corporate', 'Healthcare', 'Finance', 'Manufacturing'],
+        },
+      ],
     },
     it: {
       title: 'IT Products',
@@ -371,15 +369,15 @@ export const config = {
             'Performance Monitoring',
             'Automated Scaling',
             'Disaster Recovery',
-            'Cloud Migration Tools'
+            'Cloud Migration Tools',
           ],
           benefits: [
             '40% cost savings',
             '99.99% uptime',
-            'Enhanced security'
+            'Enhanced security',
           ],
           pricing: 'Enterprise',
-          industries: ['Technology', 'Finance', 'Healthcare', 'Manufacturing']
+          industries: ['Technology', 'Finance', 'Healthcare', 'Manufacturing'],
         },
         {
           name: 'SecurePro Shield',
@@ -392,15 +390,15 @@ export const config = {
             'Incident Response',
             'Vulnerability Assessment',
             'Access Control',
-            'Encryption Management'
+            'Encryption Management',
           ],
           benefits: [
             'Proactive protection',
             'Regulatory compliance',
-            'Reduced risk'
+            'Reduced risk',
           ],
           pricing: 'Tiered',
-          industries: ['Banking', 'Government', 'Healthcare', 'Critical Infrastructure']
+          industries: ['Banking', 'Government', 'Healthcare', 'Critical Infrastructure'],
         },
         {
           name: 'DevPro Accelerate',
@@ -413,21 +411,20 @@ export const config = {
             'Container Management',
             'Infrastructure as Code',
             'Release Management',
-            'Testing Automation'
+            'Testing Automation',
           ],
           benefits: [
             '70% faster deployment',
             'Improved quality',
-            'Reduced errors'
+            'Reduced errors',
           ],
           pricing: 'Professional',
-          industries: ['Software Development', 'Technology', 'Startups', 'Enterprise']
-        }
-      ]
-    }
+          industries: ['Software Development', 'Technology', 'Startups', 'Enterprise'],
+        },
+      ],
+    },
   },
 
-  // Enhanced Services Configuration
   services: {
     bpo: {
       title: 'Business Process Outsourcing',
@@ -442,8 +439,8 @@ export const config = {
             'Quality Monitoring & Training',
             'Customer Feedback Analysis',
             'Performance Optimization',
-            'Customer Journey Mapping'
-          ]
+            'Customer Journey Mapping',
+          ],
         },
         {
           name: 'Back Office Operations',
@@ -455,8 +452,8 @@ export const config = {
             'Claims Processing',
             'Records Management',
             'Quality Assurance',
-            'Process Documentation'
-          ]
+            'Process Documentation',
+          ],
         },
         {
           name: 'Financial Operations',
@@ -468,10 +465,10 @@ export const config = {
             'Tax Preparation',
             'Audit Support',
             'Financial Analysis',
-            'Budget Management'
-          ]
-        }
-      ]
+            'Budget Management',
+          ],
+        },
+      ],
     },
     kpo: {
       title: 'Knowledge Process Outsourcing',
@@ -486,8 +483,8 @@ export const config = {
             'Financial Modeling',
             'Equity Research',
             'Credit Analysis',
-            'Valuation Services'
-          ]
+            'Valuation Services',
+          ],
         },
         {
           name: 'Legal Services',
@@ -499,8 +496,8 @@ export const config = {
             'Legal Documentation',
             'Patent Research',
             'Regulatory Analysis',
-            'Legal Process Optimization'
-          ]
+            'Legal Process Optimization',
+          ],
         },
         {
           name: 'Research & Analytics',
@@ -512,10 +509,10 @@ export const config = {
             'Statistical Analysis',
             'Predictive Modeling',
             'Research Report Generation',
-            'Industry Analysis'
-          ]
-        }
-      ]
+            'Industry Analysis',
+          ],
+        },
+      ],
     },
     it: {
       title: 'IT Services',
@@ -530,8 +527,8 @@ export const config = {
             'API Development & Integration',
             'Legacy System Modernization',
             'Quality Assurance',
-            'Software Maintenance'
-          ]
+            'Software Maintenance',
+          ],
         },
         {
           name: 'Cloud Services',
@@ -543,8 +540,8 @@ export const config = {
             'Cloud Cost Optimization',
             'Cloud Native Development',
             'Disaster Recovery',
-            'Performance Monitoring'
-          ]
+            'Performance Monitoring',
+          ],
         },
         {
           name: 'Cybersecurity',
@@ -556,10 +553,10 @@ export const config = {
             'Identity & Access Management',
             'Network Security',
             'Data Protection',
-            'Security Training'
-          ]
-        }
-      ]
+            'Security Training',
+          ],
+        },
+      ],
     },
     consultancy: {
       title: 'Business Consultancy',
@@ -574,8 +571,8 @@ export const config = {
             'Digital Maturity Assessment',
             'Innovation Strategy',
             'Digital Workforce Planning',
-            'Technology Selection'
-          ]
+            'Technology Selection',
+          ],
         },
         {
           name: 'Technology Consulting',
@@ -587,8 +584,8 @@ export const config = {
             'Infrastructure Planning',
             'Performance Optimization',
             'Vendor Selection',
-            'Cost Optimization'
-          ]
+            'Cost Optimization',
+          ],
         },
         {
           name: 'Business Strategy',
@@ -600,44 +597,66 @@ export const config = {
             'Risk Management',
             'Performance Improvement',
             'Organization Design',
-            'Strategic Planning'
-          ]
-        }
-      ]
-    }
+            'Strategic Planning',
+          ],
+        },
+      ],
+    },
   },
 
-  // Industry Focus Areas
   industries: {
     primary: [
       {
         name: 'Banking & Financial Services',
         description: 'Comprehensive solutions for financial institutions',
-        services: ['Digital Banking', 'Risk Management', 'Compliance', 'Customer Analytics'],
-        keywords: ['Fintech', 'Digital Banking', 'Risk Management', 'Regulatory Compliance']
+        services: [
+          'Digital Banking',
+          'Risk Management',
+          'Compliance',
+          'Customer Analytics',
+        ],
+        keywords: [
+          'Fintech',
+          'Digital Banking',
+          'Risk Management',
+          'Regulatory Compliance',
+        ],
       },
       {
         name: 'Healthcare & Life Sciences',
         description: 'Technology solutions for healthcare providers',
-        services: ['EHR Systems', 'Telemedicine', 'Healthcare Analytics', 'Compliance'],
-        keywords: ['Healthcare IT', 'Medical Technology', 'Patient Care', 'HIPAA Compliance']
+        services: [
+          'EHR Systems',
+          'Telemedicine',
+          'Healthcare Analytics',
+          'Compliance',
+        ],
+        keywords: ['Healthcare IT', 'Medical Technology', 'Patient Care', 'HIPAA Compliance'],
       },
       {
         name: 'Manufacturing & Industrial',
         description: 'Industry 4.0 and smart manufacturing solutions',
-        services: ['IoT Integration', 'Predictive Maintenance', 'Supply Chain', 'Quality Control'],
-        keywords: ['Industry 4.0', 'Smart Manufacturing', 'IoT', 'Automation']
+        services: [
+          'IoT Integration',
+          'Predictive Maintenance',
+          'Supply Chain',
+          'Quality Control',
+        ],
+        keywords: ['Industry 4.0', 'Smart Manufacturing', 'IoT', 'Automation'],
       },
       {
         name: 'Retail & E-commerce',
         description: 'Digital commerce and customer experience solutions',
+        // New array for sub-industries
+        subIndustries: [
           'Media & Entertainment',
           'EdTech & Online Learning',
           'Corporate Training',
           'Higher Education',
-          'K-12 Education'
-        keywords: ['E-commerce', 'Digital Commerce', 'Customer Experience', 'Omnichannel']
-      }
+          'K-12 Education',
+        ],
+        keywords: ['E-commerce', 'Digital Commerce', 'Customer Experience', 'Omnichannel'],
+      },
     ],
     secondary: [
       'Insurance',
@@ -647,28 +666,25 @@ export const config = {
       'Education',
       'Real Estate',
       'Telecommunications',
-      'Media & Entertainment'
-    ]
+      'Media & Entertainment',
+    ],
   },
 
-  // Technology Stack
   technologies: {
     cloud: ['AWS', 'Azure', 'Google Cloud', 'Multi-Cloud'],
     development: ['React', 'Node.js', 'Python', 'Java', '.NET'],
     data: ['Big Data', 'Analytics', 'AI/ML', 'Business Intelligence'],
     security: ['Cybersecurity', 'Identity Management', 'Compliance', 'Risk Management'],
-    emerging: ['IoT', 'Blockchain', 'AR/VR', 'Edge Computing']
+    emerging: ['IoT', 'Blockchain', 'AR/VR', 'Edge Computing'],
   },
 
-  // EdTech Technologies
   edtech: {
     learning: ['Adaptive Learning', 'AI Tutoring', 'Personalized Learning', 'Microlearning'],
     content: ['Interactive Content', 'Video Learning', 'Gamification', 'VR/AR Learning'],
     analytics: ['Learning Analytics', 'Performance Tracking', 'Predictive Modeling', 'Engagement Metrics'],
-    platforms: ['LMS', 'LCMS', 'Mobile Learning', 'Social Learning']
+    platforms: ['LMS', 'LCMS', 'Mobile Learning', 'Social Learning'],
   },
 
-  // Company Metrics
   metrics: {
     founded: '2015',
     employees: '10,000+',
@@ -679,6 +695,6 @@ export const config = {
     growth: '38% YoY',
     learners: '1M+',
     courses: '50K+',
-    institutions: '2K+'
-  }
+    institutions: '2K+',
+  },
 };
