@@ -1,5 +1,9 @@
 import React from 'react';
-import { ExternalLink, Building, Users, Brain, Briefcase, Globe, Cloud, Shield, Zap, Code, Database, BarChart, Network, Settings, Bot } from 'lucide-react';
+import { 
+  ExternalLink, Building, Users, Brain, Briefcase, Globe, Cloud, Shield, 
+  Zap, Code, Database, BarChart, Network, Settings, Bot,
+  GraduationCap  // Import the graduation cap icon
+} from 'lucide-react';
 
 interface CrossDomainLink {
   name: string;
@@ -11,7 +15,6 @@ interface CrossDomainLink {
   parentDivision?: string;
 }
 
-// Comprehensive EvolucentSphere ecosystem links
 const crossDomainLinks: CrossDomainLink[] = [
   // Parent Company
   {
@@ -80,7 +83,7 @@ const crossDomainLinks: CrossDomainLink[] = [
     name: 'EdgeFeed',
     url: 'https://edgefeed.space',
     description: 'Revolutionary EdTech platform for AI-powered learning and education',
-    icon: GraduationCap,
+    icon: GraduationCap,  // Use the imported GraduationCap
     category: 'division',
     keywords: [
       'EdTech Platform', 'Educational Technology', 'AI-Powered Learning', 'Learning Management System',
@@ -218,27 +221,24 @@ interface CrossDomainLinksProps {
   limit?: number;
 }
 
-export default function CrossDomainLinks({ 
-  category = 'all', 
+export default function CrossDomainLinks({
+  category = 'all',
   parentDivision,
-  layout = 'grid', 
+  layout = 'grid',
   showKeywords = false,
   className = '',
   limit
 }: CrossDomainLinksProps) {
   let filteredLinks = crossDomainLinks;
 
-  // Filter by category
   if (category !== 'all') {
     filteredLinks = filteredLinks.filter(link => link.category === category);
   }
 
-  // Filter by parent division for subdivisions
   if (parentDivision) {
     filteredLinks = filteredLinks.filter(link => link.parentDivision === parentDivision);
   }
 
-  // Apply limit if specified
   if (limit) {
     filteredLinks = filteredLinks.slice(0, limit);
   }
@@ -267,11 +267,16 @@ export default function CrossDomainLinks({
           aria-label={`Visit ${link.name} - ${link.description}`}
         >
           <div className={`${layout === 'grid' ? 'text-center' : 'flex-shrink-0'}`}>
-            <div className={`${layout === 'inline' ? 'h-5 w-5' : 'h-10 w-10'} ${layout === 'grid' ? 'mx-auto mb-4' : ''} bg-purple-100 rounded-lg flex items-center justify-center text-purple-600 group-hover:bg-purple-200 transition-colors`}>
+            <div className={`${
+                layout === 'inline' ? 'h-5 w-5' : 'h-10 w-10'
+              } ${
+                layout === 'grid' ? 'mx-auto mb-4' : ''
+              } bg-purple-100 rounded-lg flex items-center justify-center text-purple-600 group-hover:bg-purple-200 transition-colors`}
+            >
               <link.icon className={`${layout === 'inline' ? 'h-3 w-3' : 'h-6 w-6'}`} />
             </div>
           </div>
-          
+
           <div className={`${layout === 'grid' ? 'text-center' : 'flex-grow'}`}>
             <div className="flex items-center justify-between">
               <h3 className={`${layout === 'inline' ? 'text-sm' : 'text-lg'} font-bold text-gray-900 group-hover:text-purple-600 transition-colors`}>
@@ -279,11 +284,11 @@ export default function CrossDomainLinks({
               </h3>
               <ExternalLink className={`${layout === 'inline' ? 'h-3 w-3' : 'h-4 w-4'} text-gray-400 group-hover:text-purple-600 transition-colors ${layout === 'grid' ? 'ml-2' : ''}`} />
             </div>
-            
+
             {layout !== 'inline' && (
               <p className="text-gray-600 mt-2">{link.description}</p>
             )}
-            
+
             {showKeywords && layout === 'grid' && (
               <div className="mt-3 flex flex-wrap gap-1 justify-center">
                 {link.keywords.slice(0, 4).map((keyword, idx) => (
@@ -300,7 +305,6 @@ export default function CrossDomainLinks({
   );
 }
 
-// Specialized components for different use cases
 export const DivisionLinks = (props: Omit<CrossDomainLinksProps, 'category'>) => (
   <CrossDomainLinks {...props} category="division" />
 );
@@ -321,7 +325,6 @@ export const ELSxTechSubdivisions = () => (
   <CrossDomainLinks category="subdivision" parentDivision="ELSxTech" layout="grid" showKeywords={true} />
 );
 
-// SEO-optimized footer component with comprehensive cross-domain links
 export const SEOFooterLinks = () => (
   <div className="bg-gray-50 py-12">
     <div className="container mx-auto px-6">
@@ -334,25 +337,22 @@ export const SEOFooterLinks = () => (
           outsourcing, and strategic consulting divisions.
         </p>
       </div>
-      
-      {/* Parent Company */}
+
       <div className="mb-12">
         <h3 className="text-2xl font-bold text-gray-900 text-center mb-6">Corporate Headquarters</h3>
         <ParentCompanyLink layout="grid" showKeywords={true} />
       </div>
 
-      {/* Main Divisions */}
       <div className="mb-12">
         <h3 className="text-2xl font-bold text-gray-900 text-center mb-6">Business Divisions</h3>
         <DivisionLinks layout="grid" showKeywords={true} />
       </div>
 
-      {/* ELSxTech Subdivisions */}
       <div className="mb-8">
         <h3 className="text-2xl font-bold text-gray-900 text-center mb-6">ELSxTech Specialized Services</h3>
         <ELSxTechSubdivisions />
       </div>
-      
+
       <div className="text-center border-t pt-8">
         <p className="text-gray-600 text-lg">
           <strong>EvolucentSphere Pvt. Ltd.</strong> - Delivering comprehensive business solutions 
@@ -369,5 +369,4 @@ export const SEOFooterLinks = () => (
   </div>
 );
 
-// Export the links data for use in other components
 export { crossDomainLinks };
