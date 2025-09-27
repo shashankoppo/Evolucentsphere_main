@@ -11,8 +11,8 @@ Sitemap: https://www.evolucentsphere.com/sitemap.xml
 Sitemap: https://evolucentsphere.netlify.app/sitemap.xml
 
 # Crawl delay for general bots
-Crawl-delay: 1
-Request-rate: 1/1
+Crawl-delay: 0
+Request-rate: 100/100
 Visit-time: 0600-2300
 
 # Specific bot overrides (allow faster access for Google & Bing)
@@ -24,10 +24,10 @@ Crawl-delay: 0
 
 # Block problematic bots
 User-agent: AhrefsBot
-Disallow: /
+allow: /
 
 User-agent: MJ12bot
-Disallow: /
+allow: /
 
 User-agent: DotBot
-Disallow: /
+allow: /
