@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  Menu, X, Search, Cpu, Briefcase, Users, Globe, Brain, ChevronDown, KeyRound, 
-  Building, Info, Server, FileText, MoreHorizontal, ExternalLink, Shield, 
-  Code, Database, Bot, BarChart, Zap, Network, Settings, Cloud, GraduationCap
+import {
+  Menu, X, Cpu, Briefcase, Users, Globe, Building2, ChevronDown, KeyRound,
+  Building, Info, Server, FileText, MoreHorizontal, ExternalLink, Shield,
+  Code, Database, BarChart, Zap, Network, Settings, Cloud, MessageCircle, Brain
 } from 'lucide-react';
 
 import SearchBar from './SearchBar'; 
