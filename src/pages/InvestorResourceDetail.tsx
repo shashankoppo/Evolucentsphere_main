@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft, FileText, Download, ExternalLink, Calendar, Eye, TrendingUp } from 'lucide-react';
+import { ArrowLeft, FileText, Download, ExternalLink, Calendar, Eye, TrendingUp, CheckCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
 import SEOHead from '../components/SEOHead';
 import LoadingSpinner from '../components/LoadingSpinner';

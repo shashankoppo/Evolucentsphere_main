@@ -344,7 +344,7 @@ export default function ITServices() {
               </button>
               <div className="flex gap-2">
                 <a
-                  href={`https://wa.me/${whatsappNumber}`}
+                  href="https://wa.me/1234567890"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-green-500 text-white px-6 py-4 rounded-lg hover:bg-green-600 transition-colors font-medium flex items-center"
@@ -353,7 +353,7 @@ export default function ITServices() {
                   Support
                 </a>
                 <a
-                  href={`https://wa.me/${whatsappNumber2}`}
+                  href="https://wa.me/0987654321"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-blue-500 text-white px-6 py-4 rounded-lg hover:bg-blue-600 transition-colors font-medium flex items-center"
