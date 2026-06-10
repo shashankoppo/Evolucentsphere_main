@@ -134,7 +134,7 @@ export default function Technologies() {
       />
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-b from-purple-50 to-white">
+      <section className="py-20 bg-gradient-to-b from-blue-50 to-white">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
@@ -153,7 +153,7 @@ export default function Technologies() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {technologies.map((tech, index) => (
               <div key={index} className="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-shadow">
-                <tech.icon className="h-12 w-12 text-purple-600 mb-6" />
+                <tech.icon className="h-12 w-12 text-blue-600 mb-6" />
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">{tech.title}</h3>
                 <p className="text-gray-600 mb-6">{tech.description}</p>
                 
@@ -162,7 +162,7 @@ export default function Technologies() {
                   <ul className="space-y-3">
                     {tech.features.map((feature, idx) => (
                       <li key={idx} className="flex items-center text-gray-700">
-                        <span className="h-2 w-2 bg-purple-600 rounded-full mr-2"></span>
+                        <span className="h-2 w-2 bg-blue-600 rounded-full mr-2"></span>
                         {feature}
                       </li>
                     ))}
@@ -215,14 +215,14 @@ export default function Technologies() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 bg-gradient-to-r from-purple-600 to-blue-600">
+      <section className="py-20 bg-gradient-to-r from-blue-600 to-blue-600">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center text-white">
             <h2 className="text-3xl font-bold mb-6">Ready to Transform Your Business?</h2>
             <p className="text-xl mb-8">
               Discover how our AI-powered solutions can drive your business forward
             </p>
-            <button className="bg-white text-purple-600 px-8 py-3 rounded-md hover:bg-purple-50 transition-colors font-medium">
+            <button className="bg-white text-blue-600 px-8 py-3 rounded-md hover:bg-blue-50 transition-colors font-medium">
               Schedule a Consultation
             </button>
           </div>

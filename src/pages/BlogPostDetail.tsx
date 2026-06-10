@@ -67,7 +67,7 @@ export default function BlogPostDetail() {
             </p>
             <Link
               to="/blog"
-              className="inline-flex items-center bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700 transition-colors"
+              className="inline-flex items-center bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
             >
               <ArrowLeft className="h-5 w-5 mr-2" />
               Back to Blog
@@ -114,14 +114,14 @@ export default function BlogPostDetail() {
             >
               <Link
                 to="/blog"
-                className="inline-flex items-center text-purple-600 hover:text-purple-700 mb-8 group"
+                className="inline-flex items-center text-blue-600 hover:text-blue-700 mb-8 group"
               >
                 <ArrowLeft className="h-4 w-4 mr-2 group-hover:-translate-x-1 transition-transform" />
                 Back to Blog
               </Link>
 
               <div className="mb-8">
-                <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-purple-100 text-purple-800 mb-4">
+                <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800 mb-4">
                   <Tag className="h-4 w-4 mr-1" />
                   Technology Insights
                 </span>
@@ -231,7 +231,7 @@ export default function BlogPostDetail() {
             <div className="text-center">
               <Link
                 to="/blog"
-                className="inline-flex items-center bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700 transition-colors"
+                className="inline-flex items-center bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
               >
                 View All Articles
                 <ArrowLeft className="h-5 w-5 ml-2 rotate-180" />

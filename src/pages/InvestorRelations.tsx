@@ -42,7 +42,7 @@ export default function InvestorRelations() {
       />
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-b from-purple-50 to-white">
+      <section className="py-20 bg-gradient-to-b from-blue-50 to-white">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
@@ -63,21 +63,21 @@ export default function InvestorRelations() {
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white p-8 rounded-lg shadow-lg text-center">
-              <TrendingUp className="h-12 w-12 text-purple-600 mx-auto mb-4" />
+              <TrendingUp className="h-12 w-12 text-blue-600 mx-auto mb-4" />
               <h3 className="text-2xl font-bold text-gray-900 mb-2">Revenue Growth</h3>
-              <p className="text-4xl font-bold text-purple-600">38%</p>
+              <p className="text-4xl font-bold text-blue-600">38%</p>
               <p className="text-gray-600 mt-2">Year over Year</p>
             </div>
             <div className="bg-white p-8 rounded-lg shadow-lg text-center">
-              <FileText className="h-12 w-12 text-purple-600 mx-auto mb-4" />
+              <FileText className="h-12 w-12 text-blue-600 mx-auto mb-4" />
               <h3 className="text-2xl font-bold text-gray-900 mb-2">Market Share</h3>
-              <p className="text-4xl font-bold text-purple-600">15%</p>
+              <p className="text-4xl font-bold text-blue-600">15%</p>
               <p className="text-gray-600 mt-2">Global Market Share</p>
             </div>
             <div className="bg-white p-8 rounded-lg shadow-lg text-center">
-              <Download className="h-12 w-12 text-purple-600 mx-auto mb-4" />
+              <Download className="h-12 w-12 text-blue-600 mx-auto mb-4" />
               <h3 className="text-2xl font-bold text-gray-900 mb-2">Client Growth</h3>
-              <p className="text-4xl font-bold text-purple-600">45%</p>
+              <p className="text-4xl font-bold text-blue-600">45%</p>
               <p className="text-gray-600 mt-2">New Client Acquisition</p>
             </div>
           </div>
@@ -92,7 +92,7 @@ export default function InvestorRelations() {
           </h2>
           {loading ? (
             <div className="text-center">
-              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-600 mx-auto"></div>
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
               <p className="mt-4 text-gray-600">Loading resources...</p>
             </div>
           ) : (
@@ -104,7 +104,7 @@ export default function InvestorRelations() {
                   <div className="flex space-x-4">
                     <Link
                       to={`/investor-relations/${resource.id}`}
-                      className="inline-flex items-center text-purple-600 hover:text-purple-700"
+                      className="inline-flex items-center text-blue-600 hover:text-blue-700"
                     >
                       View Details
                       <FileText className="ml-2 h-4 w-4" />
@@ -113,7 +113,7 @@ export default function InvestorRelations() {
                       href={resource.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center text-purple-600 hover:text-purple-700"
+                      className="inline-flex items-center text-blue-600 hover:text-blue-700"
                     >
                       Direct Access
                       <ExternalLink className="ml-2 h-4 w-4" />

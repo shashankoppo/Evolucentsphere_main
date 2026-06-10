@@ -91,7 +91,7 @@ export default function Contact() {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-purple-500 focus:border-purple-500"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
                   />
                 </div>
 
@@ -106,7 +106,7 @@ export default function Contact() {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-purple-500 focus:border-purple-500"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
                   />
                 </div>
 
@@ -121,7 +121,7 @@ export default function Contact() {
                     value={formData.company}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-purple-500 focus:border-purple-500"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
                   />
                 </div>
 
@@ -136,14 +136,14 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                     rows={4}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-purple-500 focus:border-purple-500"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
                   />
                 </div>
 
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-purple-600 text-white px-6 py-3 rounded-md hover:bg-purple-700 transition-colors flex items-center justify-center"
+                  className="w-full bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition-colors flex items-center justify-center"
                 >
                   {isSubmitting ? (
                     <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white" />
@@ -175,7 +175,7 @@ export default function Contact() {
               
               <div className="space-y-6">
                 <div className="flex items-start">
-                  <Phone className="h-6 w-6 text-purple-600 mr-4" />
+                  <Phone className="h-6 w-6 text-blue-600 mr-4" />
                   <div>
                     <h4 className="font-medium text-gray-900">Phone</h4>
                     <div className="text-gray-600">
@@ -186,7 +186,7 @@ export default function Contact() {
                 </div>
 
                 <div className="flex items-start">
-                  <Mail className="h-6 w-6 text-purple-600 mr-4" />
+                  <Mail className="h-6 w-6 text-blue-600 mr-4" />
                   <div>
                     <h4 className="font-medium text-gray-900">Email</h4>
                     <p className="text-gray-600">contact@evolucentsphere.com</p>
@@ -194,7 +194,7 @@ export default function Contact() {
                 </div>
 
                 <div className="flex items-start">
-                  <MapPin className="h-6 w-6 text-purple-600 mr-4" />
+                  <MapPin className="h-6 w-6 text-blue-600 mr-4" />
                   <div>
                     <h4 className="font-medium text-gray-900">Address</h4>
                     <p className="text-gray-600">

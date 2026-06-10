@@ -14,7 +14,7 @@ export default function AILab() {
       />
 
       {/* Hero Section */}
-      <section className="py-12 bg-gradient-to-r from-purple-600 to-blue-600">
+      <section className="py-12 bg-gradient-to-r from-blue-600 to-blue-600">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center text-white">
             <div className="flex items-center justify-center mb-6">
@@ -47,11 +47,11 @@ export default function AILab() {
             {Object.entries(AI_CAPABILITIES).map(([key, capability]) => (
               <div key={key} className="bg-white rounded-lg shadow-xl p-6 hover:shadow-2xl transition-shadow">
                 <div className="flex items-center mb-4">
-                  {key === 'QUANTUM' && <Cpu className="h-8 w-8 text-purple-600" />}
-                  {key === 'INTELLIGENCE' && <Brain className="h-8 w-8 text-purple-600" />}
-                  {key === 'SECURITY' && <Shield className="h-8 w-8 text-purple-600" />}
-                  {key === 'RESEARCH' && <Beaker className="h-8 w-8 text-purple-600" />}
-                  {key === 'AUTONOMOUS' && <Zap className="h-8 w-8 text-purple-600" />}
+                  {key === 'QUANTUM' && <Cpu className="h-8 w-8 text-blue-600" />}
+                  {key === 'INTELLIGENCE' && <Brain className="h-8 w-8 text-blue-600" />}
+                  {key === 'SECURITY' && <Shield className="h-8 w-8 text-blue-600" />}
+                  {key === 'RESEARCH' && <Beaker className="h-8 w-8 text-blue-600" />}
+                  {key === 'AUTONOMOUS' && <Zap className="h-8 w-8 text-blue-600" />}
                   <h3 className="text-xl font-bold text-gray-900 ml-3">{capability.name}</h3>
                 </div>
                 <p className="text-gray-600 mb-4">{capability.description}</p>
@@ -61,7 +61,7 @@ export default function AILab() {
                   <ul className="space-y-2">
                     {capability.features.map((feature, index) => (
                       <li key={index} className="flex items-center text-gray-700">
-                        <span className="h-1.5 w-1.5 bg-purple-600 rounded-full mr-2"></span>
+                        <span className="h-1.5 w-1.5 bg-blue-600 rounded-full mr-2"></span>
                         {feature}
                       </li>
                     ))}
@@ -73,7 +73,7 @@ export default function AILab() {
                   <div className="grid grid-cols-2 gap-4">
                     {Object.entries(capability.metrics).map(([metric, value], index) => (
                       <div key={index}>
-                        <div className="text-sm font-medium text-purple-600">{value}</div>
+                        <div className="text-sm font-medium text-blue-600">{value}</div>
                         <div className="text-xs text-gray-500">{metric}</div>
                       </div>
                     ))}
@@ -93,21 +93,21 @@ export default function AILab() {
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="text-center">
-              <Network className="h-12 w-12 text-purple-600 mx-auto mb-4" />
+              <Network className="h-12 w-12 text-blue-600 mx-auto mb-4" />
               <h3 className="text-xl font-bold text-gray-900 mb-2">Neural Networks</h3>
               <p className="text-gray-600">
                 Advanced neural architectures with over 1 trillion parameters
               </p>
             </div>
             <div className="text-center">
-              <Lock className="h-12 w-12 text-purple-600 mx-auto mb-4" />
+              <Lock className="h-12 w-12 text-blue-600 mx-auto mb-4" />
               <h3 className="text-xl font-bold text-gray-900 mb-2">Quantum Security</h3>
               <p className="text-gray-600">
                 Post-quantum cryptography and advanced security protocols
               </p>
             </div>
             <div className="text-center">
-              <Search className="h-12 w-12 text-purple-600 mx-auto mb-4" />
+              <Search className="h-12 w-12 text-blue-600 mx-auto mb-4" />
               <h3 className="text-xl font-bold text-gray-900 mb-2">Universal Search</h3>
               <p className="text-gray-600">
                 Quantum-enhanced search across vast knowledge spaces
@@ -126,37 +126,37 @@ export default function AILab() {
             </h2>
             <div className="grid md:grid-cols-2 gap-8">
               <div className="bg-white p-6 rounded-lg shadow-lg">
-                <Code className="h-8 w-8 text-purple-600 mb-4" />
+                <Code className="h-8 w-8 text-blue-600 mb-4" />
                 <h3 className="text-xl font-bold text-gray-900 mb-4">Advanced Code Generation</h3>
                 <ul className="space-y-2">
                   <li className="flex items-center text-gray-700">
-                    <span className="h-1.5 w-1.5 bg-purple-600 rounded-full mr-2"></span>
+                    <span className="h-1.5 w-1.5 bg-blue-600 rounded-full mr-2"></span>
                     Multi-language support
                   </li>
                   <li className="flex items-center text-gray-700">
-                    <span className="h-1.5 w-1.5 bg-purple-600 rounded-full mr-2"></span>
+                    <span className="h-1.5 w-1.5 bg-blue-600 rounded-full mr-2"></span>
                     Context-aware suggestions
                   </li>
                   <li className="flex items-center text-gray-700">
-                    <span className="h-1.5 w-1.5 bg-purple-600 rounded-full mr-2"></span>
+                    <span className="h-1.5 w-1.5 bg-blue-600 rounded-full mr-2"></span>
                     Security-first approach
                   </li>
                 </ul>
               </div>
               <div className="bg-white p-6 rounded-lg shadow-lg">
-                <Database className="h-8 w-8 text-purple-600 mb-4" />
+                <Database className="h-8 w-8 text-blue-600 mb-4" />
                 <h3 className="text-xl font-bold text-gray-900 mb-4">Knowledge Processing</h3>
                 <ul className="space-y-2">
                   <li className="flex items-center text-gray-700">
-                    <span className="h-1.5 w-1.5 bg-purple-600 rounded-full mr-2"></span>
+                    <span className="h-1.5 w-1.5 bg-blue-600 rounded-full mr-2"></span>
                     Universal knowledge base
                   </li>
                   <li className="flex items-center text-gray-700">
-                    <span className="h-1.5 w-1.5 bg-purple-600 rounded-full mr-2"></span>
+                    <span className="h-1.5 w-1.5 bg-blue-600 rounded-full mr-2"></span>
                     Real-time learning
                   </li>
                   <li className="flex items-center text-gray-700">
-                    <span className="h-1.5 w-1.5 bg-purple-600 rounded-full mr-2"></span>
+                    <span className="h-1.5 w-1.5 bg-blue-600 rounded-full mr-2"></span>
                     Cross-domain expertise
                   </li>
                 </ul>

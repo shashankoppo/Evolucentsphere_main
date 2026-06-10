@@ -98,7 +98,7 @@ export default function Careers() {
       />
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-b from-purple-50 to-white relative overflow-hidden">
+      <section className="py-20 bg-gradient-to-b from-blue-50 to-white relative overflow-hidden">
         <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
         <div className="container mx-auto px-6 relative">
           <div className="max-w-4xl mx-auto text-center">
@@ -111,23 +111,23 @@ export default function Careers() {
             </p>
             <div className="grid md:grid-cols-4 gap-6">
               <div className="bg-white p-6 rounded-lg shadow-lg">
-                <Users className="h-8 w-8 text-purple-600 mx-auto mb-2" />
-                <div className="text-2xl font-bold text-purple-600">1000+</div>
+                <Users className="h-8 w-8 text-blue-600 mx-auto mb-2" />
+                <div className="text-2xl font-bold text-blue-600">1000+</div>
                 <div className="text-gray-600">Team Members</div>
               </div>
               <div className="bg-white p-6 rounded-lg shadow-lg">
-                <Globe className="h-8 w-8 text-purple-600 mx-auto mb-2" />
-                <div className="text-2xl font-bold text-purple-600">30+</div>
+                <Globe className="h-8 w-8 text-blue-600 mx-auto mb-2" />
+                <div className="text-2xl font-bold text-blue-600">30+</div>
                 <div className="text-gray-600">Countries</div>
               </div>
               <div className="bg-white p-6 rounded-lg shadow-lg">
-                <Star className="h-8 w-8 text-purple-600 mx-auto mb-2" />
-                <div className="text-2xl font-bold text-purple-600">4.8/5</div>
+                <Star className="h-8 w-8 text-blue-600 mx-auto mb-2" />
+                <div className="text-2xl font-bold text-blue-600">4.8/5</div>
                 <div className="text-gray-600">Employee Rating</div>
               </div>
               <div className="bg-white p-6 rounded-lg shadow-lg">
-                <Award className="h-8 w-8 text-purple-600 mx-auto mb-2" />
-                <div className="text-2xl font-bold text-purple-600">#1</div>
+                <Award className="h-8 w-8 text-blue-600 mx-auto mb-2" />
+                <div className="text-2xl font-bold text-blue-600">#1</div>
                 <div className="text-gray-600">Best Place to Work</div>
               </div>
             </div>
@@ -148,12 +148,12 @@ export default function Careers() {
                 <div className="space-y-3">
                   {category.positions.map((position, idx) => (
                     <div key={idx} className="flex items-center justify-between group cursor-pointer">
-                      <span className="text-gray-700 group-hover:text-purple-600">{position}</span>
-                      <ArrowRight className="h-4 w-4 text-purple-600 opacity-0 group-hover:opacity-100 transition-opacity" />
+                      <span className="text-gray-700 group-hover:text-blue-600">{position}</span>
+                      <ArrowRight className="h-4 w-4 text-blue-600 opacity-0 group-hover:opacity-100 transition-opacity" />
                     </div>
                   ))}
                 </div>
-                <button className="mt-6 w-full bg-purple-600 text-white px-4 py-2 rounded-md hover:bg-purple-700 transition-colors">
+                <button className="mt-6 w-full bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors">
                   View All Positions
                 </button>
               </div>
@@ -171,12 +171,12 @@ export default function Careers() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {benefits.map((benefit, index) => (
               <div key={index} className="bg-white rounded-lg shadow-lg p-6">
-                <benefit.icon className="h-10 w-10 text-purple-600 mb-4" />
+                <benefit.icon className="h-10 w-10 text-blue-600 mb-4" />
                 <h3 className="text-xl font-bold text-gray-900 mb-4">{benefit.title}</h3>
                 <ul className="space-y-2">
                   {benefit.items.map((item, idx) => (
                     <li key={idx} className="flex items-center text-gray-700">
-                      <span className="h-1.5 w-1.5 bg-purple-600 rounded-full mr-2"></span>
+                      <span className="h-1.5 w-1.5 bg-blue-600 rounded-full mr-2"></span>
                       {item}
                     </li>
                   ))}
@@ -221,7 +221,7 @@ export default function Careers() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 bg-gradient-to-r from-purple-600 to-blue-600">
+      <section className="py-20 bg-gradient-to-r from-blue-600 to-blue-600">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center text-white">
             <h2 className="text-3xl font-bold mb-6">Ready to Join Our Team?</h2>
@@ -229,7 +229,7 @@ export default function Careers() {
               Explore our open positions and take the next step in your career journey.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-purple-600 px-8 py-4 rounded-lg hover:bg-purple-50 transition-colors font-medium">
+              <button className="bg-white text-blue-600 px-8 py-4 rounded-lg hover:bg-blue-50 transition-colors font-medium">
                 View All Positions
               </button>
               <div className="flex gap-2">

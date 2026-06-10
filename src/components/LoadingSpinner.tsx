@@ -15,7 +15,7 @@ export default function LoadingSpinner({ size = 'medium', className = '' }: Prop
   return (
     <div className={`flex justify-center items-center ${className}`}>
       <div
-        className={`${sizeClasses[size]} border-4 border-purple-200 border-t-purple-600 rounded-full animate-spin`}
+        className={`${sizeClasses[size]} border-4 border-blue-200 border-t-blue-600 rounded-full animate-spin`}
         role="status"
         aria-label="Loading"
       />

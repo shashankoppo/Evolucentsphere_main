@@ -67,7 +67,7 @@ export default function CaseStudyDetail() {
             </p>
             <Link
               to="/case-studies"
-              className="inline-flex items-center bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700 transition-colors"
+              className="inline-flex items-center bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
             >
               <ArrowLeft className="h-5 w-5 mr-2" />
               Back to Case Studies
@@ -113,7 +113,7 @@ export default function CaseStudyDetail() {
             >
               <Link
                 to="/case-studies"
-                className="inline-flex items-center text-purple-600 hover:text-purple-700 mb-8 group"
+                className="inline-flex items-center text-blue-600 hover:text-blue-700 mb-8 group"
               >
                 <ArrowLeft className="h-4 w-4 mr-2 group-hover:-translate-x-1 transition-transform" />
                 Back to Case Studies
@@ -195,7 +195,7 @@ export default function CaseStudyDetail() {
                         <div className="flex items-center mb-2">
                           {index === 0 && <TrendingUp className="h-5 w-5 text-green-500 mr-2" />}
                           {index === 1 && <Target className="h-5 w-5 text-blue-500 mr-2" />}
-                          {index === 2 && <Award className="h-5 w-5 text-purple-500 mr-2" />}
+                          {index === 2 && <Award className="h-5 w-5 text-blue-500 mr-2" />}
                           {index > 2 && <CheckCircle className="h-5 w-5 text-gray-500 mr-2" />}
                           <span className="font-semibold text-gray-900">{key}</span>
                         </div>
@@ -218,7 +218,7 @@ export default function CaseStudyDetail() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 bg-gradient-to-r from-purple-600 to-blue-600">
+      <section className="py-20 bg-gradient-to-r from-blue-600 to-blue-600">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center text-white">
             <h2 className="text-3xl font-bold mb-6">Ready to Achieve Similar Results?</h2>
@@ -227,7 +227,7 @@ export default function CaseStudyDetail() {
             </p>
             <Link
               to="/contact"
-              className="inline-flex items-center bg-white text-purple-600 px-8 py-4 rounded-lg hover:bg-purple-50 transition-colors font-medium"
+              className="inline-flex items-center bg-white text-blue-600 px-8 py-4 rounded-lg hover:bg-blue-50 transition-colors font-medium"
             >
               Start Your Transformation
               <ArrowLeft className="ml-2 h-5 w-5 rotate-180" />

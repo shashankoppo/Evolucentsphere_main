@@ -1,386 +1,233 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
-        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
-  <!-- Home Pages -->
   <url>
-    <loc>https://elsxglobal.cloud/</loc>
-    <lastmod>2025-01-16</lastmod>
+    <loc>https://elsxglobal.com/</loc>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80</image:loc>
-      <image:title>ELSxGlobal - Enterprise IT Solutions</image:title>
+      <image:loc>https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1200&amp;q=80</image:loc>
+      <image:title>ELSxGlobal - Enterprise IT Solutions and Digital Transformation</image:title>
     </image:image>
   </url>
-  <url>
-    <loc>https://evolucentsphere.com/</loc>
-    <lastmod>2025-01-16</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://evolucentsphere.netlify.app/</loc>
-    <lastmod>2025-01-16</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
 
-  <!-- About -->
   <url>
-    <loc>https://elsxglobal.cloud/about</loc>
-    <lastmod>2025-01-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://evolucentsphere.com/about</loc>
-    <lastmod>2025-01-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://evolucentsphere.netlify.app/about</loc>
-    <lastmod>2025-01-16</lastmod>
+    <loc>https://elsxglobal.com/about</loc>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
-  <!-- Services -->
   <url>
-    <loc>https://elsxglobal.cloud/services</loc>
-    <lastmod>2025-01-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-    <image:image>
-      <image:loc>https://images.unsplash.com/photo-1451187580459-43490279c0fa</image:loc>
-      <image:title>ELSxGlobal Services</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://evolucentsphere.com/services</loc>
-    <lastmod>2025-01-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://evolucentsphere.netlify.app/services</loc>
-    <lastmod>2025-01-16</lastmod>
+    <loc>https://elsxglobal.com/services</loc>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- Technologies -->
   <url>
-    <loc>https://elsxglobal.cloud/technologies</loc>
-    <lastmod>2025-01-16</lastmod>
+    <loc>https://elsxglobal.com/technologies</loc>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
+
   <url>
-    <loc>https://evolucentsphere.com/technologies</loc>
-    <lastmod>2025-01-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://evolucentsphere.netlify.app/technologies</loc>
-    <lastmod>2025-01-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-    <!-- Case Studies -->
-  <url>
-    <loc>https://elsxglobal.cloud/case-studies</loc>
-    <lastmod>2025-01-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://evolucentsphere.com/case-studies</loc>
-    <lastmod>2025-01-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://evolucentsphere.netlify.app/case-studies</loc>
-    <lastmod>2025-01-16</lastmod>
+    <loc>https://elsxglobal.com/case-studies</loc>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
-  <!-- Blog -->
   <url>
-    <loc>https://elsxglobal.cloud/blog</loc>
-    <lastmod>2025-01-16</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://evolucentsphere.com/blog</loc>
-    <lastmod>2025-01-16</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://evolucentsphere.netlify.app/blog</loc>
-    <lastmod>2025-01-16</lastmod>
+    <loc>https://elsxglobal.com/blog</loc>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
 
-  <!-- Investor Relations -->
   <url>
-    <loc>https://elsxglobal.cloud/investor-relations</loc>
-    <lastmod>2025-01-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://evolucentsphere.com/investor-relations</loc>
-    <lastmod>2025-01-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://evolucentsphere.netlify.app/investor-relations</loc>
-    <lastmod>2025-01-16</lastmod>
+    <loc>https://elsxglobal.com/investor-relations</loc>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
 
-  <!-- Contact -->
   <url>
-    <loc>https://elsxglobal.cloud/contact</loc>
-    <lastmod>2025-01-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://evolucentsphere.com/contact</loc>
-    <lastmod>2025-01-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://evolucentsphere.netlify.app/contact</loc>
-    <lastmod>2025-01-16</lastmod>
+    <loc>https://elsxglobal.com/contact</loc>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
-  <!-- AI Lab -->
   <url>
-    <loc>https://elsxglobal.cloud/ai-lab</loc>
-    <lastmod>2025-01-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://evolucentsphere.com/ai-lab</loc>
-    <lastmod>2025-01-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://evolucentsphere.netlify.app/ai-lab</loc>
-    <lastmod>2025-01-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-    <!-- Careers -->
-  <url>
-    <loc>https://elsxglobal.cloud/careers</loc>
-    <lastmod>2025-01-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://evolucentsphere.com/careers</loc>
-    <lastmod>2025-01-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://evolucentsphere.netlify.app/careers</loc>
-    <lastmod>2025-01-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- IT Services -->
-  <url>
-    <loc>https://elsxglobal.cloud/it-services</loc>
-    <lastmod>2025-01-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://evolucentsphere.com/it-services</loc>
-    <lastmod>2025-01-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://evolucentsphere.netlify.app/it-services</loc>
-    <lastmod>2025-01-16</lastmod>
+    <loc>https://elsxglobal.com/ai-lab</loc>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- BPO Services -->
   <url>
-    <loc>https://elsxglobal.cloud/bpo-services</loc>
-    <lastmod>2025-01-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://evolucentsphere.com/bpo-services</loc>
-    <lastmod>2025-01-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://evolucentsphere.netlify.app/bpo-services</loc>
-    <lastmod>2025-01-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- KPO Services -->
-  <url>
-    <loc>https://elsxglobal.cloud/kpo-services</loc>
-    <lastmod>2025-01-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://evolucentsphere.com/kpo-services</loc>
-    <lastmod>2025-01-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://evolucentsphere.netlify.app/kpo-services</loc>
-    <lastmod>2025-01-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- Consultancy -->
-  <url>
-    <loc>https://elsxglobal.cloud/consultancy</loc>
-    <lastmod>2025-01-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://evolucentsphere.com/consultancy</loc>
-    <lastmod>2025-01-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://evolucentsphere.netlify.app/consultancy</loc>
-    <lastmod>2025-01-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- Enterprise IT -->
-  <url>
-    <loc>https://elsxglobal.cloud/enterprise-it</loc>
-    <lastmod>2025-01-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://evolucentsphere.com/enterprise-it</loc>
-    <lastmod>2025-01-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://evolucentsphere.netlify.app/enterprise-it</loc>
-    <lastmod>2025-01-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-
-  <!-- EdgeFeed EdTech Division -->
-  <url>
-    <loc>https://elsxglobal.cloud/edgefeed</loc>
-    <lastmod>2025-01-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-    <image:image>
-      <image:loc>https://images.unsplash.com/photo-1501504905252-473c47e087f8</image:loc>
-      <image:title>EdgeFeed EdTech Platform - Educational Technology Solutions</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://edgefeed.space/</loc>
-    <lastmod>2025-01-16</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://learn.edgefeed.space/</loc>
-    <lastmod>2025-01-16</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://content.edgefeed.space/</loc>
-    <lastmod>2025-01-16</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://analytics.edgefeed.space/</loc>
-    <lastmod>2025-01-16</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://enterprise.edgefeed.space/</loc>
-    <lastmod>2025-01-16</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
-  </url>
-  </url>
-  <!-- Industry Pages -->
-  <url>
-    <loc>https://elsxglobal.cloud/industries/banking</loc>
-    <lastmod>2025-01-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://elsxglobal.cloud/industries/healthcare</loc>
-    <lastmod>2025-01-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://elsxglobal.cloud/industries/manufacturing</loc>
-    <lastmod>2025-01-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://elsxglobal.cloud/industries/retail</loc>
-    <lastmod>2025-01-16</lastmod>
+    <loc>https://elsxglobal.com/careers</loc>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
-  <!-- Dynamic content placeholders -->
-  <!-- Blog posts will be inserted here -->
-  <!-- Case studies will be inserted here -->
-  <!-- Investor resources will be inserted here -->
+  <url>
+    <loc>https://elsxglobal.com/it-services</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://elsxglobal.com/it-services/cloud-infrastructure</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://elsxglobal.com/it-services/cybersecurity</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://elsxglobal.com/it-services/digital-transformation</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://elsxglobal.com/it-services/software-development</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://elsxglobal.com/it-services/ai-analytics</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://elsxglobal.com/it-services/digital-marketing</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://elsxglobal.com/it-services/iot-emerging-tech</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://elsxglobal.com/it-services/managed-it</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://elsxglobal.com/it-services/enterprise-software</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://elsxglobal.com/bpo-services</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://elsxglobal.com/kpo-services</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://elsxglobal.com/consultancy</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://elsxglobal.com/industries/banking</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://elsxglobal.com/industries/healthcare</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://elsxglobal.com/industries/manufacturing</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://elsxglobal.com/industries/retail</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://elsxglobal.com/edgefeed</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://elsxglobal.com/privacy-policy</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://elsxglobal.com/terms-of-service</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://elsxglobal.com/cookie-policy</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://elsxglobal.com/sitemap</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
 
 </urlset>

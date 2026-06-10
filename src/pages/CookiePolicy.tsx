@@ -37,7 +37,7 @@ export default function CookiePolicy() {
       <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
-            <Cookie className="h-16 w-16 text-purple-600 mx-auto mb-6" />
+            <Cookie className="h-16 w-16 text-blue-600 mx-auto mb-6" />
             <h1 className="text-4xl font-bold text-gray-900 mb-6">
               Cookie Policy
             </h1>
@@ -60,7 +60,7 @@ export default function CookiePolicy() {
             {/* What Are Cookies */}
             <div className="mb-12">
               <div className="flex items-center mb-6">
-                <Cookie className="h-8 w-8 text-purple-600 mr-3" />
+                <Cookie className="h-8 w-8 text-blue-600 mr-3" />
                 <h2 className="text-2xl font-bold text-gray-900">What Are Cookies?</h2>
               </div>
               
@@ -80,7 +80,7 @@ export default function CookiePolicy() {
             {/* Types of Cookies */}
             <div className="mb-12">
               <div className="flex items-center mb-6">
-                <Settings className="h-8 w-8 text-purple-600 mr-3" />
+                <Settings className="h-8 w-8 text-blue-600 mr-3" />
                 <h2 className="text-2xl font-bold text-gray-900">Types of Cookies We Use</h2>
               </div>
               
@@ -135,7 +135,7 @@ export default function CookiePolicy() {
 
                 <div className="bg-white rounded-lg shadow-lg p-8">
                   <div className="flex items-center mb-4">
-                    <Eye className="h-8 w-8 text-purple-600 mr-3" />
+                    <Eye className="h-8 w-8 text-blue-600 mr-3" />
                     <h3 className="text-xl font-semibold text-gray-900">Functional Cookies</h3>
                   </div>
                   <p className="text-gray-700 mb-4">
@@ -143,15 +143,15 @@ export default function CookiePolicy() {
                   </p>
                   <ul className="space-y-2">
                     <li className="flex items-start">
-                      <span className="h-2 w-2 bg-purple-600 rounded-full mr-3 mt-2"></span>
+                      <span className="h-2 w-2 bg-blue-600 rounded-full mr-3 mt-2"></span>
                       <span>Language preferences</span>
                     </li>
                     <li className="flex items-start">
-                      <span className="h-2 w-2 bg-purple-600 rounded-full mr-3 mt-2"></span>
+                      <span className="h-2 w-2 bg-blue-600 rounded-full mr-3 mt-2"></span>
                       <span>Theme settings</span>
                     </li>
                     <li className="flex items-start">
-                      <span className="h-2 w-2 bg-purple-600 rounded-full mr-3 mt-2"></span>
+                      <span className="h-2 w-2 bg-blue-600 rounded-full mr-3 mt-2"></span>
                       <span>Form data</span>
                     </li>
                   </ul>
@@ -186,7 +186,7 @@ export default function CookiePolicy() {
             {/* Cookie Preferences */}
             <div className="mb-12">
               <div className="flex items-center mb-6">
-                <Settings className="h-8 w-8 text-purple-600 mr-3" />
+                <Settings className="h-8 w-8 text-blue-600 mr-3" />
                 <h2 className="text-2xl font-bold text-gray-900">Manage Your Cookie Preferences</h2>
               </div>
               
@@ -217,7 +217,7 @@ export default function CookiePolicy() {
                     <button
                       onClick={() => handlePreferenceChange('analytics')}
                       className={`w-12 h-6 rounded-full flex items-center px-1 transition-colors ${
-                        cookiePreferences.analytics ? 'bg-purple-600 justify-end' : 'bg-gray-300 justify-start'
+                        cookiePreferences.analytics ? 'bg-blue-600 justify-end' : 'bg-gray-300 justify-start'
                       }`}
                     >
                       <div className="w-4 h-4 bg-white rounded-full"></div>
@@ -232,7 +232,7 @@ export default function CookiePolicy() {
                     <button
                       onClick={() => handlePreferenceChange('functional')}
                       className={`w-12 h-6 rounded-full flex items-center px-1 transition-colors ${
-                        cookiePreferences.functional ? 'bg-purple-600 justify-end' : 'bg-gray-300 justify-start'
+                        cookiePreferences.functional ? 'bg-blue-600 justify-end' : 'bg-gray-300 justify-start'
                       }`}
                     >
                       <div className="w-4 h-4 bg-white rounded-full"></div>
@@ -247,7 +247,7 @@ export default function CookiePolicy() {
                     <button
                       onClick={() => handlePreferenceChange('marketing')}
                       className={`w-12 h-6 rounded-full flex items-center px-1 transition-colors ${
-                        cookiePreferences.marketing ? 'bg-purple-600 justify-end' : 'bg-gray-300 justify-start'
+                        cookiePreferences.marketing ? 'bg-blue-600 justify-end' : 'bg-gray-300 justify-start'
                       }`}
                     >
                       <div className="w-4 h-4 bg-white rounded-full"></div>
@@ -258,7 +258,7 @@ export default function CookiePolicy() {
                 <div className="mt-8 flex justify-center">
                   <button
                     onClick={saveCookiePreferences}
-                    className="bg-purple-600 text-white px-8 py-3 rounded-lg hover:bg-purple-700 transition-colors font-medium flex items-center"
+                    className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium flex items-center"
                   >
                     <CheckCircle className="h-5 w-5 mr-2" />
                     Save Preferences
@@ -285,8 +285,8 @@ export default function CookiePolicy() {
                   </div>
                   
                   <div className="text-center">
-                    <div className="bg-purple-100 p-4 rounded-lg mb-4">
-                      <Eye className="h-8 w-8 text-purple-600 mx-auto" />
+                    <div className="bg-blue-100 p-4 rounded-lg mb-4">
+                      <Eye className="h-8 w-8 text-blue-600 mx-auto" />
                     </div>
                     <h3 className="font-semibold text-gray-900 mb-2">Hotjar</h3>
                     <p className="text-sm text-gray-600">User experience and heatmap analysis</p>
@@ -305,7 +305,7 @@ export default function CookiePolicy() {
 
             {/* Contact Information */}
             <div className="mb-12">
-              <div className="bg-purple-50 rounded-lg p-8">
+              <div className="bg-blue-50 rounded-lg p-8">
                 <h2 className="text-2xl font-bold text-gray-900 mb-6">Questions About Cookies?</h2>
                 <p className="text-gray-700 mb-4">
                   If you have any questions about our use of cookies, please contact us:

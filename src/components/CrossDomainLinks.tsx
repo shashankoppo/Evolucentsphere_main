@@ -33,7 +33,7 @@ const crossDomainLinks: CrossDomainLink[] = [
   // Main Divisions
   {
     name: 'ELSxTech',
-    url: 'https://tech.elsxglobal.cloud',
+    url: 'https://tech.elsxglobal.com',
     description: 'Comprehensive technology solutions and digital innovation',
     icon: Building,
     category: 'division',
@@ -45,7 +45,7 @@ const crossDomainLinks: CrossDomainLink[] = [
   },
   {
     name: 'ELSxBPO',
-    url: 'https://bpo.elsxglobal.cloud',
+    url: 'https://bpo.elsxglobal.com',
     description: 'Business process outsourcing and customer support excellence',
     icon: Users,
     category: 'division',
@@ -57,7 +57,7 @@ const crossDomainLinks: CrossDomainLink[] = [
   },
   {
     name: 'ELSxKPO',
-    url: 'https://kpo.elsxglobal.cloud',
+    url: 'https://kpo.elsxglobal.com',
     description: 'Knowledge process outsourcing and advanced analytics',
     icon: Brain,
     category: 'division',
@@ -69,7 +69,7 @@ const crossDomainLinks: CrossDomainLink[] = [
   },
   {
     name: 'ELSxConsultancy',
-    url: 'https://consultancy.elsxglobal.cloud',
+    url: 'https://consultancy.elsxglobal.com',
     description: 'Strategic consulting and business transformation',
     icon: Briefcase,
     category: 'division',
@@ -95,7 +95,7 @@ const crossDomainLinks: CrossDomainLink[] = [
   // ELSxTech Sub-Divisions
   {
     name: 'Cloud & Infrastructure',
-    url: 'https://cloud.elsxglobal.cloud',
+    url: 'https://cloud.elsxglobal.com',
     description: 'Enterprise cloud solutions and infrastructure management',
     icon: Cloud,
     category: 'subdivision',
@@ -108,7 +108,7 @@ const crossDomainLinks: CrossDomainLink[] = [
   },
   {
     name: 'Cybersecurity Solutions',
-    url: 'https://security.elsxglobal.cloud',
+    url: 'https://security.elsxglobal.com',
     description: 'Advanced cybersecurity and threat protection services',
     icon: Shield,
     category: 'subdivision',
@@ -121,7 +121,7 @@ const crossDomainLinks: CrossDomainLink[] = [
   },
   {
     name: 'Digital Transformation',
-    url: 'https://digital.elsxglobal.cloud',
+    url: 'https://digital.elsxglobal.com',
     description: 'Strategic digital transformation consulting and implementation',
     icon: Zap,
     category: 'subdivision',
@@ -134,7 +134,7 @@ const crossDomainLinks: CrossDomainLink[] = [
   },
   {
     name: 'Software Development',
-    url: 'https://software.elsxglobal.cloud',
+    url: 'https://software.elsxglobal.com',
     description: 'Custom software development and system integration',
     icon: Code,
     category: 'subdivision',
@@ -147,7 +147,7 @@ const crossDomainLinks: CrossDomainLink[] = [
   },
   {
     name: 'Data, AI & Analytics',
-    url: 'https://ai.elsxglobal.cloud',
+    url: 'https://ai.elsxglobal.com',
     description: 'Artificial intelligence, machine learning, and data analytics',
     icon: Brain,
     category: 'subdivision',
@@ -160,7 +160,7 @@ const crossDomainLinks: CrossDomainLink[] = [
   },
   {
     name: 'Digital Marketing',
-    url: 'https://digitalmarketing.elsxglobal.cloud',
+    url: 'https://digitalmarketing.elsxglobal.com',
     description: 'Digital marketing solutions and customer experience optimization',
     icon: BarChart,
     category: 'subdivision',
@@ -173,7 +173,7 @@ const crossDomainLinks: CrossDomainLink[] = [
   },
   {
     name: 'IoT & Emerging Tech',
-    url: 'https://emergingtech.elsxglobal.cloud',
+    url: 'https://emergingtech.elsxglobal.com',
     description: 'Internet of Things and cutting-edge technology solutions',
     icon: Network,
     category: 'subdivision',
@@ -186,7 +186,7 @@ const crossDomainLinks: CrossDomainLink[] = [
   },
   {
     name: 'Managed IT Services',
-    url: 'https://managedit.elsxglobal.cloud',
+    url: 'https://managedit.elsxglobal.com',
     description: 'Comprehensive managed IT services and support',
     icon: Settings,
     category: 'subdivision',
@@ -199,7 +199,7 @@ const crossDomainLinks: CrossDomainLink[] = [
   },
   {
     name: 'Enterprise Software',
-    url: 'https://enterprise.elsxglobal.cloud',
+    url: 'https://enterprise.elsxglobal.com',
     description: 'Enterprise software solutions and ERP systems',
     icon: Database,
     category: 'subdivision',
@@ -271,7 +271,7 @@ export default function CrossDomainLinks({
                 layout === 'inline' ? 'h-5 w-5' : 'h-10 w-10'
               } ${
                 layout === 'grid' ? 'mx-auto mb-4' : ''
-              } bg-purple-100 rounded-lg flex items-center justify-center text-purple-600 group-hover:bg-purple-200 transition-colors`}
+              } bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 group-hover:bg-blue-200 transition-colors`}
             >
               <link.icon className={`${layout === 'inline' ? 'h-3 w-3' : 'h-6 w-6'}`} />
             </div>
@@ -279,10 +279,10 @@ export default function CrossDomainLinks({
 
           <div className={`${layout === 'grid' ? 'text-center' : 'flex-grow'}`}>
             <div className="flex items-center justify-between">
-              <h3 className={`${layout === 'inline' ? 'text-sm' : 'text-lg'} font-bold text-gray-900 group-hover:text-purple-600 transition-colors`}>
+              <h3 className={`${layout === 'inline' ? 'text-sm' : 'text-lg'} font-bold text-gray-900 group-hover:text-blue-600 transition-colors`}>
                 {link.name}
               </h3>
-              <ExternalLink className={`${layout === 'inline' ? 'h-3 w-3' : 'h-4 w-4'} text-gray-400 group-hover:text-purple-600 transition-colors ${layout === 'grid' ? 'ml-2' : ''}`} />
+              <ExternalLink className={`${layout === 'inline' ? 'h-3 w-3' : 'h-4 w-4'} text-gray-400 group-hover:text-blue-600 transition-colors ${layout === 'grid' ? 'ml-2' : ''}`} />
             </div>
 
             {layout !== 'inline' && (
@@ -359,7 +359,7 @@ export const SEOFooterLinks = () => (
           across multiple domains and industries worldwide since 2009.
         </p>
         <div className="mt-4 flex flex-wrap justify-center gap-4 text-sm text-gray-500">
-          <span>🌍 Global Presence</span>
+          <span>🌍 Global Reach</span>
           <span>🏆 Industry Leadership</span>
           <span>🚀 Innovation Excellence</span>
           <span>🤝 Trusted Partnership</span>

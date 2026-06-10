@@ -86,7 +86,7 @@ export default function Services() {
         keywords={['AI Services', 'Digital Transformation', 'Business Solutions']}
       />
       
-      <section className="py-20 bg-gradient-to-b from-purple-50 to-white">
+      <section className="py-20 bg-gradient-to-b from-blue-50 to-white">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h1 className="text-4xl font-bold text-gray-900 mb-4">
@@ -106,8 +106,8 @@ export default function Services() {
                   onClick={() => setSelectedCategory(category)}
                   className={`flex items-center px-6 py-3 rounded-full whitespace-nowrap transition-all duration-300 ${
                     selectedCategory.title === category.title
-                      ? 'bg-purple-600 text-white shadow-lg scale-105'
-                      : 'bg-white text-gray-700 hover:bg-purple-50 hover:scale-105'
+                      ? 'bg-blue-600 text-white shadow-lg scale-105'
+                      : 'bg-white text-gray-700 hover:bg-blue-50 hover:scale-105'
                   }`}
                 >
                   <category.icon className="h-5 w-5 mr-2" />
@@ -146,13 +146,13 @@ export default function Services() {
             ))}
           </div>
 
-          <div className="mt-16 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg p-8 text-white text-center">
+          <div className="mt-16 bg-gradient-to-r from-blue-600 to-blue-600 rounded-lg p-8 text-white text-center">
             <h3 className="text-2xl font-bold mb-4">Ready to Transform Your Business?</h3>
             <p className="mb-8 text-lg max-w-2xl mx-auto">
               Join the ranks of industry leaders who have revolutionized their operations with our solutions.
               Schedule a consultation today and discover your business's true potential.
             </p>
-            <button className="bg-white text-purple-600 px-8 py-3 rounded-md hover:bg-purple-50 transition-colors font-medium transform hover:scale-105 transition-transform">
+            <button className="bg-white text-blue-600 px-8 py-3 rounded-md hover:bg-blue-50 transition-colors font-medium transform hover:scale-105 transition-transform">
               Schedule a Consultation
             </button>
           </div>

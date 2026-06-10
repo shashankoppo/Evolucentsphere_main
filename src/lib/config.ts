@@ -4,7 +4,7 @@ export const config = {
     division: 'ELSxGlobal & EdgeFeed (Flagship Divisions)',
     description: 'Transformative Business Solutions & Technology Services',
     url: 'https://evolucentsphere.com',
-    divisionUrl: 'https://elsxglobal.cloud',
+    divisionUrl: 'https://elsxglobal.com',
     edgefeedUrl: 'https://edgefeed.space',
     contact: {
       phone: '+91 (724) 755-8873',
@@ -48,74 +48,74 @@ export const config = {
     divisions: {
       elsxglobal: {
         name: 'ELSxGlobal (Flagship Division)',
-        url: 'https://elsxglobal.cloud',
+        url: 'https://elsxglobal.com',
         description: 'Our flagship division providing comprehensive business solutions',
         subdivisions: {
           tech: {
             name: 'ELSxTech',
-            url: 'https://tech.elsxglobal.cloud',
+            url: 'https://tech.elsxglobal.com',
             description: 'Technology solutions and digital innovation',
             services: [
               {
                 name: 'Cloud & Infrastructure',
-                url: 'https://cloud.elsxglobal.cloud',
+                url: 'https://cloud.elsxglobal.com',
                 path: '/it-services/cloud-infrastructure',
               },
               {
                 name: 'Cybersecurity Solutions',
-                url: 'https://security.elsxglobal.cloud',
+                url: 'https://security.elsxglobal.com',
                 path: '/it-services/cybersecurity',
               },
               {
                 name: 'Digital Transformation',
-                url: 'https://digital.elsxglobal.cloud',
+                url: 'https://digital.elsxglobal.com',
                 path: '/it-services/digital-transformation',
               },
               {
                 name: 'Software Development',
-                url: 'https://software.elsxglobal.cloud',
+                url: 'https://software.elsxglobal.com',
                 path: '/it-services/software-development',
               },
               {
                 name: 'Data, AI & Analytics',
-                url: 'https://ai.elsxglobal.cloud',
+                url: 'https://ai.elsxglobal.com',
                 path: '/it-services/ai-analytics',
               },
               {
                 name: 'Digital Marketing',
-                url: 'https://digitalmarketing.elsxglobal.cloud',
+                url: 'https://digitalmarketing.elsxglobal.com',
                 path: '/it-services/digital-marketing',
               },
               {
                 name: 'IoT & Emerging Tech',
-                url: 'https://emergingtech.elsxglobal.cloud',
+                url: 'https://emergingtech.elsxglobal.com',
                 path: '/it-services/iot-emerging-tech',
               },
               {
                 name: 'Managed IT Services',
-                url: 'https://managedit.elsxglobal.cloud',
+                url: 'https://managedit.elsxglobal.com',
                 path: '/it-services/managed-it',
               },
               {
                 name: 'Enterprise Software',
-                url: 'https://enterprise.elsxglobal.cloud',
+                url: 'https://enterprise.elsxglobal.com',
                 path: '/it-services/enterprise-software',
               },
             ],
           },
           bpo: {
             name: 'ELSxBPO',
-            url: 'https://bpo.elsxglobal.cloud',
+            url: 'https://bpo.elsxglobal.com',
             description: 'Business process outsourcing and customer support',
           },
           kpo: {
             name: 'ELSxKPO',
-            url: 'https://kpo.elsxglobal.cloud',
+            url: 'https://kpo.elsxglobal.com',
             description: 'Knowledge process outsourcing and analytics',
           },
           consultancy: {
             name: 'ELSxConsultancy',
-            url: 'https://consultancy.elsxglobal.cloud',
+            url: 'https://consultancy.elsxglobal.com',
             description: 'Strategic consulting and business transformation',
           },
         },

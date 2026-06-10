@@ -90,19 +90,19 @@ export default function Home() {
       />
 
       {/* Enhanced Brand Banner with Cross-Domain Links */}
-      <div className="bg-gradient-to-r from-purple-600 to-blue-600 text-white py-2 sm:py-3 md:py-4">
+      <div className="bg-gradient-to-r from-blue-600 to-blue-600 text-white py-2 sm:py-3 md:py-4">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center justify-between text-center md:text-left">
             <div className="mb-3 md:mb-0">
               <p className="text-xs sm:text-sm md:text-base font-medium leading-tight">
-                <span className="font-bold text-purple-100">EvolucentSphere Pvt. Ltd.</span> - Flagship Division:{' '}
+                <span className="font-bold text-blue-100">EvolucentSphere Pvt. Ltd.</span> - Flagship Division:{' '}
                 {parentCompany && (
                   <a 
-                    href="https://elsxglobal.cloud"
+                    href="https://elsxglobal.com"
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="font-bold underline hover:text-purple-200 transition-colors"
-                    onClick={() => handleCrossDomainClick('https://elsxglobal.cloud', 'ELSxGlobal')}
+                    className="font-bold underline hover:text-blue-200 transition-colors"
+                    onClick={() => handleCrossDomainClick('https://elsxglobal.com', 'ELSxGlobal')}
                   >
                     ELSxGlobal
                     <ExternalLink className="inline h-3 w-3 ml-1" />
@@ -119,7 +119,7 @@ export default function Home() {
                 href="https://edgefeed.space"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-xs text-purple-200 hover:text-white transition-colors flex items-center justify-center"
+                className="text-xs text-blue-200 hover:text-white transition-colors flex items-center justify-center"
                 onClick={() => handleCrossDomainClick('https://edgefeed.space', 'EdgeFeed EdTech')}
               >
                 🎓 EdgeFeed EdTech Platform
@@ -153,8 +153,8 @@ export default function Home() {
               transition={{ duration: 0.6 }}
               onClick={() => handleServiceInterest('Global Operations')}
             >
-              <Globe className="h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 text-purple-600 mx-auto mb-2 sm:mb-4 group-hover:scale-110 transition-transform" />
-              <div className="text-xl sm:text-2xl md:text-3xl font-bold text-purple-600">{config.metrics.countries}</div>
+              <Globe className="h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 text-blue-600 mx-auto mb-2 sm:mb-4 group-hover:scale-110 transition-transform" />
+              <div className="text-xl sm:text-2xl md:text-3xl font-bold text-blue-600">{config.metrics.countries}</div>
               <div className="text-sm sm:text-base text-gray-600 font-medium">Countries Served</div>
               <div className="text-xs sm:text-sm text-gray-500 mt-1 hidden sm:block">Global Service Delivery</div>
             </motion.div>
@@ -166,8 +166,8 @@ export default function Home() {
               transition={{ duration: 0.6, delay: 0.2 }}
               onClick={() => handleServiceInterest('Enterprise Solutions')}
             >
-              <Users className="h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 text-purple-600 mx-auto mb-2 sm:mb-4 group-hover:scale-110 transition-transform" />
-              <div className="text-xl sm:text-2xl md:text-3xl font-bold text-purple-600">{config.metrics.clients}</div>
+              <Users className="h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 text-blue-600 mx-auto mb-2 sm:mb-4 group-hover:scale-110 transition-transform" />
+              <div className="text-xl sm:text-2xl md:text-3xl font-bold text-blue-600">{config.metrics.clients}</div>
               <div className="text-sm sm:text-base text-gray-600 font-medium">Global Clients</div>
               <div className="text-xs sm:text-sm text-gray-500 mt-1 hidden sm:block">Enterprise & SMB</div>
             </motion.div>
@@ -179,8 +179,8 @@ export default function Home() {
               transition={{ duration: 0.6, delay: 0.4 }}
               onClick={() => handleServiceInterest('Reliable Services')}
             >
-              <Shield className="h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 text-purple-600 mx-auto mb-2 sm:mb-4 group-hover:scale-110 transition-transform" />
-              <div className="text-xl sm:text-2xl md:text-3xl font-bold text-purple-600">{config.metrics.uptime}</div>
+              <Shield className="h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 text-blue-600 mx-auto mb-2 sm:mb-4 group-hover:scale-110 transition-transform" />
+              <div className="text-xl sm:text-2xl md:text-3xl font-bold text-blue-600">{config.metrics.uptime}</div>
               <div className="text-sm sm:text-base text-gray-600 font-medium">Service Uptime</div>
               <div className="text-xs sm:text-sm text-gray-500 mt-1 hidden sm:block">24/7 Operations</div>
             </motion.div>
@@ -192,8 +192,8 @@ export default function Home() {
               transition={{ duration: 0.6, delay: 0.6 }}
               onClick={() => handleServiceInterest('AI Solutions')}
             >
-              <Brain className="h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 text-purple-600 mx-auto mb-2 sm:mb-4 group-hover:scale-110 transition-transform" />
-              <div className="text-xl sm:text-2xl md:text-3xl font-bold text-purple-600">15+</div>
+              <Brain className="h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 text-blue-600 mx-auto mb-2 sm:mb-4 group-hover:scale-110 transition-transform" />
+              <div className="text-xl sm:text-2xl md:text-3xl font-bold text-blue-600">15+</div>
               <div className="text-sm sm:text-base text-gray-600 font-medium">Years Experience</div>
               <div className="text-xs sm:text-sm text-gray-500 mt-1 hidden sm:block">AI & Technology</div>
             </motion.div>
@@ -210,7 +210,7 @@ export default function Home() {
       <InnovationHub />
 
       {/* Enhanced Performance Metrics */}
-      <section className="py-16 bg-gradient-to-r from-gray-50 to-purple-50">
+      <section className="py-16 bg-gradient-to-r from-gray-50 to-blue-50">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
@@ -240,8 +240,8 @@ export default function Home() {
               <div className="text-xs sm:text-sm text-gray-500 mt-1 hidden sm:block">Customer Rating</div>
             </div>
             <div className="bg-white p-8 rounded-lg shadow-lg text-center">
-              <Award className="h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 text-purple-600 mx-auto mb-2 sm:mb-4" />
-              <div className="text-xl sm:text-2xl md:text-3xl font-bold text-purple-600">50+</div>
+              <Award className="h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 text-blue-600 mx-auto mb-2 sm:mb-4" />
+              <div className="text-xl sm:text-2xl md:text-3xl font-bold text-blue-600">50+</div>
               <div className="text-sm sm:text-base text-gray-600 font-medium">Industry Awards</div>
               <div className="text-xs sm:text-sm text-gray-500 mt-1 hidden sm:block">Recognition</div>
             </div>
@@ -269,7 +269,7 @@ export default function Home() {
                   href={parentCompany.url}
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-purple-600 hover:text-purple-700 font-medium"
+                  className="text-blue-600 hover:text-blue-700 font-medium"
                   onClick={() => handleCrossDomainClick(parentCompany.url, 'EvolucentSphere ecosystem')}
                 >
                   EvolucentSphere ecosystem
@@ -332,7 +332,7 @@ export default function Home() {
                 href="https://linkedin.com/company/evolucentsphere" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-purple-600 hover:text-purple-700 flex items-center"
+                className="text-blue-600 hover:text-blue-700 flex items-center"
                 onClick={() => handleCrossDomainClick('linkedin.com', 'EvolucentSphere LinkedIn')}
               >
                 EvolucentSphere <ExternalLink className="h-3 w-3 ml-1" />
@@ -341,7 +341,7 @@ export default function Home() {
                 href="https://linkedin.com/company/elsxtech" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-purple-600 hover:text-purple-700 flex items-center"
+                className="text-blue-600 hover:text-blue-700 flex items-center"
                 onClick={() => handleCrossDomainClick('linkedin.com', 'ELSxTech LinkedIn')}
               >
                 ELSxTech <ExternalLink className="h-3 w-3 ml-1" />
@@ -350,7 +350,7 @@ export default function Home() {
                 href="https://linkedin.com/company/elsxbpo" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-purple-600 hover:text-purple-700 flex items-center"
+                className="text-blue-600 hover:text-blue-700 flex items-center"
                 onClick={() => handleCrossDomainClick('linkedin.com', 'ELSxBPO LinkedIn')}
               >
                 ELSxBPO <ExternalLink className="h-3 w-3 ml-1" />
@@ -361,7 +361,7 @@ export default function Home() {
       </section>
 
       {/* Enhanced Newsletter Section with Industry Targeting */}
-      <section className="py-16 bg-gradient-to-r from-purple-600 to-blue-600">
+      <section className="py-16 bg-gradient-to-r from-blue-600 to-blue-600">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-4xl mx-auto text-center text-white">
             <motion.h2 
@@ -392,10 +392,10 @@ export default function Home() {
               <input
                 type="email"
                 placeholder="Enter your business email"
-                className="px-4 sm:px-6 py-2 sm:py-3 rounded-lg text-gray-900 w-full sm:min-w-[250px] md:min-w-[300px] focus:outline-none focus:ring-2 focus:ring-purple-300"
+                className="px-4 sm:px-6 py-2 sm:py-3 rounded-lg text-gray-900 w-full sm:min-w-[250px] md:min-w-[300px] focus:outline-none focus:ring-2 focus:ring-blue-300"
                 aria-label="Enter your email for ELSxGlobal newsletter subscription"
               />
-              <select className="px-4 sm:px-6 py-2 sm:py-3 rounded-lg text-gray-900 w-full sm:w-auto focus:outline-none focus:ring-2 focus:ring-purple-300">
+              <select className="px-4 sm:px-6 py-2 sm:py-3 rounded-lg text-gray-900 w-full sm:w-auto focus:outline-none focus:ring-2 focus:ring-blue-300">
                 <option value="">Select Your Industry</option>
                 <option value="banking">Banking & Finance</option>
                 <option value="healthcare">Healthcare</option>
@@ -406,7 +406,7 @@ export default function Home() {
                 <option value="other">Other</option>
               </select>
               <button 
-                className="bg-white text-purple-600 px-6 sm:px-8 py-2 sm:py-3 rounded-lg hover:bg-purple-50 transition-colors flex items-center justify-center group font-medium w-full sm:w-auto"
+                className="bg-white text-blue-600 px-6 sm:px-8 py-2 sm:py-3 rounded-lg hover:bg-blue-50 transition-colors flex items-center justify-center group font-medium w-full sm:w-auto"
                 onClick={() => handleServiceInterest('Newsletter Subscription')}
               >
                 Subscribe

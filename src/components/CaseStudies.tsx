@@ -62,7 +62,7 @@ export default function CaseStudies() {
             <p className="text-red-600 mb-4">{error}</p>
             <button
               onClick={() => window.location.reload()}
-              className="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500"
+              className="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
             >
               Try Again
             </button>
@@ -81,7 +81,7 @@ export default function CaseStudies() {
       />
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-b from-purple-50 to-white">
+      <section className="py-20 bg-gradient-to-b from-blue-50 to-white">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
@@ -93,19 +93,19 @@ export default function CaseStudies() {
             </p>
             <div className="grid md:grid-cols-4 gap-8">
               <div className="bg-white p-6 rounded-lg shadow-lg">
-                <div className="text-2xl font-bold text-purple-600">500+</div>
+                <div className="text-2xl font-bold text-blue-600">500+</div>
                 <div className="text-gray-600">Projects Delivered</div>
               </div>
               <div className="bg-white p-6 rounded-lg shadow-lg">
-                <div className="text-2xl font-bold text-purple-600">45%</div>
+                <div className="text-2xl font-bold text-blue-600">45%</div>
                 <div className="text-gray-600">Average ROI</div>
               </div>
               <div className="bg-white p-6 rounded-lg shadow-lg">
-                <div className="text-2xl font-bold text-purple-600">98%</div>
+                <div className="text-2xl font-bold text-blue-600">98%</div>
                 <div className="text-gray-600">Client Satisfaction</div>
               </div>
               <div className="bg-white p-6 rounded-lg shadow-lg">
-                <div className="text-2xl font-bold text-purple-600">30+</div>
+                <div className="text-2xl font-bold text-blue-600">30+</div>
                 <div className="text-gray-600">Countries Served</div>
               </div>
             </div>
@@ -122,7 +122,7 @@ export default function CaseStudies() {
                 onClick={() => setSelectedIndustry('all')}
                 className={`px-6 py-2 rounded-full whitespace-nowrap transition-all duration-300 ${
                   selectedIndustry === 'all'
-                    ? 'bg-purple-600 text-white'
+                    ? 'bg-blue-600 text-white'
                     : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                 }`}
               >
@@ -134,7 +134,7 @@ export default function CaseStudies() {
                   onClick={() => setSelectedIndustry(industry)}
                   className={`px-6 py-2 rounded-full whitespace-nowrap transition-all duration-300 ${
                     selectedIndustry === industry
-                      ? 'bg-purple-600 text-white'
+                      ? 'bg-blue-600 text-white'
                       : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                   }`}
                 >
@@ -167,7 +167,7 @@ export default function CaseStudies() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                     <div className="absolute bottom-4 left-4 right-4">
-                      <span className="text-sm text-white bg-purple-600 px-3 py-1 rounded-full">
+                      <span className="text-sm text-white bg-blue-600 px-3 py-1 rounded-full">
                         {study.industry}
                       </span>
                     </div>
@@ -182,7 +182,7 @@ export default function CaseStudies() {
                         <div key={idx} className="flex items-center space-x-2">
                           {idx === 0 && <TrendingUp className="h-5 w-5 text-green-500" />}
                           {idx === 1 && <Users className="h-5 w-5 text-blue-500" />}
-                          {idx === 2 && <Target className="h-5 w-5 text-purple-500" />}
+                          {idx === 2 && <Target className="h-5 w-5 text-blue-500" />}
                           <span className="text-gray-700">{`${key}: ${value}`}</span>
                         </div>
                       ))}
@@ -190,7 +190,7 @@ export default function CaseStudies() {
 
                     <Link 
                       to={`/case-studies/${study.id}`}
-                      className="inline-flex items-center text-purple-600 hover:text-purple-700 font-medium"
+                      className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium"
                     >
                       Read Full Case Study
                       <ArrowRight className="ml-2 h-4 w-4" />
@@ -204,14 +204,14 @@ export default function CaseStudies() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 bg-gradient-to-r from-purple-600 to-blue-600">
+      <section className="py-20 bg-gradient-to-r from-blue-600 to-blue-600">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center text-white">
             <h2 className="text-3xl font-bold mb-6">Ready to Write Your Success Story?</h2>
             <p className="text-xl mb-8">
               Join the ranks of industry leaders who have transformed their businesses with our solutions.
             </p>
-            <button className="bg-white text-purple-600 px-8 py-3 rounded-md hover:bg-purple-50 transition-colors font-medium">
+            <button className="bg-white text-blue-600 px-8 py-3 rounded-md hover:bg-blue-50 transition-colors font-medium">
               Schedule a Consultation
             </button>
           </div>

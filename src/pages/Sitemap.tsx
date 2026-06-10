@@ -124,7 +124,7 @@ export default function Sitemap() {
       <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
-            <Globe className="h-16 w-16 text-purple-600 mx-auto mb-6" />
+            <Globe className="h-16 w-16 text-blue-600 mx-auto mb-6" />
             <h1 className="text-4xl font-bold text-gray-900 mb-6">
               Website Sitemap
             </h1>
@@ -137,7 +137,7 @@ export default function Sitemap() {
               <button
                 onClick={generateXMLSitemap}
                 disabled={loading}
-                className="bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700 transition-colors font-medium disabled:opacity-50"
+                className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium disabled:opacity-50"
               >
                 {loading ? 'Generating...' : 'Generate XML Sitemap'}
               </button>
@@ -161,7 +161,7 @@ export default function Sitemap() {
             {sitemapSections.map((section, index) => (
               <div key={index} className="mb-16">
                 <div className="flex items-center mb-8">
-                  <section.icon className="h-8 w-8 text-purple-600 mr-3" />
+                  <section.icon className="h-8 w-8 text-blue-600 mr-3" />
                   <h2 className="text-2xl font-bold text-gray-900">{section.title}</h2>
                 </div>
                 
@@ -175,7 +175,7 @@ export default function Sitemap() {
                               href={link.path}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="hover:text-purple-600 transition-colors flex items-center"
+                              className="hover:text-blue-600 transition-colors flex items-center"
                             >
                               {link.name}
                               <ExternalLink className="h-4 w-4 ml-2" />
@@ -183,7 +183,7 @@ export default function Sitemap() {
                           ) : (
                             <Link
                               to={link.path}
-                              className="hover:text-purple-600 transition-colors"
+                              className="hover:text-blue-600 transition-colors"
                             >
                               {link.name}
                             </Link>
@@ -235,22 +235,22 @@ export default function Sitemap() {
       <section className="py-20">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
-            <div className="bg-purple-50 rounded-lg p-8">
+            <div className="bg-blue-50 rounded-lg p-8">
               <h2 className="text-2xl font-bold text-gray-900 mb-6">SEO & Search Engine Information</h2>
               <div className="grid md:grid-cols-2 gap-8">
                 <div>
                   <h3 className="text-lg font-semibold text-gray-900 mb-4">For Search Engines</h3>
                   <ul className="space-y-2">
                     <li className="flex items-start">
-                      <span className="h-2 w-2 bg-purple-600 rounded-full mr-3 mt-2"></span>
+                      <span className="h-2 w-2 bg-blue-600 rounded-full mr-3 mt-2"></span>
                       <span>XML sitemap available at <code>/sitemap.xml</code></span>
                     </li>
                     <li className="flex items-start">
-                      <span className="h-2 w-2 bg-purple-600 rounded-full mr-3 mt-2"></span>
+                      <span className="h-2 w-2 bg-blue-600 rounded-full mr-3 mt-2"></span>
                       <span>Robots.txt available at <code>/robots.txt</code></span>
                     </li>
                     <li className="flex items-start">
-                      <span className="h-2 w-2 bg-purple-600 rounded-full mr-3 mt-2"></span>
+                      <span className="h-2 w-2 bg-blue-600 rounded-full mr-3 mt-2"></span>
                       <span>Cross-domain sitemaps included</span>
                     </li>
                   </ul>
@@ -260,15 +260,15 @@ export default function Sitemap() {
                   <h3 className="text-lg font-semibold text-gray-900 mb-4">Coverage</h3>
                   <ul className="space-y-2">
                     <li className="flex items-start">
-                      <span className="h-2 w-2 bg-purple-600 rounded-full mr-3 mt-2"></span>
+                      <span className="h-2 w-2 bg-blue-600 rounded-full mr-3 mt-2"></span>
                       <span>All main pages and services</span>
                     </li>
                     <li className="flex items-start">
-                      <span className="h-2 w-2 bg-purple-600 rounded-full mr-3 mt-2"></span>
+                      <span className="h-2 w-2 bg-blue-600 rounded-full mr-3 mt-2"></span>
                       <span>Dynamic content (blog, case studies)</span>
                     </li>
                     <li className="flex items-start">
-                      <span className="h-2 w-2 bg-purple-600 rounded-full mr-3 mt-2"></span>
+                      <span className="h-2 w-2 bg-blue-600 rounded-full mr-3 mt-2"></span>
                       <span>EvolucentSphere ecosystem links</span>
                     </li>
                   </ul>

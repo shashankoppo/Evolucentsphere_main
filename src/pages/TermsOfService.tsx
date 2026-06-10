@@ -16,7 +16,7 @@ export default function TermsOfService() {
       <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
-            <Scale className="h-16 w-16 text-purple-600 mx-auto mb-6" />
+            <Scale className="h-16 w-16 text-blue-600 mx-auto mb-6" />
             <h1 className="text-4xl font-bold text-gray-900 mb-6">
               Terms of Service
             </h1>
@@ -39,7 +39,7 @@ export default function TermsOfService() {
             {/* Acceptance of Terms */}
             <div className="mb-12">
               <div className="flex items-center mb-6">
-                <FileText className="h-8 w-8 text-purple-600 mr-3" />
+                <FileText className="h-8 w-8 text-blue-600 mr-3" />
                 <h2 className="text-2xl font-bold text-gray-900">Acceptance of Terms</h2>
               </div>
               
@@ -57,7 +57,7 @@ export default function TermsOfService() {
             {/* Service Description */}
             <div className="mb-12">
               <div className="flex items-center mb-6">
-                <Users className="h-8 w-8 text-purple-600 mr-3" />
+                <Users className="h-8 w-8 text-blue-600 mr-3" />
                 <h2 className="text-2xl font-bold text-gray-900">Service Description</h2>
               </div>
               
@@ -71,19 +71,19 @@ export default function TermsOfService() {
                     <h3 className="text-lg font-semibold text-gray-900 mb-3">Technology Services</h3>
                     <ul className="space-y-2">
                       <li className="flex items-start">
-                        <span className="h-2 w-2 bg-purple-600 rounded-full mr-3 mt-2"></span>
+                        <span className="h-2 w-2 bg-blue-600 rounded-full mr-3 mt-2"></span>
                         <span>AI & Machine Learning Solutions</span>
                       </li>
                       <li className="flex items-start">
-                        <span className="h-2 w-2 bg-purple-600 rounded-full mr-3 mt-2"></span>
+                        <span className="h-2 w-2 bg-blue-600 rounded-full mr-3 mt-2"></span>
                         <span>Cloud Infrastructure Services</span>
                       </li>
                       <li className="flex items-start">
-                        <span className="h-2 w-2 bg-purple-600 rounded-full mr-3 mt-2"></span>
+                        <span className="h-2 w-2 bg-blue-600 rounded-full mr-3 mt-2"></span>
                         <span>Cybersecurity Solutions</span>
                       </li>
                       <li className="flex items-start">
-                        <span className="h-2 w-2 bg-purple-600 rounded-full mr-3 mt-2"></span>
+                        <span className="h-2 w-2 bg-blue-600 rounded-full mr-3 mt-2"></span>
                         <span>Software Development</span>
                       </li>
                     </ul>
@@ -93,19 +93,19 @@ export default function TermsOfService() {
                     <h3 className="text-lg font-semibold text-gray-900 mb-3">Business Services</h3>
                     <ul className="space-y-2">
                       <li className="flex items-start">
-                        <span className="h-2 w-2 bg-purple-600 rounded-full mr-3 mt-2"></span>
+                        <span className="h-2 w-2 bg-blue-600 rounded-full mr-3 mt-2"></span>
                         <span>Business Process Outsourcing</span>
                       </li>
                       <li className="flex items-start">
-                        <span className="h-2 w-2 bg-purple-600 rounded-full mr-3 mt-2"></span>
+                        <span className="h-2 w-2 bg-blue-600 rounded-full mr-3 mt-2"></span>
                         <span>Knowledge Process Outsourcing</span>
                       </li>
                       <li className="flex items-start">
-                        <span className="h-2 w-2 bg-purple-600 rounded-full mr-3 mt-2"></span>
+                        <span className="h-2 w-2 bg-blue-600 rounded-full mr-3 mt-2"></span>
                         <span>Strategic Consulting</span>
                       </li>
                       <li className="flex items-start">
-                        <span className="h-2 w-2 bg-purple-600 rounded-full mr-3 mt-2"></span>
+                        <span className="h-2 w-2 bg-blue-600 rounded-full mr-3 mt-2"></span>
                         <span>Digital Transformation</span>
                       </li>
                     </ul>
@@ -117,7 +117,7 @@ export default function TermsOfService() {
             {/* User Responsibilities */}
             <div className="mb-12">
               <div className="flex items-center mb-6">
-                <Shield className="h-8 w-8 text-purple-600 mr-3" />
+                <Shield className="h-8 w-8 text-blue-600 mr-3" />
                 <h2 className="text-2xl font-bold text-gray-900">User Responsibilities</h2>
               </div>
               
@@ -128,23 +128,23 @@ export default function TermsOfService() {
                 
                 <ul className="space-y-3">
                   <li className="flex items-start">
-                    <span className="h-2 w-2 bg-purple-600 rounded-full mr-3 mt-2"></span>
+                    <span className="h-2 w-2 bg-blue-600 rounded-full mr-3 mt-2"></span>
                     <span>Provide accurate and complete information</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="h-2 w-2 bg-purple-600 rounded-full mr-3 mt-2"></span>
+                    <span className="h-2 w-2 bg-blue-600 rounded-full mr-3 mt-2"></span>
                     <span>Use our services in compliance with applicable laws</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="h-2 w-2 bg-purple-600 rounded-full mr-3 mt-2"></span>
+                    <span className="h-2 w-2 bg-blue-600 rounded-full mr-3 mt-2"></span>
                     <span>Maintain the confidentiality of your account credentials</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="h-2 w-2 bg-purple-600 rounded-full mr-3 mt-2"></span>
+                    <span className="h-2 w-2 bg-blue-600 rounded-full mr-3 mt-2"></span>
                     <span>Not use our services for any unlawful or prohibited activities</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="h-2 w-2 bg-purple-600 rounded-full mr-3 mt-2"></span>
+                    <span className="h-2 w-2 bg-blue-600 rounded-full mr-3 mt-2"></span>
                     <span>Respect intellectual property rights</span>
                   </li>
                 </ul>
@@ -154,7 +154,7 @@ export default function TermsOfService() {
             {/* Intellectual Property */}
             <div className="mb-12">
               <div className="flex items-center mb-6">
-                <Globe className="h-8 w-8 text-purple-600 mr-3" />
+                <Globe className="h-8 w-8 text-blue-600 mr-3" />
                 <h2 className="text-2xl font-bold text-gray-900">Intellectual Property</h2>
               </div>
               
@@ -165,15 +165,15 @@ export default function TermsOfService() {
                   trademark, patent, trade secret, and other intellectual property laws.
                 </p>
                 
-                <div className="bg-purple-50 rounded-lg p-6 mt-6">
+                <div className="bg-blue-50 rounded-lg p-6 mt-6">
                   <h3 className="text-lg font-semibold text-gray-900 mb-3">What You Can Do</h3>
                   <ul className="space-y-2">
                     <li className="flex items-start">
-                      <span className="h-2 w-2 bg-purple-600 rounded-full mr-3 mt-2"></span>
+                      <span className="h-2 w-2 bg-blue-600 rounded-full mr-3 mt-2"></span>
                       <span>Use our services for legitimate business purposes</span>
                     </li>
                     <li className="flex items-start">
-                      <span className="h-2 w-2 bg-purple-600 rounded-full mr-3 mt-2"></span>
+                      <span className="h-2 w-2 bg-blue-600 rounded-full mr-3 mt-2"></span>
                       <span>Share publicly available content with proper attribution</span>
                     </li>
                   </ul>
@@ -184,7 +184,7 @@ export default function TermsOfService() {
             {/* Limitation of Liability */}
             <div className="mb-12">
               <div className="flex items-center mb-6">
-                <AlertTriangle className="h-8 w-8 text-purple-600 mr-3" />
+                <AlertTriangle className="h-8 w-8 text-blue-600 mr-3" />
                 <h2 className="text-2xl font-bold text-gray-900">Limitation of Liability</h2>
               </div>
               
@@ -215,24 +215,24 @@ export default function TermsOfService() {
                 
                 <div className="grid md:grid-cols-3 gap-6">
                   <div className="text-center">
-                    <div className="bg-purple-100 p-4 rounded-lg mb-4">
-                      <span className="text-2xl font-bold text-purple-600">99.9%</span>
+                    <div className="bg-blue-100 p-4 rounded-lg mb-4">
+                      <span className="text-2xl font-bold text-blue-600">99.9%</span>
                     </div>
                     <h3 className="font-semibold text-gray-900 mb-2">Uptime Guarantee</h3>
                     <p className="text-sm text-gray-600">Service availability commitment</p>
                   </div>
                   
                   <div className="text-center">
-                    <div className="bg-purple-100 p-4 rounded-lg mb-4">
-                      <span className="text-2xl font-bold text-purple-600">24/7</span>
+                    <div className="bg-blue-100 p-4 rounded-lg mb-4">
+                      <span className="text-2xl font-bold text-blue-600">24/7</span>
                     </div>
                     <h3 className="font-semibold text-gray-900 mb-2">Support</h3>
                     <p className="text-sm text-gray-600">Round-the-clock assistance</p>
                   </div>
                   
                   <div className="text-center">
-                    <div className="bg-purple-100 p-4 rounded-lg mb-4">
-                      <span className="text-2xl font-bold text-purple-600">&lt;4h</span>
+                    <div className="bg-blue-100 p-4 rounded-lg mb-4">
+                      <span className="text-2xl font-bold text-blue-600">&lt;4h</span>
                     </div>
                     <h3 className="font-semibold text-gray-900 mb-2">Response Time</h3>
                     <p className="text-sm text-gray-600">Critical issue response</p>
@@ -258,7 +258,7 @@ export default function TermsOfService() {
 
             {/* Contact Information */}
             <div className="mb-12">
-              <div className="bg-purple-50 rounded-lg p-8">
+              <div className="bg-blue-50 rounded-lg p-8">
                 <h2 className="text-2xl font-bold text-gray-900 mb-6">Contact Us</h2>
                 <p className="text-gray-700 mb-4">
                   If you have any questions about these Terms of Service, please contact us:

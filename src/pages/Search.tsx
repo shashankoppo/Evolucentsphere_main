@@ -195,7 +195,7 @@ export default function Search() {
               onClick={() => setFilter('all')}
               className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
                 filter === 'all'
-                  ? 'bg-purple-600 text-white'
+                  ? 'bg-blue-600 text-white'
                   : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
               }`}
             >
@@ -205,7 +205,7 @@ export default function Search() {
               onClick={() => setFilter('service')}
               className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
                 filter === 'service'
-                  ? 'bg-purple-600 text-white'
+                  ? 'bg-blue-600 text-white'
                   : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
               }`}
             >
@@ -215,7 +215,7 @@ export default function Search() {
               onClick={() => setFilter('page')}
               className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
                 filter === 'page'
-                  ? 'bg-purple-600 text-white'
+                  ? 'bg-blue-600 text-white'
                   : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
               }`}
             >
@@ -256,7 +256,7 @@ export default function Search() {
               </p>
               <a
                 href="/services"
-                className="inline-flex items-center text-purple-600 hover:text-purple-700 font-medium"
+                className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium"
               >
                 Browse Services
                 <ArrowRight className="ml-2 h-4 w-4" />
@@ -272,7 +272,7 @@ export default function Search() {
                   <div className="flex items-start justify-between mb-3">
                     <div className="flex items-center space-x-2">
                       {getTypeIcon(result.type)}
-                      <span className="text-sm text-purple-600 font-medium">
+                      <span className="text-sm text-blue-600 font-medium">
                         {getTypeLabel(result.type)}
                       </span>
                     </div>
@@ -287,7 +287,7 @@ export default function Search() {
                   <h3 className="text-xl font-bold text-gray-900 mb-2">
                     <a 
                       href={result.url}
-                      className="hover:text-purple-600 transition-colors"
+                      className="hover:text-blue-600 transition-colors"
                     >
                       {result.title}
                     </a>
@@ -300,7 +300,7 @@ export default function Search() {
                   <div className="flex items-center justify-between">
                     <a
                       href={result.url}
-                      className="inline-flex items-center text-purple-600 hover:text-purple-700 font-medium"
+                      className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium"
                     >
                       View Details
                       <ArrowRight className="ml-2 h-4 w-4" />

@@ -52,7 +52,7 @@ export default function SitemapManager() {
     <div className="bg-white rounded-lg shadow-lg p-6">
       <div className="flex items-center justify-between mb-6">
         <div className="flex items-center">
-          <Globe className="h-6 w-6 text-purple-600 mr-2" />
+          <Globe className="h-6 w-6 text-blue-600 mr-2" />
           <h3 className="text-xl font-bold text-gray-900">Sitemap Manager</h3>
         </div>
         <div className="flex items-center space-x-2">
@@ -74,7 +74,7 @@ export default function SitemapManager() {
           <button
             onClick={handleGenerateSitemap}
             disabled={isGenerating}
-            className="flex items-center px-4 py-2 bg-purple-600 text-white rounded-md hover:bg-purple-700 disabled:opacity-50 transition-colors"
+            className="flex items-center px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 disabled:opacity-50 transition-colors"
           >
             {isGenerating ? (
               <RefreshCw className="h-4 w-4 mr-2 animate-spin" />

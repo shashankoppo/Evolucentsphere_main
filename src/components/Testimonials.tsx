@@ -84,11 +84,11 @@ export default function Testimonials() {
                 <div>
                   <h3 className="font-bold text-gray-900">{testimonial.client_name}</h3>
                   <p className="text-gray-600">Client</p>
-                  <p className="text-sm text-purple-600">{testimonial.company}</p>
+                  <p className="text-sm text-blue-600">{testimonial.company}</p>
                 </div>
               </div>
               <div className="mb-6">
-                <Quote className="h-8 w-8 text-purple-200 mb-4" />
+                <Quote className="h-8 w-8 text-blue-200 mb-4" />
                 <p className="text-gray-600 italic">{testimonial.content}</p>
               </div>
               <div className="flex text-yellow-400">

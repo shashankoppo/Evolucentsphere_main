@@ -27,14 +27,14 @@ export default function Products() {
         <div className="text-center mb-16">
           <div className="inline-block">
             <div className="flex items-center justify-center mb-4">
-              <div className="h-1 w-10 bg-purple-600 mr-2"></div>
-              <span className="text-purple-600 font-semibold">Our Products</span>
-              <div className="h-1 w-10 bg-purple-600 ml-2"></div>
+              <div className="h-1 w-10 bg-blue-600 mr-2"></div>
+              <span className="text-blue-600 font-semibold">Our Products</span>
+              <div className="h-1 w-10 bg-blue-600 ml-2"></div>
             </div>
           </div>
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
             Innovative Solutions for 
-            <span className="text-purple-600"> Enterprise Excellence</span>
+            <span className="text-blue-600"> Enterprise Excellence</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Transform your business operations with our suite of cutting-edge products
@@ -48,7 +48,7 @@ export default function Products() {
             <div className="flex items-center justify-between mb-12">
               <div>
                 <h3 className="text-2xl font-bold text-gray-900">{category.title}</h3>
-                <div className="h-1 w-20 bg-purple-600 mt-2"></div>
+                <div className="h-1 w-20 bg-blue-600 mt-2"></div>
               </div>
             </div>
 
@@ -56,10 +56,10 @@ export default function Products() {
               {category.products.map((product, index) => (
                 <div key={index} className="bg-white rounded-xl shadow-xl p-8 transform hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
                   <div className="flex items-center mb-6">
-                    <div className="bg-purple-100 p-3 rounded-lg">
-                      {key === 'bpo' && <Package className="h-8 w-8 text-purple-600" />}
-                      {key === 'kpo' && <Brain className="h-8 w-8 text-purple-600" />}
-                      {key === 'it' && <Cloud className="h-8 w-8 text-purple-600" />}
+                    <div className="bg-blue-100 p-3 rounded-lg">
+                      {key === 'bpo' && <Package className="h-8 w-8 text-blue-600" />}
+                      {key === 'kpo' && <Brain className="h-8 w-8 text-blue-600" />}
+                      {key === 'it' && <Cloud className="h-8 w-8 text-blue-600" />}
                     </div>
                     <div className="ml-4">
                       <h4 className="text-xl font-bold text-gray-900">{product.name}</h4>
@@ -78,7 +78,7 @@ export default function Products() {
                     <div className="grid grid-cols-2 gap-3">
                       {product.features.map((feature, idx) => (
                         <div key={idx} className="flex items-center text-sm text-gray-700">
-                          <CheckCircle className="h-4 w-4 text-purple-600 mr-2 flex-shrink-0" />
+                          <CheckCircle className="h-4 w-4 text-blue-600 mr-2 flex-shrink-0" />
                           <span>{feature}</span>
                         </div>
                       ))}
@@ -97,7 +97,7 @@ export default function Products() {
                     </div>
                   </div>
 
-                  <button className="mt-8 w-full bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700 transition-colors flex items-center justify-center group">
+                  <button className="mt-8 w-full bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center group">
                     Learn More
                     <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                   </button>
@@ -112,36 +112,36 @@ export default function Products() {
           <h3 className="text-2xl font-bold text-gray-900 mb-8">Trusted by Industry Leaders</h3>
           <div className="grid md:grid-cols-4 gap-8">
             <div>
-              <Users className="h-12 w-12 text-purple-600 mx-auto mb-4" />
-              <div className="text-2xl font-bold text-purple-600">10,000+</div>
+              <Users className="h-12 w-12 text-blue-600 mx-auto mb-4" />
+              <div className="text-2xl font-bold text-blue-600">10,000+</div>
               <div className="text-gray-600">Active Users</div>
             </div>
             <div>
-              <Shield className="h-12 w-12 text-purple-600 mx-auto mb-4" />
-              <div className="text-2xl font-bold text-purple-600">99.9%</div>
+              <Shield className="h-12 w-12 text-blue-600 mx-auto mb-4" />
+              <div className="text-2xl font-bold text-blue-600">99.9%</div>
               <div className="text-gray-600">Uptime</div>
             </div>
             <div>
-              <Award className="h-12 w-12 text-purple-600 mx-auto mb-4" />
-              <div className="text-2xl font-bold text-purple-600">50+</div>
+              <Award className="h-12 w-12 text-blue-600 mx-auto mb-4" />
+              <div className="text-2xl font-bold text-blue-600">50+</div>
               <div className="text-gray-600">Industry Awards</div>
             </div>
             <div>
-              <Star className="h-12 w-12 text-purple-600 mx-auto mb-4" />
-              <div className="text-2xl font-bold text-purple-600">4.9/5</div>
+              <Star className="h-12 w-12 text-blue-600 mx-auto mb-4" />
+              <div className="text-2xl font-bold text-blue-600">4.9/5</div>
               <div className="text-gray-600">Client Rating</div>
             </div>
           </div>
         </div>
 
         {/* Call to Action */}
-        <div className="mt-20 bg-gradient-to-r from-purple-600 to-blue-600 rounded-xl p-12 text-white text-center">
+        <div className="mt-20 bg-gradient-to-r from-blue-600 to-blue-600 rounded-xl p-12 text-white text-center">
           <h3 className="text-3xl font-bold mb-6">Ready to Transform Your Business?</h3>
           <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
             Join the ranks of industry leaders who have revolutionized their operations with our innovative solutions.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-purple-600 px-8 py-4 rounded-lg hover:bg-purple-50 transition-colors font-medium flex items-center justify-center">
+            <button className="bg-white text-blue-600 px-8 py-4 rounded-lg hover:bg-blue-50 transition-colors font-medium flex items-center justify-center">
               Schedule a Demo
               <ArrowRight className="ml-2 h-5 w-5" />
             </button>

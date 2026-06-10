@@ -280,7 +280,7 @@ export default function DigitalExperienceMarketing() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 bg-gradient-to-r from-pink-600 to-purple-600">
+      <section className="py-20 bg-gradient-to-r from-pink-600 to-blue-600">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center text-white">
             <h2 className="text-3xl font-bold mb-6">Elevate Your Digital Marketing</h2>

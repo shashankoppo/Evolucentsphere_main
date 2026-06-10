@@ -86,17 +86,17 @@ export default function InnovationHub() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
                   <div className="absolute bottom-4 left-4">
-                    <span className="text-white text-sm bg-purple-600 px-3 py-1 rounded-full">
+                    <span className="text-white text-sm bg-blue-600 px-3 py-1 rounded-full">
                       {innovation.category}
                     </span>
                   </div>
                 </div>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-purple-600 transition-colors">
+              <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
                 {innovation.title}
               </h3>
               <p className="text-gray-600 mb-3">{innovation.description}</p>
-              <span className="text-sm text-purple-600">{innovation.readTime}</span>
+              <span className="text-sm text-blue-600">{innovation.readTime}</span>
             </div>
           ))}
         </div>
@@ -110,7 +110,7 @@ export default function InnovationHub() {
           <div className="grid md:grid-cols-3 gap-8">
             {researchAreas.map((area, index) => (
               <div key={index} className="text-center">
-                <area.icon className="h-12 w-12 text-purple-600 mx-auto mb-4" />
+                <area.icon className="h-12 w-12 text-blue-600 mx-auto mb-4" />
                 <h4 className="text-xl font-bold text-gray-900 mb-2">{area.title}</h4>
                 <p className="text-gray-600">{area.description}</p>
               </div>
@@ -119,14 +119,14 @@ export default function InnovationHub() {
         </div>
 
         {/* Innovation Assessment */}
-        <div className="bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg p-8 text-white">
+        <div className="bg-gradient-to-r from-blue-600 to-blue-600 rounded-lg p-8 text-white">
           <div className="max-w-3xl mx-auto text-center">
             <h3 className="text-2xl font-bold mb-4">Innovation Readiness Assessment</h3>
             <p className="mb-8">
               Evaluate your organization's innovation potential and discover opportunities 
               for technological advancement with our comprehensive assessment tool.
             </p>
-            <button className="bg-white text-purple-600 px-8 py-3 rounded-md hover:bg-purple-50 transition-colors font-medium">
+            <button className="bg-white text-blue-600 px-8 py-3 rounded-md hover:bg-blue-50 transition-colors font-medium">
               Start Assessment
             </button>
           </div>

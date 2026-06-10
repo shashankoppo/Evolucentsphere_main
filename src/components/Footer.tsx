@@ -69,7 +69,7 @@ export default function Footer() {
             {/* Company Info */}
             <div className="lg:col-span-2">
               <div className="flex items-center space-x-3 mb-6">
-                <Brain className="h-10 w-10 text-purple-400" />
+                <Brain className="h-10 w-10 text-blue-400" />
                 <div>
                   <span className="text-2xl font-bold">EvolucentSphere</span>
                   <p className="text-sm text-gray-400">Flagship Division: ELSxGlobal</p>
@@ -100,7 +100,7 @@ export default function Footer() {
                     <p className="font-medium mb-1">Global Presence:</p>
                     <ul className="text-sm space-y-1">
                       {config.app.locations.map((location, index) => (
-                        <li key={index}>📍 {location}</li>
+                        <li key={index}>{location}</li>
                       ))}
                     </ul>
                   </div>
@@ -126,7 +126,7 @@ export default function Footer() {
 
             {/* Our Services */}
             <div>
-              <h3 className="text-lg font-semibold mb-6 text-purple-400">Our Services</h3>
+              <h3 className="text-lg font-semibold mb-6 text-blue-400">Our Services</h3>
               <ul className="space-y-3">
                 {footerSections.services.map((service, index) => (
                   <li key={index}>
@@ -144,7 +144,7 @@ export default function Footer() {
 
             {/* Company */}
             <div>
-              <h3 className="text-lg font-semibold mb-6 text-purple-400">Company</h3>
+              <h3 className="text-lg font-semibold mb-6 text-blue-400">Company</h3>
               <ul className="space-y-3">
                 {footerSections.company.map((item, index) => (
                   <li key={index}>
@@ -161,7 +161,7 @@ export default function Footer() {
 
             {/* Main Divisions */}
             <div>
-              <h3 className="text-lg font-semibold mb-6 text-purple-400">Our Divisions</h3>
+              <h3 className="text-lg font-semibold mb-6 text-blue-400">Our Divisions</h3>
               <ul className="space-y-3">
                 {parentCompany && (
                   <li>
@@ -194,7 +194,7 @@ export default function Footer() {
 
             {/* Industries */}
             <div>
-              <h3 className="text-lg font-semibold mb-6 text-purple-400">Industries</h3>
+              <h3 className="text-lg font-semibold mb-6 text-blue-400">Industries</h3>
               <ul className="space-y-3">
                 {footerSections.industries.map((industry, index) => (
                   <li key={index}>
@@ -212,7 +212,7 @@ export default function Footer() {
 
           {/* ELSxTech Subdivisions */}
           <div className="border-t border-gray-800 pt-8 mb-8">
-            <h3 className="text-xl font-semibold mb-6 text-center text-purple-400">
+            <h3 className="text-xl font-semibold mb-6 text-center text-blue-400">
               ELSxTech Specialized Services
             </h3>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">

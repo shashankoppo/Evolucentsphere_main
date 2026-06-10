@@ -50,7 +50,7 @@ export default function BreadcrumbNav() {
       <div className="container mx-auto px-4 sm:px-6">
         <ol className="flex items-center space-x-1 text-sm">
           <li>
-            <Link to="/" className="text-purple-600 hover:text-purple-700 flex items-center">
+            <Link to="/" className="text-blue-600 hover:text-blue-700 flex items-center">
               <Home className="h-4 w-4 mr-1" />
               Home
             </Link>
@@ -64,7 +64,7 @@ export default function BreadcrumbNav() {
               ) : (
                 <Link
                   to={breadcrumb.path}
-                  className="text-purple-600 hover:text-purple-700"
+                  className="text-blue-600 hover:text-blue-700"
                 >
                   {breadcrumb.label}
                 </Link>

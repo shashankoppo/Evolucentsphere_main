@@ -43,7 +43,7 @@ const resources = [
 
 export default function Resources() {
   return (
-    <section id="resources" className="py-20 bg-gradient-to-b from-white to-purple-50">
+    <section id="resources" className="py-20 bg-gradient-to-b from-white to-blue-50">
       <SEOHead 
         title="Knowledge Center & Resources"
         description="Access our comprehensive collection of resources including digital transformation guides, AI implementation whitepapers, and technology assessment toolkits to accelerate your business growth."
@@ -72,7 +72,7 @@ export default function Resources() {
         <div className="grid md:grid-cols-3 gap-8 mb-16">
           {resources.map((resource, index) => (
             <div key={index} className="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-all duration-300">
-              <resource.icon className="h-12 w-12 text-purple-600 mb-6" />
+              <resource.icon className="h-12 w-12 text-blue-600 mb-6" />
               <h3 className="text-xl font-bold text-gray-900 mb-4">{resource.title}</h3>
               <p className="text-gray-600 mb-6">{resource.description}</p>
               
@@ -81,7 +81,7 @@ export default function Resources() {
                 <ul className="space-y-2">
                   {resource.highlights.map((highlight, idx) => (
                     <li key={idx} className="flex items-center text-gray-600">
-                      <span className="h-2 w-2 bg-purple-600 rounded-full mr-2"></span>
+                      <span className="h-2 w-2 bg-blue-600 rounded-full mr-2"></span>
                       {highlight}
                     </li>
                   ))}
@@ -90,7 +90,7 @@ export default function Resources() {
               
               <a 
                 href={resource.downloadLink}
-                className="inline-flex items-center text-purple-600 hover:text-purple-700 font-medium"
+                className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium"
               >
                 <Download className="h-5 w-5 mr-2" />
                 Download Resource
@@ -108,11 +108,11 @@ export default function Resources() {
               including detailed implementation guides, templates, and industry research.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <button className="inline-flex items-center bg-purple-600 text-white px-8 py-3 rounded-md hover:bg-purple-700 transition-colors font-medium">
+              <button className="inline-flex items-center bg-blue-600 text-white px-8 py-3 rounded-md hover:bg-blue-700 transition-colors font-medium">
                 Explore Premium Resources
                 <ArrowRight className="ml-2 h-5 w-5" />
               </button>
-              <button className="inline-flex items-center border-2 border-purple-600 text-purple-600 px-8 py-3 rounded-md hover:bg-purple-50 transition-colors font-medium">
+              <button className="inline-flex items-center border-2 border-blue-600 text-blue-600 px-8 py-3 rounded-md hover:bg-blue-50 transition-colors font-medium">
                 View Pricing
               </button>
             </div>

@@ -40,10 +40,10 @@ export default function Awards() {
         <div className="grid md:grid-cols-4 gap-8">
           {awards.map((award, index) => (
             <div key={index} className="text-center">
-              <award.icon className="h-16 w-16 text-purple-600 mx-auto mb-4" />
+              <award.icon className="h-16 w-16 text-blue-600 mx-auto mb-4" />
               <h3 className="text-xl font-bold text-gray-900 mb-2">{award.title}</h3>
               <p className="text-gray-600">{award.organization}</p>
-              <p className="text-purple-600 font-medium">{award.year}</p>
+              <p className="text-blue-600 font-medium">{award.year}</p>
             </div>
           ))}
         </div>

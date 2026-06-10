@@ -44,7 +44,7 @@ export default function Retail() {
       />
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-b from-purple-50 to-white">
+      <section className="py-20 bg-gradient-to-b from-blue-50 to-white">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
             <motion.h1 
@@ -80,7 +80,7 @@ export default function Retail() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1, duration: 0.6 }}
               >
-                <service.icon className="h-12 w-12 text-purple-600 mb-6" />
+                <service.icon className="h-12 w-12 text-blue-600 mb-6" />
                 <h3 className="text-xl font-bold text-gray-900 mb-4">{service.title}</h3>
                 <p className="text-gray-600 mb-6">{service.description}</p>
                 <div className="space-y-2">
@@ -98,14 +98,14 @@ export default function Retail() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 bg-gradient-to-r from-purple-600 to-pink-600">
+      <section className="py-20 bg-gradient-to-r from-blue-600 to-pink-600">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center text-white">
             <h2 className="text-3xl font-bold mb-6">Revolutionize Your Retail Business</h2>
             <p className="text-xl mb-8">
               Create exceptional customer experiences and drive growth with our retail technology solutions.
             </p>
-            <button className="bg-white text-purple-600 px-8 py-4 rounded-lg hover:bg-purple-50 transition-colors font-medium flex items-center justify-center mx-auto group">
+            <button className="bg-white text-blue-600 px-8 py-4 rounded-lg hover:bg-blue-50 transition-colors font-medium flex items-center justify-center mx-auto group">
               Explore Retail Solutions
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </button>

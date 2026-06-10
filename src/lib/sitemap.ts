@@ -17,7 +17,7 @@ export class SitemapGenerator {
   private staticUrls: SitemapUrl[];
   private crossDomainUrls: SitemapUrl[];
 
-  constructor(baseUrl: string = 'https://elsxglobal.cloud') {
+  constructor(baseUrl: string = 'https://elsxglobal.com') {
     this.baseUrl = baseUrl;
     this.initializeUrls();
   }
@@ -277,104 +277,104 @@ export class SitemapGenerator {
       },
       // Main division sites
       {
-        loc: 'https://tech.elsxglobal.cloud/',
+        loc: 'https://tech.elsxglobal.com/',
         lastmod: new Date().toISOString().split('T')[0],
         changefreq: 'daily',
         priority: 0.9
       },
       {
-        loc: 'https://tech.elsxglobal.cloud/services',
+        loc: 'https://tech.elsxglobal.com/services',
         lastmod: new Date().toISOString().split('T')[0],
         changefreq: 'weekly',
         priority: 0.8
       },
       {
-        loc: 'https://bpo.elsxglobal.cloud/',
+        loc: 'https://bpo.elsxglobal.com/',
         lastmod: new Date().toISOString().split('T')[0],
         changefreq: 'daily',
         priority: 0.9
       },
       {
-        loc: 'https://bpo.elsxglobal.cloud/services',
+        loc: 'https://bpo.elsxglobal.com/services',
         lastmod: new Date().toISOString().split('T')[0],
         changefreq: 'weekly',
         priority: 0.8
       },
       {
-        loc: 'https://kpo.elsxglobal.cloud/',
+        loc: 'https://kpo.elsxglobal.com/',
         lastmod: new Date().toISOString().split('T')[0],
         changefreq: 'daily',
         priority: 0.9
       },
       {
-        loc: 'https://kpo.elsxglobal.cloud/services',
+        loc: 'https://kpo.elsxglobal.com/services',
         lastmod: new Date().toISOString().split('T')[0],
         changefreq: 'weekly',
         priority: 0.8
       },
       {
-        loc: 'https://consultancy.elsxglobal.cloud/',
+        loc: 'https://consultancy.elsxglobal.com/',
         lastmod: new Date().toISOString().split('T')[0],
         changefreq: 'daily',
         priority: 0.9
       },
       {
-        loc: 'https://consultancy.elsxglobal.cloud/services',
+        loc: 'https://consultancy.elsxglobal.com/services',
         lastmod: new Date().toISOString().split('T')[0],
         changefreq: 'weekly',
         priority: 0.8
       },
       // ELSxTech Sub-domain URLs
       {
-        loc: 'https://cloud.elsxglobal.cloud/',
+        loc: 'https://cloud.elsxglobal.com/',
         lastmod: new Date().toISOString().split('T')[0],
         changefreq: 'daily',
         priority: 0.8
       },
       {
-        loc: 'https://security.elsxglobal.cloud/',
+        loc: 'https://security.elsxglobal.com/',
         lastmod: new Date().toISOString().split('T')[0],
         changefreq: 'daily',
         priority: 0.8
       },
       {
-        loc: 'https://digital.elsxglobal.cloud/',
+        loc: 'https://digital.elsxglobal.com/',
         lastmod: new Date().toISOString().split('T')[0],
         changefreq: 'daily',
         priority: 0.8
       },
       {
-        loc: 'https://software.elsxglobal.cloud/',
+        loc: 'https://software.elsxglobal.com/',
         lastmod: new Date().toISOString().split('T')[0],
         changefreq: 'daily',
         priority: 0.8
       },
       {
-        loc: 'https://ai.elsxglobal.cloud/',
+        loc: 'https://ai.elsxglobal.com/',
         lastmod: new Date().toISOString().split('T')[0],
         changefreq: 'daily',
         priority: 0.8
       },
       {
-        loc: 'https://digitalmarketing.elsxglobal.cloud/',
+        loc: 'https://digitalmarketing.elsxglobal.com/',
         lastmod: new Date().toISOString().split('T')[0],
         changefreq: 'daily',
         priority: 0.8
       },
       {
-        loc: 'https://emergingtech.elsxglobal.cloud/',
+        loc: 'https://emergingtech.elsxglobal.com/',
         lastmod: new Date().toISOString().split('T')[0],
         changefreq: 'daily',
         priority: 0.8
       },
       {
-        loc: 'https://managedit.elsxglobal.cloud/',
+        loc: 'https://managedit.elsxglobal.com/',
         lastmod: new Date().toISOString().split('T')[0],
         changefreq: 'daily',
         priority: 0.8
       },
       {
-        loc: 'https://enterprise.elsxglobal.cloud/',
+        loc: 'https://enterprise.elsxglobal.com/',
         lastmod: new Date().toISOString().split('T')[0],
         changefreq: 'daily',
         priority: 0.8
@@ -530,55 +530,55 @@ export class SitemapGenerator {
     <lastmod>${lastmod}</lastmod>
   </sitemap>
   <sitemap>
-    <loc>https://tech.elsxglobal.cloud/sitemap.xml</loc>
+    <loc>https://tech.elsxglobal.com/sitemap.xml</loc>
     <lastmod>${lastmod}</lastmod>
   </sitemap>
   <sitemap>
-    <loc>https://bpo.elsxglobal.cloud/sitemap.xml</loc>
+    <loc>https://bpo.elsxglobal.com/sitemap.xml</loc>
     <lastmod>${lastmod}</lastmod>
   </sitemap>
   <sitemap>
-    <loc>https://kpo.elsxglobal.cloud/sitemap.xml</loc>
+    <loc>https://kpo.elsxglobal.com/sitemap.xml</loc>
     <lastmod>${lastmod}</lastmod>
   </sitemap>
   <sitemap>
-    <loc>https://consultancy.elsxglobal.cloud/sitemap.xml</loc>
+    <loc>https://consultancy.elsxglobal.com/sitemap.xml</loc>
     <lastmod>${lastmod}</lastmod>
   </sitemap>
   <sitemap>
-    <loc>https://cloud.elsxglobal.cloud/sitemap.xml</loc>
+    <loc>https://cloud.elsxglobal.com/sitemap.xml</loc>
     <lastmod>${lastmod}</lastmod>
   </sitemap>
   <sitemap>
-    <loc>https://security.elsxglobal.cloud/sitemap.xml</loc>
+    <loc>https://security.elsxglobal.com/sitemap.xml</loc>
     <lastmod>${lastmod}</lastmod>
   </sitemap>
   <sitemap>
-    <loc>https://digital.elsxglobal.cloud/sitemap.xml</loc>
+    <loc>https://digital.elsxglobal.com/sitemap.xml</loc>
     <lastmod>${lastmod}</lastmod>
   </sitemap>
   <sitemap>
-    <loc>https://software.elsxglobal.cloud/sitemap.xml</loc>
+    <loc>https://software.elsxglobal.com/sitemap.xml</loc>
     <lastmod>${lastmod}</lastmod>
   </sitemap>
   <sitemap>
-    <loc>https://ai.elsxglobal.cloud/sitemap.xml</loc>
+    <loc>https://ai.elsxglobal.com/sitemap.xml</loc>
     <lastmod>${lastmod}</lastmod>
   </sitemap>
   <sitemap>
-    <loc>https://digitalmarketing.elsxglobal.cloud/sitemap.xml</loc>
+    <loc>https://digitalmarketing.elsxglobal.com/sitemap.xml</loc>
     <lastmod>${lastmod}</lastmod>
   </sitemap>
   <sitemap>
-    <loc>https://emergingtech.elsxglobal.cloud/sitemap.xml</loc>
+    <loc>https://emergingtech.elsxglobal.com/sitemap.xml</loc>
     <lastmod>${lastmod}</lastmod>
   </sitemap>
   <sitemap>
-    <loc>https://managedit.elsxglobal.cloud/sitemap.xml</loc>
+    <loc>https://managedit.elsxglobal.com/sitemap.xml</loc>
     <lastmod>${lastmod}</lastmod>
   </sitemap>
   <sitemap>
-    <loc>https://enterprise.elsxglobal.cloud/sitemap.xml</loc>
+    <loc>https://enterprise.elsxglobal.com/sitemap.xml</loc>
     <lastmod>${lastmod}</lastmod>
   </sitemap>
 </sitemapindex>`;
@@ -618,19 +618,19 @@ Disallow: /node_modules/
 Sitemap: ${this.baseUrl}/sitemap.xml
 Sitemap: ${this.baseUrl}/sitemap-index.xml
 Sitemap: https://evolucentsphere.com/sitemap.xml
-Sitemap: https://tech.elsxglobal.cloud/sitemap.xml
-Sitemap: https://bpo.elsxglobal.cloud/sitemap.xml
-Sitemap: https://kpo.elsxglobal.cloud/sitemap.xml
-Sitemap: https://consultancy.elsxglobal.cloud/sitemap.xml
-Sitemap: https://cloud.elsxglobal.cloud/sitemap.xml
-Sitemap: https://security.elsxglobal.cloud/sitemap.xml
-Sitemap: https://digital.elsxglobal.cloud/sitemap.xml
-Sitemap: https://software.elsxglobal.cloud/sitemap.xml
-Sitemap: https://ai.elsxglobal.cloud/sitemap.xml
-Sitemap: https://digitalmarketing.elsxglobal.cloud/sitemap.xml
-Sitemap: https://emergingtech.elsxglobal.cloud/sitemap.xml
-Sitemap: https://managedit.elsxglobal.cloud/sitemap.xml
-Sitemap: https://enterprise.elsxglobal.cloud/sitemap.xml
+Sitemap: https://tech.elsxglobal.com/sitemap.xml
+Sitemap: https://bpo.elsxglobal.com/sitemap.xml
+Sitemap: https://kpo.elsxglobal.com/sitemap.xml
+Sitemap: https://consultancy.elsxglobal.com/sitemap.xml
+Sitemap: https://cloud.elsxglobal.com/sitemap.xml
+Sitemap: https://security.elsxglobal.com/sitemap.xml
+Sitemap: https://digital.elsxglobal.com/sitemap.xml
+Sitemap: https://software.elsxglobal.com/sitemap.xml
+Sitemap: https://ai.elsxglobal.com/sitemap.xml
+Sitemap: https://digitalmarketing.elsxglobal.com/sitemap.xml
+Sitemap: https://emergingtech.elsxglobal.com/sitemap.xml
+Sitemap: https://managedit.elsxglobal.com/sitemap.xml
+Sitemap: https://enterprise.elsxglobal.com/sitemap.xml
 
 # Crawl optimization
 Crawl-delay: 1

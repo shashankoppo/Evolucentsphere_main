@@ -130,7 +130,7 @@ export default function SearchBar() {
           onChange={(e) => setQuery(e.target.value)}
           onFocus={() => setShowResults(true)}
           placeholder="Search for services, solutions, or insights..."
-          className="w-full px-4 py-3 pl-12 pr-10 text-gray-700 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+          className="w-full px-4 py-3 pl-12 pr-10 text-gray-700 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
           aria-label="Search"
         />
         <Search className="absolute left-4 top-3.5 h-5 w-5 text-gray-400" />
@@ -150,7 +150,7 @@ export default function SearchBar() {
         <div className="absolute z-50 w-full mt-2 bg-white rounded-lg shadow-xl border border-gray-200">
           {isLoading ? (
             <div className="p-4 text-center text-gray-500">
-              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-purple-500 mx-auto"></div>
+              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-500 mx-auto"></div>
             </div>
           ) : (
             <div className="max-h-96 overflow-y-auto">

@@ -98,7 +98,7 @@ export default function LiveChat() {
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
-          className="bg-purple-600 text-white p-4 rounded-full shadow-lg hover:bg-purple-700 transition-all duration-300 transform hover:scale-110"
+          className="bg-blue-600 text-white p-4 rounded-full shadow-lg hover:bg-blue-700 transition-all duration-300 transform hover:scale-110"
         >
           <MessageCircle className="h-6 w-6" />
         </button>
@@ -106,7 +106,7 @@ export default function LiveChat() {
 
       {isOpen && (
         <div className="bg-white rounded-lg shadow-xl w-96 max-w-full">
-          <div className="p-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-t-lg">
+          <div className="p-4 bg-gradient-to-r from-blue-600 to-blue-600 text-white rounded-t-lg">
             <div className="flex justify-between items-center">
               <div className="flex items-center space-x-2">
                 <Bot className="h-6 w-6" />
@@ -137,7 +137,7 @@ export default function LiveChat() {
                 <div
                   className={`max-w-3/4 p-3 rounded-lg ${
                     message.type === 'user'
-                      ? 'bg-purple-600 text-white'
+                      ? 'bg-blue-600 text-white'
                       : 'bg-gray-100'
                   }`}
                 >
@@ -145,7 +145,7 @@ export default function LiveChat() {
                     {message.type === 'user' ? (
                       <User className="h-4 w-4" />
                     ) : (
-                      <Bot className="h-4 w-4 text-purple-600" />
+                      <Bot className="h-4 w-4 text-blue-600" />
                     )}
                     <span className="text-xs opacity-75">
                       {message.timestamp.toLocaleTimeString()}
@@ -170,7 +170,7 @@ export default function LiveChat() {
                       {message.capabilities.map((cap, index) => (
                         <span
                           key={index}
-                          className="inline-flex items-center px-2 py-1 text-xs bg-purple-100 text-purple-800 rounded-full"
+                          className="inline-flex items-center px-2 py-1 text-xs bg-blue-100 text-blue-800 rounded-full"
                         >
                           <Sparkles className="h-3 w-3 mr-1" />
                           {cap}
@@ -191,12 +191,12 @@ export default function LiveChat() {
                 value={inputMessage}
                 onChange={(e) => setInputMessage(e.target.value)}
                 placeholder="Type your message..."
-                className="flex-1 px-4 py-2 border rounded-full focus:outline-none focus:ring-2 focus:ring-purple-500"
+                className="flex-1 px-4 py-2 border rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
               <button
                 type="submit"
                 disabled={isTyping}
-                className="bg-purple-600 text-white p-2 rounded-full hover:bg-purple-700 transition-colors"
+                className="bg-blue-600 text-white p-2 rounded-full hover:bg-blue-700 transition-colors"
               >
                 {isTyping ? (
                   <div className="animate-spin rounded-full h-5 w-5 border-2 border-white"></div>

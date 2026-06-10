@@ -167,7 +167,7 @@ const divisions: Division[] = [
 // --- Employee Login Button Component ---
 const EmployeeLoginButton = () => (
   <a
-    href="https://elsxglobal.cloud/employee-portal"
+    href="https://elsxglobal.com/employee-portal"
     target="_blank"
     rel="noopener noreferrer"
     className="w-full justify-center flex items-center space-x-2.5 bg-gray-800 text-white px-3 py-2 text-sm font-semibold rounded-lg hover:bg-gray-900 transition-colors"
@@ -203,10 +203,10 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Enhanced Logo with Parent Company Reference */}
           <Link to="/" className="flex items-center space-x-2 flex-shrink-0" aria-label="EvolucentSphere Home - Flagship Division ELSxGlobal">
-            <Brain className="h-7 w-7 sm:h-8 sm:w-8 md:h-9 md:w-9 text-purple-600" />
+            <Brain className="h-7 w-7 sm:h-8 sm:w-8 md:h-9 md:w-9 text-blue-600" />
             <div className="flex flex-col">
               <span className="text-lg sm:text-xl font-bold text-gray-900">EvolucentSphere</span>
-              <span className="text-xs sm:text-xs text-purple-600 hidden sm:block">Flagship: ELSxGlobal</span>
+              <span className="text-xs sm:text-xs text-blue-600 hidden sm:block">Flagship: ELSxGlobal</span>
             </div>
           </Link>
 
@@ -246,7 +246,7 @@ const DesktopNav = () => {
         {/* Enhanced Divisions Mega Menu */}
         <div onMouseEnter={() => setIsMegaMenuOpen(true)} onMouseLeave={() => setIsMegaMenuOpen(false)} className="relative">
           <button 
-            className="flex items-center text-gray-600 hover:text-purple-600 transition-colors"
+            className="flex items-center text-gray-600 hover:text-blue-600 transition-colors"
             aria-label="View all ELSxGlobal divisions and EvolucentSphere companies"
           >
             Our Divisions <ChevronDown className={`ml-1 h-4 w-4 transition-transform ${isMegaMenuOpen ? 'rotate-180' : ''}`} />
@@ -258,7 +258,7 @@ const DesktopNav = () => {
         
         <div onMouseEnter={() => setIsMoreMenuOpen(true)} onMouseLeave={() => setIsMoreMenuOpen(false)} className="relative">
           <button 
-            className="flex items-center text-gray-600 hover:text-purple-600 transition-colors"
+            className="flex items-center text-gray-600 hover:text-blue-600 transition-colors"
             aria-label="More navigation options"
           >
             <MoreHorizontal className="h-5 w-5" />
@@ -268,7 +268,7 @@ const DesktopNav = () => {
         
         <Link 
           to="/ai-lab" 
-          className="flex items-center text-purple-600 hover:text-purple-700"
+          className="flex items-center text-blue-600 hover:text-blue-700"
           aria-label="Explore our AI Lab and advanced technology solutions"
         >
           <Cpu className="h-5 w-5 mr-1.5" /> AI Lab
@@ -279,7 +279,7 @@ const DesktopNav = () => {
         <EmployeeLoginButton /> 
         <Link 
           to="/contact" 
-          className="bg-purple-600 text-white px-4 py-2 text-sm font-semibold rounded-full hover:bg-purple-700 transition-all transform hover:scale-105"
+          className="bg-blue-600 text-white px-4 py-2 text-sm font-semibold rounded-full hover:bg-blue-700 transition-all transform hover:scale-105"
           aria-label="Contact ELSxGlobal for business solutions and consulting"
         >
           ContactUs
@@ -323,7 +323,7 @@ const MobileMenuPanel = ({ closeMenu }: { closeMenu: () => void }) => {
               aria-label="Toggle divisions menu"
             >
               <span className="flex items-center">
-                <Building className="h-5 w-5 mr-3 text-purple-600"/>
+                <Building className="h-5 w-5 mr-3 text-blue-600"/>
                 Our Divisions & Companies
               </span>
               <ChevronDown className={`h-5 w-5 transition-transform ${isDivisionsOpen ? 'rotate-180' : ''}`} />
@@ -355,7 +355,7 @@ const MobileMenuPanel = ({ closeMenu }: { closeMenu: () => void }) => {
                                 closeMenu();
                               }
                             }}
-                            className="flex-1 py-1.5 pl-4 text-gray-600 hover:text-purple-600 transition-colors"
+                            className="flex-1 py-1.5 pl-4 text-gray-600 hover:text-blue-600 transition-colors"
                             aria-label={`Visit ${d.name} - ${d.description}`}
                           >
                             <div className="flex items-center">
@@ -389,7 +389,7 @@ const MobileMenuPanel = ({ closeMenu }: { closeMenu: () => void }) => {
                                   key={sub.path}
                                   to={sub.path}
                                   onClick={closeMenu}
-                                  className="block py-1.5 pl-4 text-sm text-gray-500 hover:text-purple-600 transition-colors border-l border-gray-100"
+                                  className="block py-1.5 pl-4 text-sm text-gray-500 hover:text-blue-600 transition-colors border-l border-gray-100"
                                 >
                                   <div className="flex items-center">
                                     <sub.icon className="h-3 w-3 mr-2" />
@@ -411,22 +411,22 @@ const MobileMenuPanel = ({ closeMenu }: { closeMenu: () => void }) => {
               <Link 
                 key={link.name} 
                 to={link.path} 
-                className="flex items-center py-3 text-lg font-medium text-gray-800 hover:text-purple-600 transition-colors" 
+                className="flex items-center py-3 text-lg font-medium text-gray-800 hover:text-blue-600 transition-colors" 
                 onClick={closeMenu}
                 aria-label={`Navigate to ${link.name} section`}
               >
-                {link.icon && <link.icon className="h-5 w-5 mr-3 text-purple-600"/>} 
+                {link.icon && <link.icon className="h-5 w-5 mr-3 text-blue-600"/>} 
                 {link.name}
               </Link>
             ))}
             
             <Link 
               to="/ai-lab" 
-              className="flex items-center py-3 text-lg font-medium text-purple-600 hover:text-purple-700 transition-colors" 
+              className="flex items-center py-3 text-lg font-medium text-blue-600 hover:text-blue-700 transition-colors" 
               onClick={closeMenu}
               aria-label="Explore our AI Lab and advanced technology solutions"
             >
-              <Cpu className="h-5 w-5 mr-3 text-purple-600"/>
+              <Cpu className="h-5 w-5 mr-3 text-blue-600"/>
               AI Lab
             </Link>
           </div>
@@ -457,7 +457,7 @@ const MobileMenuPanel = ({ closeMenu }: { closeMenu: () => void }) => {
             <EmployeeLoginButton />
             <Link 
               to="/contact" 
-              className="w-full bg-purple-600 text-white px-4 py-3 rounded-lg text-center font-semibold hover:bg-purple-700 transition-colors" 
+              className="w-full bg-blue-600 text-white px-4 py-3 rounded-lg text-center font-semibold hover:bg-blue-700 transition-colors" 
               onClick={closeMenu}
               aria-label="Contact ELSxGlobal for business solutions and consulting"
             >
@@ -520,15 +520,15 @@ const EnhancedMegaMenu = () => (
               className="flex items-center p-3 -m-3 rounded-lg hover:bg-gray-50 transition-colors"
               aria-label={`Visit ${d.name} - ${d.description}`}
             >
-              <div className="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-purple-100 text-purple-600 group-hover:bg-purple-200 transition-colors">
+              <div className="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-blue-100 text-blue-600 group-hover:bg-blue-200 transition-colors">
                 <d.icon className="h-6 w-6" />
               </div>
               <div className="ml-4 flex-grow">
                 <div className="flex items-center justify-between">
-                  <p className="text-base font-medium text-gray-900 group-hover:text-purple-600 transition-colors">
+                  <p className="text-base font-medium text-gray-900 group-hover:text-blue-600 transition-colors">
                     {d.name}
                   </p>
-                  {d.external && <ExternalLink className="h-4 w-4 text-gray-400 group-hover:text-purple-600" />}
+                  {d.external && <ExternalLink className="h-4 w-4 text-gray-400 group-hover:text-blue-600" />}
                 </div>
                 <p className="text-sm text-gray-500">{d.description}</p>
                 {d.keywords && (
@@ -550,7 +550,7 @@ const EnhancedMegaMenu = () => (
                   <Link
                     key={sub.path}
                     to={sub.path}
-                    className="flex items-center p-2 text-sm text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded transition-colors"
+                    className="flex items-center p-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-colors"
                   >
                     <sub.icon className="h-4 w-4 mr-2" />
                     <span>{sub.name}</span>

@@ -79,7 +79,7 @@ export default function Technologies() {
               className="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
             >
               <div className="flex items-center mb-6">
-                <tech.icon className="h-12 w-12 text-purple-600" />
+                <tech.icon className="h-12 w-12 text-blue-600" />
                 <h3 className="text-2xl font-bold text-gray-900 ml-4">{tech.title}</h3>
               </div>
               
@@ -90,7 +90,7 @@ export default function Technologies() {
                 <ul className="grid grid-cols-2 gap-3">
                   {tech.features.map((feature, idx) => (
                     <li key={idx} className="flex items-center text-sm text-gray-700">
-                      <span className="h-2 w-2 bg-purple-600 rounded-full mr-2"></span>
+                      <span className="h-2 w-2 bg-blue-600 rounded-full mr-2"></span>
                       {feature}
                     </li>
                   ))}
@@ -102,7 +102,7 @@ export default function Technologies() {
                 <div className="grid grid-cols-3 gap-4">
                   {tech.metrics.map((metric, idx) => (
                     <div key={idx} className="text-center">
-                      <div className="text-2xl font-bold text-purple-600">{metric.value}</div>
+                      <div className="text-2xl font-bold text-blue-600">{metric.value}</div>
                       <div className="text-sm text-gray-600">{metric.label}</div>
                     </div>
                   ))}
@@ -118,16 +118,16 @@ export default function Technologies() {
             Trusted by Industry Leaders
           </h3>
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-purple-50 rounded-lg p-6">
-              <p className="text-xl font-bold text-purple-600 mb-2">500+</p>
+            <div className="bg-blue-50 rounded-lg p-6">
+              <p className="text-xl font-bold text-blue-600 mb-2">500+</p>
               <p className="text-gray-700">Enterprise Clients</p>
             </div>
-            <div className="bg-purple-50 rounded-lg p-6">
-              <p className="text-xl font-bold text-purple-600 mb-2">$2B+</p>
+            <div className="bg-blue-50 rounded-lg p-6">
+              <p className="text-xl font-bold text-blue-600 mb-2">$2B+</p>
               <p className="text-gray-700">Client Cost Savings</p>
             </div>
-            <div className="bg-purple-50 rounded-lg p-6">
-              <p className="text-xl font-bold text-purple-600 mb-2">99.9%</p>
+            <div className="bg-blue-50 rounded-lg p-6">
+              <p className="text-xl font-bold text-blue-600 mb-2">99.9%</p>
               <p className="text-gray-700">Client Satisfaction</p>
             </div>
           </div>

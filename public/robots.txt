@@ -1,28 +1,27 @@
-# Allow all web crawlers
+# Robots.txt for ELSxGlobal - elsxglobal.com
 User-agent: *
 Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /search?
 
-
-# Sitemap locations
-Sitemap: https://elsxglobal.cloud/sitemap.xml
-Sitemap: https://www.elsxglobal.cloud/sitemap.xml
-Sitemap: https://evolucentsphere.com/sitemap.xml
-Sitemap: https://www.evolucentsphere.com/sitemap.xml
-Sitemap: https://evolucentsphere.netlify.app/sitemap.xml
-
-# Specific bot overrides (allow faster access for Google & Bing)
 User-agent: Googlebot
 Crawl-delay: 0
 
 User-agent: Bingbot
 Crawl-delay: 0
 
-# Block problematic bots
 User-agent: AhrefsBot
-allow: /
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
 
 User-agent: MJ12bot
-allow: /
+Disallow: /
 
 User-agent: DotBot
-allow: /
+Disallow: /
+
+Sitemap: https://elsxglobal.com/sitemap.xml
+Sitemap: https://evolucentsphere.com/sitemap.xml

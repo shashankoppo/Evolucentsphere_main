@@ -113,7 +113,7 @@ export default function AIAssistant() {
   return (
     <div className="bg-white rounded-lg shadow-xl overflow-hidden h-[600px] flex flex-col">
       {/* Header */}
-      <div className="bg-gradient-to-r from-purple-600 to-blue-600 text-white p-4">
+      <div className="bg-gradient-to-r from-blue-600 to-blue-600 text-white p-4">
         <div className="flex items-center space-x-3">
           <Brain className="h-6 w-6" />
           <div>
@@ -135,7 +135,7 @@ export default function AIAssistant() {
             <div
               className={`max-w-[80%] rounded-lg p-4 ${
                 message.role === 'user'
-                  ? 'bg-purple-600 text-white'
+                  ? 'bg-blue-600 text-white'
                   : 'bg-gray-100'
               }`}
             >
@@ -143,7 +143,7 @@ export default function AIAssistant() {
                 {message.role === 'user' ? (
                   <User className="h-4 w-4" />
                 ) : (
-                  <Bot className="h-4 w-4 text-purple-600" />
+                  <Bot className="h-4 w-4 text-blue-600" />
                 )}
                 <span className="text-xs opacity-75">
                   {message.timestamp.toLocaleTimeString()}
@@ -158,13 +158,13 @@ export default function AIAssistant() {
                 <div className="mt-2 pt-2 border-t border-gray-200 space-y-1">
                   {message.metadata.confidence && (
                     <div className="flex items-center text-xs">
-                      <Brain className="h-3 w-3 mr-1 text-purple-600" />
+                      <Brain className="h-3 w-3 mr-1 text-blue-600" />
                       <span>Confidence: {(message.metadata.confidence * 100).toFixed(1)}%</span>
                     </div>
                   )}
                   {message.metadata.processingTime && (
                     <div className="flex items-center text-xs">
-                      <Cpu className="h-3 w-3 mr-1 text-purple-600" />
+                      <Cpu className="h-3 w-3 mr-1 text-blue-600" />
                       <span>Processing Time: {message.metadata.processingTime.toFixed(0)}ms</span>
                     </div>
                   )}
@@ -184,13 +184,13 @@ export default function AIAssistant() {
             value={input}
             onChange={(e) => setInput(e.target.value)}
             placeholder="Ask me anything..."
-            className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
+            className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             disabled={isProcessing}
           />
           <button
             type="submit"
             disabled={isProcessing}
-            className="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors flex items-center space-x-2 disabled:opacity-50"
+            className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors flex items-center space-x-2 disabled:opacity-50"
           >
             {isProcessing ? (
               <RefreshCw className="h-5 w-5 animate-spin" />
@@ -206,16 +206,16 @@ export default function AIAssistant() {
         <div className="mt-2 flex items-center justify-between text-xs text-gray-500">
           <div className="flex items-center space-x-3">
             <span className="flex items-center">
-              <Brain className="h-3 w-3 mr-1 text-purple-600" />
+              <Brain className="h-3 w-3 mr-1 text-blue-600" />
               Neural: Active
             </span>
             <span className="flex items-center">
-              <Cpu className="h-3 w-3 mr-1 text-purple-600" />
+              <Cpu className="h-3 w-3 mr-1 text-blue-600" />
               Quantum: Ready
             </span>
           </div>
           <div className="flex items-center">
-            <Sparkles className="h-3 w-3 text-purple-600 mr-1" />
+            <Sparkles className="h-3 w-3 text-blue-600 mr-1" />
             <span>AI-Powered</span>
           </div>
         </div>

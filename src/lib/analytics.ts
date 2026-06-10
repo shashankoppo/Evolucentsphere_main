@@ -83,12 +83,12 @@ declare global {
 // Cross-domain configuration
 const CROSS_DOMAIN_CONFIG = {
   domains: [
-    'elsxglobal.cloud',
+    'elsxglobal.com',
     'evolucentsphere.com',
-    'tech.elsxglobal.cloud',
-    'bpo.elsxglobal.cloud',
-    'kpo.elsxglobal.cloud',
-    'consultancy.elsxglobal.cloud'
+    'tech.elsxglobal.com',
+    'bpo.elsxglobal.com',
+    'kpo.elsxglobal.com',
+    'consultancy.elsxglobal.com'
   ],
   trackingIds: {
     main: 'G-XXXXXXXXXX', // Replace with actual tracking ID
@@ -311,10 +311,10 @@ function getSiteSection(pathname: string): string {
 
 function getCrossDomainType(domain: string): string {
   if (domain.includes('evolucentsphere.com')) return 'parent_company';
-  if (domain.includes('tech.elsxglobal.cloud')) return 'tech_division';
-  if (domain.includes('bpo.elsxglobal.cloud')) return 'bpo_division';
-  if (domain.includes('kpo.elsxglobal.cloud')) return 'kpo_division';
-  if (domain.includes('consultancy.elsxglobal.cloud')) return 'consultancy_division';
+  if (domain.includes('tech.elsxglobal.com')) return 'tech_division';
+  if (domain.includes('bpo.elsxglobal.com')) return 'bpo_division';
+  if (domain.includes('kpo.elsxglobal.com')) return 'kpo_division';
+  if (domain.includes('consultancy.elsxglobal.com')) return 'consultancy_division';
   return 'other_division';
 }
 
