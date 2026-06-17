@@ -5,18 +5,17 @@ import { Lock, Mail, AlertCircle, ArrowLeft, UserPlus, CheckCircle } from 'lucid
 import SEOHead from '../../components/SEOHead';
 
 export default function AdminLogin() {
-  const { signIn, signUp, hasUsers } = useAdmin();
+  const { signIn, signUp } = useAdmin();
   const navigate = useNavigate();
+
+  const [mode, setMode] = useState<'signin' | 'signup'>('signin');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
-
-  // Show setup form only if we haven't confirmed users exist
-  const showSetup = hasUsers === false || hasUsers === null;
-  const isLocked = hasUsers === true;
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -33,7 +32,7 @@ export default function AdminLogin() {
     navigate('/admin');
   };
 
-  const handleSetup = async (e: React.FormEvent) => {
+  const handleSignup = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
     setSuccess(null);
@@ -57,26 +56,27 @@ export default function AdminLogin() {
       return;
     }
 
-    setSuccess('Admin account created! You can now sign in.');
+    setSuccess('Account created! You can now sign in.');
+    setMode('signin');
     setLoading(false);
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center py-12 px-4">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50 flex items-center justify-center py-12 px-4">
       <SEOHead title="Admin Portal | ELSxGlobal" noindex={true} />
       <div className="w-full max-w-md">
-        <div className="bg-white rounded-lg shadow-xl p-8">
+        <div className="bg-white rounded-2xl shadow-xl p-8">
           <div className="text-center mb-8">
-            <div className="inline-flex items-center justify-center h-14 w-14 rounded-xl bg-blue-600 text-white mb-4">
-              {showSetup && !isLocked ? <UserPlus className="h-7 w-7" /> : <Lock className="h-7 w-7" />}
+            <div className="inline-flex items-center justify-center h-16 w-16 rounded-xl bg-gradient-to-br from-blue-600 to-blue-700 text-white mb-4 shadow-lg">
+              {mode === 'signup' ? <UserPlus className="h-8 w-8" /> : <Lock className="h-8 w-8" />}
             </div>
             <h1 className="text-2xl font-bold text-gray-900">
-              {showSetup && !isLocked ? 'Initial Setup' : 'Admin Portal'}
+              {mode === 'signup' ? 'Create Account' : 'Admin Portal'}
             </h1>
             <p className="text-gray-600 mt-2">
-              {showSetup && !isLocked
-                ? 'Create your admin account to get started'
-                : 'Sign in to manage your website content'}
+              {mode === 'signup'
+                ? 'Set up your admin credentials'
+                : 'Sign in to manage website content'}
             </p>
           </div>
 
@@ -94,8 +94,8 @@ export default function AdminLogin() {
             </div>
           )}
 
-          {showSetup && !isLocked ? (
-            <form onSubmit={handleSetup} className="space-y-5">
+          {mode === 'signup' ? (
+            <form onSubmit={handleSignup} className="space-y-5">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">Admin Email</label>
                 <div className="relative">
@@ -105,13 +105,13 @@ export default function AdminLogin() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
-                    className="w-full pl-10 pr-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                    className="w-full pl-10 pr-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
                     placeholder="admin@elsxglobal.com"
                   />
                 </div>
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Password (min 6 characters)</label>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Password (min 6 chars)</label>
                 <div className="relative">
                   <Lock className="h-5 w-5 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2" />
                   <input
@@ -120,7 +120,7 @@ export default function AdminLogin() {
                     onChange={(e) => setPassword(e.target.value)}
                     required
                     minLength={6}
-                    className="w-full pl-10 pr-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                    className="w-full pl-10 pr-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
                     placeholder="Create a secure password"
                   />
                 </div>
@@ -134,18 +134,24 @@ export default function AdminLogin() {
                     value={confirmPassword}
                     onChange={(e) => setConfirmPassword(e.target.value)}
                     required
-                    className="w-full pl-10 pr-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
-                    placeholder="Re-enter password"
+                    className="w-full pl-10 pr-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+                    placeholder="Confirm password"
                   />
                 </div>
               </div>
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full bg-blue-600 text-white py-2.5 rounded-lg hover:bg-blue-700 transition-colors font-medium disabled:opacity-50"
+                className="w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white py-2.5 rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all font-medium disabled:opacity-50 shadow-lg"
               >
-                {loading ? 'Creating account...' : 'Create Admin Account'}
+                {loading ? 'Creating...' : 'Create Admin Account'}
               </button>
+              <p className="text-center text-sm text-gray-500">
+                Already have an account?{' '}
+                <button type="button" onClick={() => setMode('signin')} className="text-blue-600 hover:underline font-medium">
+                  Sign in
+                </button>
+              </p>
             </form>
           ) : (
             <form onSubmit={handleLogin} className="space-y-5">
@@ -158,7 +164,7 @@ export default function AdminLogin() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
-                    className="w-full pl-10 pr-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                    className="w-full pl-10 pr-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
                     placeholder="admin@elsxglobal.com"
                   />
                 </div>
@@ -172,7 +178,7 @@ export default function AdminLogin() {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     required
-                    className="w-full pl-10 pr-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                    className="w-full pl-10 pr-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
                     placeholder="Enter your password"
                   />
                 </div>
@@ -180,14 +186,20 @@ export default function AdminLogin() {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full bg-blue-600 text-white py-2.5 rounded-lg hover:bg-blue-700 transition-colors font-medium disabled:opacity-50"
+                className="w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white py-2.5 rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all font-medium disabled:opacity-50 shadow-lg"
               >
                 {loading ? 'Signing in...' : 'Sign In'}
               </button>
+              <p className="text-center text-sm text-gray-500">
+                No account yet?{' '}
+                <button type="button" onClick={() => setMode('signup')} className="text-blue-600 hover:underline font-medium">
+                  Create one
+                </button>
+              </p>
             </form>
           )}
 
-          <div className="mt-6 text-center">
+          <div className="mt-6 pt-6 border-t border-gray-100 text-center">
             <Link to="/" className="text-sm text-gray-500 hover:text-blue-600 flex items-center justify-center">
               <ArrowLeft className="h-4 w-4 mr-1" /> Back to website
             </Link>

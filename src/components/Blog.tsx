@@ -24,10 +24,10 @@ export default function Blog() {
         if (mounted) {
           setPosts(data);
         }
-      } catch (error) {
-        console.error('Error fetching blog posts:', error);
+      } catch (err) {
+        console.error('Error fetching blog posts:', err);
         if (mounted) {
-          setError(error instanceof Error ? error.message : 'Failed to load blog posts. Please try again later.');
+          setError('Failed to load blog posts.');
         }
       } finally {
         if (mounted) {
@@ -50,19 +50,9 @@ export default function Blog() {
   if (loading) {
     return (
       <section id="blog" className="py-20 bg-gray-50">
-        <SEOHead 
+        <SEOHead
           title="Blog & Insights"
           description="Stay updated with the latest insights, trends, and thought leadership in AI, technology, and business transformation from ELSxGlobal experts."
-          keywords={[
-            'Technology Blog',
-            'AI Insights',
-            'Business Transformation',
-            'Industry Trends',
-            'Thought Leadership',
-            'Technology News',
-            'Innovation Articles',
-            'Digital Transformation'
-          ]}
         />
         <div className="container mx-auto px-6">
           <div className="flex justify-center">
@@ -73,53 +63,17 @@ export default function Blog() {
     );
   }
 
-  if (error) {
-    return (
-      <section id="blog" className="py-20 bg-gray-50">
-        <SEOHead 
-          title="Blog & Insights"
-          description="Stay updated with the latest insights, trends, and thought leadership in AI, technology, and business transformation from ELSxGlobal experts."
-          keywords={[
-            'Technology Blog',
-            'AI Insights',
-            'Business Transformation',
-            'Industry Trends',
-            'Thought Leadership',
-            'Technology News',
-            'Innovation Articles',
-            'Digital Transformation'
-          ]}
-        />
-        <div className="container mx-auto px-6">
-          <div className="text-center">
-            <p className="text-red-600 mb-4">{error}</p>
-            <button
-              onClick={() => window.location.reload()}
-              className="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-            >
-              Try Again
-            </button>
-          </div>
-        </div>
-      </section>
-    );
+  if (error || posts.length === 0) {
+    return null;
   }
+
+  const displayPosts = posts.slice(0, 3);
 
   return (
     <section id="blog" className="py-20 bg-gray-50">
-      <SEOHead 
+      <SEOHead
         title="Blog & Insights"
         description="Stay updated with the latest insights, trends, and thought leadership in AI, technology, and business transformation from ELSxGlobal experts."
-        keywords={[
-          'Technology Blog',
-          'AI Insights',
-          'Business Transformation',
-          'Industry Trends',
-          'Thought Leadership',
-          'Technology News',
-          'Innovation Articles',
-          'Digital Transformation'
-        ]}
       />
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
@@ -128,11 +82,11 @@ export default function Blog() {
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
-          {posts.map((post) => (
-            <article key={post.id} className="bg-white rounded-lg shadow-lg overflow-hidden">
+          {displayPosts.map((post) => (
+            <article key={post.id} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
               <div className="relative h-48">
-                <img 
-                  src={FALLBACK_IMAGE}
+                <img
+                  src={post.image_url || FALLBACK_IMAGE}
                   alt={post.title}
                   onError={handleImageError}
                   className="w-full h-full object-cover"
@@ -141,11 +95,16 @@ export default function Blog() {
                 />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">
+                {post.category && (
+                  <span className="inline-block px-3 py-1 text-xs font-medium bg-blue-100 text-blue-700 rounded-full mb-3">
+                    {post.category}
+                  </span>
+                )}
+                <h3 className="text-xl font-bold text-gray-900 mb-2 line-clamp-2">
                   {post.title}
                 </h3>
-                <p className="text-gray-600 mb-4">
-                  {post.content}
+                <p className="text-gray-600 mb-4 line-clamp-3">
+                  {post.excerpt || post.content}
                 </p>
                 <div className="flex items-center text-sm text-gray-500 mb-4">
                   <div className="flex items-center mr-4">
@@ -157,9 +116,9 @@ export default function Blog() {
                     {new Date(post.created_at).toLocaleDateString()}
                   </div>
                 </div>
-                <Link 
+                <Link
                   to={`/blog/${post.id}`}
-                  className="inline-flex items-center text-blue-600 hover:text-blue-700"
+                  className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium"
                 >
                   Read More
                   <ArrowRight className="ml-2 h-4 w-4" />
@@ -168,6 +127,18 @@ export default function Blog() {
             </article>
           ))}
         </div>
+
+        {posts.length > 3 && (
+          <div className="text-center mt-12">
+            <Link
+              to="/blog"
+              className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium"
+            >
+              View All Articles
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Link>
+          </div>
+        )}
       </div>
     </section>
   );

@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Linkedin, Instagram, Facebook, ArrowRight, Globe, Users, Shield, Brain, ExternalLink, Star, Award, TrendingUp } from 'lucide-react';
+import { Linkedin, Instagram, Facebook, ArrowRight, Globe, Users, Shield, Brain, ExternalLink, Star, Award, TrendingUp, CheckCircle } from 'lucide-react';
+import { supabase } from '../lib/supabase';
 import Hero from '../components/Hero';
 import Services from '../components/Services';
 import Products from '../components/Products';
@@ -16,12 +17,48 @@ import { config } from '../lib/config';
 import { trackCrossDomainClick, trackServiceInterest } from '../lib/analytics';
 
 export default function Home() {
+  const [newsletterEmail, setNewsletterEmail] = useState('');
+  const [newsletterIndustry, setNewsletterIndustry] = useState('');
+  const [newsletterLoading, setNewsletterLoading] = useState(false);
+  const [newsletterSuccess, setNewsletterSuccess] = useState(false);
+  const [newsletterError, setNewsletterError] = useState<string | null>(null);
+
   const handleCrossDomainClick = (domain: string, linkText: string) => {
     trackCrossDomainClick(domain, linkText, 'home_page');
   };
 
   const handleServiceInterest = (service: string) => {
     trackServiceInterest(service);
+  };
+
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setNewsletterLoading(true);
+    setNewsletterError(null);
+    setNewsletterSuccess(false);
+
+    try {
+      const { error } = await supabase
+        .from('newsletter_subscribers')
+        .insert([{ email: newsletterEmail, industry_interest: newsletterIndustry || null }]);
+
+      if (error) {
+        if (error.code === '23505') {
+          setNewsletterError('This email is already subscribed.');
+        } else {
+          throw error;
+        }
+      } else {
+        setNewsletterSuccess(true);
+        setNewsletterEmail('');
+        setNewsletterIndustry('');
+        trackServiceInterest('Newsletter Subscription');
+      }
+    } catch {
+      setNewsletterError('Something went wrong. Please try again.');
+    } finally {
+      setNewsletterLoading(false);
+    }
   };
 
   // Get parent company link from centralized data
@@ -364,7 +401,7 @@ export default function Home() {
       <section className="py-16 bg-gradient-to-r from-blue-600 to-blue-600">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-4xl mx-auto text-center text-white">
-            <motion.h2 
+            <motion.h2
               className="text-2xl sm:text-3xl font-bold mb-4"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -372,47 +409,73 @@ export default function Home() {
             >
               Stay Updated with ELSxGlobal Insights
             </motion.h2>
-            <motion.p 
+            <motion.p
               className="text-base sm:text-lg md:text-xl mb-6 sm:mb-8 opacity-90 px-4"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
             >
-              Get the latest insights on AI, Digital Transformation, BPO/KPO trends, 
+              Get the latest insights on AI, Digital Transformation, BPO/KPO trends,
               and industry-specific solutions delivered to your inbox
             </motion.p>
-            <motion.form 
-              className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-4 sm:mb-6 px-4"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.4 }}
-            >
-              <input
-                type="email"
-                placeholder="Enter your business email"
-                className="px-4 sm:px-6 py-2 sm:py-3 rounded-lg text-gray-900 w-full sm:min-w-[250px] md:min-w-[300px] focus:outline-none focus:ring-2 focus:ring-blue-300"
-                aria-label="Enter your email for ELSxGlobal newsletter subscription"
-              />
-              <select className="px-4 sm:px-6 py-2 sm:py-3 rounded-lg text-gray-900 w-full sm:w-auto focus:outline-none focus:ring-2 focus:ring-blue-300">
-                <option value="">Select Your Industry</option>
-                <option value="banking">Banking & Finance</option>
-                <option value="healthcare">Healthcare</option>
-                <option value="manufacturing">Manufacturing</option>
-                <option value="retail">Retail & E-commerce</option>
-                <option value="insurance">Insurance</option>
-                <option value="government">Government</option>
-                <option value="other">Other</option>
-              </select>
-              <button 
-                className="bg-white text-blue-600 px-6 sm:px-8 py-2 sm:py-3 rounded-lg hover:bg-blue-50 transition-colors flex items-center justify-center group font-medium w-full sm:w-auto"
-                onClick={() => handleServiceInterest('Newsletter Subscription')}
+
+            {newsletterSuccess ? (
+              <motion.div
+                className="bg-white/20 backdrop-blur-sm px-6 py-4 rounded-lg inline-flex items-center"
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
               >
-                Subscribe
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-              </button>
-            </motion.form>
+                <CheckCircle className="h-6 w-6 mr-2" />
+                <span className="font-medium">Thank you for subscribing!</span>
+              </motion.div>
+            ) : (
+              <motion.form
+                onSubmit={handleNewsletterSubmit}
+                className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-4 sm:mb-6 px-4"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.4 }}
+              >
+                <input
+                  type="email"
+                  value={newsletterEmail}
+                  onChange={(e) => setNewsletterEmail(e.target.value)}
+                  required
+                  placeholder="Enter your business email"
+                  className="px-4 sm:px-6 py-2 sm:py-3 rounded-lg text-gray-900 w-full sm:min-w-[250px] md:min-w-[300px] focus:outline-none focus:ring-2 focus:ring-blue-300"
+                  aria-label="Enter your email for ELSxGlobal newsletter subscription"
+                />
+                <select
+                  value={newsletterIndustry}
+                  onChange={(e) => setNewsletterIndustry(e.target.value)}
+                  className="px-4 sm:px-6 py-2 sm:py-3 rounded-lg text-gray-900 w-full sm:w-auto focus:outline-none focus:ring-2 focus:ring-blue-300"
+                >
+                  <option value="">Select Your Industry</option>
+                  <option value="banking">Banking & Finance</option>
+                  <option value="healthcare">Healthcare</option>
+                  <option value="manufacturing">Manufacturing</option>
+                  <option value="retail">Retail & E-commerce</option>
+                  <option value="insurance">Insurance</option>
+                  <option value="government">Government</option>
+                  <option value="other">Other</option>
+                </select>
+                <button
+                  type="submit"
+                  disabled={newsletterLoading}
+                  className="bg-white text-blue-600 px-6 sm:px-8 py-2 sm:py-3 rounded-lg hover:bg-blue-50 transition-colors flex items-center justify-center group font-medium w-full sm:w-auto disabled:opacity-50"
+                >
+                  {newsletterLoading ? 'Subscribing...' : 'Subscribe'}
+                  {!newsletterLoading && <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />}
+                </button>
+              </motion.form>
+            )}
+
+            {newsletterError && (
+              <p className="text-red-200 text-sm mb-4">{newsletterError}</p>
+            )}
+
             <p className="text-xs sm:text-sm opacity-75 px-4">
               Join 10,000+ business leaders receiving insights on technology trends and business transformation
             </p>
