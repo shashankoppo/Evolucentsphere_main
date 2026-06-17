@@ -7,7 +7,6 @@ interface AdminContextType {
   session: Session | null;
   loading: boolean;
   signIn: (email: string, password: string) => Promise<{ error: string | null }>;
-  signUp: (email: string, password: string) => Promise<{ error: string | null }>;
   signOut: () => Promise<void>;
 }
 
@@ -16,7 +15,6 @@ const AdminContext = createContext<AdminContextType>({
   session: null,
   loading: true,
   signIn: async () => ({ error: 'Not initialized' }),
-  signUp: async () => ({ error: 'Not initialized' }),
   signOut: async () => {},
 });
 
@@ -46,17 +44,12 @@ export function AdminProvider({ children }: { children: React.ReactNode }) {
     return { error: error?.message ?? null };
   };
 
-  const signUp = async (email: string, password: string) => {
-    const { error } = await supabase.auth.signUp({ email, password });
-    return { error: error?.message ?? null };
-  };
-
   const signOut = async () => {
     await supabase.auth.signOut();
   };
 
   return (
-    <AdminContext.Provider value={{ user, session, loading, signIn, signUp, signOut }}>
+    <AdminContext.Provider value={{ user, session, loading, signIn, signOut }}>
       {children}
     </AdminContext.Provider>
   );
