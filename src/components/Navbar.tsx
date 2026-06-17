@@ -2,190 +2,32 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
-  Menu, X, Cpu, Briefcase, Users, Globe, Building2, ChevronDown, KeyRound,
-  Building, Info, Server, FileText, MoreHorizontal, ExternalLink, Shield,
-  Code, Database, BarChart, Zap, Network, Settings, Cloud, MessageCircle, Brain
+  Menu, X, Cpu, Briefcase, Users, Globe, ChevronDown, ExternalLink, Shield,
+  Code, BarChart, Zap, Network, Settings, Cloud, Brain
 } from 'lucide-react';
 
-import SearchBar from './SearchBar'; 
-
-// --- Type Definitions ---
-type NavLinkType = {
-  name: string;
-  path: string;
-  icon?: React.ElementType;
-  isPrimary: boolean;
-  external?: boolean;
-};
-
-type Division = {
-  name: string;
-  path: string;
-  description: string;
-  icon: React.ElementType;
-  external?: boolean;
-  keywords?: string[];
-  subDivisions?: SubDivision[];
-};
-
-type SubDivision = {
-  name: string;
-  path: string;
-  description: string;
-  icon: React.ElementType;
-  external?: boolean;
-  keywords?: string[];
-};
-
-// --- Centralized Navigation Data with Enhanced ELSxTech Structure ---
-const NAV_LINKS: NavLinkType[] = [
-  { name: 'Services', path: '/services', icon: Server, isPrimary: true },
-  { name: 'Technologies', path: '/technologies', icon: Cpu, isPrimary: true },
-  { name: 'Case Studies', path: '/case-studies', icon: FileText, isPrimary: false },
-  { name: 'About', path: '/about', icon: Info, isPrimary: false },
-  { name: 'Careers', path: '/careers', icon: Briefcase, isPrimary: false },
-  { name: 'Investors', path: '/investor-relations', icon: Globe, isPrimary: false },
+const NAV_LINKS = [
+  { name: 'Services', path: '/services', isPrimary: true },
+  { name: 'Case Studies', path: '/case-studies', isPrimary: true },
+  { name: 'About', path: '/about', isPrimary: false },
+  { name: 'Careers', path: '/careers', isPrimary: false },
+  { name: 'Investors', path: '/investor-relations', isPrimary: false },
 ];
 
-// Enhanced divisions with comprehensive ELSxTech sub-divisions
-const divisions: Division[] = [
-  { 
-    name: 'ELSxTech', 
-    path: '/it-services', 
-    description: 'Comprehensive technology solutions and innovation', 
-    icon: Cpu,
-    keywords: ['IT Services', 'Technology Solutions', 'Digital Innovation', 'Software Development', 'Cloud Computing'],
-    subDivisions: [
-      {
-        name: 'Cloud & Infrastructure',
-        path: '/it-services/cloud-infrastructure',
-        description: 'Enterprise cloud solutions and infrastructure management',
-        icon: Cloud,
-        external: true,
-        keywords: ['Cloud Computing', 'AWS', 'Azure', 'Infrastructure', 'DevOps', 'Kubernetes']
-      },
-      {
-        name: 'Cybersecurity Solutions',
-        path: '/it-services/cybersecurity',
-        description: 'Advanced cybersecurity and threat protection',
-        icon: Shield,
-        external: true,
-        keywords: ['Cybersecurity', 'Information Security', 'Threat Detection', 'Compliance', 'SIEM']
-      },
-      {
-        name: 'Digital Transformation',
-        path: '/it-services/digital-transformation',
-        description: 'Strategic digital transformation consulting',
-        icon: Zap,
-        external: true,
-        keywords: ['Digital Transformation', 'Business Transformation', 'Process Automation', 'Change Management']
-      },
-      {
-        name: 'Software Development',
-        path: '/it-services/software-development',
-        description: 'Custom software development and integration',
-        icon: Code,
-        external: true,
-        keywords: ['Software Development', 'Custom Applications', 'Web Development', 'Mobile Apps', 'API Integration']
-      },
-      {
-        name: 'Data, AI & Analytics',
-        path: '/it-services/ai-analytics',
-        description: 'AI, machine learning, and data analytics solutions',
-        icon: Brain,
-        external: true,
-        keywords: ['Artificial Intelligence', 'Machine Learning', 'Data Analytics', 'Business Intelligence', 'Predictive Analytics']
-      },
-      {
-        name: 'Digital Marketing',
-        path: '/it-services/digital-marketing',
-        description: 'Digital experience and marketing solutions',
-        icon: BarChart,
-        external: true,
-        keywords: ['Digital Marketing', 'Customer Experience', 'Marketing Automation', 'SEO', 'Social Media']
-      },
-      {
-        name: 'IoT & Emerging Tech',
-        path: '/it-services/iot-emerging-tech',
-        description: 'Internet of Things and emerging technologies',
-        icon: Network,
-        external: true,
-        keywords: ['Internet of Things', 'IoT', 'Blockchain', 'AR/VR', 'Edge Computing', 'Industry 4.0']
-      },
-      {
-        name: 'Managed IT Services',
-        path: '/it-services/managed-it',
-        description: 'Comprehensive managed IT services and support',
-        icon: Settings,
-        external: true,
-        keywords: ['Managed IT', 'IT Support', 'Help Desk', 'Network Management', 'System Administration']
-      },
-      {
-        name: 'Enterprise Software',
-        path: '/it-services/enterprise-software',
-        description: 'Enterprise software solutions and ERP systems',
-        icon: Database,
-        external: true,
-        keywords: ['Enterprise Software', 'ERP', 'CRM', 'Business Applications', 'Workflow Management']
-      }
-    ]
-  },
-  { 
-    name: 'ELSxBPO', 
-    path: '/bpo-services', 
-    description: 'Business process outsourcing & customer support', 
-    icon: Users,
-    external: true,
-    keywords: ['BPO Services', 'Customer Support', 'Contact Center', 'Back Office Operations', 'Process Outsourcing']
-  },
-  { 
-    name: 'ELSxKPO', 
-    path: '/kpo-services', 
-    description: 'Knowledge process outsourcing & analytics', 
-    icon: Brain,
-    external: true,
-    keywords: ['KPO Services', 'Research Analytics', 'Business Intelligence', 'Data Management', 'Knowledge Services']
-  },
-  { 
-    name: 'ELSxConsultancy', 
-    path: '/consultancy', 
-    description: 'Strategic consulting & digital transformation', 
-    icon: Briefcase,
-    external: true,
-    keywords: ['Business Consulting', 'Digital Transformation', 'ESG Consulting', 'Lean Six Sigma', 'Strategy Consulting']
-  },
-  { 
-    name: 'EvolucentSphere', 
-    path: 'https://evolucentsphere.com', 
-    description: 'Corporate headquarters & global operations', 
-    icon: Globe,
-    external: true,
-    keywords: ['Corporate', 'Global Operations', 'Enterprise Solutions', 'Multi-Division Services', 'Business Transformation']
-  }
+const divisions = [
+  { name: 'ELSxTech', path: '/it-services', description: 'Technology solutions & innovation', icon: Cpu },
+  { name: 'ELSxBPO', path: '/bpo-services', description: 'Business process outsourcing', icon: Users },
+  { name: 'ELSxKPO', path: '/kpo-services', description: 'Knowledge process & analytics', icon: Brain },
+  { name: 'ELSxConsultancy', path: '/consultancy', description: 'Strategic consulting', icon: Briefcase },
 ];
 
-// --- Employee Login Button Component ---
-const EmployeeLoginButton = () => (
-  <a
-    href="https://elsxglobal.com/employee-portal"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="w-full justify-center flex items-center space-x-2.5 bg-gray-800 text-white px-3 py-2 text-sm font-semibold rounded-lg hover:bg-gray-900 transition-colors"
-    aria-label="Access Employee Portal - Secure Login for ELSxGlobal Staff"
-  >
-    <KeyRound className="h-4 w-4" />
-    <span>Employee Portal</span>
-    <ExternalLink className="h-3 w-3" />
-  </a>
-);
-
-// --- Main Navbar Component ---
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isDivisionsOpen, setIsDivisionsOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 10);
+    const handleScroll = () => setIsScrolled(window.scrollY > 20);
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -196,39 +38,198 @@ export default function Navbar() {
   }, [isMenuOpen]);
 
   return (
-    <nav className={`fixed w-full bg-white z-[1000] transition-shadow duration-300 border-b border-gray-200/80 ${
-        isScrolled ? 'shadow-md' : ''
+    <>
+      <nav className={`fixed w-full z-[1000] transition-all duration-300 ${
+        isScrolled
+          ? 'bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-100'
+          : 'bg-white border-b border-gray-100'
       }`}>
-      <div className="container mx-auto px-4 sm:px-6">
-        <div className="flex items-center justify-between h-16">
-          {/* Enhanced Logo with Parent Company Reference */}
-          <Link to="/" className="flex items-center space-x-2 flex-shrink-0" aria-label="EvolucentSphere Home - Flagship Division ELSxGlobal">
-            <Brain className="h-7 w-7 sm:h-8 sm:w-8 md:h-9 md:w-9 text-blue-600" />
-            <div className="flex flex-col">
-              <span className="text-lg sm:text-xl font-bold text-gray-900">EvolucentSphere</span>
-              <span className="text-xs sm:text-xs text-blue-600 hidden sm:block">Flagship: ELSxGlobal</span>
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="flex items-center justify-between h-16 lg:h-20">
+            {/* Logo */}
+            <Link to="/" className="flex items-center gap-2.5 flex-shrink-0" aria-label="EvolucentSphere Home">
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-xl blur opacity-40"></div>
+                <div className="relative bg-gradient-to-br from-blue-600 to-cyan-500 p-2 rounded-xl">
+                  <Brain className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
+                </div>
+              </div>
+              <div className="flex flex-col">
+                <span className="text-lg sm:text-xl font-bold text-gray-900 tracking-tight">EvolucentSphere</span>
+                <span className="text-[10px] sm:text-xs text-gray-500 font-medium -mt-0.5">ELSxGlobal</span>
+              </div>
+            </Link>
+
+            {/* Desktop Nav */}
+            <div className="hidden lg:flex items-center gap-8">
+              {/* Divisions Dropdown */}
+              <div
+                className="relative"
+                onMouseEnter={() => setIsDivisionsOpen(true)}
+                onMouseLeave={() => setIsDivisionsOpen(false)}
+              >
+                <button className="flex items-center gap-1 text-gray-600 hover:text-gray-900 font-medium transition-colors py-2">
+                  Divisions
+                  <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${isDivisionsOpen ? 'rotate-180' : ''}`} />
+                </button>
+                <AnimatePresence>
+                  {isDivisionsOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 10 }}
+                      transition={{ duration: 0.15 }}
+                      className="absolute top-full left-0 pt-2"
+                    >
+                      <div className="bg-white rounded-xl shadow-xl border border-gray-100 py-2 min-w-[280px]">
+                        {divisions.map((d) => (
+                          <Link
+                            key={d.path}
+                            to={d.path}
+                            className="flex items-center gap-3 px-4 py-3 hover:bg-gray-50 transition-colors"
+                          >
+                            <div className="p-2 bg-blue-50 rounded-lg">
+                              <d.icon className="h-4 w-4 text-blue-600" />
+                            </div>
+                            <div>
+                              <p className="font-medium text-gray-900">{d.name}</p>
+                              <p className="text-sm text-gray-500">{d.description}</p>
+                            </div>
+                          </Link>
+                        ))}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+
+              {NAV_LINKS.filter(l => l.isPrimary).map((link) => (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  className="text-gray-600 hover:text-gray-900 font-medium transition-colors"
+                >
+                  {link.name}
+                </Link>
+              ))}
+
+              <Link
+                to="/ai-lab"
+                className="flex items-center gap-1.5 text-blue-600 hover:text-blue-700 font-medium transition-colors"
+              >
+                <Cpu className="h-4 w-4" />
+                AI Lab
+              </Link>
             </div>
-          </Link>
 
-          <DesktopNav />
+            {/* Right Side */}
+            <div className="hidden lg:flex items-center gap-4">
+              <a
+                href="https://linkedin.com/company/elsxglobal"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-blue-600 transition-colors"
+              >
+                <ExternalLink className="h-5 w-5" />
+              </a>
+              <Link
+                to="/contact"
+                className="px-5 py-2.5 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold rounded-xl hover:from-blue-700 hover:to-blue-800 transition-all shadow-lg shadow-blue-500/20 hover:shadow-blue-500/40"
+              >
+                Contact Us
+              </Link>
+            </div>
 
-          <div className="lg:hidden flex items-center">
-            <button 
-              onClick={() => setIsMenuOpen(true)} 
-              className="text-gray-600 p-2"
-              aria-label="Open navigation menu"
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setIsMenuOpen(true)}
+              className="lg:hidden p-2 text-gray-600 hover:text-gray-900 transition-colors"
             >
-              <span className="sr-only">Open menu</span>
               <Menu className="h-6 w-6" />
             </button>
           </div>
         </div>
-      </div>
-        
+      </nav>
+
+      {/* Mobile Menu */}
       <AnimatePresence>
-        {isMenuOpen && <MobileMenuPanel closeMenu={() => setIsMenuOpen(false)} />}
+        {isMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[1001] lg:hidden"
+          >
+            <div className="absolute inset-0 bg-black/20 backdrop-blur-sm" onClick={() => setIsMenuOpen(false)} />
+            <motion.div
+              initial={{ x: '100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '100%' }}
+              transition={{ type: 'spring', damping: 30, stiffness: 300 }}
+              className="absolute right-0 top-0 bottom-0 w-[85%] max-w-sm bg-white shadow-xl"
+            >
+              <div className="flex items-center justify-between p-4 border-b border-gray-100">
+                <span className="font-bold text-lg text-gray-900">Menu</span>
+                <button
+                  onClick={() => setIsMenuOpen(false)}
+                  className="p-2 text-gray-400 hover:text-gray-600 transition-colors"
+                >
+                  <X className="h-6 w-6" />
+                </button>
+              </div>
+
+              <nav className="p-4 space-y-1">
+                {divisions.map((d) => (
+                  <Link
+                    key={d.path}
+                    to={d.path}
+                    onClick={() => setIsMenuOpen(false)}
+                    className="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-gray-50 transition-colors"
+                  >
+                    <d.icon className="h-5 w-5 text-blue-600" />
+                    <div>
+                      <p className="font-medium text-gray-900">{d.name}</p>
+                      <p className="text-xs text-gray-500">{d.description}</p>
+                    </div>
+                  </Link>
+                ))}
+
+                <div className="pt-4 border-t border-gray-100 mt-4">
+                  {NAV_LINKS.map((link) => (
+                    <Link
+                      key={link.path}
+                      to={link.path}
+                      onClick={() => setIsMenuOpen(false)}
+                      className="block px-4 py-3 text-gray-700 hover:text-blue-600 font-medium transition-colors"
+                    >
+                      {link.name}
+                    </Link>
+                  ))}
+                  <Link
+                    to="/ai-lab"
+                    onClick={() => setIsMenuOpen(false)}
+                    className="flex items-center gap-2 px-4 py-3 text-blue-600 font-medium"
+                  >
+                    <Cpu className="h-5 w-5" />
+                    AI Lab
+                  </Link>
+                </div>
+              </nav>
+
+              <div className="absolute bottom-0 left-0 right-0 p-4 border-t border-gray-100 bg-gray-50">
+                <Link
+                  to="/contact"
+                  onClick={() => setIsMenuOpen(false)}
+                  className="block w-full py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold text-center rounded-xl"
+                >
+                  Contact Us
+                </Link>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
       </AnimatePresence>
-    </nav>
+    </>
   );
 }
 

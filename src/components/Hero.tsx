@@ -1,140 +1,157 @@
 import React from 'react';
-import { ArrowRight, Brain, Shield, Cpu, Users, MessageCircle, Phone } from 'lucide-react';
+import { ArrowRight, Brain, Shield, Cpu, Users, MessageCircle, Phone, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { config } from '../lib/config';
 
 export default function Hero() {
   return (
-    <div className="relative min-h-screen flex items-center">
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-600 opacity-10"></div>
-      <div className="absolute inset-0" style={{
-        backgroundImage: 'url("https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80")',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        opacity: 0.1
-      }}></div>
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="max-w-4xl">
-          <motion.div 
-            className="flex items-center mb-8"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <Brain className="h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 text-blue-600 mr-2 sm:mr-3 md:mr-4 flex-shrink-0" />
-            <div>
-              <h1 className="text-5xl md:text-7xl font-bold text-gray-900">
-                EvolucentSphere
-              </h1>
-              <p className="text-sm sm:text-base md:text-xl text-blue-600">
-                Flagship Division: ELSxGlobal
-              </p>
-            </div>
-          </motion.div>
-          
-          <motion.p 
-            className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold text-blue-600 mb-4 md:mb-6"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            Transform. Innovate. Excel.
-          </motion.p>
-          
-          <motion.p 
-            className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-700 mb-6 md:mb-8 leading-relaxed"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-          >
-            Your trusted partner for comprehensive business transformation through our flagship ELSxGlobal division. 
-            Experience innovation with our BPO, KPO, IT Services, and Business Consultancy solutions powered by cutting-edge technology.
-          </motion.p>
-          
-          <motion.div 
-            className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8 md:mb-12"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-          >
-            <Link 
-              to="/contact" 
-              className="group inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-md text-white bg-blue-600 hover:bg-blue-700 transform hover:scale-105 transition-all duration-300"
-            >
-              Transform Your Business
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-            </Link>
-            <Link 
-              to="/services" 
-              className="group inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-md text-gray-700 bg-white border-2 border-blue-600 hover:bg-blue-50 transform hover:scale-105 transition-all duration-300"
-            >
-              Explore Our Solutions
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-            </Link>
-            
-            {/* Quick WhatsApp Contact */}
-            <div className="flex gap-2 sm:gap-3 justify-center">
-              <a
-                href={`https://wa.me/${config.app.contact.phone.replace(/[^0-9]/g, '')}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group inline-flex items-center justify-center px-4 sm:px-6 py-3 sm:py-4 text-sm sm:text-base font-semibold rounded-md text-white bg-green-500 hover:bg-green-600 transform hover:scale-105 transition-all duration-300"
-                aria-label="WhatsApp Support"
-              >
-                <MessageCircle className="h-4 w-4 sm:h-5 sm:w-5 mr-1 sm:mr-2" />
-                Support
-              </a>
-              <a
-                href={`https://wa.me/${config.app.contact.phone2.replace(/[^0-9]/g, '')}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group inline-flex items-center justify-center px-4 sm:px-6 py-3 sm:py-4 text-sm sm:text-base font-semibold rounded-md text-white bg-blue-500 hover:bg-blue-600 transform hover:scale-105 transition-all duration-300"
-                aria-label="WhatsApp Business"
-              >
-                <Phone className="h-4 w-4 sm:h-5 sm:w-5 mr-1 sm:mr-2" />
-                Business
-              </a>
-            </div>
-          </motion.div>
+    <section className="relative min-h-[90vh] flex items-center overflow-hidden">
+      {/* Animated Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500 rounded-full filter blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-cyan-500 rounded-full filter blur-3xl animate-pulse delay-1000"></div>
+          <div className="absolute top-1/2 left-1/2 w-72 h-72 bg-indigo-500 rounded-full filter blur-3xl animate-pulse delay-500"></div>
+        </div>
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMSIvPjwvZz48L2c+PC9zdmc+')] opacity-40"></div>
+      </div>
 
-          <motion.div 
-            className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Left Content */}
+          <div className="text-white">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 mb-6">
+                <Sparkles className="h-4 w-4 text-cyan-400" />
+                <span className="text-sm font-medium text-cyan-100">Flagship Division: ELSxGlobal</span>
+              </div>
+
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+                <span className="bg-gradient-to-r from-white via-cyan-200 to-white bg-clip-text text-transparent">
+                  EvolucentSphere
+                </span>
+              </h1>
+
+              <p className="text-xl sm:text-2xl font-light text-cyan-100 mb-4">
+                Transform. Innovate. Excel.
+              </p>
+
+              <p className="text-lg text-gray-300 mb-8 max-w-xl leading-relaxed">
+                Your trusted partner for comprehensive business transformation. Experience innovation with our BPO, KPO, IT Services, and Business Consultancy solutions powered by cutting-edge technology.
+              </p>
+
+              <div className="flex flex-wrap gap-4 mb-10">
+                <Link
+                  to="/contact"
+                  className="group inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-blue-600 transition-all duration-300 shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 hover:scale-105"
+                >
+                  Transform Your Business
+                  <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                </Link>
+
+                <Link
+                  to="/services"
+                  className="group inline-flex items-center gap-2 px-6 py-3 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-xl border border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105"
+                >
+                  Explore Solutions
+                  <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                </Link>
+
+                <div className="flex gap-2">
+                  <a
+                    href={`https://wa.me/${config.app.contact.phone.replace(/[^0-9]/g, '')}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-4 py-3 bg-green-500 text-white font-medium rounded-xl hover:bg-green-600 transition-all duration-300 hover:scale-105"
+                    aria-label="WhatsApp Support"
+                  >
+                    <MessageCircle className="h-5 w-5" />
+                    <span className="sr-only sm:not-sr-only">Support</span>
+                  </a>
+                  <a
+                    href={`https://wa.me/${config.app.contact.phone2.replace(/[^0-9]/g, '')}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-4 py-3 bg-blue-500 text-white font-medium rounded-xl hover:bg-blue-600 transition-all duration-300 hover:scale-105"
+                    aria-label="WhatsApp Business"
+                  >
+                    <Phone className="h-5 w-5" />
+                    <span className="sr-only sm:not-sr-only">Sales</span>
+                  </a>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Stats */}
+            <motion.div
+              className="grid grid-cols-2 sm:grid-cols-4 gap-6"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+            >
+              {[
+                { icon: Users, value: '500+', label: 'Global Clients' },
+                { icon: Shield, value: '99.9%', label: 'Uptime SLA' },
+                { icon: Cpu, value: '24/7', label: 'Support' },
+                { icon: Brain, value: '15+', label: 'Years Expert' },
+              ].map((stat) => (
+                <div key={stat.label} className="text-center p-3">
+                  <stat.icon className="h-6 w-6 mx-auto mb-2 text-cyan-400" />
+                  <div className="text-2xl sm:text-3xl font-bold text-white">{stat.value}</div>
+                  <div className="text-sm text-gray-400">{stat.label}</div>
+                </div>
+              ))}
+            </motion.div>
+          </div>
+
+          {/* Right - Animated Illustration */}
+          <motion.div
+            className="hidden lg:block relative"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, delay: 0.2 }}
           >
-            <div className="text-center p-2 sm:p-4">
-              <div className="flex items-center justify-center mb-2">
-                <Users className="h-5 w-5 sm:h-6 sm:w-6 text-blue-600" />
+            <div className="relative w-full aspect-square max-w-lg mx-auto">
+              {/* Animated circles */}
+              <div className="absolute inset-0 border-2 border-cyan-500/30 rounded-full animate-spin" style={{ animationDuration: '20s' }}></div>
+              <div className="absolute inset-8 border-2 border-blue-500/30 rounded-full animate-spin" style={{ animationDuration: '15s', animationDirection: 'reverse' }}></div>
+              <div className="absolute inset-16 border-2 border-indigo-500/30 rounded-full animate-spin" style={{ animationDuration: '10s' }}></div>
+
+              {/* Center icon */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="relative">
+                  <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-2xl blur-2xl opacity-50 animate-pulse"></div>
+                  <div className="relative bg-gradient-to-br from-slate-800 to-slate-900 p-8 rounded-2xl border border-white/10">
+                    <Brain className="h-20 w-20 text-cyan-400" />
+                  </div>
+                </div>
               </div>
-              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-blue-600 mb-1 sm:mb-2">500+</h3>
-              <p className="text-xs sm:text-sm md:text-base text-gray-600">Global Clients</p>
-            </div>
-            <div className="text-center p-2 sm:p-4">
-              <div className="flex items-center justify-center mb-2">
-                <Shield className="h-5 w-5 sm:h-6 sm:w-6 text-blue-600" />
-              </div>
-              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-blue-600 mb-1 sm:mb-2">99.9%</h3>
-              <p className="text-xs sm:text-sm md:text-base text-gray-600">Service Uptime</p>
-            </div>
-            <div className="text-center p-2 sm:p-4">
-              <div className="flex items-center justify-center mb-2">
-                <Cpu className="h-5 w-5 sm:h-6 sm:w-6 text-blue-600" />
-              </div>
-              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-blue-600 mb-1 sm:mb-2">24/7</h3>
-              <p className="text-xs sm:text-sm md:text-base text-gray-600">Support</p>
-            </div>
-            <div className="text-center p-2 sm:p-4">
-              <div className="flex items-center justify-center mb-2">
-                <Brain className="h-5 w-5 sm:h-6 sm:w-6 text-blue-600" />
-              </div>
-              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-blue-600 mb-1 sm:mb-2">15+</h3>
-              <p className="text-xs sm:text-sm md:text-base text-gray-600">Years Experience</p>
+
+              {/* Floating icons */}
+              {[
+                { icon: Shield, className: 'top-10 right-20', delay: 0 },
+                { icon: Users, className: 'bottom-20 right-10', delay: 0.5 },
+                { icon: Cpu, className: 'top-1/3 left-5', delay: 1 },
+              ].map((item, i) => (
+                <motion.div
+                  key={i}
+                  className={`absolute ${item.className} p-3 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20`}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.5 + item.delay }}
+                >
+                  <item.icon className="h-6 w-6 text-cyan-300" />
+                </motion.div>
+              ))}
             </div>
           </motion.div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
