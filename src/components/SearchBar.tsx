@@ -130,15 +130,15 @@ export default function SearchBar() {
           onChange={(e) => setQuery(e.target.value)}
           onFocus={() => setShowResults(true)}
           placeholder="Search for services, solutions, or insights..."
-          className="w-full px-4 py-3 pl-12 pr-10 text-gray-700 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+          className="w-full px-4 py-3 pl-12 pr-10 text-ink bg-white border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent"
           aria-label="Search"
         />
-        <Search className="absolute left-4 top-3.5 h-5 w-5 text-gray-400" />
+        <Search className="absolute left-4 top-3.5 h-5 w-5 text-ink-muted" />
         {query && (
           <button
             type="button"
             onClick={clearSearch}
-            className="absolute right-4 top-3.5 text-gray-400 hover:text-gray-600"
+            className="absolute right-4 top-3.5 text-ink-muted hover:text-ink-secondary"
           >
             <X className="h-5 w-5" />
           </button>
@@ -147,10 +147,10 @@ export default function SearchBar() {
 
       {/* Search Results Dropdown */}
       {showResults && (
-        <div className="absolute z-50 w-full mt-2 bg-white rounded-lg shadow-xl border border-gray-200">
+        <div className="absolute z-50 w-full mt-2 bg-white rounded-lg shadow-xl border border-border">
           {isLoading ? (
-            <div className="p-4 text-center text-gray-500">
-              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-500 mx-auto"></div>
+            <div className="p-4 text-center text-ink-muted">
+              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-brand-500 mx-auto"></div>
             </div>
           ) : (
             <div className="max-h-96 overflow-y-auto">
@@ -162,20 +162,20 @@ export default function SearchBar() {
                       <a
                         key={index}
                         href={result.url}
-                        className="block px-4 py-3 hover:bg-gray-50"
+                        className="block px-4 py-3 hover:bg-surface"
                       >
                         <div className="flex items-center justify-between">
                           <div>
-                            <h4 className="text-sm font-medium text-gray-900">{result.title}</h4>
-                            <p className="text-sm text-gray-500">{result.description}</p>
+                            <h4 className="text-sm font-medium text-ink">{result.title}</h4>
+                            <p className="text-sm text-ink-muted">{result.description}</p>
                           </div>
-                          <ArrowRight className="h-4 w-4 text-gray-400" />
+                          <ArrowRight className="h-4 w-4 text-ink-muted" />
                         </div>
                       </a>
                     ))}
                   </div>
                 ) : (
-                  <div className="p-4 text-center text-gray-500">
+                  <div className="p-4 text-center text-ink-muted">
                     No results found for "{query}"
                   </div>
                 )
@@ -184,7 +184,7 @@ export default function SearchBar() {
                 <div>
                   {recentSearches.length > 0 && (
                     <div className="p-2">
-                      <div className="flex items-center px-3 py-2 text-sm text-gray-500">
+                      <div className="flex items-center px-3 py-2 text-sm text-ink-muted">
                         <History className="h-4 w-4 mr-2" />
                         Recent Searches
                       </div>
@@ -192,15 +192,15 @@ export default function SearchBar() {
                         <button
                           key={index}
                           onClick={() => setQuery(search)}
-                          className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-50"
+                          className="block w-full text-left px-4 py-2 text-sm text-ink hover:bg-surface"
                         >
                           {search}
                         </button>
                       ))}
                     </div>
                   )}
-                  <div className="p-2 border-t">
-                    <div className="flex items-center px-3 py-2 text-sm text-gray-500">
+                  <div className="p-2 border-t border-border">
+                    <div className="flex items-center px-3 py-2 text-sm text-ink-muted">
                       <TrendingUp className="h-4 w-4 mr-2" />
                       Trending Searches
                     </div>
@@ -208,7 +208,7 @@ export default function SearchBar() {
                       <button
                         key={index}
                         onClick={() => setQuery(trend)}
-                        className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-50"
+                        className="block w-full text-left px-4 py-2 text-sm text-ink hover:bg-surface"
                       >
                         {trend}
                       </button>

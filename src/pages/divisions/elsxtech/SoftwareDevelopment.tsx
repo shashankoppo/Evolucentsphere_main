@@ -59,12 +59,12 @@ export default function SoftwareDevelopment() {
       />
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-b from-green-50 to-white relative overflow-hidden">
+      <section className="section-padding bg-gradient-to-b from-green-50 to-white relative overflow-hidden">
         <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
-        <div className="container mx-auto px-6 relative">
+        <div className="container-main relative">
           <div className="max-w-4xl mx-auto text-center">
             <motion.h1 
-              className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
+              className="text-4xl md:text-5xl font-bold text-ink mb-6"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
@@ -72,7 +72,7 @@ export default function SoftwareDevelopment() {
               Software Development & Integration
             </motion.h1>
             <motion.p 
-              className="text-xl text-gray-600 mb-12"
+              className="text-xl text-ink-secondary mb-12"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.6 }}
@@ -85,13 +85,13 @@ export default function SoftwareDevelopment() {
               {benefits.map((benefit, index) => (
                 <motion.div
                   key={index}
-                  className="bg-white p-6 rounded-lg shadow-lg"
+                  className="card"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4 + index * 0.1, duration: 0.6 }}
                 >
                   <div className="text-2xl font-bold text-green-600">{benefit.metric}</div>
-                  <div className="text-gray-600">{benefit.label}</div>
+                  <div className="text-ink-secondary">{benefit.label}</div>
                 </motion.div>
               ))}
             </div>
@@ -100,27 +100,27 @@ export default function SoftwareDevelopment() {
       </section>
 
       {/* Services Grid */}
-      <section className="py-20">
-        <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
+      <section className="section-padding">
+        <div className="container-main">
+          <h2 className="text-3xl font-bold text-ink text-center mb-12">
             Our Development Services
           </h2>
           <div className="grid md:grid-cols-2 gap-8">
             {services.map((service, index) => (
               <motion.div
                 key={index}
-                className="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-all duration-300"
+                className="card hover:shadow-xl transition-all duration-300"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1, duration: 0.6 }}
               >
                 <service.icon className="h-12 w-12 text-green-600 mb-6" />
-                <h3 className="text-xl font-bold text-gray-900 mb-4">{service.title}</h3>
-                <p className="text-gray-600 mb-6">{service.description}</p>
+                <h3 className="text-xl font-bold text-ink mb-4">{service.title}</h3>
+                <p className="text-ink-secondary mb-6">{service.description}</p>
                 
                 <div className="space-y-2">
                   {service.features.map((feature, idx) => (
-                    <div key={idx} className="flex items-center text-gray-700">
+                    <div key={idx} className="flex items-center text-ink-secondary">
                       <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
                       {feature}
                     </div>
@@ -133,94 +133,94 @@ export default function SoftwareDevelopment() {
       </section>
 
       {/* Technology Stack */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
+      <section className="section-padding surface">
+        <div className="container-main">
+          <h2 className="text-3xl font-bold text-ink text-center mb-12">
             Technology Stack & Expertise
           </h2>
           <div className="grid md:grid-cols-4 gap-8">
-            <div className="bg-white p-6 rounded-lg shadow-lg">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Frontend</h3>
+            <div className="card">
+              <h3 className="text-xl font-bold text-ink mb-4">Frontend</h3>
               <ul className="space-y-2">
-                <li className="flex items-center text-gray-700">
+                <li className="flex items-center text-ink-secondary">
                   <span className="h-2 w-2 bg-green-600 rounded-full mr-2"></span>
                   React.js & Next.js
                 </li>
-                <li className="flex items-center text-gray-700">
+                <li className="flex items-center text-ink-secondary">
                   <span className="h-2 w-2 bg-green-600 rounded-full mr-2"></span>
                   Angular & Vue.js
                 </li>
-                <li className="flex items-center text-gray-700">
+                <li className="flex items-center text-ink-secondary">
                   <span className="h-2 w-2 bg-green-600 rounded-full mr-2"></span>
                   TypeScript & JavaScript
                 </li>
-                <li className="flex items-center text-gray-700">
+                <li className="flex items-center text-ink-secondary">
                   <span className="h-2 w-2 bg-green-600 rounded-full mr-2"></span>
                   Tailwind CSS & SCSS
                 </li>
               </ul>
             </div>
             
-            <div className="bg-white p-6 rounded-lg shadow-lg">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Backend</h3>
+            <div className="card">
+              <h3 className="text-xl font-bold text-ink mb-4">Backend</h3>
               <ul className="space-y-2">
-                <li className="flex items-center text-gray-700">
+                <li className="flex items-center text-ink-secondary">
                   <span className="h-2 w-2 bg-green-600 rounded-full mr-2"></span>
                   Node.js & Express
                 </li>
-                <li className="flex items-center text-gray-700">
+                <li className="flex items-center text-ink-secondary">
                   <span className="h-2 w-2 bg-green-600 rounded-full mr-2"></span>
                   Python & Django
                 </li>
-                <li className="flex items-center text-gray-700">
+                <li className="flex items-center text-ink-secondary">
                   <span className="h-2 w-2 bg-green-600 rounded-full mr-2"></span>
                   Java & Spring Boot
                 </li>
-                <li className="flex items-center text-gray-700">
+                <li className="flex items-center text-ink-secondary">
                   <span className="h-2 w-2 bg-green-600 rounded-full mr-2"></span>
                   .NET & C#
                 </li>
               </ul>
             </div>
             
-            <div className="bg-white p-6 rounded-lg shadow-lg">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Mobile</h3>
+            <div className="card">
+              <h3 className="text-xl font-bold text-ink mb-4">Mobile</h3>
               <ul className="space-y-2">
-                <li className="flex items-center text-gray-700">
+                <li className="flex items-center text-ink-secondary">
                   <span className="h-2 w-2 bg-green-600 rounded-full mr-2"></span>
                   React Native
                 </li>
-                <li className="flex items-center text-gray-700">
+                <li className="flex items-center text-ink-secondary">
                   <span className="h-2 w-2 bg-green-600 rounded-full mr-2"></span>
                   Flutter & Dart
                 </li>
-                <li className="flex items-center text-gray-700">
+                <li className="flex items-center text-ink-secondary">
                   <span className="h-2 w-2 bg-green-600 rounded-full mr-2"></span>
                   iOS (Swift)
                 </li>
-                <li className="flex items-center text-gray-700">
+                <li className="flex items-center text-ink-secondary">
                   <span className="h-2 w-2 bg-green-600 rounded-full mr-2"></span>
                   Android (Kotlin)
                 </li>
               </ul>
             </div>
             
-            <div className="bg-white p-6 rounded-lg shadow-lg">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Database</h3>
+            <div className="card">
+              <h3 className="text-xl font-bold text-ink mb-4">Database</h3>
               <ul className="space-y-2">
-                <li className="flex items-center text-gray-700">
+                <li className="flex items-center text-ink-secondary">
                   <span className="h-2 w-2 bg-green-600 rounded-full mr-2"></span>
                   PostgreSQL & MySQL
                 </li>
-                <li className="flex items-center text-gray-700">
+                <li className="flex items-center text-ink-secondary">
                   <span className="h-2 w-2 bg-green-600 rounded-full mr-2"></span>
                   MongoDB & Redis
                 </li>
-                <li className="flex items-center text-gray-700">
+                <li className="flex items-center text-ink-secondary">
                   <span className="h-2 w-2 bg-green-600 rounded-full mr-2"></span>
                   Firebase & Supabase
                 </li>
-                <li className="flex items-center text-gray-700">
+                <li className="flex items-center text-ink-secondary">
                   <span className="h-2 w-2 bg-green-600 rounded-full mr-2"></span>
                   Elasticsearch
                 </li>
@@ -231,9 +231,9 @@ export default function SoftwareDevelopment() {
       </section>
 
       {/* Development Process */}
-      <section className="py-20">
-        <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
+      <section className="section-padding">
+        <div className="container-main">
+          <h2 className="text-3xl font-bold text-ink text-center mb-12">
             Our Development Process
           </h2>
           <div className="grid md:grid-cols-5 gap-8">
@@ -241,54 +241,54 @@ export default function SoftwareDevelopment() {
               <div className="bg-green-100 p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
                 <Settings className="h-8 w-8 text-green-600" />
               </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-2">Planning</h3>
-              <p className="text-gray-600 text-sm">Requirements analysis and project planning</p>
+              <h3 className="text-lg font-bold text-ink mb-2">Planning</h3>
+              <p className="text-ink-secondary text-sm">Requirements analysis and project planning</p>
             </div>
             
             <div className="text-center">
               <div className="bg-green-100 p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
                 <Code className="h-8 w-8 text-green-600" />
               </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-2">Design</h3>
-              <p className="text-gray-600 text-sm">UI/UX design and system architecture</p>
+              <h3 className="text-lg font-bold text-ink mb-2">Design</h3>
+              <p className="text-ink-secondary text-sm">UI/UX design and system architecture</p>
             </div>
             
             <div className="text-center">
               <div className="bg-green-100 p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
                 <Zap className="h-8 w-8 text-green-600" />
               </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-2">Development</h3>
-              <p className="text-gray-600 text-sm">Agile development with regular updates</p>
+              <h3 className="text-lg font-bold text-ink mb-2">Development</h3>
+              <p className="text-ink-secondary text-sm">Agile development with regular updates</p>
             </div>
             
             <div className="text-center">
               <div className="bg-green-100 p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
                 <BarChart className="h-8 w-8 text-green-600" />
               </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-2">Testing</h3>
-              <p className="text-gray-600 text-sm">Comprehensive testing and quality assurance</p>
+              <h3 className="text-lg font-bold text-ink mb-2">Testing</h3>
+              <p className="text-ink-secondary text-sm">Comprehensive testing and quality assurance</p>
             </div>
             
             <div className="text-center">
               <div className="bg-green-100 p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
                 <Globe className="h-8 w-8 text-green-600" />
               </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-2">Deployment</h3>
-              <p className="text-gray-600 text-sm">Launch and ongoing maintenance</p>
+              <h3 className="text-lg font-bold text-ink mb-2">Deployment</h3>
+              <p className="text-ink-secondary text-sm">Launch and ongoing maintenance</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 bg-gradient-to-r from-green-600 to-blue-600">
-        <div className="container mx-auto px-6">
+      <section className="section-padding bg-gradient-to-r from-green-600 to-blue-600">
+        <div className="container-main">
           <div className="max-w-4xl mx-auto text-center text-white">
             <h2 className="text-3xl font-bold mb-6">Ready to Build Your Next Application?</h2>
             <p className="text-xl mb-8">
               Let's discuss your software development needs and create something amazing together.
             </p>
-            <button className="bg-white text-green-600 px-8 py-4 rounded-lg hover:bg-green-50 transition-colors font-medium flex items-center justify-center mx-auto group">
+            <button className="btn-secondary flex items-center justify-center mx-auto group">
               Start Your Project
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </button>

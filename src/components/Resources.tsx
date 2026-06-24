@@ -43,7 +43,7 @@ const resources = [
 
 export default function Resources() {
   return (
-    <section id="resources" className="py-20 bg-gradient-to-b from-white to-blue-50">
+    <section id="resources" className="section-padding surface">
       <SEOHead 
         title="Knowledge Center & Resources"
         description="Access our comprehensive collection of resources including digital transformation guides, AI implementation whitepapers, and technology assessment toolkits to accelerate your business growth."
@@ -60,10 +60,11 @@ export default function Resources() {
           'Strategic Planning'
         ]}
       />
-      <div className="container mx-auto px-6">
+      <div className="container-main">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Knowledge Center</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <span className="section-label">Resources</span>
+          <h2 className="text-4xl font-bold text-ink mb-4">Knowledge Center</h2>
+          <p className="text-xl text-ink-secondary max-w-3xl mx-auto">
             Access our comprehensive collection of resources designed to guide your 
             digital transformation journey and accelerate business growth.
           </p>
@@ -71,17 +72,17 @@ export default function Resources() {
 
         <div className="grid md:grid-cols-3 gap-8 mb-16">
           {resources.map((resource, index) => (
-            <div key={index} className="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-all duration-300">
-              <resource.icon className="h-12 w-12 text-blue-600 mb-6" />
-              <h3 className="text-xl font-bold text-gray-900 mb-4">{resource.title}</h3>
-              <p className="text-gray-600 mb-6">{resource.description}</p>
+            <div key={index} className="card p-8 hover:shadow-xl transition-all duration-300">
+              <resource.icon className="h-12 w-12 text-brand-500 mb-6" />
+              <h3 className="text-xl font-bold text-ink mb-4">{resource.title}</h3>
+              <p className="text-ink-secondary mb-6">{resource.description}</p>
               
               <div className="mb-6">
-                <h4 className="font-semibold text-gray-900 mb-3">Key Highlights</h4>
+                <h4 className="font-semibold text-ink mb-3">Key Highlights</h4>
                 <ul className="space-y-2">
                   {resource.highlights.map((highlight, idx) => (
-                    <li key={idx} className="flex items-center text-gray-600">
-                      <span className="h-2 w-2 bg-blue-600 rounded-full mr-2"></span>
+                    <li key={idx} className="flex items-center text-ink-secondary">
+                      <span className="h-2 w-2 bg-brand-500 rounded-full mr-2"></span>
                       {highlight}
                     </li>
                   ))}
@@ -90,7 +91,7 @@ export default function Resources() {
               
               <a 
                 href={resource.downloadLink}
-                className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium"
+                className="inline-flex items-center text-brand-500 hover:text-brand-600 font-medium"
               >
                 <Download className="h-5 w-5 mr-2" />
                 Download Resource
@@ -100,19 +101,19 @@ export default function Resources() {
         </div>
 
         {/* Premium Resources */}
-        <div className="bg-white rounded-lg shadow-xl p-8">
+        <div className="card p-8">
           <div className="max-w-3xl mx-auto text-center">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Premium Resource Library</h3>
-            <p className="text-gray-600 mb-8">
+            <h3 className="text-2xl font-bold text-ink mb-4">Premium Resource Library</h3>
+            <p className="text-ink-secondary mb-8">
               Get exclusive access to our comprehensive collection of advanced resources,
               including detailed implementation guides, templates, and industry research.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <button className="inline-flex items-center bg-blue-600 text-white px-8 py-3 rounded-md hover:bg-blue-700 transition-colors font-medium">
+              <button className="btn-primary">
                 Explore Premium Resources
                 <ArrowRight className="ml-2 h-5 w-5" />
               </button>
-              <button className="inline-flex items-center border-2 border-blue-600 text-blue-600 px-8 py-3 rounded-md hover:bg-blue-50 transition-colors font-medium">
+              <button className="btn-secondary">
                 View Pricing
               </button>
             </div>

@@ -143,7 +143,7 @@ export default function ServicesPage() {
                         to={svc.href}
                         className="group card p-5 flex items-center gap-3 h-full"
                       >
-                        <div className="inline-flex items-center justify-center w-9 h-9 rounded-lg bg-gray-50 text-ink-muted shrink-0 group-hover:bg-brand-50 group-hover:text-brand-500 transition-colors">
+                        <div className="inline-flex items-center justify-center w-9 h-9 rounded-lg bg-surface text-ink-muted shrink-0 group-hover:bg-brand-50 group-hover:text-brand-500 transition-colors">
                           <svc.icon className="w-4 h-4" />
                         </div>
                         <div className="flex-1 min-w-0">

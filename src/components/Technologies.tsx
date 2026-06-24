@@ -60,13 +60,14 @@ const technologies = [
 
 export default function Technologies() {
   return (
-    <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
-      <div className="container mx-auto px-6">
+    <section className="section-padding surface">
+      <div className="container-main">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+          <span className="section-label">Technology Stack</span>
+          <h2 className="text-4xl font-bold text-ink mb-4">
             Cutting-edge Technologies
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-ink-secondary max-w-3xl mx-auto">
             Leverage our advanced technology stack to transform your business operations
             and stay ahead in the digital age.
           </p>
@@ -74,36 +75,36 @@ export default function Technologies() {
 
         <div className="grid md:grid-cols-3 gap-8">
           {technologies.map((tech, index) => (
-            <div 
-              key={index} 
-              className="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+            <div
+              key={index}
+              className="card p-8 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
             >
               <div className="flex items-center mb-6">
-                <tech.icon className="h-12 w-12 text-blue-600" />
-                <h3 className="text-2xl font-bold text-gray-900 ml-4">{tech.title}</h3>
+                <tech.icon className="h-12 w-12 text-brand-500" />
+                <h3 className="text-2xl font-bold text-ink ml-4">{tech.title}</h3>
               </div>
-              
-              <p className="text-gray-600 mb-6">{tech.description}</p>
-              
+
+              <p className="text-ink-secondary mb-6">{tech.description}</p>
+
               <div className="mb-8">
-                <h4 className="font-semibold text-gray-900 mb-4">Key Capabilities</h4>
+                <h4 className="font-semibold text-ink mb-4">Key Capabilities</h4>
                 <ul className="grid grid-cols-2 gap-3">
                   {tech.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-center text-sm text-gray-700">
-                      <span className="h-2 w-2 bg-blue-600 rounded-full mr-2"></span>
+                    <li key={idx} className="flex items-center text-sm text-ink-secondary">
+                      <span className="h-2 w-2 bg-brand-500 rounded-full mr-2"></span>
                       {feature}
                     </li>
                   ))}
                 </ul>
               </div>
 
-              <div className="border-t pt-6">
-                <h4 className="font-semibold text-gray-900 mb-4">Performance Metrics</h4>
+              <div className="border-t border-border pt-6">
+                <h4 className="font-semibold text-ink mb-4">Performance Metrics</h4>
                 <div className="grid grid-cols-3 gap-4">
                   {tech.metrics.map((metric, idx) => (
                     <div key={idx} className="text-center">
-                      <div className="text-2xl font-bold text-blue-600">{metric.value}</div>
-                      <div className="text-sm text-gray-600">{metric.label}</div>
+                      <div className="text-2xl font-bold text-brand-500">{metric.value}</div>
+                      <div className="text-sm text-ink-secondary">{metric.label}</div>
                     </div>
                   ))}
                 </div>
@@ -114,21 +115,21 @@ export default function Technologies() {
 
         {/* Success Stories */}
         <div className="mt-20 text-center">
-          <h3 className="text-2xl font-bold text-gray-900 mb-8">
+          <h3 className="text-2xl font-bold text-ink mb-8">
             Trusted by Industry Leaders
           </h3>
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-blue-50 rounded-lg p-6">
-              <p className="text-xl font-bold text-blue-600 mb-2">500+</p>
-              <p className="text-gray-700">Enterprise Clients</p>
+            <div className="card p-6">
+              <p className="text-xl font-bold text-brand-500 mb-2">500+</p>
+              <p className="text-ink-secondary">Enterprise Clients</p>
             </div>
-            <div className="bg-blue-50 rounded-lg p-6">
-              <p className="text-xl font-bold text-blue-600 mb-2">$2B+</p>
-              <p className="text-gray-700">Client Cost Savings</p>
+            <div className="card p-6">
+              <p className="text-xl font-bold text-brand-500 mb-2">$2B+</p>
+              <p className="text-ink-secondary">Client Cost Savings</p>
             </div>
-            <div className="bg-blue-50 rounded-lg p-6">
-              <p className="text-xl font-bold text-blue-600 mb-2">99.9%</p>
-              <p className="text-gray-700">Client Satisfaction</p>
+            <div className="card p-6">
+              <p className="text-xl font-bold text-brand-500 mb-2">99.9%</p>
+              <p className="text-ink-secondary">Client Satisfaction</p>
             </div>
           </div>
         </div>

@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect }  from 'react';
 import { Bot, User, Brain, Sparkles, Send, Cpu, RefreshCw } from 'lucide-react';
 import { aiCore } from '../lib/ai/core';
 import { AI_CAPABILITIES } from '../lib/ai/capabilities';
@@ -111,9 +111,9 @@ export default function AIAssistant() {
   };
 
   return (
-    <div className="bg-white rounded-lg shadow-xl overflow-hidden h-[600px] flex flex-col">
+    <div className="card overflow-hidden h-[600px] flex flex-col">
       {/* Header */}
-      <div className="bg-gradient-to-r from-blue-600 to-blue-600 text-white p-4">
+      <div className="bg-brand-500 text-white p-4">
         <div className="flex items-center space-x-3">
           <Brain className="h-6 w-6" />
           <div>
@@ -135,15 +135,15 @@ export default function AIAssistant() {
             <div
               className={`max-w-[80%] rounded-lg p-4 ${
                 message.role === 'user'
-                  ? 'bg-blue-600 text-white'
-                  : 'bg-gray-100'
+                  ? 'bg-brand-500 text-white'
+                  : 'bg-surface'
               }`}
             >
               <div className="flex items-center space-x-2 mb-2">
                 {message.role === 'user' ? (
                   <User className="h-4 w-4" />
                 ) : (
-                  <Bot className="h-4 w-4 text-blue-600" />
+                  <Bot className="h-4 w-4 text-brand-500" />
                 )}
                 <span className="text-xs opacity-75">
                   {message.timestamp.toLocaleTimeString()}
@@ -155,16 +155,16 @@ export default function AIAssistant() {
               </div>
 
               {message.metadata && (
-                <div className="mt-2 pt-2 border-t border-gray-200 space-y-1">
+                <div className="mt-2 pt-2 border-t border-border space-y-1">
                   {message.metadata.confidence && (
                     <div className="flex items-center text-xs">
-                      <Brain className="h-3 w-3 mr-1 text-blue-600" />
+                      <Brain className="h-3 w-3 mr-1 text-brand-500" />
                       <span>Confidence: {(message.metadata.confidence * 100).toFixed(1)}%</span>
                     </div>
                   )}
                   {message.metadata.processingTime && (
                     <div className="flex items-center text-xs">
-                      <Cpu className="h-3 w-3 mr-1 text-blue-600" />
+                      <Cpu className="h-3 w-3 mr-1 text-brand-500" />
                       <span>Processing Time: {message.metadata.processingTime.toFixed(0)}ms</span>
                     </div>
                   )}
@@ -177,20 +177,20 @@ export default function AIAssistant() {
       </div>
 
       {/* Input Area */}
-      <div className="border-t p-4">
+      <div className="border-t border-border p-4">
         <form onSubmit={handleSubmit} className="flex space-x-2">
           <input
             type="text"
             value={input}
             onChange={(e) => setInput(e.target.value)}
             placeholder="Ask me anything..."
-            className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="flex-1 px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent"
             disabled={isProcessing}
           />
           <button
             type="submit"
             disabled={isProcessing}
-            className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors flex items-center space-x-2 disabled:opacity-50"
+            className="btn-primary disabled:opacity-50"
           >
             {isProcessing ? (
               <RefreshCw className="h-5 w-5 animate-spin" />
@@ -203,19 +203,19 @@ export default function AIAssistant() {
           </button>
         </form>
 
-        <div className="mt-2 flex items-center justify-between text-xs text-gray-500">
+        <div className="mt-2 flex items-center justify-between text-xs text-ink-secondary">
           <div className="flex items-center space-x-3">
             <span className="flex items-center">
-              <Brain className="h-3 w-3 mr-1 text-blue-600" />
+              <Brain className="h-3 w-3 mr-1 text-brand-500" />
               Neural: Active
             </span>
             <span className="flex items-center">
-              <Cpu className="h-3 w-3 mr-1 text-blue-600" />
+              <Cpu className="h-3 w-3 mr-1 text-brand-500" />
               Quantum: Ready
             </span>
           </div>
           <div className="flex items-center">
-            <Sparkles className="h-3 w-3 text-blue-600 mr-1" />
+            <Sparkles className="h-3 w-3 text-brand-500 mr-1" />
             <span>AI-Powered</span>
           </div>
         </div>

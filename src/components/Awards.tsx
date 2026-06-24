@@ -30,20 +30,21 @@ const awards = [
 
 export default function Awards() {
   return (
-    <section className="py-20">
-      <div className="container mx-auto px-6">
+    <section className="section-padding">
+      <div className="container-main">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Recognition & Awards</h2>
-          <p className="text-xl text-gray-600">Celebrating excellence in technology innovation</p>
+          <span className="section-label">Recognition</span>
+          <h2 className="text-4xl font-bold text-ink mb-4">Recognition & Awards</h2>
+          <p className="text-xl text-ink-secondary">Celebrating excellence in technology innovation</p>
         </div>
 
         <div className="grid md:grid-cols-4 gap-8">
           {awards.map((award, index) => (
             <div key={index} className="text-center">
-              <award.icon className="h-16 w-16 text-blue-600 mx-auto mb-4" />
-              <h3 className="text-xl font-bold text-gray-900 mb-2">{award.title}</h3>
-              <p className="text-gray-600">{award.organization}</p>
-              <p className="text-blue-600 font-medium">{award.year}</p>
+              <award.icon className="h-16 w-16 text-brand-500 mx-auto mb-4" />
+              <h3 className="text-xl font-bold text-ink mb-2">{award.title}</h3>
+              <p className="text-ink-secondary">{award.organization}</p>
+              <span className="label mt-2 inline-block">{award.year}</span>
             </div>
           ))}
         </div>

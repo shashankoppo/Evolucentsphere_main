@@ -58,16 +58,16 @@ export default function CaseStudyDetail() {
           description="The requested case study could not be found."
           noindex={true}
         />
-        <div className="container mx-auto px-6 py-20">
+        <div className="container-main section-padding">
           <div className="max-w-4xl mx-auto text-center">
-            <Building className="h-16 w-16 text-gray-400 mx-auto mb-6" />
-            <h1 className="text-3xl font-bold text-gray-900 mb-4">Case Study Not Found</h1>
-            <p className="text-xl text-gray-600 mb-8">
+            <Building className="h-16 w-16 text-ink-secondary mx-auto mb-6" />
+            <h1 className="text-3xl font-bold text-ink mb-4">Case Study Not Found</h1>
+            <p className="text-xl text-ink-secondary mb-8">
               {error || 'The case study you are looking for does not exist.'}
             </p>
             <Link
               to="/case-studies"
-              className="inline-flex items-center bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
+              className="btn-primary bg-brand-500"
             >
               <ArrowLeft className="h-5 w-5 mr-2" />
               Back to Case Studies
@@ -103,8 +103,8 @@ export default function CaseStudyDetail() {
       />
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-b from-blue-50 to-white">
-        <div className="container mx-auto px-6">
+      <section className="section-padding bg-gradient-to-b from-blue-50 to-white">
+        <div className="container-main">
           <div className="max-w-4xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -120,15 +120,15 @@ export default function CaseStudyDetail() {
               </Link>
 
               <div className="mb-8">
-                <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800 mb-4">
+                <span className="label mb-4">
                   <Building className="h-4 w-4 mr-1" />
                   {caseStudy.industry}
                 </span>
-                <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                <h1 className="text-4xl md:text-5xl font-bold text-ink mb-6">
                   {caseStudy.title}
                 </h1>
                 
-                <div className="flex items-center text-gray-600">
+                <div className="flex items-center text-ink-secondary">
                   <Calendar className="h-5 w-5 mr-2" />
                   <span>Published {publishDate.toLocaleDateString('en-US', { 
                     year: 'numeric', 
@@ -154,19 +154,19 @@ export default function CaseStudyDetail() {
 
       {/* Case Study Content */}
       <section className="py-12">
-        <div className="container mx-auto px-6">
+        <div className="container-main">
           <div className="max-w-4xl mx-auto">
             <div className="grid md:grid-cols-3 gap-8">
               {/* Main Content */}
               <div className="md:col-span-2">
                 <motion.div
-                  className="bg-white rounded-lg shadow-lg p-8"
+                  className="card"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2, duration: 0.6 }}
                 >
-                  <h2 className="text-2xl font-bold text-gray-900 mb-6">Challenge & Solution</h2>
-                  <div className="text-gray-700 leading-relaxed text-lg">
+                  <h2 className="text-2xl font-bold text-ink mb-6">Challenge & Solution</h2>
+                  <div className="text-ink-secondary leading-relaxed text-lg">
                     {caseStudy.content.split('\n').map((paragraph, index) => (
                       <p key={index} className="mb-6">
                         {paragraph}
@@ -179,14 +179,14 @@ export default function CaseStudyDetail() {
               {/* Results Sidebar */}
               <div className="md:col-span-1">
                 <motion.div
-                  className="bg-white rounded-lg shadow-lg p-8 sticky top-24"
+                  className="card sticky top-24"
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.4, duration: 0.6 }}
                 >
                   <div className="flex items-center mb-6">
                     <BarChart className="h-6 w-6 text-green-600 mr-2" />
-                    <h3 className="text-xl font-bold text-gray-900">Key Results</h3>
+                    <h3 className="text-xl font-bold text-ink">Key Results</h3>
                   </div>
                   
                   <div className="space-y-6">
@@ -196,8 +196,8 @@ export default function CaseStudyDetail() {
                           {index === 0 && <TrendingUp className="h-5 w-5 text-green-500 mr-2" />}
                           {index === 1 && <Target className="h-5 w-5 text-blue-500 mr-2" />}
                           {index === 2 && <Award className="h-5 w-5 text-blue-500 mr-2" />}
-                          {index > 2 && <CheckCircle className="h-5 w-5 text-gray-500 mr-2" />}
-                          <span className="font-semibold text-gray-900">{key}</span>
+                          {index > 2 && <CheckCircle className="h-5 w-5 text-ink-secondary mr-2" />}
+                          <span className="font-semibold text-ink">{key}</span>
                         </div>
                         <div className="text-2xl font-bold text-green-600">{value}</div>
                       </div>
@@ -205,8 +205,8 @@ export default function CaseStudyDetail() {
                   </div>
 
                   <div className="mt-8 pt-6 border-t">
-                    <h4 className="font-semibold text-gray-900 mb-3">Industry</h4>
-                    <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800">
+                    <h4 className="font-semibold text-ink mb-3">Industry</h4>
+                    <span className="label">
                       {caseStudy.industry}
                     </span>
                   </div>
@@ -218,8 +218,8 @@ export default function CaseStudyDetail() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-blue-600">
-        <div className="container mx-auto px-6">
+      <section className="section-padding bg-brand-500">
+        <div className="container-main">
           <div className="max-w-4xl mx-auto text-center text-white">
             <h2 className="text-3xl font-bold mb-6">Ready to Achieve Similar Results?</h2>
             <p className="text-xl mb-8">
@@ -227,7 +227,7 @@ export default function CaseStudyDetail() {
             </p>
             <Link
               to="/contact"
-              className="inline-flex items-center bg-white text-blue-600 px-8 py-4 rounded-lg hover:bg-blue-50 transition-colors font-medium"
+              className="btn-secondary"
             >
               Start Your Transformation
               <ArrowLeft className="ml-2 h-5 w-5 rotate-180" />

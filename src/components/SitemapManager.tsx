@@ -49,11 +49,11 @@ export default function SitemapManager() {
   };
 
   return (
-    <div className="bg-white rounded-lg shadow-lg p-6">
+    <div className="card p-6">
       <div className="flex items-center justify-between mb-6">
         <div className="flex items-center">
-          <Globe className="h-6 w-6 text-blue-600 mr-2" />
-          <h3 className="text-xl font-bold text-gray-900">Sitemap Manager</h3>
+          <Globe className="h-6 w-6 text-brand-500 mr-2" />
+          <h3 className="text-xl font-bold text-ink">Sitemap Manager</h3>
         </div>
         <div className="flex items-center space-x-2">
           {status === 'success' && <CheckCircle className="h-5 w-5 text-green-500" />}
@@ -64,9 +64,9 @@ export default function SitemapManager() {
       <div className="space-y-4">
         <div className="flex items-center justify-between">
           <div>
-            <p className="text-gray-700">Generate an updated sitemap with all current pages and content</p>
+            <p className="text-ink-secondary">Generate an updated sitemap with all current pages and content</p>
             {lastGenerated && (
-              <p className="text-sm text-gray-500 mt-1">
+              <p className="text-sm text-ink-muted mt-1">
                 Last generated: {lastGenerated.toLocaleString()}
               </p>
             )}
@@ -74,7 +74,7 @@ export default function SitemapManager() {
           <button
             onClick={handleGenerateSitemap}
             disabled={isGenerating}
-            className="flex items-center px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 disabled:opacity-50 transition-colors"
+            className="btn-primary disabled:opacity-50"
           >
             {isGenerating ? (
               <RefreshCw className="h-4 w-4 mr-2 animate-spin" />
@@ -86,24 +86,24 @@ export default function SitemapManager() {
         </div>
 
         {sitemapContent && (
-          <div className="border-t pt-4">
+          <div className="border-t border-gray-100 pt-4">
             <div className="flex items-center justify-between mb-4">
-              <h4 className="font-semibold text-gray-900">Generated Sitemap</h4>
+              <h4 className="font-semibold text-ink">Generated Sitemap</h4>
               <button
                 onClick={handleDownloadSitemap}
-                className="flex items-center px-3 py-1 text-sm bg-gray-100 text-gray-700 rounded-md hover:bg-gray-200 transition-colors"
+                className="btn-secondary text-sm"
               >
                 <Download className="h-4 w-4 mr-1" />
                 Download
               </button>
             </div>
-            <div className="bg-gray-50 rounded-md p-4 max-h-64 overflow-y-auto">
-              <pre className="text-xs text-gray-700 whitespace-pre-wrap">
+            <div className="surface rounded-md p-4 max-h-64 overflow-y-auto">
+              <pre className="text-xs text-ink-secondary whitespace-pre-wrap">
                 {sitemapContent.substring(0, 1000)}
                 {sitemapContent.length > 1000 && '...'}
               </pre>
             </div>
-            <p className="text-sm text-gray-500 mt-2">
+            <p className="text-sm text-ink-muted mt-2">
               Total size: {(sitemapContent.length / 1024).toFixed(2)} KB
             </p>
           </div>

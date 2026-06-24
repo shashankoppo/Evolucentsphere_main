@@ -21,38 +21,38 @@ export default function AdminInvestorResources() {
   return (
     <div>
       <div className="flex items-center justify-between mb-6">
-        <h1 className="text-2xl font-bold text-gray-900">Investor Resources</h1>
-        <button className="flex items-center px-4 py-2 bg-teal-600 text-white rounded-lg text-sm hover:bg-teal-700">
+        <h1 className="text-2xl font-bold text-ink">Investor Resources</h1>
+        <button className="btn-secondary text-sm">
           <Plus className="h-4 w-4 mr-2" /> New Resource
         </button>
       </div>
 
       {loading ? (
-        <div className="text-center py-12 text-gray-500">Loading...</div>
+        <div className="text-center section-padding text-ink-secondary">Loading...</div>
       ) : resources.length === 0 ? (
-        <div className="bg-white rounded-lg shadow p-12 text-center">
+        <div className="card p-12 text-center">
           <FileText className="h-12 w-12 text-gray-300 mx-auto mb-4" />
-          <p className="text-gray-500">No investor resources yet.</p>
+          <p className="text-ink-secondary">No investor resources yet.</p>
         </div>
       ) : (
-        <div className="bg-white rounded-lg shadow overflow-hidden">
+        <div className="card overflow-hidden">
           <table className="w-full">
-            <thead className="bg-gray-50 border-b">
+            <thead className="surface border-b">
               <tr>
-                <th className="text-left px-6 py-3 text-xs font-medium text-gray-500 uppercase">Title</th>
-                <th className="text-left px-6 py-3 text-xs font-medium text-gray-500 uppercase">Type</th>
-                <th className="text-left px-6 py-3 text-xs font-medium text-gray-500 uppercase">Date</th>
-                <th className="text-right px-6 py-3 text-xs font-medium text-gray-500 uppercase">Actions</th>
+                <th className="text-left px-6 py-3 text-xs font-medium text-ink-secondary uppercase">Title</th>
+                <th className="text-left px-6 py-3 text-xs font-medium text-ink-secondary uppercase">Type</th>
+                <th className="text-left px-6 py-3 text-xs font-medium text-ink-secondary uppercase">Date</th>
+                <th className="text-right px-6 py-3 text-xs font-medium text-ink-secondary uppercase">Actions</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-200">
               {resources.map((resource) => (
                 <tr key={resource.id} className="hover:bg-gray-50">
                   <td className="px-6 py-4">
-                    <div className="font-medium text-gray-900">{resource.title}</div>
+                    <div className="font-medium text-ink">{resource.title}</div>
                   </td>
                   <td className="px-6 py-4">
-                    <span className="px-2 py-1 text-xs font-medium bg-gray-100 text-gray-600 rounded">{resource.type}</span>
+                    <span className="label">{resource.type}</span>
                   </td>
                   <td className="px-6 py-4 text-sm text-gray-500">
                     {new Date(resource.created_at).toLocaleDateString()}

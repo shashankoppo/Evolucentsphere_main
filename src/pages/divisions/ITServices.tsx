@@ -1,19 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import {
-  Server,
-  Cloud,
-  Shield,
-  Code,
-  Database,
-  Network,
-  Brain,
-  Cpu,
-  Globe,
-  Bot,
-  Lock,
-  Settings
+  Server, Cloud, Shield, Code, Database, Network, Brain, Bot,
+  Globe, Cpu, Settings, MessageCircle, Users, ArrowRight
 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import SEOHead from '../../components/SEOHead';
 
 const services = [
@@ -165,14 +156,14 @@ const automationTools = [
 ];
 
 export default function ITServices() {
-  const [automationStats, setAutomationStats] = React.useState({
+  const [automationStats] = React.useState({
     efficiency: '45%',
     costReduction: '30%',
     productivity: '60%'
   });
 
   return (
-    <div className="min-h-screen pt-20">
+    <div>
       <SEOHead 
         title="IT Services & Automation Solutions"
         description="Enterprise IT services with integrated automation solutions using WordPress, Canva, and Google Workspace"
@@ -180,86 +171,96 @@ export default function ITServices() {
       />
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-b from-blue-50 to-white">
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto text-center">
+      <section className="pt-28 lg:pt-36 pb-16 lg:pb-24 bg-white">
+        <div className="container-main">
+          <div className="max-w-3xl text-center mx-auto">
+            <motion.span initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} className="label mb-4">
+              IT Services
+            </motion.span>
             <motion.h1 
-              className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
+              className="text-4xl lg:text-5xl font-bold text-ink mb-6"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              Enterprise IT Services & 
-              <span className="text-blue-600"> Automation Solutions</span>
+              Enterprise IT Services & <span className="gradient-text">Automation Solutions</span>
             </motion.h1>
             <motion.p 
-              className="text-xl text-gray-600 mb-12"
+              className="text-lg text-ink-secondary max-w-2xl mx-auto mb-10"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.6 }}
             >
-              Transform your business with our comprehensive IT services and 
-              integrated automation solutions powered by WordPress, Canva, and Google Workspace
+              Transform your business with our comprehensive IT services and integrated automation solutions powered by WordPress, Canva, and Google Workspace
             </motion.p>
 
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="bg-white p-6 rounded-lg shadow-lg">
-                <Server className="h-8 w-8 text-blue-600 mx-auto mb-4" />
-                <div className="text-2xl font-bold text-blue-600">100+</div>
-                <div className="text-gray-600">Enterprise Clients</div>
+            <motion.div 
+              className="grid md:grid-cols-3 gap-4"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.35, duration: 0.6 }}
+            >
+              <div className="card p-6 text-center">
+                <Server className="h-8 w-8 text-brand-500 mx-auto mb-3" />
+                <div className="text-2xl font-bold text-brand-500">100+</div>
+                <div className="text-sm text-ink-secondary">Enterprise Clients</div>
               </div>
-              <div className="bg-white p-6 rounded-lg shadow-lg">
-                <Globe className="h-8 w-8 text-blue-600 mx-auto mb-4" />
-                <div className="text-2xl font-bold text-blue-600">24/7</div>
-                <div className="text-gray-600">Support</div>
+              <div className="card p-6 text-center">
+                <Globe className="h-8 w-8 text-brand-500 mx-auto mb-3" />
+                <div className="text-2xl font-bold text-brand-500">24/7</div>
+                <div className="text-sm text-ink-secondary">Support</div>
               </div>
-              <div className="bg-white p-6 rounded-lg shadow-lg">
-                <Shield className="h-8 w-8 text-blue-600 mx-auto mb-4" />
-                <div className="text-2xl font-bold text-blue-600">99.9%</div>
-                <div className="text-gray-600">Uptime</div>
+              <div className="card p-6 text-center">
+                <Shield className="h-8 w-8 text-brand-500 mx-auto mb-3" />
+                <div className="text-2xl font-bold text-brand-500">99.9%</div>
+                <div className="text-sm text-ink-secondary">Uptime</div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
 
       {/* Services Grid */}
-      <section className="py-20">
-        <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
-            Our Services & Solutions
-          </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <section className="section-padding surface">
+        <div className="container-main">
+          <div className="text-center mb-12 lg:mb-16">
+            <span className="label mb-4">Solutions</span>
+            <h2 className="text-3xl lg:text-4xl font-bold text-ink mb-4">
+              Our Services & Solutions
+            </h2>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
             {services.map((service, index) => (
               <motion.div
                 key={index}
-                className="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-all duration-300"
+                className="card p-6 lg:p-8"
                 initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
                 transition={{ delay: index * 0.1, duration: 0.6 }}
               >
-                <service.icon className="h-12 w-12 text-blue-600 mb-6" />
-                <h3 className="text-xl font-bold text-gray-900 mb-4">{service.title}</h3>
-                <p className="text-gray-600 mb-6">{service.description}</p>
+                <service.icon className="h-10 w-10 text-brand-500 mb-5" />
+                <h3 className="text-lg font-bold text-ink mb-3">{service.title}</h3>
+                <p className="text-sm text-ink-secondary mb-5">{service.description}</p>
                 
-                <div className="mb-6">
-                  <h4 className="font-semibold text-gray-900 mb-3">Key Features</h4>
-                  <ul className="space-y-2">
+                <div className="mb-5">
+                  <h4 className="text-sm font-semibold text-ink mb-2">Key Features</h4>
+                  <ul className="space-y-1.5">
                     {service.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-center text-gray-700">
-                        <span className="h-2 w-2 bg-blue-600 rounded-full mr-2"></span>
+                      <li key={idx} className="flex items-center text-sm text-ink-secondary">
+                        <span className="h-1.5 w-1.5 bg-brand-500 rounded-full mr-2 shrink-0"></span>
                         {feature}
                       </li>
                     ))}
                   </ul>
                 </div>
 
-                <div className="border-t pt-6">
-                  <h4 className="font-semibold text-gray-900 mb-3">Integrations</h4>
-                  <ul className="space-y-2">
+                <div className="border-t border-gray-100 pt-4">
+                  <h4 className="text-sm font-semibold text-ink mb-2">Integrations</h4>
+                  <ul className="space-y-1.5">
                     {service.integrations.map((integration, idx) => (
-                      <li key={idx} className="flex items-center text-blue-600">
-                        <Settings className="h-4 w-4 mr-2" />
+                      <li key={idx} className="flex items-center text-sm text-brand-500">
+                        <Settings className="h-3.5 w-3.5 mr-2 shrink-0" />
                         {integration}
                       </li>
                     ))}
@@ -272,26 +273,30 @@ export default function ITServices() {
       </section>
 
       {/* Automation Tools */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
-            Integrated Automation Solutions
-          </h2>
-          <div className="grid md:grid-cols-3 gap-8">
+      <section className="section-padding bg-white">
+        <div className="container-main">
+          <div className="text-center mb-12 lg:mb-16">
+            <span className="label mb-4">Automation</span>
+            <h2 className="text-3xl lg:text-4xl font-bold text-ink mb-4">
+              Integrated Automation Solutions
+            </h2>
+          </div>
+          <div className="grid md:grid-cols-3 gap-5">
             {automationTools.map((tool, index) => (
               <motion.div
                 key={index}
-                className="bg-white rounded-lg shadow-lg p-8"
+                className="card p-6 lg:p-8"
                 initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
                 transition={{ delay: index * 0.1, duration: 0.6 }}
               >
-                <h3 className="text-xl font-bold text-gray-900 mb-4">{tool.name}</h3>
-                <p className="text-gray-600 mb-6">{tool.description}</p>
-                <ul className="space-y-2">
+                <h3 className="text-lg font-bold text-ink mb-3">{tool.name}</h3>
+                <p className="text-sm text-ink-secondary mb-5">{tool.description}</p>
+                <ul className="space-y-1.5">
                   {tool.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-center text-gray-700">
-                      <span className="h-2 w-2 bg-blue-600 rounded-full mr-2"></span>
+                    <li key={idx} className="flex items-center text-sm text-ink-secondary">
+                      <span className="h-1.5 w-1.5 bg-brand-500 rounded-full mr-2 shrink-0"></span>
                       {feature}
                     </li>
                   ))}
@@ -303,62 +308,64 @@ export default function ITServices() {
       </section>
 
       {/* Integration Benefits */}
-      <section className="py-20">
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-gray-900 mb-12">
+      <section className="section-padding surface">
+        <div className="container-main">
+          <div className="text-center mb-12 lg:mb-16">
+            <span className="label mb-4">Results</span>
+            <h2 className="text-3xl lg:text-4xl font-bold text-ink mb-4">
               Benefits of Our Integrated Solutions
             </h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="bg-white p-6 rounded-lg shadow-lg">
-                <Cpu className="h-12 w-12 text-blue-600 mx-auto mb-4" />
-                <div className="text-2xl font-bold text-blue-600">{automationStats.efficiency}</div>
-                <div className="text-gray-600">Efficiency Increase</div>
-              </div>
-              <div className="bg-white p-6 rounded-lg shadow-lg">
-                <Database className="h-12 w-12 text-blue-600 mx-auto mb-4" />
-                <div className="text-2xl font-bold text-blue-600">{automationStats.costReduction}</div>
-                <div className="text-gray-600">Cost Reduction</div>
-              </div>
-              <div className="bg-white p-6 rounded-lg shadow-lg">
-                <Network className="h-12 w-12 text-blue-600 mx-auto mb-4" />
-                <div className="text-2xl font-bold text-blue-600">{automationStats.productivity}</div>
-                <div className="text-gray-600">Productivity Boost</div>
-              </div>
+          </div>
+          <div className="grid md:grid-cols-3 gap-5 max-w-4xl mx-auto">
+            <div className="card p-6 text-center">
+              <Cpu className="h-10 w-10 text-brand-500 mx-auto mb-4" />
+              <div className="text-3xl font-bold text-brand-500 mb-1">{automationStats.efficiency}</div>
+              <div className="text-sm text-ink-secondary">Efficiency Increase</div>
+            </div>
+            <div className="card p-6 text-center">
+              <Database className="h-10 w-10 text-brand-500 mx-auto mb-4" />
+              <div className="text-3xl font-bold text-brand-500 mb-1">{automationStats.costReduction}</div>
+              <div className="text-sm text-ink-secondary">Cost Reduction</div>
+            </div>
+            <div className="card p-6 text-center">
+              <Network className="h-10 w-10 text-brand-500 mx-auto mb-4" />
+              <div className="text-3xl font-bold text-brand-500 mb-1">{automationStats.productivity}</div>
+              <div className="text-sm text-ink-secondary">Productivity Boost</div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-blue-600">
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto text-center text-white">
-            <h2 className="text-3xl font-bold mb-6">Ready to Transform Your IT Infrastructure?</h2>
-            <p className="text-xl mb-8">
+      <section className="py-16 lg:py-24 bg-brand-500">
+        <div className="container-main">
+          <div className="max-w-2xl mx-auto text-center">
+            <h2 className="text-2xl lg:text-3xl font-bold text-white mb-4">Ready to Transform Your IT Infrastructure?</h2>
+            <p className="text-brand-100 mb-8">
               Let's discuss how our integrated solutions can help you achieve your business goals
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-blue-600 px-8 py-4 rounded-lg hover:bg-blue-50 transition-colors font-medium">
+            <div className="flex flex-wrap justify-center gap-3">
+              <Link to="/contact" className="inline-flex items-center gap-2 px-6 py-3 bg-white text-brand-600 font-semibold text-sm rounded-lg hover:bg-brand-50 transition-colors">
                 Schedule a Consultation
-              </button>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
               <div className="flex gap-2">
                 <a
                   href="https://wa.me/1234567890"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-green-500 text-white px-6 py-4 rounded-lg hover:bg-green-600 transition-colors font-medium flex items-center"
+                  className="inline-flex items-center gap-2 px-5 py-3 bg-green-500 text-white font-semibold text-sm rounded-lg hover:bg-green-600 transition-colors"
                 >
-                  <MessageCircle className="h-5 w-5 mr-2" />
+                  <MessageCircle className="h-4 w-4" />
                   Support
                 </a>
                 <a
                   href="https://wa.me/0987654321"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-blue-500 text-white px-6 py-4 rounded-lg hover:bg-blue-600 transition-colors font-medium flex items-center"
+                  className="inline-flex items-center gap-2 px-5 py-3 bg-blue-500 text-white font-semibold text-sm rounded-lg hover:bg-blue-600 transition-colors"
                 >
-                  <Users className="h-5 w-5 mr-2" />
+                  <Users className="h-4 w-4" />
                   Business
                 </a>
               </div>

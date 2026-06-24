@@ -59,12 +59,12 @@ export default function CybersecuritySolutions() {
       />
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-b from-red-50 to-white relative overflow-hidden">
+      <section className="section-padding bg-gradient-to-b from-red-50 to-white relative overflow-hidden">
         <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
-        <div className="container mx-auto px-6 relative">
+        <div className="container-main relative">
           <div className="max-w-4xl mx-auto text-center">
             <motion.h1 
-              className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
+              className="text-4xl md:text-5xl font-bold text-ink mb-6"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
@@ -72,7 +72,7 @@ export default function CybersecuritySolutions() {
               Advanced Cybersecurity Solutions
             </motion.h1>
             <motion.p 
-              className="text-xl text-gray-600 mb-12"
+              className="text-xl text-ink-secondary mb-12"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.6 }}
@@ -85,13 +85,13 @@ export default function CybersecuritySolutions() {
               {benefits.map((benefit, index) => (
                 <motion.div
                   key={index}
-                  className="bg-white p-6 rounded-lg shadow-lg"
+                  className="card"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4 + index * 0.1, duration: 0.6 }}
                 >
                   <div className="text-2xl font-bold text-red-600">{benefit.metric}</div>
-                  <div className="text-gray-600">{benefit.label}</div>
+                  <div className="text-ink-secondary">{benefit.label}</div>
                 </motion.div>
               ))}
             </div>
@@ -100,27 +100,27 @@ export default function CybersecuritySolutions() {
       </section>
 
       {/* Services Grid */}
-      <section className="py-20">
-        <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
+      <section className="section-padding">
+        <div className="container-main">
+          <h2 className="text-3xl font-bold text-ink text-center mb-12">
             Our Cybersecurity Services
           </h2>
           <div className="grid md:grid-cols-2 gap-8">
             {services.map((service, index) => (
               <motion.div
                 key={index}
-                className="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-all duration-300"
+                className="card hover:shadow-xl transition-all duration-300"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1, duration: 0.6 }}
               >
                 <service.icon className="h-12 w-12 text-red-600 mb-6" />
-                <h3 className="text-xl font-bold text-gray-900 mb-4">{service.title}</h3>
-                <p className="text-gray-600 mb-6">{service.description}</p>
+                <h3 className="text-xl font-bold text-ink mb-4">{service.title}</h3>
+                <p className="text-ink-secondary mb-6">{service.description}</p>
                 
                 <div className="space-y-2">
                   {service.features.map((feature, idx) => (
-                    <div key={idx} className="flex items-center text-gray-700">
+                    <div key={idx} className="flex items-center text-ink-secondary">
                       <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
                       {feature}
                     </div>
@@ -133,72 +133,72 @@ export default function CybersecuritySolutions() {
       </section>
 
       {/* Security Framework */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
+      <section className="section-padding surface">
+        <div className="container-main">
+          <h2 className="text-3xl font-bold text-ink text-center mb-12">
             Security Frameworks & Compliance
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white p-6 rounded-lg shadow-lg">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Compliance Standards</h3>
+            <div className="card">
+              <h3 className="text-xl font-bold text-ink mb-4">Compliance Standards</h3>
               <ul className="space-y-2">
-                <li className="flex items-center text-gray-700">
+                <li className="flex items-center text-ink-secondary">
                   <span className="h-2 w-2 bg-red-600 rounded-full mr-2"></span>
                   ISO 27001/27002
                 </li>
-                <li className="flex items-center text-gray-700">
+                <li className="flex items-center text-ink-secondary">
                   <span className="h-2 w-2 bg-red-600 rounded-full mr-2"></span>
                   NIST Cybersecurity Framework
                 </li>
-                <li className="flex items-center text-gray-700">
+                <li className="flex items-center text-ink-secondary">
                   <span className="h-2 w-2 bg-red-600 rounded-full mr-2"></span>
                   GDPR & CCPA
                 </li>
-                <li className="flex items-center text-gray-700">
+                <li className="flex items-center text-ink-secondary">
                   <span className="h-2 w-2 bg-red-600 rounded-full mr-2"></span>
                   HIPAA & SOX
                 </li>
               </ul>
             </div>
             
-            <div className="bg-white p-6 rounded-lg shadow-lg">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Security Tools</h3>
+            <div className="card">
+              <h3 className="text-xl font-bold text-ink mb-4">Security Tools</h3>
               <ul className="space-y-2">
-                <li className="flex items-center text-gray-700">
+                <li className="flex items-center text-ink-secondary">
                   <span className="h-2 w-2 bg-red-600 rounded-full mr-2"></span>
                   Splunk & QRadar SIEM
                 </li>
-                <li className="flex items-center text-gray-700">
+                <li className="flex items-center text-ink-secondary">
                   <span className="h-2 w-2 bg-red-600 rounded-full mr-2"></span>
                   CrowdStrike & SentinelOne
                 </li>
-                <li className="flex items-center text-gray-700">
+                <li className="flex items-center text-ink-secondary">
                   <span className="h-2 w-2 bg-red-600 rounded-full mr-2"></span>
                   Okta & Azure AD
                 </li>
-                <li className="flex items-center text-gray-700">
+                <li className="flex items-center text-ink-secondary">
                   <span className="h-2 w-2 bg-red-600 rounded-full mr-2"></span>
                   Nessus & Qualys
                 </li>
               </ul>
             </div>
             
-            <div className="bg-white p-6 rounded-lg shadow-lg">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Threat Intelligence</h3>
+            <div className="card">
+              <h3 className="text-xl font-bold text-ink mb-4">Threat Intelligence</h3>
               <ul className="space-y-2">
-                <li className="flex items-center text-gray-700">
+                <li className="flex items-center text-ink-secondary">
                   <span className="h-2 w-2 bg-red-600 rounded-full mr-2"></span>
                   MITRE ATT&CK Framework
                 </li>
-                <li className="flex items-center text-gray-700">
+                <li className="flex items-center text-ink-secondary">
                   <span className="h-2 w-2 bg-red-600 rounded-full mr-2"></span>
                   Threat Hunting
                 </li>
-                <li className="flex items-center text-gray-700">
+                <li className="flex items-center text-ink-secondary">
                   <span className="h-2 w-2 bg-red-600 rounded-full mr-2"></span>
                   IOC Analysis
                 </li>
-                <li className="flex items-center text-gray-700">
+                <li className="flex items-center text-ink-secondary">
                   <span className="h-2 w-2 bg-red-600 rounded-full mr-2"></span>
                   Dark Web Monitoring
                 </li>
@@ -209,14 +209,14 @@ export default function CybersecuritySolutions() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 bg-gradient-to-r from-red-600 to-blue-600">
-        <div className="container mx-auto px-6">
+      <section className="section-padding bg-gradient-to-r from-red-600 to-blue-600">
+        <div className="container-main">
           <div className="max-w-4xl mx-auto text-center text-white">
             <h2 className="text-3xl font-bold mb-6">Secure Your Enterprise Today</h2>
             <p className="text-xl mb-8">
               Don't wait for a security breach. Let's strengthen your cybersecurity posture now.
             </p>
-            <button className="bg-white text-red-600 px-8 py-4 rounded-lg hover:bg-red-50 transition-colors font-medium flex items-center justify-center mx-auto group">
+            <button className="btn-secondary flex items-center justify-center mx-auto group">
               Get Security Assessment
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </button>

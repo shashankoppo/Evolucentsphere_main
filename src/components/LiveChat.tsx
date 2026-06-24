@@ -98,7 +98,7 @@ export default function LiveChat() {
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
-          className="bg-blue-600 text-white p-4 rounded-full shadow-lg hover:bg-blue-700 transition-all duration-300 transform hover:scale-110"
+          className="bg-brand-500 text-white p-4 rounded-full shadow-lg hover:bg-brand-600 transition-all duration-300 transform hover:scale-110"
         >
           <MessageCircle className="h-6 w-6" />
         </button>

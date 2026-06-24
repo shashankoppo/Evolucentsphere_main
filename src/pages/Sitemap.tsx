@@ -99,7 +99,7 @@ export default function Sitemap() {
 
   const downloadXMLSitemap = () => {
     if (!xmlSitemap) return;
-    
+
     const blob = new Blob([xmlSitemap], { type: 'application/xml' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
@@ -113,7 +113,7 @@ export default function Sitemap() {
 
   return (
     <div className="min-h-screen pt-20">
-      <SEOHead 
+      <SEOHead
         title="Sitemap | ELSxGlobal"
         description="Complete sitemap of ELSxGlobal website including all pages, services, and resources. Navigate easily through our comprehensive business solutions."
         keywords={['Sitemap', 'Site Navigation', 'Website Map', 'Page Directory']}
@@ -121,30 +121,30 @@ export default function Sitemap() {
       />
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
-        <div className="container mx-auto px-6">
+      <section className="section-padding surface">
+        <div className="container-main">
           <div className="max-w-4xl mx-auto text-center">
-            <Globe className="h-16 w-16 text-blue-600 mx-auto mb-6" />
-            <h1 className="text-4xl font-bold text-gray-900 mb-6">
+            <Globe className="h-16 w-16 text-brand-500 mx-auto mb-6" />
+            <h1 className="text-4xl font-bold text-ink mb-6">
               Website Sitemap
             </h1>
-            <p className="text-xl text-gray-600 mb-8">
-              Navigate through all pages and services available on our website. 
+            <p className="text-xl text-ink-secondary mb-8">
+              Navigate through all pages and services available on our website.
               Find exactly what you're looking for with our comprehensive site directory.
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button
                 onClick={generateXMLSitemap}
                 disabled={loading}
-                className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium disabled:opacity-50"
+                className="btn-primary disabled:opacity-50"
               >
                 {loading ? 'Generating...' : 'Generate XML Sitemap'}
               </button>
               {xmlSitemap && (
                 <button
                   onClick={downloadXMLSitemap}
-                  className="bg-gray-600 text-white px-6 py-3 rounded-lg hover:bg-gray-700 transition-colors font-medium"
+                  className="btn-secondary"
                 >
                   Download XML
                 </button>
@@ -155,27 +155,27 @@ export default function Sitemap() {
       </section>
 
       {/* Sitemap Sections */}
-      <section className="py-20">
-        <div className="container mx-auto px-6">
+      <section className="section-padding bg-white">
+        <div className="container-main">
           <div className="max-w-6xl mx-auto">
             {sitemapSections.map((section, index) => (
               <div key={index} className="mb-16">
                 <div className="flex items-center mb-8">
-                  <section.icon className="h-8 w-8 text-blue-600 mr-3" />
-                  <h2 className="text-2xl font-bold text-gray-900">{section.title}</h2>
+                  <section.icon className="h-8 w-8 text-brand-500 mr-3" />
+                  <h2 className="text-2xl font-bold text-ink">{section.title}</h2>
                 </div>
-                
+
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {section.links.map((link, linkIndex) => (
-                    <div key={linkIndex} className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+                    <div key={linkIndex} className="card hover:shadow-lg transition-shadow">
                       <div className="flex items-start justify-between mb-3">
-                        <h3 className="text-lg font-semibold text-gray-900">
+                        <h3 className="text-lg font-semibold text-ink">
                           {link.external ? (
                             <a
                               href={link.path}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="hover:text-blue-600 transition-colors flex items-center"
+                              className="hover:text-brand-500 transition-colors flex items-center"
                             >
                               {link.name}
                               <ExternalLink className="h-4 w-4 ml-2" />
@@ -183,21 +183,21 @@ export default function Sitemap() {
                           ) : (
                             <Link
                               to={link.path}
-                              className="hover:text-blue-600 transition-colors"
+                              className="hover:text-brand-500 transition-colors"
                             >
                               {link.name}
                             </Link>
                           )}
                         </h3>
                       </div>
-                      
+
                       {link.description && (
-                        <p className="text-gray-600 text-sm mb-3">
+                        <p className="text-ink-secondary text-sm mb-3">
                           {link.description}
                         </p>
                       )}
-                      
-                      <div className="text-xs text-gray-500 font-mono">
+
+                      <div className="text-xs text-ink-muted font-mono">
                         {link.path}
                       </div>
                     </div>
@@ -211,18 +211,18 @@ export default function Sitemap() {
 
       {/* XML Sitemap Preview */}
       {xmlSitemap && (
-        <section className="py-20 bg-gray-50">
-          <div className="container mx-auto px-6">
+        <section className="section-padding surface">
+          <div className="container-main">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">XML Sitemap Preview</h2>
-              <div className="bg-white rounded-lg shadow-lg p-6">
+              <h2 className="text-2xl font-bold text-ink mb-6">XML Sitemap Preview</h2>
+              <div className="card">
                 <div className="bg-gray-100 rounded-md p-4 max-h-96 overflow-y-auto">
-                  <pre className="text-xs text-gray-700 whitespace-pre-wrap">
+                  <pre className="text-xs text-ink whitespace-pre-wrap">
                     {xmlSitemap.substring(0, 2000)}
                     {xmlSitemap.length > 2000 && '...'}
                   </pre>
                 </div>
-                <p className="text-sm text-gray-500 mt-4">
+                <p className="text-sm text-ink-secondary mt-4">
                   Total size: {(xmlSitemap.length / 1024).toFixed(2)} KB
                 </p>
               </div>
@@ -232,43 +232,43 @@ export default function Sitemap() {
       )}
 
       {/* SEO Information */}
-      <section className="py-20">
-        <div className="container mx-auto px-6">
+      <section className="section-padding bg-white">
+        <div className="container-main">
           <div className="max-w-4xl mx-auto">
-            <div className="bg-blue-50 rounded-lg p-8">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">SEO & Search Engine Information</h2>
+            <div className="card p-8 bg-brand-50">
+              <h2 className="text-2xl font-bold text-ink mb-6">SEO & Search Engine Information</h2>
               <div className="grid md:grid-cols-2 gap-8">
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-4">For Search Engines</h3>
+                  <h3 className="text-lg font-semibold text-ink mb-4">For Search Engines</h3>
                   <ul className="space-y-2">
                     <li className="flex items-start">
-                      <span className="h-2 w-2 bg-blue-600 rounded-full mr-3 mt-2"></span>
+                      <span className="h-2 w-2 bg-brand-500 rounded-full mr-3 mt-2"></span>
                       <span>XML sitemap available at <code>/sitemap.xml</code></span>
                     </li>
                     <li className="flex items-start">
-                      <span className="h-2 w-2 bg-blue-600 rounded-full mr-3 mt-2"></span>
+                      <span className="h-2 w-2 bg-brand-500 rounded-full mr-3 mt-2"></span>
                       <span>Robots.txt available at <code>/robots.txt</code></span>
                     </li>
                     <li className="flex items-start">
-                      <span className="h-2 w-2 bg-blue-600 rounded-full mr-3 mt-2"></span>
+                      <span className="h-2 w-2 bg-brand-500 rounded-full mr-3 mt-2"></span>
                       <span>Cross-domain sitemaps included</span>
                     </li>
                   </ul>
                 </div>
-                
+
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-4">Coverage</h3>
+                  <h3 className="text-lg font-semibold text-ink mb-4">Coverage</h3>
                   <ul className="space-y-2">
                     <li className="flex items-start">
-                      <span className="h-2 w-2 bg-blue-600 rounded-full mr-3 mt-2"></span>
+                      <span className="h-2 w-2 bg-brand-500 rounded-full mr-3 mt-2"></span>
                       <span>All main pages and services</span>
                     </li>
                     <li className="flex items-start">
-                      <span className="h-2 w-2 bg-blue-600 rounded-full mr-3 mt-2"></span>
+                      <span className="h-2 w-2 bg-brand-500 rounded-full mr-3 mt-2"></span>
                       <span>Dynamic content (blog, case studies)</span>
                     </li>
                     <li className="flex items-start">
-                      <span className="h-2 w-2 bg-blue-600 rounded-full mr-3 mt-2"></span>
+                      <span className="h-2 w-2 bg-brand-500 rounded-full mr-3 mt-2"></span>
                       <span>EvolucentSphere ecosystem links</span>
                     </li>
                   </ul>

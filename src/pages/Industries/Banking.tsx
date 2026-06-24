@@ -1,5 +1,5 @@
 import React from 'react';
-import { Building, Shield, BarChart, Zap, CheckCircle, ArrowRight } from 'lucide-react';
+import { Shield, BarChart, Zap, CheckCircle, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import SEOHead from '../../components/SEOHead';
 
@@ -45,11 +45,11 @@ export default function Banking() {
       />
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-b from-green-50 to-white">
-        <div className="container mx-auto px-6">
+      <section className="section-padding bg-gradient-to-b from-green-50 to-white">
+        <div className="container-main">
           <div className="max-w-4xl mx-auto text-center">
             <motion.h1 
-              className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
+              className="text-4xl md:text-5xl font-bold text-ink mb-6"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
@@ -57,7 +57,7 @@ export default function Banking() {
               Banking & Financial Services
             </motion.h1>
             <motion.p 
-              className="text-xl text-gray-600 mb-12"
+              className="text-xl text-ink-secondary mb-12"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.6 }}
@@ -70,23 +70,23 @@ export default function Banking() {
       </section>
 
       {/* Services */}
-      <section className="py-20">
-        <div className="container mx-auto px-6">
+      <section className="section-padding">
+        <div className="container-main">
           <div className="grid md:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <motion.div
                 key={index}
-                className="bg-white rounded-lg shadow-lg p-8"
+                className="card"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1, duration: 0.6 }}
               >
                 <service.icon className="h-12 w-12 text-green-600 mb-6" />
-                <h3 className="text-xl font-bold text-gray-900 mb-4">{service.title}</h3>
-                <p className="text-gray-600 mb-6">{service.description}</p>
+                <h3 className="text-xl font-bold text-ink mb-4">{service.title}</h3>
+                <p className="text-ink-secondary mb-6">{service.description}</p>
                 <div className="space-y-2">
                   {service.features.map((feature, idx) => (
-                    <div key={idx} className="flex items-center text-gray-700">
+                    <div key={idx} className="flex items-center text-ink-secondary">
                       <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
                       {feature}
                     </div>
@@ -99,14 +99,14 @@ export default function Banking() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 bg-gradient-to-r from-green-600 to-blue-600">
-        <div className="container mx-auto px-6">
+      <section className="section-padding bg-brand-500">
+        <div className="container-main">
           <div className="max-w-4xl mx-auto text-center text-white">
             <h2 className="text-3xl font-bold mb-6">Transform Your Financial Services</h2>
             <p className="text-xl mb-8">
               Partner with us to modernize your banking operations and enhance customer experiences.
             </p>
-            <button className="bg-white text-green-600 px-8 py-4 rounded-lg hover:bg-green-50 transition-colors font-medium flex items-center justify-center mx-auto group">
+            <button className="btn-primary flex items-center justify-center mx-auto group">
               Schedule Consultation
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </button>

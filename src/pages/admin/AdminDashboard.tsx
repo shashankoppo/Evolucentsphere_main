@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link, Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { useAdmin } from '../../context/AdminContext';
 import {
@@ -32,15 +32,15 @@ export default function AdminDashboard() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen bg-surface">
       <SEOHead title="Admin Dashboard | ELSxGlobal" noindex={true} />
 
       {/* Mobile sidebar toggle */}
       <div className="lg:hidden fixed top-0 left-0 right-0 z-40 bg-white border-b border-gray-200 px-4 py-3 flex items-center justify-between">
-        <button onClick={() => setSidebarOpen(true)} className="text-gray-600">
+        <button onClick={() => setSidebarOpen(true)} className="text-ink-secondary">
           <Menu className="h-6 w-6" />
         </button>
-        <span className="font-bold text-gray-900">Admin Panel</span>
+        <span className="font-bold text-ink">Admin Panel</span>
         <div className="w-6" />
       </div>
 
@@ -50,9 +50,9 @@ export default function AdminDashboard() {
           <div className="fixed inset-0 bg-black/50" onClick={() => setSidebarOpen(false)} />
           <div className="fixed inset-y-0 left-0 w-64 bg-white shadow-xl">
             <div className="flex items-center justify-between p-4 border-b">
-              <span className="font-bold text-gray-900">Admin Panel</span>
+              <span className="font-bold text-ink">Admin Panel</span>
               <button onClick={() => setSidebarOpen(false)}>
-                <X className="h-5 w-5 text-gray-600" />
+                <X className="h-5 w-5 text-ink-secondary" />
               </button>
             </div>
             <SidebarNav isActive={isActive} onSignOut={handleSignOut} />
@@ -64,12 +64,12 @@ export default function AdminDashboard() {
       <aside className="hidden lg:fixed lg:inset-y-0 lg:left-0 lg:w-64 lg:bg-white lg:border-r lg:border-gray-200 lg:flex lg:flex-col">
         <div className="p-6 border-b border-gray-200">
           <div className="flex items-center space-x-3">
-            <div className="h-9 w-9 rounded-lg bg-blue-600 flex items-center justify-center">
+            <div className="h-9 w-9 rounded-lg bg-brand-500 flex items-center justify-center">
               <Globe className="h-5 w-5 text-white" />
             </div>
             <div>
-              <span className="font-bold text-gray-900 text-lg">ELSxGlobal</span>
-              <p className="text-xs text-gray-500">Admin Panel</p>
+              <span className="font-bold text-ink text-lg">ELSxGlobal</span>
+              <p className="text-xs text-ink-secondary">Admin Panel</p>
             </div>
           </div>
         </div>
@@ -79,13 +79,13 @@ export default function AdminDashboard() {
       {/* Main content */}
       <div className="lg:pl-64 pt-14 lg:pt-0">
         <header className="hidden lg:flex items-center justify-between bg-white border-b border-gray-200 px-6 py-3">
-          <div className="flex items-center text-sm text-gray-500">
+          <div className="flex items-center text-sm text-ink-secondary">
             <Link to="/" className="hover:text-blue-600">Website</Link>
             <ChevronRight className="h-4 w-4 mx-1" />
-            <span className="text-gray-900 font-medium">Admin</span>
+            <span className="text-ink font-medium">Admin</span>
           </div>
           <div className="flex items-center space-x-4">
-            <span className="text-sm text-gray-600">{user?.email}</span>
+            <span className="text-sm text-ink-secondary">{user?.email}</span>
             <button
               onClick={handleSignOut}
               className="text-sm text-red-600 hover:text-red-700 flex items-center"
@@ -113,7 +113,7 @@ function SidebarNav({ isActive, onSignOut }: { isActive: (path: string, exact?: 
           className={`flex items-center px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${
             isActive(item.path, item.exact)
               ? 'bg-blue-50 text-blue-700'
-              : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
+              : 'text-ink-secondary hover:bg-gray-50 hover:text-ink'
           }`}
         >
           <item.icon className="h-5 w-5 mr-3" />
@@ -121,7 +121,7 @@ function SidebarNav({ isActive, onSignOut }: { isActive: (path: string, exact?: 
         </Link>
       ))}
       <div className="pt-4 mt-4 border-t border-gray-200">
-        <Link to="/" className="flex items-center px-3 py-2.5 rounded-lg text-sm text-gray-600 hover:bg-gray-50">
+        <Link to="/" className="flex items-center px-3 py-2.5 rounded-lg text-sm text-ink-secondary hover:bg-gray-50">
           <Globe className="h-5 w-5 mr-3" /> View Website
         </Link>
         <button

@@ -48,18 +48,18 @@ export default function Insurance() {
         targetIndustries={['Insurance']}
       />
 
-      <section className="py-20 bg-gradient-to-b from-blue-50 to-white">
-        <div className="container mx-auto px-6">
+      <section className="section-padding bg-gradient-to-b from-blue-50 to-white">
+        <div className="container-main">
           <div className="max-w-4xl mx-auto text-center">
             <motion.h1
-              className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
+              className="text-4xl md:text-5xl font-bold text-ink mb-6"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
             >
               Insurance Industry Solutions
             </motion.h1>
             <motion.p
-              className="text-xl text-gray-600 mb-12"
+              className="text-xl text-ink-secondary mb-12"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
@@ -70,13 +70,13 @@ export default function Insurance() {
               {stats.map((stat, i) => (
                 <motion.div
                   key={i}
-                  className="bg-white p-6 rounded-lg shadow-lg"
+                  className="card"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4 + i * 0.1 }}
                 >
                   <div className="text-2xl font-bold text-blue-600">{stat.value}</div>
-                  <div className="text-gray-600 text-sm">{stat.label}</div>
+                  <div className="text-ink-secondary text-sm">{stat.label}</div>
                 </motion.div>
               ))}
             </div>
@@ -84,25 +84,25 @@ export default function Insurance() {
         </div>
       </section>
 
-      <section className="py-20">
-        <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">Our Insurance Solutions</h2>
+      <section className="section-padding">
+        <div className="container-main">
+          <h2 className="text-3xl font-bold text-ink text-center mb-12">Our Insurance Solutions</h2>
           <div className="grid md:grid-cols-2 gap-8">
             {services.map((service, i) => (
               <motion.div
                 key={i}
-                className="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-shadow"
+                className="card hover:shadow-xl transition-shadow"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
               >
                 <service.icon className="h-12 w-12 text-blue-600 mb-6" />
-                <h3 className="text-xl font-bold text-gray-900 mb-4">{service.title}</h3>
-                <p className="text-gray-600 mb-6">{service.description}</p>
+                <h3 className="text-xl font-bold text-ink mb-4">{service.title}</h3>
+                <p className="text-ink-secondary mb-6">{service.description}</p>
                 <div className="space-y-2">
                   {service.features.map((feature, idx) => (
-                    <div key={idx} className="flex items-center text-gray-700">
+                    <div key={idx} className="flex items-center text-ink-secondary">
                       <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
                       {feature}
                     </div>
@@ -114,12 +114,12 @@ export default function Insurance() {
         </div>
       </section>
 
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-blue-600">
-        <div className="container mx-auto px-6">
+      <section className="section-padding bg-brand-500">
+        <div className="container-main">
           <div className="max-w-4xl mx-auto text-center text-white">
             <h2 className="text-3xl font-bold mb-6">Ready to Transform Your Insurance Operations?</h2>
             <p className="text-xl mb-8">Let us help you modernize claims, underwriting, and customer engagement.</p>
-            <a href="/contact" className="bg-white text-blue-600 px-8 py-4 rounded-lg hover:bg-blue-50 transition-colors font-medium inline-block">
+            <a href="/contact" className="btn-primary inline-block">
               Schedule a Consultation
             </a>
           </div>

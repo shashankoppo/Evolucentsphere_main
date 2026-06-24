@@ -40,32 +40,32 @@ export default function AdminOverview() {
 
   return (
     <div>
-      <h1 className="text-2xl font-bold text-gray-900 mb-6">Dashboard</h1>
+      <h1 className="text-2xl font-bold text-ink mb-6">Dashboard</h1>
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
         {cards.map((card) => (
-          <Link key={card.path} to={card.path} className="bg-white rounded-lg shadow p-6 hover:shadow-md transition-shadow group">
+          <Link key={card.path} to={card.path} className="card hover:shadow-md transition-shadow group">
             <div className="flex items-center justify-between mb-4">
               <div className={`p-2 rounded-lg ${card.color}`}>
                 <card.icon className="h-6 w-6" />
               </div>
-              <ArrowRight className="h-4 w-4 text-gray-400 group-hover:text-gray-600 transition-colors" />
+              <ArrowRight className="h-4 w-4 text-gray-400 group-hover:text-ink-secondary transition-colors" />
             </div>
-            <div className="text-3xl font-bold text-gray-900">{card.count}</div>
-            <div className="text-sm text-gray-600 mt-1">{card.name}</div>
+            <div className="text-3xl font-bold text-ink">{card.count}</div>
+            <div className="text-sm text-ink-secondary mt-1">{card.name}</div>
           </Link>
         ))}
       </div>
 
-      <div className="mt-8 bg-white rounded-lg shadow p-6">
-        <h2 className="text-lg font-bold text-gray-900 mb-4">Quick Actions</h2>
+      <div className="mt-8 card">
+        <h2 className="text-lg font-bold text-ink mb-4">Quick Actions</h2>
         <div className="flex flex-wrap gap-3">
-          <Link to="/admin/blog" className="px-4 py-2 bg-blue-600 text-white rounded-lg text-sm hover:bg-blue-700 transition-colors">
+          <Link to="/admin/blog" className="btn-primary text-sm">
             Manage Blog Posts
           </Link>
-          <Link to="/admin/case-studies" className="px-4 py-2 bg-green-600 text-white rounded-lg text-sm hover:bg-green-700 transition-colors">
+          <Link to="/admin/case-studies" className="btn-secondary text-sm">
             Manage Case Studies
           </Link>
-          <Link to="/admin/contacts" className="px-4 py-2 bg-orange-600 text-white rounded-lg text-sm hover:bg-orange-700 transition-colors">
+          <Link to="/admin/contacts" className="btn-secondary text-sm">
             View Contact Submissions
           </Link>
         </div>

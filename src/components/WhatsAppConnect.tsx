@@ -25,8 +25,8 @@ export default function WhatsAppConnect() {
         {/* Tooltip */}
         <div className="absolute right-16 top-1/2 -translate-y-1/2 invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-300">
           <div className="bg-white p-4 rounded-lg shadow-xl w-64">
-            <h3 className="font-semibold text-gray-900 mb-2">Business WhatsApp</h3>
-            <div className="space-y-2 text-sm text-gray-600">
+            <h3 className="font-semibold text-ink mb-2">Business WhatsApp</h3>
+            <div className="space-y-2 text-sm text-ink-secondary">
               <div className="flex items-center">
                 <Phone className="h-4 w-4 mr-2" />
                 <span>{whatsappNumber2}</span>
@@ -61,8 +61,8 @@ export default function WhatsAppConnect() {
         {/* Tooltip */}
         <div className="absolute right-16 top-1/2 -translate-y-1/2 invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-300">
           <div className="bg-white p-4 rounded-lg shadow-xl w-64">
-            <h3 className="font-semibold text-gray-900 mb-2">Support WhatsApp</h3>
-            <div className="space-y-2 text-sm text-gray-600">
+            <h3 className="font-semibold text-ink mb-2">Support WhatsApp</h3>
+            <div className="space-y-2 text-sm text-ink-secondary">
               <div className="flex items-center">
                 <Phone className="h-4 w-4 mr-2" />
                 <span>{whatsappNumber}</span>

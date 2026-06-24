@@ -1,12 +1,40 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Globe, Users, Shield, Clock, TrendingUp, Star, Award, Building, Heart, ShoppingCart, Factory, ArrowUpRight } from 'lucide-react';
+import {
+  ArrowRight,
+  Globe,
+  Users,
+  Shield,
+  Clock,
+  TrendingUp,
+  Star,
+  Award,
+  Building,
+  Heart,
+  ShoppingCart,
+  Factory,
+  ArrowUpRight,
+  MapPin,
+} from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { supabase } from '../lib/supabase';
+
 import Hero from '../components/Hero';
 import Services from '../components/Services';
+import Technologies from '../components/Technologies';
+import AIAssistant from '../components/AIAssistant';
+import Products from '../components/Products';
+import InnovationHub from '../components/InnovationHub';
+import Blog from '../components/Blog';
+import CaseStudies from '../components/CaseStudies';
+import Awards from '../components/Awards';
+import Resources from '../components/Resources';
+import Testimonials from '../components/Testimonials';
+import Footer from '../components/Footer';
 import Contact from '../components/Contact';
 import SEOHead from '../components/SEOHead';
+
+/* ─── Inline data ─── */
 
 const industries = [
   { icon: Building, name: 'Banking & Finance', href: '/industries/banking', desc: 'Digital banking, risk management, fintech' },
@@ -39,6 +67,23 @@ const whyChoose = [
     title: 'Full-Stack Delivery',
     description: 'End-to-end services from BPO and KPO to IT and strategic consulting under one roof.',
   },
+];
+
+const trustedCompanies = [
+  'Fortune 500 Banks',
+  'Global Healthcare Networks',
+  'Leading Manufacturers',
+  'Retail Giants',
+  'Government Agencies',
+  'Tech Unicorns',
+];
+
+const globalOffices = [
+  { city: 'Jabalpur', country: 'India', role: 'Headquarters' },
+  { city: 'Indore', country: 'India', role: 'Development Center' },
+  { city: 'Pune', country: 'India', role: 'Delivery Center' },
+  { city: 'Eindhoven', country: 'Netherlands', role: 'European HQ' },
+  { city: 'Chicago', country: 'United States', role: 'Americas HQ' },
 ];
 
 export default function Home() {
@@ -74,9 +119,10 @@ export default function Home() {
         description="Transform your business with EvolucentSphere's AI-powered BPO, KPO, IT Services, and Strategic Consulting. Global delivery across 30+ countries."
       />
 
+      {/* ─── 1. Hero ─── */}
       <Hero />
 
-      {/* Quick Stats Bar */}
+      {/* ─── 2. Quick Stats Bar ─── */}
       <section className="border-y border-gray-100 bg-white">
         <div className="container-main">
           <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-gray-100">
@@ -98,9 +144,59 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ─── 3. Trusted Companies ─── */}
+      <section className="section-padding bg-white">
+        <div className="container-main">
+          <div className="text-center mb-10 lg:mb-14">
+            <motion.span
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="label mb-4"
+            >
+              Trusted Worldwide
+            </motion.span>
+            <motion.h2
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-3xl lg:text-4xl font-bold text-ink mb-4"
+            >
+              Powering Enterprises Across the Globe
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="text-ink-secondary text-lg max-w-2xl mx-auto"
+            >
+              From Fortune 500 banks to fast-growing startups, organizations trust EvolucentSphere to deliver transformative results.
+            </motion.p>
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+            {trustedCompanies.map((company, i) => (
+              <motion.div
+                key={company}
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.06 }}
+                className="card px-5 py-6 flex items-center justify-center text-center"
+              >
+                <span className="text-sm font-semibold text-ink-secondary">{company}</span>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── 4. Our Services ─── */}
       <Services />
 
-      {/* Why Choose Us */}
+      {/* ─── 5. Why Choose Us ─── */}
       <section className="section-padding bg-white">
         <div className="container-main">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
@@ -173,7 +269,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Industries */}
+      {/* ─── 6. Industries ─── */}
       <section className="section-padding surface">
         <div className="container-main">
           <div className="text-center mb-12 lg:mb-16">
@@ -250,7 +346,154 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Newsletter */}
+      {/* ─── 7. Technologies ─── */}
+      <Technologies />
+
+      {/* ─── 8. AI Assistant ─── */}
+      <section className="section-padding bg-white">
+        <div className="container-main">
+          <div className="text-center mb-10 lg:mb-14">
+            <motion.span
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="label mb-4"
+            >
+              AI Assistant
+            </motion.span>
+            <motion.h2
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-3xl lg:text-4xl font-bold text-ink mb-4"
+            >
+              Meet Aarnik — Your AI Concierge
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="text-ink-secondary text-lg max-w-2xl mx-auto"
+            >
+              Powered by quantum computing and advanced neural networks, Aarnik delivers instant insights, answers, and guidance across our entire service portfolio.
+            </motion.p>
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+            className="max-w-3xl mx-auto"
+          >
+            <AIAssistant />
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ─── 9. Products ─── */}
+      <Products />
+
+      {/* ─── 10. Innovation Hub ─── */}
+      <InnovationHub />
+
+      {/* ─── 11. Global Presence ─── */}
+      <section className="section-padding surface">
+        <div className="container-main">
+          <div className="text-center mb-12 lg:mb-16">
+            <motion.span
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="label mb-4"
+            >
+              Global Presence
+            </motion.span>
+            <motion.h2
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-3xl lg:text-4xl font-bold text-ink mb-4"
+            >
+              Delivering Excellence Across 30+ Countries
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="text-ink-secondary text-lg max-w-2xl mx-auto"
+            >
+              Our global delivery network ensures round-the-clock support and localized expertise wherever you operate.
+            </motion.p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-5">
+            {globalOffices.map((office, i) => (
+              <motion.div
+                key={office.city}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.08 }}
+                className="card p-6 text-center"
+              >
+                <div className="inline-flex items-center justify-center w-11 h-11 rounded-lg bg-brand-50 text-brand-500 mb-4">
+                  <MapPin className="w-5 h-5" />
+                </div>
+                <h3 className="text-base font-semibold text-ink mb-1">{office.city}</h3>
+                <p className="text-sm text-ink-secondary mb-1">{office.country}</p>
+                <span className="text-xs text-brand-500 font-medium">{office.role}</span>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.4 }}
+            className="mt-12 text-center"
+          >
+            <div className="inline-flex items-center gap-6 card px-8 py-4">
+              <div className="text-center">
+                <div className="text-2xl font-bold text-ink">30+</div>
+                <div className="text-xs text-ink-muted uppercase tracking-wide">Countries</div>
+              </div>
+              <div className="w-px h-8 bg-gray-100" />
+              <div className="text-center">
+                <div className="text-2xl font-bold text-ink">5</div>
+                <div className="text-xs text-ink-muted uppercase tracking-wide">Global Offices</div>
+              </div>
+              <div className="w-px h-8 bg-gray-100" />
+              <div className="text-center">
+                <div className="text-2xl font-bold text-ink">24/7</div>
+                <div className="text-xs text-ink-muted uppercase tracking-wide">Support</div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ─── 12. Blog ─── */}
+      <Blog />
+
+      {/* ─── 13. Case Studies ─── */}
+      <CaseStudies />
+
+      {/* ─── 14. Awards ─── */}
+      <Awards />
+
+      {/* ─── 15. Resources ─── */}
+      <Resources />
+
+      {/* ─── 16. Testimonials ─── */}
+      <Testimonials />
+
+      {/* ─── 17. Newsletter ─── */}
       <section className="section-padding bg-brand-500">
         <div className="container-main">
           <div className="max-w-2xl mx-auto text-center">
@@ -313,7 +556,11 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ─── 18. Contact ─── */}
       <Contact />
+
+      {/* ─── 19. Footer (includes CTA + all links) ─── */}
+      <Footer />
     </div>
   );
 }

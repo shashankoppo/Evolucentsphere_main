@@ -62,18 +62,18 @@ export default function AdminLogin() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50 flex items-center justify-center py-12 px-4">
+    <div className="min-h-screen bg-surface flex items-center justify-center py-12 px-4">
       <SEOHead title="Admin Portal | ELSxGlobal" noindex={true} />
       <div className="w-full max-w-md">
-        <div className="bg-white rounded-2xl shadow-xl p-8">
+        <div className="card">
           <div className="text-center mb-8">
-            <div className="inline-flex items-center justify-center h-16 w-16 rounded-xl bg-gradient-to-br from-blue-600 to-blue-700 text-white mb-4 shadow-lg">
+            <div className="inline-flex items-center justify-center h-16 w-16 rounded-xl bg-brand-500 text-white mb-4 shadow-lg">
               {mode === 'signup' ? <UserPlus className="h-8 w-8" /> : <Lock className="h-8 w-8" />}
             </div>
-            <h1 className="text-2xl font-bold text-gray-900">
+            <h1 className="text-2xl font-bold text-ink">
               {mode === 'signup' ? 'Create Account' : 'Admin Portal'}
             </h1>
-            <p className="text-gray-600 mt-2">
+            <p className="text-ink-secondary mt-2">
               {mode === 'signup'
                 ? 'Set up your admin credentials'
                 : 'Sign in to manage website content'}
@@ -97,44 +97,44 @@ export default function AdminLogin() {
           {mode === 'signup' ? (
             <form onSubmit={handleSignup} className="space-y-5">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Admin Email</label>
+                <label className="block text-sm font-medium text-ink-secondary mb-1">Admin Email</label>
                 <div className="relative">
-                  <Mail className="h-5 w-5 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2" />
+                  <Mail className="h-5 w-5 text-ink-muted absolute left-3 top-1/2 -translate-y-1/2" />
                   <input
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
-                    className="w-full pl-10 pr-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+                    className="w-full pl-10 pr-4 py-2.5 border border-border rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-transparent outline-none transition-all"
                     placeholder="admin@elsxglobal.com"
                   />
                 </div>
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Password (min 6 chars)</label>
+                <label className="block text-sm font-medium text-ink-secondary mb-1">Password (min 6 chars)</label>
                 <div className="relative">
-                  <Lock className="h-5 w-5 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2" />
+                  <Lock className="h-5 w-5 text-ink-muted absolute left-3 top-1/2 -translate-y-1/2" />
                   <input
                     type="password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     required
                     minLength={6}
-                    className="w-full pl-10 pr-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+                    className="w-full pl-10 pr-4 py-2.5 border border-border rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-transparent outline-none transition-all"
                     placeholder="Create a secure password"
                   />
                 </div>
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Confirm Password</label>
+                <label className="block text-sm font-medium text-ink-secondary mb-1">Confirm Password</label>
                 <div className="relative">
-                  <Lock className="h-5 w-5 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2" />
+                  <Lock className="h-5 w-5 text-ink-muted absolute left-3 top-1/2 -translate-y-1/2" />
                   <input
                     type="password"
                     value={confirmPassword}
                     onChange={(e) => setConfirmPassword(e.target.value)}
                     required
-                    className="w-full pl-10 pr-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+                    className="w-full pl-10 pr-4 py-2.5 border border-border rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-transparent outline-none transition-all"
                     placeholder="Confirm password"
                   />
                 </div>
@@ -142,13 +142,13 @@ export default function AdminLogin() {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white py-2.5 rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all font-medium disabled:opacity-50 shadow-lg"
+                className="w-full btn-primary disabled:opacity-50"
               >
                 {loading ? 'Creating...' : 'Create Admin Account'}
               </button>
-              <p className="text-center text-sm text-gray-500">
+              <p className="text-center text-sm text-ink-secondary">
                 Already have an account?{' '}
-                <button type="button" onClick={() => setMode('signin')} className="text-blue-600 hover:underline font-medium">
+                <button type="button" onClick={() => setMode('signin')} className="text-brand-500 hover:underline font-medium">
                   Sign in
                 </button>
               </p>
@@ -156,29 +156,29 @@ export default function AdminLogin() {
           ) : (
             <form onSubmit={handleLogin} className="space-y-5">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                <label className="block text-sm font-medium text-ink-secondary mb-1">Email</label>
                 <div className="relative">
-                  <Mail className="h-5 w-5 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2" />
+                  <Mail className="h-5 w-5 text-ink-muted absolute left-3 top-1/2 -translate-y-1/2" />
                   <input
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
-                    className="w-full pl-10 pr-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+                    className="w-full pl-10 pr-4 py-2.5 border border-border rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-transparent outline-none transition-all"
                     placeholder="admin@elsxglobal.com"
                   />
                 </div>
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Password</label>
+                <label className="block text-sm font-medium text-ink-secondary mb-1">Password</label>
                 <div className="relative">
-                  <Lock className="h-5 w-5 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2" />
+                  <Lock className="h-5 w-5 text-ink-muted absolute left-3 top-1/2 -translate-y-1/2" />
                   <input
                     type="password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     required
-                    className="w-full pl-10 pr-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+                    className="w-full pl-10 pr-4 py-2.5 border border-border rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-transparent outline-none transition-all"
                     placeholder="Enter your password"
                   />
                 </div>
@@ -186,13 +186,13 @@ export default function AdminLogin() {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white py-2.5 rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all font-medium disabled:opacity-50 shadow-lg"
+                className="w-full btn-primary disabled:opacity-50"
               >
                 {loading ? 'Signing in...' : 'Sign In'}
               </button>
-              <p className="text-center text-sm text-gray-500">
+              <p className="text-center text-sm text-ink-secondary">
                 No account yet?{' '}
-                <button type="button" onClick={() => setMode('signup')} className="text-blue-600 hover:underline font-medium">
+                <button type="button" onClick={() => setMode('signup')} className="text-brand-500 hover:underline font-medium">
                   Create one
                 </button>
               </p>
@@ -200,7 +200,7 @@ export default function AdminLogin() {
           )}
 
           <div className="mt-6 pt-6 border-t border-gray-100 text-center">
-            <Link to="/" className="text-sm text-gray-500 hover:text-blue-600 flex items-center justify-center">
+            <Link to="/" className="text-sm text-ink-secondary hover:text-blue-600 flex items-center justify-center">
               <ArrowLeft className="h-4 w-4 mr-1" /> Back to website
             </Link>
           </div>

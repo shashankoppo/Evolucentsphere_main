@@ -4,24 +4,18 @@
 
 @layer base {
   :root {
-    --color-primary: #1a56db;
-    --color-primary-dark: #1e429f;
-    --color-primary-light: #e1effe;
-    --color-secondary: #0ea5e9;
+    --color-brand: #1a56db;
+    --color-brand-dark: #1e429f;
+    --color-brand-light: #e1effe;
     --color-surface: #f8fafc;
-    --color-surface-elevated: #ffffff;
-    --color-text: #1e293b;
-    --color-text-secondary: #64748b;
-    --color-text-muted: #94a3b8;
+    --color-ink: #0f172a;
+    --color-ink-secondary: #475569;
+    --color-ink-muted: #94a3b8;
     --color-border: #e2e8f0;
-    --color-border-light: #f1f5f9;
     --color-success: #059669;
     --color-warning: #d97706;
     --color-error: #dc2626;
-    --radius-sm: 0.375rem;
-    --radius-md: 0.5rem;
-    --radius-lg: 0.75rem;
-    --radius-xl: 1rem;
+    --radius: 0.75rem;
     --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   }
 
@@ -35,7 +29,7 @@
     font-family: var(--font-sans);
     font-size: 15px;
     line-height: 1.6;
-    color: var(--color-text);
+    color: var(--color-ink);
     background-color: #ffffff;
     overflow-x: hidden;
   }
@@ -44,7 +38,7 @@
     font-weight: 700;
     line-height: 1.2;
     letter-spacing: -0.02em;
-    color: var(--color-text);
+    color: var(--color-ink);
   }
 
   h1 { font-size: clamp(2.25rem, 5vw, 3.5rem); }
@@ -53,21 +47,21 @@
   h4 { font-size: 1.125rem; }
 
   p {
-    color: var(--color-text-secondary);
+    color: var(--color-ink-secondary);
   }
 
   a {
-    color: var(--color-primary);
+    color: var(--color-brand);
     transition: all 0.2s ease;
   }
 
   a:hover {
-    color: var(--color-primary-dark);
+    color: var(--color-brand-dark);
   }
 
   ::selection {
-    background: var(--color-primary-light);
-    color: var(--color-primary-dark);
+    background: var(--color-brand-light);
+    color: var(--color-brand-dark);
   }
 }
 
@@ -111,17 +105,19 @@
     justify-content: center;
     gap: 0.5rem;
     padding: 0.75rem 1.75rem;
-    background-color: var(--color-primary);
+    background-color: var(--color-brand);
     color: white;
     font-weight: 600;
     font-size: 0.875rem;
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius);
     transition: all 0.2s ease;
     box-shadow: 0 1px 3px rgba(26, 86, 219, 0.3);
+    cursor: pointer;
+    border: none;
   }
 
   .btn-primary:hover {
-    background-color: var(--color-primary-dark);
+    background-color: var(--color-brand-dark);
     transform: translateY(-1px);
     box-shadow: 0 4px 12px rgba(26, 86, 219, 0.35);
     color: white;
@@ -134,18 +130,19 @@
     gap: 0.5rem;
     padding: 0.75rem 1.75rem;
     background-color: white;
-    color: var(--color-text);
+    color: var(--color-ink);
     font-weight: 600;
     font-size: 0.875rem;
     border: 1px solid var(--color-border);
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius);
     transition: all 0.2s ease;
+    cursor: pointer;
   }
 
   .btn-secondary:hover {
-    border-color: var(--color-text-muted);
+    border-color: var(--color-ink-muted);
     background-color: var(--color-surface);
-    color: var(--color-text);
+    color: var(--color-ink);
   }
 
   .btn-ghost {
@@ -155,22 +152,24 @@
     gap: 0.5rem;
     padding: 0.75rem 1.75rem;
     background-color: transparent;
-    color: var(--color-text);
+    color: var(--color-ink);
     font-weight: 600;
     font-size: 0.875rem;
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius);
     transition: all 0.2s ease;
+    cursor: pointer;
+    border: none;
   }
 
   .btn-ghost:hover {
     background-color: var(--color-surface);
-    color: var(--color-text);
+    color: var(--color-ink);
   }
 
   .card {
     background: white;
     border: 1px solid var(--color-border);
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius);
     transition: all 0.3s ease;
   }
 
@@ -181,7 +180,7 @@
   }
 
   .gradient-text {
-    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    background: linear-gradient(135deg, var(--color-brand) 0%, #0ea5e9 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -197,8 +196,8 @@
     padding: 0.25rem 0.75rem;
     font-size: 0.75rem;
     font-weight: 600;
-    color: var(--color-primary);
-    background-color: var(--color-primary-light);
+    color: var(--color-brand);
+    background-color: var(--color-brand-light);
     border-radius: 9999px;
     text-transform: uppercase;
     letter-spacing: 0.05em;
@@ -210,7 +209,7 @@
     gap: 0.5rem;
     font-size: 0.75rem;
     font-weight: 600;
-    color: var(--color-primary);
+    color: var(--color-brand);
     text-transform: uppercase;
     letter-spacing: 0.08em;
     margin-bottom: 1rem;
@@ -221,7 +220,20 @@
     display: inline-block;
     width: 2rem;
     height: 2px;
-    background-color: var(--color-primary);
+    background-color: var(--color-brand);
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, #1a56db 0%, #0ea5e9 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-grid-pattern {
+    background-image: linear-gradient(to right, rgba(99, 102, 241, 0.1) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(99, 102, 241, 0.1) 1px, transparent 1px);
+    background-size: 4rem 4rem;
   }
 }
 

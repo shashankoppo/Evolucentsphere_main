@@ -58,12 +58,12 @@ export default function DigitalTransformation() {
       />
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-b from-blue-50 to-white relative overflow-hidden">
+      <section className="section-padding bg-gradient-to-b from-blue-50 to-white relative overflow-hidden">
         <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
-        <div className="container mx-auto px-6 relative">
+        <div className="container-main relative">
           <div className="max-w-4xl mx-auto text-center">
             <motion.h1 
-              className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
+              className="text-4xl md:text-5xl font-bold text-ink mb-6"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
@@ -71,7 +71,7 @@ export default function DigitalTransformation() {
               Digital Transformation Consulting
             </motion.h1>
             <motion.p 
-              className="text-xl text-gray-600 mb-12"
+              className="text-xl text-ink-secondary mb-12"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.6 }}
@@ -84,13 +84,13 @@ export default function DigitalTransformation() {
               {benefits.map((benefit, index) => (
                 <motion.div
                   key={index}
-                  className="bg-white p-6 rounded-lg shadow-lg"
+                  className="card"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4 + index * 0.1, duration: 0.6 }}
                 >
                   <div className="text-2xl font-bold text-blue-600">{benefit.metric}</div>
-                  <div className="text-gray-600">{benefit.label}</div>
+                  <div className="text-ink-secondary">{benefit.label}</div>
                 </motion.div>
               ))}
             </div>
@@ -99,27 +99,27 @@ export default function DigitalTransformation() {
       </section>
 
       {/* Services Grid */}
-      <section className="py-20">
-        <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
+      <section className="section-padding">
+        <div className="container-main">
+          <h2 className="text-3xl font-bold text-ink text-center mb-12">
             Our Digital Transformation Services
           </h2>
           <div className="grid md:grid-cols-2 gap-8">
             {services.map((service, index) => (
               <motion.div
                 key={index}
-                className="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-all duration-300"
+                className="card hover:shadow-xl transition-all duration-300"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1, duration: 0.6 }}
               >
                 <service.icon className="h-12 w-12 text-blue-600 mb-6" />
-                <h3 className="text-xl font-bold text-gray-900 mb-4">{service.title}</h3>
-                <p className="text-gray-600 mb-6">{service.description}</p>
+                <h3 className="text-xl font-bold text-ink mb-4">{service.title}</h3>
+                <p className="text-ink-secondary mb-6">{service.description}</p>
                 
                 <div className="space-y-2">
                   {service.features.map((feature, idx) => (
-                    <div key={idx} className="flex items-center text-gray-700">
+                    <div key={idx} className="flex items-center text-ink-secondary">
                       <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
                       {feature}
                     </div>
@@ -132,9 +132,9 @@ export default function DigitalTransformation() {
       </section>
 
       {/* Transformation Framework */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
+      <section className="section-padding surface">
+        <div className="container-main">
+          <h2 className="text-3xl font-bold text-ink text-center mb-12">
             Our Transformation Framework
           </h2>
           <div className="grid md:grid-cols-4 gap-8">
@@ -142,104 +142,104 @@ export default function DigitalTransformation() {
               <div className="bg-blue-100 p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
                 <Target className="h-8 w-8 text-blue-600" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Assess</h3>
-              <p className="text-gray-600">Digital maturity assessment and gap analysis</p>
+              <h3 className="text-xl font-bold text-ink mb-2">Assess</h3>
+              <p className="text-ink-secondary">Digital maturity assessment and gap analysis</p>
             </div>
             
             <div className="text-center">
               <div className="bg-blue-100 p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
                 <Lightbulb className="h-8 w-8 text-blue-600" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Design</h3>
-              <p className="text-gray-600">Strategy development and roadmap planning</p>
+              <h3 className="text-xl font-bold text-ink mb-2">Design</h3>
+              <p className="text-ink-secondary">Strategy development and roadmap planning</p>
             </div>
             
             <div className="text-center">
               <div className="bg-blue-100 p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
                 <Settings className="h-8 w-8 text-blue-600" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Implement</h3>
-              <p className="text-gray-600">Technology deployment and process automation</p>
+              <h3 className="text-xl font-bold text-ink mb-2">Implement</h3>
+              <p className="text-ink-secondary">Technology deployment and process automation</p>
             </div>
             
             <div className="text-center">
               <div className="bg-blue-100 p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
                 <TrendingUp className="h-8 w-8 text-blue-600" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Optimize</h3>
-              <p className="text-gray-600">Continuous improvement and scaling</p>
+              <h3 className="text-xl font-bold text-ink mb-2">Optimize</h3>
+              <p className="text-ink-secondary">Continuous improvement and scaling</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Industry Focus */}
-      <section className="py-20">
-        <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
+      <section className="section-padding">
+        <div className="container-main">
+          <h2 className="text-3xl font-bold text-ink text-center mb-12">
             Industry-Specific Solutions
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white p-6 rounded-lg shadow-lg">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Manufacturing</h3>
+            <div className="card">
+              <h3 className="text-xl font-bold text-ink mb-4">Manufacturing</h3>
               <ul className="space-y-2">
-                <li className="flex items-center text-gray-700">
+                <li className="flex items-center text-ink-secondary">
                   <span className="h-2 w-2 bg-blue-600 rounded-full mr-2"></span>
                   Industry 4.0 Implementation
                 </li>
-                <li className="flex items-center text-gray-700">
+                <li className="flex items-center text-ink-secondary">
                   <span className="h-2 w-2 bg-blue-600 rounded-full mr-2"></span>
                   Smart Factory Solutions
                 </li>
-                <li className="flex items-center text-gray-700">
+                <li className="flex items-center text-ink-secondary">
                   <span className="h-2 w-2 bg-blue-600 rounded-full mr-2"></span>
                   Supply Chain Digitization
                 </li>
-                <li className="flex items-center text-gray-700">
+                <li className="flex items-center text-ink-secondary">
                   <span className="h-2 w-2 bg-blue-600 rounded-full mr-2"></span>
                   Predictive Maintenance
                 </li>
               </ul>
             </div>
             
-            <div className="bg-white p-6 rounded-lg shadow-lg">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Financial Services</h3>
+            <div className="card">
+              <h3 className="text-xl font-bold text-ink mb-4">Financial Services</h3>
               <ul className="space-y-2">
-                <li className="flex items-center text-gray-700">
+                <li className="flex items-center text-ink-secondary">
                   <span className="h-2 w-2 bg-blue-600 rounded-full mr-2"></span>
                   Digital Banking Platforms
                 </li>
-                <li className="flex items-center text-gray-700">
+                <li className="flex items-center text-ink-secondary">
                   <span className="h-2 w-2 bg-blue-600 rounded-full mr-2"></span>
                   Fintech Integration
                 </li>
-                <li className="flex items-center text-gray-700">
+                <li className="flex items-center text-ink-secondary">
                   <span className="h-2 w-2 bg-blue-600 rounded-full mr-2"></span>
                   Regulatory Compliance
                 </li>
-                <li className="flex items-center text-gray-700">
+                <li className="flex items-center text-ink-secondary">
                   <span className="h-2 w-2 bg-blue-600 rounded-full mr-2"></span>
                   Customer Experience
                 </li>
               </ul>
             </div>
             
-            <div className="bg-white p-6 rounded-lg shadow-lg">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Healthcare</h3>
+            <div className="card">
+              <h3 className="text-xl font-bold text-ink mb-4">Healthcare</h3>
               <ul className="space-y-2">
-                <li className="flex items-center text-gray-700">
+                <li className="flex items-center text-ink-secondary">
                   <span className="h-2 w-2 bg-blue-600 rounded-full mr-2"></span>
                   Electronic Health Records
                 </li>
-                <li className="flex items-center text-gray-700">
+                <li className="flex items-center text-ink-secondary">
                   <span className="h-2 w-2 bg-blue-600 rounded-full mr-2"></span>
                   Telemedicine Platforms
                 </li>
-                <li className="flex items-center text-gray-700">
+                <li className="flex items-center text-ink-secondary">
                   <span className="h-2 w-2 bg-blue-600 rounded-full mr-2"></span>
                   Patient Experience
                 </li>
-                <li className="flex items-center text-gray-700">
+                <li className="flex items-center text-ink-secondary">
                   <span className="h-2 w-2 bg-blue-600 rounded-full mr-2"></span>
                   Healthcare Analytics
                 </li>
@@ -250,14 +250,14 @@ export default function DigitalTransformation() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-blue-600">
-        <div className="container mx-auto px-6">
+      <section className="section-padding bg-brand-500">
+        <div className="container-main">
           <div className="max-w-4xl mx-auto text-center text-white">
             <h2 className="text-3xl font-bold mb-6">Start Your Digital Transformation Journey</h2>
             <p className="text-xl mb-8">
               Transform your business with our proven digital transformation methodology and expertise.
             </p>
-            <button className="bg-white text-blue-600 px-8 py-4 rounded-lg hover:bg-blue-50 transition-colors font-medium flex items-center justify-center mx-auto group">
+            <button className="btn-secondary flex items-center justify-center mx-auto group">
               Begin Transformation
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </button>

@@ -58,16 +58,16 @@ export default function BlogPostDetail() {
           description="The requested blog post could not be found."
           noindex={true}
         />
-        <div className="container mx-auto px-6 py-20">
+        <div className="container-main section-padding">
           <div className="max-w-4xl mx-auto text-center">
-            <BookOpen className="h-16 w-16 text-gray-400 mx-auto mb-6" />
-            <h1 className="text-3xl font-bold text-gray-900 mb-4">Blog Post Not Found</h1>
-            <p className="text-xl text-gray-600 mb-8">
+            <BookOpen className="h-16 w-16 text-ink-secondary mx-auto mb-6" />
+            <h1 className="text-3xl font-bold text-ink mb-4">Blog Post Not Found</h1>
+            <p className="text-xl text-ink-secondary mb-8">
               {error || 'The blog post you are looking for does not exist.'}
             </p>
             <Link
               to="/blog"
-              className="inline-flex items-center bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
+              className="btn-primary bg-brand-500"
             >
               <ArrowLeft className="h-5 w-5 mr-2" />
               Back to Blog
@@ -104,8 +104,8 @@ export default function BlogPostDetail() {
       />
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
-        <div className="container mx-auto px-6">
+      <section className="section-padding bg-gradient-to-b from-surface to-white">
+        <div className="container-main">
           <div className="max-w-4xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -121,15 +121,15 @@ export default function BlogPostDetail() {
               </Link>
 
               <div className="mb-8">
-                <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800 mb-4">
+                <span className="label mb-4">
                   <Tag className="h-4 w-4 mr-1" />
                   Technology Insights
                 </span>
-                <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                <h1 className="text-4xl md:text-5xl font-bold text-ink mb-6">
                   {post.title}
                 </h1>
                 
-                <div className="flex flex-wrap items-center gap-6 text-gray-600">
+                <div className="flex flex-wrap items-center gap-6 text-ink-secondary">
                   <div className="flex items-center">
                     <User className="h-5 w-5 mr-2" />
                     <span className="font-medium">{post.author}</span>
@@ -165,7 +165,7 @@ export default function BlogPostDetail() {
 
       {/* Article Content */}
       <section className="py-12">
-        <div className="container mx-auto px-6">
+        <div className="container-main">
           <div className="max-w-4xl mx-auto">
             <motion.article
               className="prose prose-lg max-w-none"
@@ -173,8 +173,8 @@ export default function BlogPostDetail() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.6 }}
             >
-              <div className="bg-white rounded-lg shadow-lg p-8 md:p-12">
-                <div className="text-gray-700 leading-relaxed text-lg">
+              <div className="card md:p-12">
+                <div className="text-ink-secondary leading-relaxed text-lg">
                   {post.content.split('\n').map((paragraph, index) => (
                     <p key={index} className="mb-6">
                       {paragraph}
@@ -186,17 +186,17 @@ export default function BlogPostDetail() {
                 <div className="border-t pt-8 mt-12">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center">
-                      <Share2 className="h-5 w-5 text-gray-400 mr-2" />
-                      <span className="text-gray-600">Share this article</span>
+                      <Share2 className="h-5 w-5 text-ink-secondary mr-2" />
+                      <span className="text-ink-secondary">Share this article</span>
                     </div>
                     <div className="flex space-x-4">
-                      <button className="text-gray-400 hover:text-blue-600 transition-colors">
+                      <button className="text-ink-secondary hover:text-blue-600 transition-colors">
                         Twitter
                       </button>
-                      <button className="text-gray-400 hover:text-blue-700 transition-colors">
+                      <button className="text-ink-secondary hover:text-blue-700 transition-colors">
                         LinkedIn
                       </button>
-                      <button className="text-gray-400 hover:text-blue-500 transition-colors">
+                      <button className="text-ink-secondary hover:text-blue-500 transition-colors">
                         Facebook
                       </button>
                     </div>
@@ -212,8 +212,8 @@ export default function BlogPostDetail() {
                       className="w-16 h-16 rounded-full object-cover mr-4"
                     />
                     <div>
-                      <h3 className="text-lg font-bold text-gray-900">{post.author}</h3>
-                      <p className="text-gray-600">Technology Expert at ELSxGlobal</p>
+                      <h3 className="text-lg font-bold text-ink">{post.author}</h3>
+                      <p className="text-ink-secondary">Technology Expert at ELSxGlobal</p>
                     </div>
                   </div>
                 </div>
@@ -224,14 +224,14 @@ export default function BlogPostDetail() {
       </section>
 
       {/* Related Articles */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-6">
+      <section className="section-padding surface">
+        <div className="container-main">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-2xl font-bold text-gray-900 mb-8">Related Articles</h2>
+            <h2 className="text-2xl font-bold text-ink mb-8">Related Articles</h2>
             <div className="text-center">
               <Link
                 to="/blog"
-                className="inline-flex items-center bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
+                className="btn-primary bg-brand-500"
               >
                 View All Articles
                 <ArrowLeft className="h-5 w-5 ml-2 rotate-180" />

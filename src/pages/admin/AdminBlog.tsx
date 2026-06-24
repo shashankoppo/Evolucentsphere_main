@@ -21,38 +21,38 @@ export default function AdminBlog() {
   return (
     <div>
       <div className="flex items-center justify-between mb-6">
-        <h1 className="text-2xl font-bold text-gray-900">Blog Posts</h1>
-        <button className="flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg text-sm hover:bg-blue-700">
+        <h1 className="text-2xl font-bold text-ink">Blog Posts</h1>
+        <button className="btn-primary text-sm">
           <Plus className="h-4 w-4 mr-2" /> New Post
         </button>
       </div>
 
       {loading ? (
-        <div className="text-center py-12 text-gray-500">Loading...</div>
+        <div className="text-center section-padding text-ink-secondary">Loading...</div>
       ) : posts.length === 0 ? (
-        <div className="bg-white rounded-lg shadow p-12 text-center">
-          <BookOpen className="h-12 w-12 text-gray-300 mx-auto mb-4" />
-          <p className="text-gray-500">No blog posts yet.</p>
+        <div className="card p-12 text-center">
+          <BookOpen className="h-12 w-12 text-ink-muted mx-auto mb-4" />
+          <p className="text-ink-secondary">No blog posts yet.</p>
         </div>
       ) : (
-        <div className="bg-white rounded-lg shadow overflow-hidden">
+        <div className="card overflow-hidden">
           <table className="w-full">
-            <thead className="bg-gray-50 border-b">
+            <thead className="surface border-b">
               <tr>
-                <th className="text-left px-6 py-3 text-xs font-medium text-gray-500 uppercase">Title</th>
-                <th className="text-left px-6 py-3 text-xs font-medium text-gray-500 uppercase">Author</th>
-                <th className="text-left px-6 py-3 text-xs font-medium text-gray-500 uppercase">Date</th>
-                <th className="text-right px-6 py-3 text-xs font-medium text-gray-500 uppercase">Actions</th>
+                <th className="text-left px-6 py-3 text-xs font-medium text-ink-secondary uppercase">Title</th>
+                <th className="text-left px-6 py-3 text-xs font-medium text-ink-secondary uppercase">Author</th>
+                <th className="text-left px-6 py-3 text-xs font-medium text-ink-secondary uppercase">Date</th>
+                <th className="text-right px-6 py-3 text-xs font-medium text-ink-secondary uppercase">Actions</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-200">
               {posts.map((post) => (
                 <tr key={post.id} className="hover:bg-gray-50">
                   <td className="px-6 py-4">
-                    <div className="font-medium text-gray-900">{post.title}</div>
+                    <div className="font-medium text-ink">{post.title}</div>
                     <div className="text-sm text-gray-500 truncate max-w-md">{post.content.substring(0, 80)}...</div>
                   </td>
-                  <td className="px-6 py-4 text-sm text-gray-600">{post.author}</td>
+                  <td className="px-6 py-4 text-sm text-ink-secondary">{post.author}</td>
                   <td className="px-6 py-4 text-sm text-gray-500">
                     {new Date(post.created_at).toLocaleDateString()}
                   </td>

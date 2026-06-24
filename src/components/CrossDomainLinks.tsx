@@ -250,8 +250,8 @@ export default function CrossDomainLinks({
   };
 
   const itemClasses = {
-    grid: 'bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1',
-    list: 'bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 flex items-center space-x-4',
+    grid: 'card hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1',
+    list: 'card hover:shadow-lg transition-all duration-300 flex items-center space-x-4',
     inline: 'bg-white px-4 py-2 rounded-full shadow-md hover:shadow-lg transition-all duration-300 flex items-center space-x-2'
   };
 
@@ -279,20 +279,20 @@ export default function CrossDomainLinks({
 
           <div className={`${layout === 'grid' ? 'text-center' : 'flex-grow'}`}>
             <div className="flex items-center justify-between">
-              <h3 className={`${layout === 'inline' ? 'text-sm' : 'text-lg'} font-bold text-gray-900 group-hover:text-blue-600 transition-colors`}>
+              <h3 className={`${layout === 'inline' ? 'text-sm' : 'text-lg'} font-bold text-ink group-hover:text-blue-600 transition-colors`}>
                 {link.name}
               </h3>
               <ExternalLink className={`${layout === 'inline' ? 'h-3 w-3' : 'h-4 w-4'} text-gray-400 group-hover:text-blue-600 transition-colors ${layout === 'grid' ? 'ml-2' : ''}`} />
             </div>
 
             {layout !== 'inline' && (
-              <p className="text-gray-600 mt-2">{link.description}</p>
+              <p className="text-ink-secondary mt-2">{link.description}</p>
             )}
 
             {showKeywords && layout === 'grid' && (
               <div className="mt-3 flex flex-wrap gap-1 justify-center">
                 {link.keywords.slice(0, 4).map((keyword, idx) => (
-                  <span key={idx} className="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded-full">
+                  <span key={idx} className="label">
                     {keyword}
                   </span>
                 ))}
@@ -326,35 +326,35 @@ export const ELSxTechSubdivisions = () => (
 );
 
 export const SEOFooterLinks = () => (
-  <div className="bg-gray-50 py-12">
-    <div className="container mx-auto px-6">
+  <div className="surface py-12">
+    <div className="container-main">
       <div className="text-center mb-8">
-        <h2 className="text-3xl font-bold text-gray-900 mb-4">
+        <h2 className="text-3xl font-bold text-ink mb-4">
           Explore the Complete EvolucentSphere Ecosystem
         </h2>
-        <p className="text-xl text-gray-600 max-w-4xl mx-auto">
+        <p className="text-xl text-ink-secondary max-w-4xl mx-auto">
           Discover our comprehensive suite of business solutions across technology, 
           outsourcing, and strategic consulting divisions.
         </p>
       </div>
 
       <div className="mb-12">
-        <h3 className="text-2xl font-bold text-gray-900 text-center mb-6">Corporate Headquarters</h3>
+        <h3 className="text-2xl font-bold text-ink text-center mb-6">Corporate Headquarters</h3>
         <ParentCompanyLink layout="grid" showKeywords={true} />
       </div>
 
       <div className="mb-12">
-        <h3 className="text-2xl font-bold text-gray-900 text-center mb-6">Business Divisions</h3>
+        <h3 className="text-2xl font-bold text-ink text-center mb-6">Business Divisions</h3>
         <DivisionLinks layout="grid" showKeywords={true} />
       </div>
 
       <div className="mb-8">
-        <h3 className="text-2xl font-bold text-gray-900 text-center mb-6">ELSxTech Specialized Services</h3>
+        <h3 className="text-2xl font-bold text-ink text-center mb-6">ELSxTech Specialized Services</h3>
         <ELSxTechSubdivisions />
       </div>
 
       <div className="text-center border-t pt-8">
-        <p className="text-gray-600 text-lg">
+        <p className="text-ink-secondary text-lg">
           <strong>EvolucentSphere Pvt. Ltd.</strong> - Delivering comprehensive business solutions 
           across multiple domains and industries worldwide since 2009.
         </p>

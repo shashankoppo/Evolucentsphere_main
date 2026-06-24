@@ -6,7 +6,7 @@ import SEOHead from '../components/SEOHead';
 export default function NotFound() {
   return (
     <div className="min-h-screen flex items-center justify-center pt-20">
-      <SEOHead title="Page Not Found" noindex={true} />
+      <SEOHead title="Page Not Found" description="The requested page could not be found." noindex={true} />
       <div className="text-center px-6 max-w-md mx-auto">
         <AlertTriangle className="h-16 w-16 text-brand-200 mx-auto mb-6" />
         <h1 className="text-4xl font-bold text-ink mb-4">Page Not Found</h1>
