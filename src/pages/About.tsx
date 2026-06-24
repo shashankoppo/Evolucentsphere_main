@@ -1,191 +1,206 @@
 import React from 'react';
-import { Users, Award, Globe, Target, Rocket, Shield, Brain, Code } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { ArrowRight, Users, Award, Globe, Target, Lightbulb, Shield, TrendingUp, Star, MessageCircle } from 'lucide-react';
 import SEOHead from '../components/SEOHead';
+
+const values = [
+  { icon: Users, title: 'People First', desc: 'Empowering teams and clients through continuous growth and learning.' },
+  { icon: Award, title: 'Excellence', desc: 'Setting the highest standards and delivering exceptional results.' },
+  { icon: Globe, title: 'Global Impact', desc: 'Creating positive change across industries and borders.' },
+  { icon: Target, title: 'Innovation', desc: 'Pushing boundaries with cutting-edge solutions.' },
+];
+
+const principles = [
+  { icon: Lightbulb, title: 'Think Big', desc: 'Bold ambitions and visionary goals drive everything we build.' },
+  { icon: Shield, title: 'Build Trust', desc: 'Integrity, transparency, and long-term partnerships.' },
+  { icon: TrendingUp, title: 'Learn & Adapt', desc: 'Continuous evolution with technology and market shifts.' },
+  { icon: Star, title: 'Deliver Excellence', desc: 'Results that exceed expectations and create real value.' },
+];
 
 export default function About() {
   return (
-    <div className="pt-20">
-      <SEOHead 
+    <div>
+      <SEOHead
         title="About Us"
-        description="Learn about ELSxGlobal - pioneers in AI and quantum computing solutions transforming businesses worldwide."
-        keywords={['About ELSxGlobal', 'AI Company', 'Technology Innovation', 'Digital Transformation']}
+        description="EvolucentSphere Pvt. Ltd. — Flagship Division ELSxGlobal. Delivering AI-powered BPO, KPO, IT services, and consulting across 30+ countries."
       />
 
-      {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-b from-blue-50 to-white">
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+      {/* Hero */}
+      <section className="pt-28 lg:pt-36 pb-16 lg:pb-24 bg-white">
+        <div className="container-main">
+          <div className="max-w-3xl">
+            <motion.span
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="label mb-4"
+            >
+              About Us
+            </motion.span>
+            <motion.h1
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 }}
+              className="text-4xl lg:text-5xl font-bold text-ink mb-6"
+            >
               Pioneering the Future of Business Intelligence
-            </h1>
-            <p className="text-xl text-gray-600 mb-8">
-              At ELSxGlobal, we combine cutting-edge AI technology with quantum computing expertise 
-              to transform businesses and drive unprecedented growth. Our innovative solutions are shaping 
-              the future of enterprise technology.
-            </p>
-            <div className="grid md:grid-cols-4 gap-8 mt-12">
-              <div className="text-center">
-                <div className="text-3xl font-bold text-blue-600">500+</div>
-                <div className="text-gray-600">Global Clients</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-blue-600">95%</div>
-                <div className="text-gray-600">Client Retention</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-blue-600">$2B+</div>
-                <div className="text-gray-600">Client ROI Generated</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-blue-600">15+</div>
-                <div className="text-gray-600">Years of Innovation</div>
-              </div>
-            </div>
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              className="text-lg text-ink-secondary max-w-2xl"
+            >
+              We combine deep domain expertise with cutting-edge technology to transform
+              businesses and drive sustainable growth across industries worldwide.
+            </motion.p>
           </div>
+
+          {/* Stats */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.35 }}
+            className="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-12"
+          >
+            {[
+              { value: '500+', label: 'Global Clients' },
+              { value: '98%', label: 'Client Retention' },
+              { value: '38%', label: 'YoY Revenue Growth' },
+              { value: '15+', label: 'Years of Innovation' },
+            ].map((stat, i) => (
+              <div key={i} className="card p-6 text-center">
+                <div className="text-2xl lg:text-3xl font-bold text-brand-500 mb-1">{stat.value}</div>
+                <div className="text-xs text-ink-muted uppercase tracking-wide font-medium">{stat.label}</div>
+              </div>
+            ))}
+          </motion.div>
         </div>
       </section>
 
       {/* Core Values */}
-      <section className="py-20">
-        <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">Our Core Values</h2>
-          <div className="grid md:grid-cols-4 gap-8">
-            <div className="text-center">
-              <Users className="h-12 w-12 text-blue-600 mx-auto mb-4" />
-              <h3 className="text-xl font-bold text-gray-900 mb-2">People First</h3>
-              <p className="text-gray-600">
-                We believe in empowering our people and clients through continuous learning and growth,
-                fostering a culture of innovation and excellence.
-              </p>
-            </div>
-            <div className="text-center">
-              <Award className="h-12 w-12 text-blue-600 mx-auto mb-4" />
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Excellence</h3>
-              <p className="text-gray-600">
-                We strive for excellence in everything we do, setting the highest standards in the industry
-                and delivering exceptional results.
-              </p>
-            </div>
-            <div className="text-center">
-              <Globe className="h-12 w-12 text-blue-600 mx-auto mb-4" />
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Global Impact</h3>
-              <p className="text-gray-600">
-                Our solutions create lasting positive impact across industries and borders, driving
-                sustainable growth and innovation.
-              </p>
-            </div>
-            <div className="text-center">
-              <Target className="h-12 w-12 text-blue-600 mx-auto mb-4" />
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Innovation</h3>
-              <p className="text-gray-600">
-                We constantly push boundaries to deliver innovative solutions for complex challenges,
-                staying ahead of technological trends.
-              </p>
-            </div>
+      <section className="section-padding surface">
+        <div className="container-main">
+          <div className="text-center mb-12 lg:mb-16">
+            <span className="label mb-4">Our Culture</span>
+            <h2 className="text-3xl lg:text-4xl font-bold text-ink mb-4">Core Values</h2>
+            <p className="text-ink-secondary text-lg max-w-2xl mx-auto">
+              The principles that guide every decision we make and every solution we deliver.
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {values.map((v, i) => (
+              <motion.div
+                key={v.title}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.08 }}
+                className="card p-6 text-center"
+              >
+                <div className="inline-flex items-center justify-center w-11 h-11 rounded-lg bg-brand-50 text-brand-500 mb-4">
+                  <v.icon className="w-5 h-5" />
+                </div>
+                <h3 className="text-base font-semibold text-ink mb-2">{v.title}</h3>
+                <p className="text-sm text-ink-secondary">{v.desc}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Leadership Principles */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">Leadership Principles</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="bg-white p-6 rounded-lg shadow-lg">
-              <Rocket className="h-10 w-10 text-blue-600 mb-4" />
-              <h3 className="text-lg font-bold text-gray-900 mb-2">Think Big</h3>
-              <p className="text-gray-600">
-                We encourage bold thinking and ambitious goals, pushing the boundaries of what's possible
-                in technology and business transformation.
-              </p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-lg">
-              <Shield className="h-10 w-10 text-blue-600 mb-4" />
-              <h3 className="text-lg font-bold text-gray-900 mb-2">Build Trust</h3>
-              <p className="text-gray-600">
-                We maintain the highest standards of integrity and transparency, building lasting
-                relationships with our clients and partners.
-              </p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-lg">
-              <Brain className="h-10 w-10 text-blue-600 mb-4" />
-              <h3 className="text-lg font-bold text-gray-900 mb-2">Learn & Adapt</h3>
-              <p className="text-gray-600">
-                We embrace continuous learning and adaptation, staying ahead of technological
-                advancements and market changes.
-              </p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-lg">
-              <Code className="h-10 w-10 text-blue-600 mb-4" />
-              <h3 className="text-lg font-bold text-gray-900 mb-2">Deliver Excellence</h3>
-              <p className="text-gray-600">
-                We are committed to delivering exceptional results that exceed expectations and
-                drive measurable business value.
-              </p>
-            </div>
+      <section className="section-padding bg-white">
+        <div className="container-main">
+          <div className="text-center mb-12 lg:mb-16">
+            <span className="label mb-4">Leadership</span>
+            <h2 className="text-3xl lg:text-4xl font-bold text-ink mb-4">Leadership Principles</h2>
+            <p className="text-ink-secondary text-lg max-w-2xl mx-auto">
+              How we operate, lead, and deliver at every level of the organization.
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {principles.map((p, i) => (
+              <motion.div
+                key={p.title}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.08 }}
+                className="card p-6"
+              >
+                <div className="inline-flex items-center justify-center w-11 h-11 rounded-lg bg-brand-50 text-brand-500 mb-4">
+                  <p.icon className="w-5 h-5" />
+                </div>
+                <h3 className="text-base font-semibold text-ink mb-2">{p.title}</h3>
+                <p className="text-sm text-ink-secondary">{p.desc}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-20">
-        <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-12">
-            <div className="bg-white p-8 rounded-lg shadow-lg">
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Mission</h2>
-              <p className="text-gray-600 text-lg leading-relaxed">
+      <section className="section-padding surface">
+        <div className="container-main">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="card p-8 lg:p-10"
+            >
+              <h2 className="text-2xl font-bold text-ink mb-4">Our Mission</h2>
+              <p className="text-ink-secondary leading-relaxed">
                 To empower organizations worldwide with transformative technology solutions that 
-                drive efficiency, innovation, and sustainable growth. We're committed to delivering 
-                exceptional value through our expertise in AI, quantum computing, and advanced analytics,
-                helping businesses navigate and thrive in the digital age.
+                drive efficiency, innovation, and sustainable growth. We deliver exceptional value 
+                through our expertise in AI, cloud computing, and advanced analytics, helping 
+                businesses navigate and thrive in the digital age.
               </p>
-            </div>
-            <div className="bg-white p-8 rounded-lg shadow-lg">
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Vision</h2>
-              <p className="text-gray-600 text-lg leading-relaxed">
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.15 }}
+              className="card p-8 lg:p-10"
+            >
+              <h2 className="text-2xl font-bold text-ink mb-4">Our Vision</h2>
+              <p className="text-ink-secondary leading-relaxed">
                 To be the global leader in technological innovation and business transformation, 
                 setting new standards for excellence and creating lasting positive impact for our 
-                clients, employees, and communities. We envision a future where advanced technology
+                clients, employees, and communities. We envision a future where advanced technology 
                 solutions are accessible and transformative for businesses of all sizes.
               </p>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Call to Action */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-blue-600">
-        <div className="container mx-auto px-6">
-          <div className="max-w-3xl mx-auto text-center text-white">
-            <h2 className="text-3xl font-bold mb-6">Ready to Transform Your Business?</h2>
-            <p className="text-xl mb-8">
-              Join the ranks of industry leaders who have revolutionized their operations with our
-              innovative solutions.
+      {/* CTA */}
+      <section className="py-16 lg:py-24 bg-brand-500">
+        <div className="container-main">
+          <div className="max-w-2xl mx-auto text-center">
+            <h2 className="text-2xl lg:text-3xl font-bold text-white mb-4">
+              Ready to Transform Your Business?
+            </h2>
+            <p className="text-brand-100 mb-8">
+              Join the ranks of industry leaders who have revolutionized their operations with our solutions.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-blue-600 px-8 py-3 rounded-md hover:bg-blue-50 transition-colors font-medium">
+            <div className="flex flex-wrap justify-center gap-3">
+              <Link to="/contact" className="inline-flex items-center gap-2 px-6 py-3 bg-white text-brand-600 font-semibold text-sm rounded-lg hover:bg-brand-50 transition-colors">
                 Schedule a Consultation
-              </button>
-              <div className="flex gap-2">
-                <a
-                  href="https://wa.me/+917247558873"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-green-500 text-white px-6 py-3 rounded-md hover:bg-green-600 transition-colors font-medium flex items-center"
-                >
-                  <MessageCircle className="h-4 w-4 mr-2" />
-                  Support
-                </a>
-                <a
-                  href="https://wa.me/+918770422622"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-blue-500 text-white px-6 py-3 rounded-md hover:bg-blue-600 transition-colors font-medium flex items-center"
-                >
-                  <Users className="h-4 w-4 mr-2" />
-                  Business
-                </a>
-              </div>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+              <a
+                href="https://wa.me/918770422622"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-green-500 text-white font-semibold text-sm rounded-lg hover:bg-green-600 transition-colors"
+              >
+                <MessageCircle className="w-4 h-4" />
+                WhatsApp Business
+              </a>
             </div>
           </div>
         </div>

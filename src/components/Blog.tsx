@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
 import { Calendar, User, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { dbOperations } from '../lib/db';
@@ -49,12 +50,12 @@ export default function Blog() {
 
   if (loading) {
     return (
-      <section id="blog" className="py-20 bg-gray-50">
+      <section id="blog" className="section-padding surface">
         <SEOHead
           title="Blog & Insights"
-          description="Stay updated with the latest insights, trends, and thought leadership in AI, technology, and business transformation from ELSxGlobal experts."
+          description="Stay updated with the latest insights, trends, and thought leadership in AI, technology, and business transformation."
         />
-        <div className="container mx-auto px-6">
+        <div className="container-main">
           <div className="flex justify-center">
             <LoadingSpinner size="large" />
           </div>
@@ -70,20 +71,28 @@ export default function Blog() {
   const displayPosts = posts.slice(0, 3);
 
   return (
-    <section id="blog" className="py-20 bg-gray-50">
+    <section id="blog" className="section-padding surface">
       <SEOHead
         title="Blog & Insights"
-        description="Stay updated with the latest insights, trends, and thought leadership in AI, technology, and business transformation from ELSxGlobal experts."
+        description="Stay updated with the latest insights, trends, and thought leadership in AI, technology, and business transformation."
       />
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Latest Insights</h2>
-          <p className="text-xl text-gray-600">Thought leadership and industry trends</p>
+      <div className="container-main">
+        <div className="text-center mb-12 lg:mb-16">
+          <span className="label mb-4">Blog</span>
+          <h2 className="text-3xl lg:text-4xl font-bold text-ink mb-4">Latest Insights</h2>
+          <p className="text-ink-secondary text-lg max-w-2xl mx-auto">Thought leadership and industry trends from our experts.</p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {displayPosts.map((post) => (
-            <article key={post.id} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+        <div className="grid md:grid-cols-3 gap-5">
+          {displayPosts.map((post, index) => (
+            <motion.article
+              key={post.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.08 }}
+              className="card overflow-hidden flex flex-col"
+            >
               <div className="relative h-48">
                 <img
                   src={post.image_url || FALLBACK_IMAGE}
@@ -94,48 +103,48 @@ export default function Blog() {
                   decoding="async"
                 />
               </div>
-              <div className="p-6">
+              <div className="p-5 flex flex-col flex-1">
                 {post.category && (
-                  <span className="inline-block px-3 py-1 text-xs font-medium bg-blue-100 text-blue-700 rounded-full mb-3">
+                  <span className="inline-block self-start px-2.5 py-1 text-xs font-semibold bg-brand-50 text-brand-500 rounded-full mb-3">
                     {post.category}
                   </span>
                 )}
-                <h3 className="text-xl font-bold text-gray-900 mb-2 line-clamp-2">
+                <h3 className="text-base font-bold text-ink mb-2 line-clamp-2">
                   {post.title}
                 </h3>
-                <p className="text-gray-600 mb-4 line-clamp-3">
+                <p className="text-sm text-ink-secondary mb-4 line-clamp-3 flex-1">
                   {post.excerpt || post.content}
                 </p>
-                <div className="flex items-center text-sm text-gray-500 mb-4">
-                  <div className="flex items-center mr-4">
-                    <User className="h-4 w-4 mr-1" />
+                <div className="flex items-center text-xs text-ink-muted mb-4">
+                  <div className="flex items-center gap-1 mr-4">
+                    <User className="h-3.5 w-3.5" />
                     {post.author}
                   </div>
-                  <div className="flex items-center">
-                    <Calendar className="h-4 w-4 mr-1" />
+                  <div className="flex items-center gap-1">
+                    <Calendar className="h-3.5 w-3.5" />
                     {new Date(post.created_at).toLocaleDateString()}
                   </div>
                 </div>
                 <Link
                   to={`/blog/${post.id}`}
-                  className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium"
+                  className="inline-flex items-center text-sm font-semibold text-brand-500 hover:text-brand-600 transition-colors"
                 >
                   Read More
-                  <ArrowRight className="ml-2 h-4 w-4" />
+                  <ArrowRight className="ml-1.5 h-4 w-4" />
                 </Link>
               </div>
-            </article>
+            </motion.article>
           ))}
         </div>
 
         {posts.length > 3 && (
-          <div className="text-center mt-12">
+          <div className="text-center mt-10">
             <Link
               to="/blog"
-              className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium"
+              className="btn-secondary"
             >
               View All Articles
-              <ArrowRight className="ml-2 h-5 w-5" />
+              <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         )}

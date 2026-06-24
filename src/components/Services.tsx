@@ -1,199 +1,133 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import {
-  Brain, Code, Shield, Cloud, Users, Settings, Zap, BarChart, ArrowRight,
-  Cpu, Database, Lock, Globe, MessageCircle, CheckCircle
-} from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
-import SEOHead from './SEOHead';
+import { motion } from 'framer-motion';
+import { ArrowRight, Cloud, Brain, Shield, Zap, Code, BarChart3 } from 'lucide-react';
 
-const serviceCategories = [
+const services = [
   {
-    id: 'ai',
-    title: 'AI & Analytics',
-    shortTitle: 'AI',
     icon: Brain,
-    color: 'from-purple-500 to-indigo-600',
-    bgColor: 'bg-purple-50',
-    textColor: 'text-purple-600',
-    description: 'Harness artificial intelligence to transform operations',
-    services: [
-      { name: 'Predictive Analytics', desc: 'Forecast trends with AI-powered insights', features: ['Real-time forecasting', 'Automated decisions', 'Custom models'] },
-      { name: 'Machine Learning', desc: 'Build intelligent systems that learn and adapt', features: ['Deep learning', 'NLP solutions', 'Computer vision'] },
-      { name: 'Data Science', desc: 'Turn data into actionable business intelligence', features: ['Data mining', 'Visualization', 'Statistical analysis'] },
-    ]
+    title: 'AI & Machine Learning',
+    description: 'Transform operations with intelligent automation, predictive analytics, and neural networks.',
+    href: '/it-services/ai-analytics',
+    color: 'bg-violet-50 text-violet-600',
   },
   {
-    id: 'cloud',
-    title: 'Cloud & Infrastructure',
-    shortTitle: 'Cloud',
     icon: Cloud,
-    color: 'from-cyan-500 to-blue-600',
-    bgColor: 'bg-cyan-50',
-    textColor: 'text-cyan-600',
-    description: 'Scalable cloud solutions for modern business',
-    services: [
-      { name: 'Cloud Migration', desc: 'Seamless transition to cloud infrastructure', features: ['AWS/Azure/GCP', 'Zero downtime', 'Cost optimization'] },
-      { name: 'DevOps', desc: 'Accelerate delivery with modern practices', features: ['CI/CD pipelines', 'Container orchestration', 'Infrastructure as code'] },
-      { name: 'Managed Services', desc: 'End-to-end infrastructure management', features: ['24/7 monitoring', 'Auto-scaling', 'Security hardening'] },
-    ]
+    title: 'Cloud Infrastructure',
+    description: 'Multi-cloud strategy, migration, and infrastructure management with enterprise-grade security.',
+    href: '/it-services/cloud-infrastructure',
+    color: 'bg-sky-50 text-sky-600',
   },
   {
-    id: 'security',
-    title: 'Cybersecurity',
-    shortTitle: 'Security',
     icon: Shield,
-    color: 'from-red-500 to-orange-600',
-    bgColor: 'bg-red-50',
-    textColor: 'text-red-600',
-    description: 'Protect your business from evolving threats',
-    services: [
-      { name: 'Threat Detection', desc: 'AI-powered real-time threat monitoring', features: ['SOC services', 'Incident response', 'Threat intelligence'] },
-      { name: 'Security Audit', desc: 'Comprehensive security assessments', features: ['Vulnerability scanning', 'Penetration testing', 'Compliance checks'] },
-      { name: 'Data Protection', desc: 'Secure your sensitive information', features: ['Encryption', 'Access control', 'DLP solutions'] },
-    ]
+    title: 'Cybersecurity',
+    description: 'Advanced threat detection, compliance management, and enterprise security solutions.',
+    href: '/it-services/cybersecurity',
+    color: 'bg-rose-50 text-rose-600',
   },
   {
-    id: 'digital',
-    title: 'Digital Transformation',
-    shortTitle: 'Digital',
     icon: Zap,
-    color: 'from-amber-500 to-yellow-600',
-    bgColor: 'bg-amber-50',
-    textColor: 'text-amber-600',
-    description: 'Modernize and transform your business',
-    services: [
-      { name: 'Process Automation', desc: 'Streamline operations with RPA and AI', features: ['Workflow automation', 'RPA bots', 'Intelligent processing'] },
-      { name: 'Legacy Modernization', desc: 'Transform outdated systems to modern platforms', features: ['API enablement', 'Microservices', 'Cloud-native'] },
-      { name: 'Digital Strategy', desc: 'Roadmap for digital excellence', features: ['Assessment', 'Roadmap', 'Change management'] },
-    ]
+    title: 'Digital Transformation',
+    description: 'Strategic business modernization, process automation, and change management.',
+    href: '/it-services/digital-transformation',
+    color: 'bg-amber-50 text-amber-600',
+  },
+  {
+    icon: Code,
+    title: 'Software Development',
+    description: 'Custom web, mobile, and enterprise applications built with modern architectures.',
+    href: '/it-services/software-development',
+    color: 'bg-emerald-50 text-emerald-600',
+  },
+  {
+    icon: BarChart3,
+    title: 'Data & Analytics',
+    description: 'Business intelligence, data visualization, and real-time analytics platforms.',
+    href: '/it-services/ai-analytics',
+    color: 'bg-indigo-50 text-indigo-600',
   },
 ];
 
 export default function Services() {
-  const [activeCategory, setActiveCategory] = useState(serviceCategories[0]);
-
   return (
-    <section id="services" className="py-20 lg:py-28 bg-gray-50">
-      <SEOHead
-        title="Services - Enterprise Solutions"
-        description="Comprehensive AI, cloud, cybersecurity, and digital transformation services."
-      />
-
-      <div className="container mx-auto px-4 sm:px-6">
+    <section className="section-padding surface">
+      <div className="container-main">
         {/* Header */}
-        <motion.div
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
-          <span className="inline-block px-4 py-1.5 bg-blue-100 text-blue-700 text-sm font-medium rounded-full mb-4">
-            Our Expertise
-          </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-            Enterprise Solutions
-          </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Leverage cutting-edge technologies and expert teams to transform your business operations
-          </p>
-        </motion.div>
+        <div className="max-w-2xl mb-12 lg:mb-16">
+          <motion.span
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="label mb-4"
+          >
+            Our Services
+          </motion.span>
+          <motion.h2
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-3xl lg:text-4xl font-bold text-ink mb-4"
+          >
+            Comprehensive Solutions for Modern Enterprises
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="text-ink-secondary text-lg"
+          >
+            From cloud infrastructure to AI-powered analytics, we deliver the technology 
+            that drives measurable business outcomes.
+          </motion.p>
+        </div>
 
-        {/* Category Tabs */}
-        <div className="flex flex-wrap justify-center gap-3 mb-12">
-          {serviceCategories.map((cat) => (
-            <button
-              key={cat.id}
-              onClick={() => setActiveCategory(cat)}
-              className={`flex items-center gap-2 px-5 py-2.5 rounded-xl font-medium transition-all duration-300 ${
-                activeCategory.id === cat.id
-                  ? `bg-gradient-to-r ${cat.color} text-white shadow-lg scale-105`
-                  : 'bg-white text-gray-700 hover:bg-gray-100 hover:scale-105 shadow'
-              }`}
+        {/* Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+          {services.map((service, index) => (
+            <motion.div
+              key={service.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.08 }}
             >
-              <cat.icon className="h-5 w-5" />
-              <span className="hidden sm:inline">{cat.title}</span>
-              <span className="sm:hidden">{cat.shortTitle}</span>
-            </button>
+              <Link
+                to={service.href}
+                className="group card p-6 lg:p-7 h-full flex flex-col gap-4"
+              >
+                <div className={`inline-flex items-center justify-center w-11 h-11 rounded-lg ${service.color} shrink-0`}>
+                  <service.icon className="w-5 h-5" />
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-base font-semibold text-ink mb-1.5 group-hover:text-brand-500 transition-colors">
+                    {service.title}
+                  </h3>
+                  <p className="text-sm text-ink-secondary leading-relaxed">
+                    {service.description}
+                  </p>
+                </div>
+                <div className="flex items-center gap-1 text-sm font-semibold text-brand-500 opacity-0 group-hover:opacity-100 transition-opacity -translate-x-1 group-hover:translate-x-0 duration-300">
+                  Learn more
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </div>
+              </Link>
+            </motion.div>
           ))}
         </div>
 
-        {/* Category Content */}
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={activeCategory.id}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.3 }}
-          >
-            {/* Category Description */}
-            <div className="text-center mb-10">
-              <div className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl ${activeCategory.bgColor} mb-4`}>
-                <activeCategory.icon className={`h-8 w-8 ${activeCategory.textColor}`} />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">{activeCategory.title}</h3>
-              <p className="text-gray-600 max-w-xl mx-auto">{activeCategory.description}</p>
-            </div>
-
-            {/* Services Grid */}
-            <div className="grid md:grid-cols-3 gap-6 lg:gap-8 mb-12">
-              {activeCategory.services.map((service, idx) => (
-                <motion.div
-                  key={service.name}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: idx * 0.1 }}
-                  className="group bg-white rounded-2xl p-6 lg:p-8 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100"
-                >
-                  <h4 className="text-xl font-bold text-gray-900 mb-2">{service.name}</h4>
-                  <p className="text-gray-600 mb-4">{service.desc}</p>
-                  <ul className="space-y-2">
-                    {service.features.map((feature) => (
-                      <li key={feature} className="flex items-center text-sm text-gray-700">
-                        <CheckCircle className="h-4 w-4 text-green-500 mr-2 flex-shrink-0" />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-        </AnimatePresence>
-
-        {/* CTA */}
+        {/* View all */}
         <motion.div
-          className="bg-gradient-to-r from-slate-900 via-blue-900 to-slate-900 rounded-2xl p-8 lg:p-12 text-center text-white relative overflow-hidden"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
+          className="mt-10 text-center"
         >
-          <div className="absolute inset-0 opacity-10">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500 rounded-full filter blur-3xl"></div>
-            <div className="absolute bottom-0 left-0 w-48 h-48 bg-cyan-500 rounded-full filter blur-3xl"></div>
-          </div>
-          <div className="relative z-10">
-            <h3 className="text-2xl sm:text-3xl font-bold mb-4">Ready to Transform Your Business?</h3>
-            <p className="text-gray-300 mb-8 max-w-xl mx-auto">
-              Join 500+ enterprises that have revolutionized their operations with our solutions.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Link
-                to="/contact"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-white text-gray-900 font-semibold rounded-xl hover:bg-gray-100 transition-all duration-300 shadow-lg hover:scale-105"
-              >
-                Get Started
-                <ArrowRight className="h-5 w-5" />
-              </Link>
-              <Link
-                to="/case-studies"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 text-white font-semibold rounded-xl border border-white/20 hover:bg-white/20 transition-all"
-              >
-                View Case Studies
-              </Link>
-            </div>
-          </div>
+          <Link to="/services" className="btn-secondary">
+            View All Services
+            <ArrowRight className="w-4 h-4" />
+          </Link>
         </motion.div>
       </div>
     </section>

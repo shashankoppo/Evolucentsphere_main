@@ -1,269 +1,164 @@
 import React from 'react';
-import { Briefcase, Users, Star, Award, Globe, ArrowRight, BookOpen, Heart, Coffee, Sun } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { ArrowRight, ArrowUpRight, Users, Globe, Star, Award, Heart, BookOpen, Coffee, Sun } from 'lucide-react';
 import SEOHead from '../components/SEOHead';
 
 const jobCategories = [
   {
     title: 'Technology',
-    positions: [
-      'Senior Software Engineer',
-      'AI/ML Engineer',
-      'Cloud Architect',
-      'DevOps Engineer',
-      'Full Stack Developer'
-    ]
+    positions: ['Senior Software Engineer', 'AI/ML Engineer', 'Cloud Architect', 'DevOps Engineer', 'Full Stack Developer'],
   },
   {
     title: 'Operations',
-    positions: [
-      'Operations Manager',
-      'Process Analyst',
-      'Quality Assurance Lead',
-      'Team Leader',
-      'Project Coordinator'
-    ]
+    positions: ['Operations Manager', 'Process Analyst', 'Quality Assurance Lead', 'Team Leader', 'Project Coordinator'],
   },
   {
     title: 'Customer Experience',
-    positions: [
-      'Customer Success Manager',
-      'Technical Support Specialist',
-      'Account Manager',
-      'Customer Experience Lead',
-      'Support Team Lead'
-    ]
+    positions: ['Customer Success Manager', 'Technical Support Specialist', 'Account Manager', 'Customer Experience Lead', 'Support Team Lead'],
   },
   {
     title: 'Business & Strategy',
-    positions: [
-      'Business Analyst',
-      'Strategy Consultant',
-      'Product Manager',
-      'Digital Marketing Specialist',
-      'Market Research Analyst'
-    ]
-  }
+    positions: ['Business Analyst', 'Strategy Consultant', 'Product Manager', 'Digital Marketing Specialist', 'Market Research Analyst'],
+  },
 ];
 
 const benefits = [
-  {
-    icon: Heart,
-    title: 'Health & Wellness',
-    items: [
-      'Comprehensive health insurance',
-      'Mental health support',
-      'Fitness allowance',
-      'Wellness programs'
-    ]
-  },
-  {
-    icon: BookOpen,
-    title: 'Learning & Growth',
-    items: [
-      'Professional development',
-      'Certification support',
-      'Training programs',
-      'Career mentorship'
-    ]
-  },
-  {
-    icon: Coffee,
-    title: 'Work-Life Balance',
-    items: [
-      'Flexible work hours',
-      'Remote work options',
-      'Paid time off',
-      'Parental leave'
-    ]
-  },
-  {
-    icon: Sun,
-    title: 'Perks & Benefits',
-    items: [
-      'Performance bonuses',
-      'Stock options',
-      'Team events',
-      'Travel opportunities'
-    ]
-  }
+  { icon: Heart, title: 'Health & Wellness', items: ['Comprehensive health insurance', 'Mental health support', 'Fitness allowance', 'Wellness programs'] },
+  { icon: BookOpen, title: 'Learning & Growth', items: ['Professional development', 'Certification support', 'Training programs', 'Career mentorship'] },
+  { icon: Coffee, title: 'Work-Life Balance', items: ['Flexible work hours', 'Remote work options', 'Paid time off', 'Parental leave'] },
+  { icon: Sun, title: 'Perks & Benefits', items: ['Performance bonuses', 'Stock options', 'Team events', 'Travel opportunities'] },
 ];
 
 export default function Careers() {
   return (
-    <div className="min-h-screen pt-20">
-      <SEOHead 
-        title="Careers | Join Our Team"
-        description="Join EvolucentSphere and be part of a team shaping the future of technology and business transformation."
-        keywords={['Careers', 'Jobs', 'Technology Jobs', 'IT Careers', 'Business Jobs']}
-      />
+    <div>
+      <SEOHead title="Careers" description="Join EvolucentSphere and build your future with a team shaping technology and business transformation." />
 
-      {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-b from-blue-50 to-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
-        <div className="container mx-auto px-6 relative">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+      {/* Hero */}
+      <section className="pt-28 lg:pt-36 pb-16 lg:pb-24 bg-white">
+        <div className="container-main">
+          <div className="max-w-3xl text-center mx-auto">
+            <motion.span initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} className="label mb-4">Careers</motion.span>
+            <motion.h1 initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="text-4xl lg:text-5xl font-bold text-ink mb-6">
               Build Your Future With Us
-            </h1>
-            <p className="text-xl text-gray-600 mb-8">
-              Join a team of innovators, problem-solvers, and thought leaders shaping the future 
-              of technology and business transformation.
-            </p>
-            <div className="grid md:grid-cols-4 gap-6">
-              <div className="bg-white p-6 rounded-lg shadow-lg">
-                <Users className="h-8 w-8 text-blue-600 mx-auto mb-2" />
-                <div className="text-2xl font-bold text-blue-600">1000+</div>
-                <div className="text-gray-600">Team Members</div>
-              </div>
-              <div className="bg-white p-6 rounded-lg shadow-lg">
-                <Globe className="h-8 w-8 text-blue-600 mx-auto mb-2" />
-                <div className="text-2xl font-bold text-blue-600">30+</div>
-                <div className="text-gray-600">Countries</div>
-              </div>
-              <div className="bg-white p-6 rounded-lg shadow-lg">
-                <Star className="h-8 w-8 text-blue-600 mx-auto mb-2" />
-                <div className="text-2xl font-bold text-blue-600">4.8/5</div>
-                <div className="text-gray-600">Employee Rating</div>
-              </div>
-              <div className="bg-white p-6 rounded-lg shadow-lg">
-                <Award className="h-8 w-8 text-blue-600 mx-auto mb-2" />
-                <div className="text-2xl font-bold text-blue-600">#1</div>
-                <div className="text-gray-600">Best Place to Work</div>
-              </div>
-            </div>
+            </motion.h1>
+            <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="text-lg text-ink-secondary max-w-2xl mx-auto">
+              Join innovators, problem-solvers, and thought leaders shaping the future of technology and business transformation.
+            </motion.p>
           </div>
+
+          {/* Stats */}
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.35 }} className="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-12">
+            {[
+              { icon: Users, value: '1000+', label: 'Team Members' },
+              { icon: Globe, value: '30+', label: 'Countries' },
+              { icon: Star, value: '4.8/5', label: 'Employee Rating' },
+              { icon: Award, value: '#1', label: 'Best Place to Work' },
+            ].map((s, i) => (
+              <div key={i} className="card p-6 text-center">
+                <s.icon className="w-5 h-5 text-brand-400 mb-2 mx-auto" />
+                <div className="text-2xl font-bold text-ink mb-1">{s.value}</div>
+                <div className="text-xs text-ink-muted uppercase tracking-wide font-medium">{s.label}</div>
+              </div>
+            ))}
+          </motion.div>
         </div>
       </section>
 
       {/* Open Positions */}
-      <section className="py-20">
-        <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
-            Open Positions
-          </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {jobCategories.map((category, index) => (
-              <div key={index} className="bg-white rounded-lg shadow-lg p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-4">{category.title}</h3>
-                <div className="space-y-3">
-                  {category.positions.map((position, idx) => (
-                    <div key={idx} className="flex items-center justify-between group cursor-pointer">
-                      <span className="text-gray-700 group-hover:text-blue-600">{position}</span>
-                      <ArrowRight className="h-4 w-4 text-blue-600 opacity-0 group-hover:opacity-100 transition-opacity" />
+      <section className="section-padding surface">
+        <div className="container-main">
+          <div className="text-center mb-12 lg:mb-16">
+            <span className="label mb-4">Opportunities</span>
+            <h2 className="text-3xl lg:text-4xl font-bold text-ink mb-4">Open Positions</h2>
+            <p className="text-ink-secondary text-lg max-w-2xl mx-auto">Find the role that matches your skills and passion.</p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {jobCategories.map((cat, i) => (
+              <motion.div key={cat.title} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} className="card p-6">
+                <h3 className="text-lg font-bold text-ink mb-4">{cat.title}</h3>
+                <div className="space-y-2">
+                  {cat.positions.map((pos, idx) => (
+                    <div key={idx} className="flex items-center justify-between text-sm group cursor-pointer py-1">
+                      <span className="text-ink-secondary group-hover:text-brand-500 transition-colors">{pos}</span>
+                      <ArrowUpRight className="w-4 h-4 text-ink-muted opacity-0 group-hover:opacity-100 transition-opacity" />
                     </div>
                   ))}
                 </div>
-                <button className="mt-6 w-full bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors">
-                  View All Positions
-                </button>
-              </div>
+                <button className="btn-primary w-full mt-6 text-sm">View All Positions</button>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
       {/* Benefits */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
-            Why Join Us?
-          </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {benefits.map((benefit, index) => (
-              <div key={index} className="bg-white rounded-lg shadow-lg p-6">
-                <benefit.icon className="h-10 w-10 text-blue-600 mb-4" />
-                <h3 className="text-xl font-bold text-gray-900 mb-4">{benefit.title}</h3>
+      <section className="section-padding bg-white">
+        <div className="container-main">
+          <div className="text-center mb-12 lg:mb-16">
+            <span className="label mb-4">Perks</span>
+            <h2 className="text-3xl lg:text-4xl font-bold text-ink mb-4">Why Join Us?</h2>
+            <p className="text-ink-secondary text-lg max-w-2xl mx-auto">We invest in our people because they are our greatest asset.</p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {benefits.map((b, i) => (
+              <motion.div key={b.title} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} className="card p-6">
+                <div className="inline-flex items-center justify-center w-10 h-10 rounded-lg bg-brand-50 text-brand-500 mb-4">
+                  <b.icon className="w-5 h-5" />
+                </div>
+                <h3 className="text-base font-semibold text-ink mb-3">{b.title}</h3>
                 <ul className="space-y-2">
-                  {benefit.items.map((item, idx) => (
-                    <li key={idx} className="flex items-center text-gray-700">
-                      <span className="h-1.5 w-1.5 bg-blue-600 rounded-full mr-2"></span>
+                  {b.items.map((item, idx) => (
+                    <li key={idx} className="flex items-center gap-2 text-sm text-ink-secondary">
+                      <span className="w-1.5 h-1.5 rounded-full bg-brand-400 shrink-0" />
                       {item}
                     </li>
                   ))}
                 </ul>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
       {/* Culture */}
-      <section className="py-20">
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Culture</h2>
-            <p className="text-xl text-gray-600 mb-12">
-              We foster an environment of innovation, collaboration, and continuous learning where 
-              every team member can grow and make an impact.
+      <section className="section-padding surface">
+        <div className="container-main">
+          <div className="text-center mb-12 lg:mb-16">
+            <span className="label mb-4">Culture</span>
+            <h2 className="text-3xl lg:text-4xl font-bold text-ink mb-4">Our Culture</h2>
+            <p className="text-ink-secondary text-lg max-w-2xl mx-auto">
+              We foster an environment of innovation, collaboration, and continuous learning where every team member can grow.
             </p>
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="bg-white p-6 rounded-lg shadow-lg">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Innovation</h3>
-                <p className="text-gray-600">
-                  We encourage creative thinking and embrace new ideas to solve complex challenges.
-                </p>
-              </div>
-              <div className="bg-white p-6 rounded-lg shadow-lg">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Collaboration</h3>
-                <p className="text-gray-600">
-                  We work together across teams and borders to achieve exceptional results.
-                </p>
-              </div>
-              <div className="bg-white p-6 rounded-lg shadow-lg">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Growth</h3>
-                <p className="text-gray-600">
-                  We invest in our people's development and celebrate their success.
-                </p>
-              </div>
-            </div>
+          </div>
+          <div className="grid sm:grid-cols-3 gap-5">
+            {[
+              { title: 'Innovation', desc: 'We encourage creative thinking and embrace new ideas to solve complex challenges.' },
+              { title: 'Collaboration', desc: 'We work together across teams and borders to achieve exceptional results.' },
+              { title: 'Growth', desc: 'We invest in our people\'s development and celebrate their success.' },
+            ].map((c, i) => (
+              <motion.div key={c.title} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} className="card p-6 text-center">
+                <h3 className="text-lg font-semibold text-ink mb-2">{c.title}</h3>
+                <p className="text-sm text-ink-secondary">{c.desc}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Call to Action */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-blue-600">
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto text-center text-white">
-            <h2 className="text-3xl font-bold mb-6">Ready to Join Our Team?</h2>
-            <p className="text-xl mb-8">
-              Explore our open positions and take the next step in your career journey.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-blue-600 px-8 py-4 rounded-lg hover:bg-blue-50 transition-colors font-medium">
-                View All Positions
-              </button>
-              <div className="flex gap-2">
-                <a
-                  href="https://wa.me/+917247558873"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-green-500 text-white px-6 py-4 rounded-lg hover:bg-green-600 transition-colors font-medium flex items-center"
-                >
-                  <MessageCircle className="h-4 w-4 mr-2" />
-                  HR Support
-                </a>
-                <a
-                  href="https://wa.me/+918770422622"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-blue-500 text-white px-6 py-4 rounded-lg hover:bg-blue-600 transition-colors font-medium flex items-center"
-                >
-                  <Users className="h-4 w-4 mr-2" />
-                  Recruitment
-                </a>
-              </div>
-            </div>
+      {/* CTA */}
+      <section className="py-16 lg:py-24 bg-brand-500">
+        <div className="container-main">
+          <div className="max-w-2xl mx-auto text-center">
+            <h2 className="text-2xl lg:text-3xl font-bold text-white mb-4">Ready to Join Our Team?</h2>
+            <p className="text-brand-100 mb-8">Explore our open positions and take the next step in your career.</p>
+            <Link to="/contact" className="inline-flex items-center gap-2 px-6 py-3 bg-white text-brand-600 font-semibold text-sm rounded-lg hover:bg-brand-50 transition-colors">
+              View All Positions <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
         </div>
       </section>
-
-      <style jsx>{`
-        .bg-grid-pattern {
-          background-image: linear-gradient(to right, rgba(99, 102, 241, 0.1) 1px, transparent 1px),
-                          linear-gradient(to bottom, rgba(99, 102, 241, 0.1) 1px, transparent 1px);
-          background-size: 4rem 4rem;
-        }
-      `}</style>
     </div>
   );
 }

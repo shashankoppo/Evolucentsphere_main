@@ -1,19 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import { ArrowRight, Building, Users, TrendingUp, Target, Award } from 'lucide-react';
+import { ArrowRight, Building, TrendingUp, ArrowUpRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import { dbOperations } from '../lib/db';
 import type { CaseStudy } from '../lib/db';
 import LoadingSpinner from './LoadingSpinner';
 import SEOHead from './SEOHead';
 
-const industries = [
-  'Financial Services',
-  'Healthcare',
-  'Manufacturing',
-  'Retail',
-  'Technology',
-  'Energy'
-];
+const industries = ['Financial Services', 'Healthcare', 'Manufacturing', 'Retail', 'Technology', 'Energy'];
 
 export default function CaseStudies() {
   const [caseStudies, setCaseStudies] = useState<CaseStudy[]>([]);
@@ -44,8 +38,8 @@ export default function CaseStudies() {
 
   if (loading) {
     return (
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-6">
+      <section className="section-padding surface">
+        <div className="container-main">
           <div className="flex justify-center">
             <LoadingSpinner size="large" />
           </div>
@@ -56,14 +50,11 @@ export default function CaseStudies() {
 
   if (error) {
     return (
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-6">
+      <section className="section-padding surface">
+        <div className="container-main">
           <div className="text-center">
-            <p className="text-red-600 mb-4">{error}</p>
-            <button
-              onClick={() => window.location.reload()}
-              className="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-            >
+            <p className="text-error mb-4">{error}</p>
+            <button onClick={() => window.location.reload()} className="btn-primary text-sm">
               Try Again
             </button>
           </div>
@@ -73,160 +64,143 @@ export default function CaseStudies() {
   }
 
   return (
-    <div className="min-h-screen">
-      <SEOHead 
+    <div>
+      <SEOHead
         title="Case Studies"
         description="Explore real-world success stories and transformations achieved through our innovative solutions."
-        keywords={['Case Studies', 'Success Stories', 'Business Transformation', 'Client Success']}
       />
 
-      {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-b from-blue-50 to-white">
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+      {/* Hero */}
+      <section className="pt-28 lg:pt-36 pb-16 lg:pb-24 bg-white">
+        <div className="container-main">
+          <div className="max-w-3xl text-center mx-auto">
+            <motion.span initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} className="label mb-4">Case Studies</motion.span>
+            <motion.h1 initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="text-4xl lg:text-5xl font-bold text-ink mb-6">
               Client Success Stories
-            </h1>
-            <p className="text-xl text-gray-600 mb-12">
-              Discover how we've helped organizations across industries achieve remarkable results
-              through innovative technology solutions.
-            </p>
-            <div className="grid md:grid-cols-4 gap-8">
-              <div className="bg-white p-6 rounded-lg shadow-lg">
-                <div className="text-2xl font-bold text-blue-600">500+</div>
-                <div className="text-gray-600">Projects Delivered</div>
-              </div>
-              <div className="bg-white p-6 rounded-lg shadow-lg">
-                <div className="text-2xl font-bold text-blue-600">45%</div>
-                <div className="text-gray-600">Average ROI</div>
-              </div>
-              <div className="bg-white p-6 rounded-lg shadow-lg">
-                <div className="text-2xl font-bold text-blue-600">98%</div>
-                <div className="text-gray-600">Client Satisfaction</div>
-              </div>
-              <div className="bg-white p-6 rounded-lg shadow-lg">
-                <div className="text-2xl font-bold text-blue-600">30+</div>
-                <div className="text-gray-600">Countries Served</div>
-              </div>
-            </div>
+            </motion.h1>
+            <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="text-lg text-ink-secondary max-w-2xl mx-auto">
+              Discover how we've helped organizations achieve remarkable results through innovative technology.
+            </motion.p>
           </div>
+
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.35 }} className="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-12">
+            {[
+              { value: '500+', label: 'Projects Delivered' },
+              { value: '45%', label: 'Average ROI' },
+              { value: '98%', label: 'Client Satisfaction' },
+              { value: '30+', label: 'Countries Served' },
+            ].map((stat, i) => (
+              <div key={i} className="card p-6 text-center">
+                <div className="text-2xl font-bold text-brand-500 mb-1">{stat.value}</div>
+                <div className="text-xs text-ink-muted uppercase tracking-wide font-medium">{stat.label}</div>
+              </div>
+            ))}
+          </motion.div>
         </div>
       </section>
 
-      {/* Industry Filter */}
-      <section className="py-12 bg-white">
-        <div className="container mx-auto px-6">
-          <div className="flex overflow-x-auto pb-4 hide-scrollbar">
-            <div className="flex space-x-4 mx-auto">
+      {/* Filter */}
+      <section className="py-6 bg-white border-y border-gray-100">
+        <div className="container-main">
+          <div className="flex flex-wrap gap-2">
+            <button
+              onClick={() => setSelectedIndustry('all')}
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
+                selectedIndustry === 'all'
+                  ? 'bg-brand-500 text-white'
+                  : 'bg-gray-50 text-ink-secondary hover:bg-gray-100'
+              }`}
+            >
+              All
+            </button>
+            {industries.map((industry) => (
               <button
-                onClick={() => setSelectedIndustry('all')}
-                className={`px-6 py-2 rounded-full whitespace-nowrap transition-all duration-300 ${
-                  selectedIndustry === 'all'
-                    ? 'bg-blue-600 text-white'
-                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                key={industry}
+                onClick={() => setSelectedIndustry(industry)}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
+                  selectedIndustry === industry
+                    ? 'bg-brand-500 text-white'
+                    : 'bg-gray-50 text-ink-secondary hover:bg-gray-100'
                 }`}
               >
-                All Industries
+                {industry}
               </button>
-              {industries.map((industry) => (
-                <button
-                  key={industry}
-                  onClick={() => setSelectedIndustry(industry)}
-                  className={`px-6 py-2 rounded-full whitespace-nowrap transition-all duration-300 ${
-                    selectedIndustry === industry
-                      ? 'bg-blue-600 text-white'
-                      : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                  }`}
-                >
-                  {industry}
-                </button>
-              ))}
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Case Studies Grid */}
-      <section className="py-20">
-        <div className="container mx-auto px-6">
+      {/* Grid */}
+      <section className="section-padding surface">
+        <div className="container-main">
           {filteredCaseStudies.length === 0 ? (
-            <div className="text-center text-gray-600">
-              No case studies available for the selected industry.
-            </div>
+            <div className="text-center text-ink-secondary">No case studies available for the selected industry.</div>
           ) : (
-            <div className="grid md:grid-cols-3 gap-8">
-              {filteredCaseStudies.map((study) => (
-                <div key={study.id} className="bg-white rounded-lg shadow-lg overflow-hidden">
-                  <div className="relative h-48">
-                    <img 
-                      src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-                      alt={study.title} 
-                      className="w-full h-full object-cover"
-                      loading="lazy"
-                      decoding="async"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                    <div className="absolute bottom-4 left-4 right-4">
-                      <span className="text-sm text-white bg-blue-600 px-3 py-1 rounded-full">
-                        {study.industry}
-                      </span>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+              {filteredCaseStudies.map((study, index) => (
+                <motion.div
+                  key={study.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.08 }}
+                >
+                  <div className="card overflow-hidden h-full flex flex-col">
+                    <div className="relative h-48">
+                      <img
+                        src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                        alt={study.title}
+                        className="w-full h-full object-cover"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                      <div className="absolute bottom-4 left-4">
+                        <span className="text-xs font-semibold text-white bg-brand-500 px-2.5 py-1 rounded-full">
+                          {study.industry}
+                        </span>
+                      </div>
+                    </div>
+                    <div className="p-5 flex flex-col flex-1">
+                      <h3 className="text-lg font-bold text-ink mb-2">{study.title}</h3>
+                      <p className="text-sm text-ink-secondary mb-4 line-clamp-2">{study.content}</p>
+                      <div className="space-y-2 mb-4 flex-1">
+                        {Object.entries(study.results).slice(0, 3).map(([key, value], idx) => (
+                          <div key={idx} className="flex items-center gap-2 text-sm text-ink-secondary">
+                            <TrendingUp className="h-4 w-4 text-emerald-500" />
+                            <span>{key}: <span className="font-semibold text-ink">{value}</span></span>
+                          </div>
+                        ))}
+                      </div>
+                      <Link
+                        to={`/case-studies/${study.id}`}
+                        className="inline-flex items-center text-sm font-semibold text-brand-500 hover:text-brand-600 transition-colors"
+                      >
+                        Read Case Study
+                        <ArrowRight className="ml-1.5 h-4 w-4" />
+                      </Link>
                     </div>
                   </div>
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">{study.title}</h3>
-                    <p className="text-gray-600 mb-4">{study.content}</p>
-                    
-                    <div className="space-y-4 mb-6">
-                      <h4 className="font-semibold text-gray-900">Key Results:</h4>
-                      {Object.entries(study.results).map(([key, value], idx) => (
-                        <div key={idx} className="flex items-center space-x-2">
-                          {idx === 0 && <TrendingUp className="h-5 w-5 text-green-500" />}
-                          {idx === 1 && <Users className="h-5 w-5 text-blue-500" />}
-                          {idx === 2 && <Target className="h-5 w-5 text-blue-500" />}
-                          <span className="text-gray-700">{`${key}: ${value}`}</span>
-                        </div>
-                      ))}
-                    </div>
-
-                    <Link 
-                      to={`/case-studies/${study.id}`}
-                      className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium"
-                    >
-                      Read Full Case Study
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Link>
-                  </div>
-                </div>
+                </motion.div>
               ))}
             </div>
           )}
         </div>
       </section>
 
-      {/* Call to Action */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-blue-600">
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto text-center text-white">
-            <h2 className="text-3xl font-bold mb-6">Ready to Write Your Success Story?</h2>
-            <p className="text-xl mb-8">
-              Join the ranks of industry leaders who have transformed their businesses with our solutions.
-            </p>
-            <button className="bg-white text-blue-600 px-8 py-3 rounded-md hover:bg-blue-50 transition-colors font-medium">
+      {/* CTA */}
+      <section className="py-16 lg:py-24 bg-brand-500">
+        <div className="container-main">
+          <div className="max-w-2xl mx-auto text-center">
+            <h2 className="text-2xl lg:text-3xl font-bold text-white mb-4">Ready to Write Your Success Story?</h2>
+            <p className="text-brand-100 mb-8">Join industry leaders who transformed their businesses with our solutions.</p>
+            <Link to="/contact" className="inline-flex items-center gap-2 px-6 py-3 bg-white text-brand-600 font-semibold text-sm rounded-lg hover:bg-brand-50 transition-colors">
               Schedule a Consultation
-            </button>
+              <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
         </div>
       </section>
-
-      <style>{`
-        .hide-scrollbar::-webkit-scrollbar {
-          display: none;
-        }
-        .hide-scrollbar {
-          -ms-overflow-style: none;
-          scrollbar-width: none;
-        }
-      `}</style>
     </div>
   );
 }

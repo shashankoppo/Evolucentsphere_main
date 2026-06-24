@@ -3,8 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import BreadcrumbNav from './components/BreadcrumbNav';
-import LiveChat from './components/LiveChat';
+
 import WhatsAppConnect from './components/WhatsAppConnect';
 import { AdminProvider } from './context/AdminContext';
 import ProtectedAdminRoute from './components/ProtectedAdminRoute';
@@ -12,12 +11,12 @@ import ProtectedAdminRoute from './components/ProtectedAdminRoute';
 // Pages
 import Home from './pages/Home';
 import About from './pages/About';
-import Services from './components/Services';
+import ServicesPage from './pages/Services';
 import Technologies from './pages/Technologies';
 import CaseStudies from './components/CaseStudies';
 import Blog from './components/Blog';
 import InvestorRelations from './pages/InvestorRelations';
-import Contact from './components/Contact';
+import Contact from './pages/Contact';
 import AILab from './pages/AILab';
 import Careers from './pages/Careers';
 import Search from './pages/Search';
@@ -71,12 +70,10 @@ function Layout({ children, hideFooter = false }: { children: React.ReactNode; h
   return (
     <div className="flex flex-col min-h-screen bg-white">
       <Navbar />
-      <main className="flex-grow relative pt-16">
-        <BreadcrumbNav />
+      <main className="flex-grow">
         {children}
       </main>
       {!hideFooter && <Footer />}
-      <LiveChat />
       <WhatsAppConnect />
     </div>
   );
@@ -91,7 +88,7 @@ export default function App() {
             {/* Public Pages */}
             <Route path="/" element={<Layout><Home /></Layout>} />
             <Route path="/about" element={<Layout><About /></Layout>} />
-            <Route path="/services" element={<Layout><Services /></Layout>} />
+            <Route path="/services" element={<Layout><ServicesPage /></Layout>} />
             <Route path="/technologies" element={<Layout><Technologies /></Layout>} />
             <Route path="/case-studies" element={<Layout><CaseStudies /></Layout>} />
             <Route path="/blog" element={<Layout><Blog /></Layout>} />

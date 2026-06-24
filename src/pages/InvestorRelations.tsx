@@ -1,5 +1,6 @@
 import React from 'react';
-import { TrendingUp, FileText, Download, ExternalLink } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { TrendingUp, FileText, Download, ExternalLink, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { dbOperations } from '../lib/db';
 import type { InvestorResource } from '../lib/db';
@@ -24,102 +25,105 @@ export default function InvestorRelations() {
   }, []);
 
   return (
-    <div className="pt-20">
-      <SEOHead 
-        title="Investor Relations | ELSxGlobal"
+    <div>
+      <SEOHead
+        title="Investor Relations"
         description="Access financial reports, earnings presentations, and investor resources. Stay updated with ELSxGlobal's growth and investment opportunities."
-        keywords={[
-          'Investor Relations',
-          'Financial Reports',
-          'Earnings',
-          'Investment Opportunities',
-          'Shareholder Information',
-          'Financial Performance',
-          'Annual Reports',
-          'Quarterly Results'
-        ]}
-        type="website"
       />
 
-      {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-b from-blue-50 to-white">
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+      {/* Hero */}
+      <section className="pt-28 lg:pt-36 pb-16 lg:pb-24 bg-white">
+        <div className="container-main">
+          <div className="max-w-3xl text-center mx-auto">
+            <motion.span initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} className="label mb-4">Investor Relations</motion.span>
+            <motion.h1 initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="text-4xl lg:text-5xl font-bold text-ink mb-6">
               Investor Relations
-            </h1>
-            <p className="text-xl text-gray-600">
-              Discover investment opportunities in the future of business transformation
-            </p>
+            </motion.h1>
+            <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="text-lg text-ink-secondary max-w-2xl mx-auto">
+              Discover investment opportunities in the future of business transformation.
+            </motion.p>
           </div>
         </div>
       </section>
 
       {/* Financial Highlights */}
-      <section className="py-20">
-        <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
-            Financial Performance
-          </h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white p-8 rounded-lg shadow-lg text-center">
-              <TrendingUp className="h-12 w-12 text-blue-600 mx-auto mb-4" />
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">Revenue Growth</h3>
-              <p className="text-4xl font-bold text-blue-600">38%</p>
-              <p className="text-gray-600 mt-2">Year over Year</p>
-            </div>
-            <div className="bg-white p-8 rounded-lg shadow-lg text-center">
-              <FileText className="h-12 w-12 text-blue-600 mx-auto mb-4" />
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">Market Share</h3>
-              <p className="text-4xl font-bold text-blue-600">15%</p>
-              <p className="text-gray-600 mt-2">Global Market Share</p>
-            </div>
-            <div className="bg-white p-8 rounded-lg shadow-lg text-center">
-              <Download className="h-12 w-12 text-blue-600 mx-auto mb-4" />
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">Client Growth</h3>
-              <p className="text-4xl font-bold text-blue-600">45%</p>
-              <p className="text-gray-600 mt-2">New Client Acquisition</p>
-            </div>
+      <section className="section-padding surface">
+        <div className="container-main">
+          <div className="text-center mb-12 lg:mb-16">
+            <span className="label mb-4">Performance</span>
+            <h2 className="text-3xl lg:text-4xl font-bold text-ink mb-4">Financial Highlights</h2>
+            <p className="text-ink-secondary text-lg max-w-2xl mx-auto">Key metrics demonstrating our growth trajectory.</p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-5">
+            <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="card p-6 text-center">
+              <TrendingUp className="h-6 w-6 text-brand-500 mx-auto mb-3" />
+              <h3 className="text-lg font-semibold text-ink mb-2">Revenue Growth</h3>
+              <p className="text-3xl font-bold text-brand-500 mb-1">38%</p>
+              <p className="text-xs text-ink-muted uppercase tracking-wide font-medium">Year over Year</p>
+            </motion.div>
+            <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="card p-6 text-center">
+              <FileText className="h-6 w-6 text-brand-500 mx-auto mb-3" />
+              <h3 className="text-lg font-semibold text-ink mb-2">Market Share</h3>
+              <p className="text-3xl font-bold text-brand-500 mb-1">15%</p>
+              <p className="text-xs text-ink-muted uppercase tracking-wide font-medium">Global Market</p>
+            </motion.div>
+            <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} className="card p-6 text-center">
+              <Download className="h-6 w-6 text-brand-500 mx-auto mb-3" />
+              <h3 className="text-lg font-semibold text-ink mb-2">Client Growth</h3>
+              <p className="text-3xl font-bold text-brand-500 mb-1">45%</p>
+              <p className="text-xs text-ink-muted uppercase tracking-wide font-medium">New Acquisition</p>
+            </motion.div>
           </div>
         </div>
       </section>
 
       {/* Investor Resources */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
-            Investor Resources
-          </h2>
+      <section className="section-padding bg-white">
+        <div className="container-main">
+          <div className="text-center mb-12 lg:mb-16">
+            <span className="label mb-4">Resources</span>
+            <h2 className="text-3xl lg:text-4xl font-bold text-ink mb-4">Investor Resources</h2>
+            <p className="text-ink-secondary text-lg max-w-2xl mx-auto">Access reports, presentations, and financial documents.</p>
+          </div>
           {loading ? (
-            <div className="text-center">
-              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
-              <p className="mt-4 text-gray-600">Loading resources...</p>
+            <div className="text-center py-12">
+              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-brand-500 mx-auto mb-4"></div>
+              <p className="text-sm text-ink-muted">Loading resources...</p>
             </div>
           ) : (
-            <div className="grid md:grid-cols-2 gap-8">
-              {resources.map((resource) => (
-                <div key={resource.id} className="bg-white p-6 rounded-lg shadow-md">
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">{resource.title}</h3>
-                  <p className="text-gray-600 mb-4">Type: {resource.type}</p>
-                  <div className="flex space-x-4">
+            <div className="grid md:grid-cols-2 gap-5">
+              {resources.map((resource, index) => (
+                <motion.div
+                  key={resource.id}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.08 }}
+                  className="card p-6"
+                >
+                  <div className="flex items-center justify-between mb-3">
+                    <h3 className="text-lg font-bold text-ink">{resource.title}</h3>
+                    <span className="px-2.5 py-1 text-xs font-semibold bg-brand-50 text-brand-500 rounded-full">{resource.type}</span>
+                  </div>
+                  <div className="flex items-center gap-4">
                     <Link
                       to={`/investor-relations/${resource.id}`}
-                      className="inline-flex items-center text-blue-600 hover:text-blue-700"
+                      className="inline-flex items-center text-sm font-semibold text-brand-500 hover:text-brand-600 transition-colors"
                     >
                       View Details
-                      <FileText className="ml-2 h-4 w-4" />
+                      <FileText className="ml-1.5 h-4 w-4" />
                     </Link>
                     <a
                       href={resource.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center text-blue-600 hover:text-blue-700"
+                      className="inline-flex items-center text-sm font-semibold text-ink-secondary hover:text-ink transition-colors"
                     >
                       Direct Access
-                      <ExternalLink className="ml-2 h-4 w-4" />
+                      <ExternalLink className="ml-1.5 h-4 w-4" />
                     </a>
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
           )}

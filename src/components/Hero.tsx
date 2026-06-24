@@ -1,154 +1,95 @@
 import React from 'react';
-import { ArrowRight, Brain, Shield, Cpu, Users, MessageCircle, Phone, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { config } from '../lib/config';
+import { ArrowRight, Shield, Users, Clock, Sparkles } from 'lucide-react';
+
+const stats = [
+  { icon: Users, value: '500+', label: 'Global Clients' },
+  { icon: Shield, value: '99.9%', label: 'Uptime SLA' },
+  { icon: Clock, value: '24/7', label: 'Support' },
+  { icon: Sparkles, value: '15+', label: 'Years Experience' },
+];
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[90vh] flex items-center overflow-hidden">
-      {/* Animated Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500 rounded-full filter blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-cyan-500 rounded-full filter blur-3xl animate-pulse delay-1000"></div>
-          <div className="absolute top-1/2 left-1/2 w-72 h-72 bg-indigo-500 rounded-full filter blur-3xl animate-pulse delay-500"></div>
-        </div>
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMSIvPjwvZz48L2c+PC9zdmc+')] opacity-40"></div>
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-white">
+      {/* Background pattern */}
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-20%,rgba(15,90,213,0.08),transparent)]" />
+        <div className="absolute top-20 right-0 w-96 h-96 bg-brand-100/40 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-80 h-80 bg-brand-50/60 rounded-full blur-3xl" />
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(226,232,240,0.4)_1px,transparent_1px),linear-gradient(90deg,rgba(226,232,240,0.4)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_50%,black,transparent)]" />
       </div>
 
-      <div className="container mx-auto px-4 sm:px-6 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left Content */}
-          <div className="text-white">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 mb-6">
-                <Sparkles className="h-4 w-4 text-cyan-400" />
-                <span className="text-sm font-medium text-cyan-100">Flagship Division: ELSxGlobal</span>
-              </div>
-
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-                <span className="bg-gradient-to-r from-white via-cyan-200 to-white bg-clip-text text-transparent">
-                  EvolucentSphere
-                </span>
-              </h1>
-
-              <p className="text-xl sm:text-2xl font-light text-cyan-100 mb-4">
-                Transform. Innovate. Excel.
-              </p>
-
-              <p className="text-lg text-gray-300 mb-8 max-w-xl leading-relaxed">
-                Your trusted partner for comprehensive business transformation. Experience innovation with our BPO, KPO, IT Services, and Business Consultancy solutions powered by cutting-edge technology.
-              </p>
-
-              <div className="flex flex-wrap gap-4 mb-10">
-                <Link
-                  to="/contact"
-                  className="group inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-blue-600 transition-all duration-300 shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 hover:scale-105"
-                >
-                  Transform Your Business
-                  <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                </Link>
-
-                <Link
-                  to="/services"
-                  className="group inline-flex items-center gap-2 px-6 py-3 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-xl border border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105"
-                >
-                  Explore Solutions
-                  <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                </Link>
-
-                <div className="flex gap-2">
-                  <a
-                    href={`https://wa.me/${config.app.contact.phone.replace(/[^0-9]/g, '')}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-4 py-3 bg-green-500 text-white font-medium rounded-xl hover:bg-green-600 transition-all duration-300 hover:scale-105"
-                    aria-label="WhatsApp Support"
-                  >
-                    <MessageCircle className="h-5 w-5" />
-                    <span className="sr-only sm:not-sr-only">Support</span>
-                  </a>
-                  <a
-                    href={`https://wa.me/${config.app.contact.phone2.replace(/[^0-9]/g, '')}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-4 py-3 bg-blue-500 text-white font-medium rounded-xl hover:bg-blue-600 transition-all duration-300 hover:scale-105"
-                    aria-label="WhatsApp Business"
-                  >
-                    <Phone className="h-5 w-5" />
-                    <span className="sr-only sm:not-sr-only">Sales</span>
-                  </a>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Stats */}
-            <motion.div
-              className="grid grid-cols-2 sm:grid-cols-4 gap-6"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-            >
-              {[
-                { icon: Users, value: '500+', label: 'Global Clients' },
-                { icon: Shield, value: '99.9%', label: 'Uptime SLA' },
-                { icon: Cpu, value: '24/7', label: 'Support' },
-                { icon: Brain, value: '15+', label: 'Years Expert' },
-              ].map((stat) => (
-                <div key={stat.label} className="text-center p-3">
-                  <stat.icon className="h-6 w-6 mx-auto mb-2 text-cyan-400" />
-                  <div className="text-2xl sm:text-3xl font-bold text-white">{stat.value}</div>
-                  <div className="text-sm text-gray-400">{stat.label}</div>
-                </div>
-              ))}
-            </motion.div>
-          </div>
-
-          {/* Right - Animated Illustration */}
+      <div className="container-main relative z-10 pt-24 lg:pt-32">
+        <div className="max-w-3xl">
+          {/* Badge */}
           <motion.div
-            className="hidden lg:block relative"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, delay: 0.2 }}
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="mb-6"
           >
-            <div className="relative w-full aspect-square max-w-lg mx-auto">
-              {/* Animated circles */}
-              <div className="absolute inset-0 border-2 border-cyan-500/30 rounded-full animate-spin" style={{ animationDuration: '20s' }}></div>
-              <div className="absolute inset-8 border-2 border-blue-500/30 rounded-full animate-spin" style={{ animationDuration: '15s', animationDirection: 'reverse' }}></div>
-              <div className="absolute inset-16 border-2 border-indigo-500/30 rounded-full animate-spin" style={{ animationDuration: '10s' }}></div>
+            <span className="inline-flex items-center gap-2 px-3 py-1.5 bg-brand-50 border border-brand-200 rounded-full text-xs font-semibold text-brand-600">
+              <Sparkles className="w-3.5 h-3.5" />
+              Flagship Division: ELSxGlobal
+            </span>
+          </motion.div>
 
-              {/* Center icon */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="relative">
-                  <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-2xl blur-2xl opacity-50 animate-pulse"></div>
-                  <div className="relative bg-gradient-to-br from-slate-800 to-slate-900 p-8 rounded-2xl border border-white/10">
-                    <Brain className="h-20 w-20 text-cyan-400" />
-                  </div>
+          {/* Headline */}
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-ink mb-6 leading-[1.1]"
+          >
+            Transform Your Business with{' '}
+            <span className="gradient-text">AI-Powered Solutions</span>
+          </motion.h1>
+
+          {/* Subheadline */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.35 }}
+            className="text-lg sm:text-xl text-ink-secondary max-w-xl mb-8 leading-relaxed"
+          >
+            EvolucentSphere delivers transformative BPO, KPO, IT services, and strategic consulting
+            across Banking, Healthcare, Manufacturing, and Retail industries.
+          </motion.p>
+
+          {/* CTAs */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="flex flex-wrap gap-3 mb-16"
+          >
+            <Link to="/contact" className="btn-primary">
+              Transform Your Business
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+            <Link to="/services" className="btn-secondary">
+              Explore Solutions
+            </Link>
+          </motion.div>
+
+          {/* Stats */}
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.65 }}
+            className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6"
+          >
+            {stats.map((stat, i) => (
+              <div key={i} className="flex flex-col gap-1">
+                <div className="flex items-center gap-1.5 text-brand-500 mb-0.5">
+                  <stat.icon className="w-4 h-4" />
+                  <span className="text-2xl font-bold text-ink">{stat.value}</span>
                 </div>
+                <span className="text-xs text-ink-muted font-medium">{stat.label}</span>
               </div>
-
-              {/* Floating icons */}
-              {[
-                { icon: Shield, className: 'top-10 right-20', delay: 0 },
-                { icon: Users, className: 'bottom-20 right-10', delay: 0.5 },
-                { icon: Cpu, className: 'top-1/3 left-5', delay: 1 },
-              ].map((item, i) => (
-                <motion.div
-                  key={i}
-                  className={`absolute ${item.className} p-3 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20`}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.5 + item.delay }}
-                >
-                  <item.icon className="h-6 w-6 text-cyan-300" />
-                </motion.div>
-              ))}
-            </div>
+            ))}
           </motion.div>
         </div>
       </div>
