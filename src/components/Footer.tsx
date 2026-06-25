@@ -117,7 +117,7 @@ export default function Footer() {
               <h2 className="text-2xl lg:text-3xl font-bold text-white mb-3">
                 Ready to Scale Your Business or Invest in the Future?
               </h2>
-              <p className="text-ink-secondary max-w-lg mb-6">
+              <p className="text-white/60 max-w-lg mb-6">
                 EvolucentSphere is a high-growth technology and services company. 
                 Request a consultation, explore our investor resources, or join our partner ecosystem.
               </p>
@@ -139,7 +139,7 @@ export default function Footer() {
                 <div key={item.label} className="bg-white/5 border border-white/10 rounded-xl p-4">
                   <item.icon className="w-5 h-5 text-brand-400 mb-2" />
                   <div className="text-xl font-bold text-white">{item.value}</div>
-                  <div className="text-xs text-ink-muted">{item.label}</div>
+                  <div className="text-xs text-white/40">{item.label}</div>
                 </div>
               ))}
             </div>
@@ -153,7 +153,7 @@ export default function Footer() {
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
             <div>
               <h3 className="text-lg font-semibold text-white mb-1">Stay ahead of the curve</h3>
-              <p className="text-sm text-ink-secondary">
+              <p className="text-sm text-white/60">
                 Get industry insights, technology trends, and exclusive reports delivered to your inbox.
               </p>
             </div>
@@ -163,7 +163,7 @@ export default function Footer() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email"
-                className="flex-1 px-4 py-2.5 bg-white/10 border border-white/20 rounded-lg text-sm text-white placeholder:text-ink-muted focus:outline-none focus:border-brand-400 transition-colors"
+                className="flex-1 px-4 py-2.5 bg-white/10 border border-white/20 rounded-lg text-sm text-white placeholder:text-white/40 focus:outline-none focus:border-brand-400 transition-colors"
                 required
               />
               <button
@@ -199,32 +199,32 @@ export default function Footer() {
               </div>
               <div className="flex flex-col leading-none">
                 <span className="text-base font-bold text-white tracking-tight">EvolucentSphere</span>
-                <span className="text-[10px] font-medium text-ink-muted tracking-wide">FLAGSHIP DIVISION: ELSxGLOBAL</span>
+                <span className="text-[10px] font-medium text-white/40 tracking-wide">FLAGSHIP DIVISION: ELSxGLOBAL</span>
               </div>
             </Link>
-            <p className="text-sm text-ink-secondary leading-relaxed mb-6 max-w-xs">
+            <p className="text-sm text-white/60 leading-relaxed mb-6 max-w-xs">
               Delivering comprehensive business solutions through AI-powered technology and strategic outsourcing across Banking, Healthcare, Manufacturing, and Retail.
             </p>
 
             <div className="space-y-2 text-sm mb-6">
-              <div className="flex items-center gap-2 text-ink-secondary">
-                <Phone className="w-4 h-4 text-ink-muted flex-shrink-0" />
+              <div className="flex items-center gap-2 text-white/60">
+                <Phone className="w-4 h-4 text-white/40 flex-shrink-0" />
                 <span>+91 (724) 755-8873</span>
               </div>
-              <div className="flex items-center gap-2 text-ink-secondary">
-                <Phone className="w-4 h-4 text-ink-muted flex-shrink-0" />
+              <div className="flex items-center gap-2 text-white/60">
+                <Phone className="w-4 h-4 text-white/40 flex-shrink-0" />
                 <span>+91 (877) 042-2622</span>
               </div>
-              <div className="flex items-center gap-2 text-ink-secondary">
-                <Mail className="w-4 h-4 text-ink-muted flex-shrink-0" />
+              <div className="flex items-center gap-2 text-white/60">
+                <Mail className="w-4 h-4 text-white/40 flex-shrink-0" />
                 <span>contact@evolucentsphere.com</span>
               </div>
-              <div className="flex items-center gap-2 text-ink-secondary">
-                <MessageCircle className="w-4 h-4 text-ink-muted flex-shrink-0" />
+              <div className="flex items-center gap-2 text-white/60">
+                <MessageCircle className="w-4 h-4 text-white/40 flex-shrink-0" />
                 <span>WhatsApp: +91 877-042-2622</span>
               </div>
-              <div className="flex items-center gap-2 text-ink-secondary">
-                <MapPin className="w-4 h-4 text-ink-muted flex-shrink-0" />
+              <div className="flex items-center gap-2 text-white/60">
+                <MapPin className="w-4 h-4 text-white/40 flex-shrink-0" />
                 <span>3223/4A Tech Park, Jabalpur, India</span>
               </div>
             </div>
@@ -236,7 +236,7 @@ export default function Footer() {
                   href={s.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 rounded-lg bg-white/5 hover:bg-white/10 text-ink-secondary hover:text-white transition-colors"
+                  className="p-2 rounded-lg bg-white/5 hover:bg-white/10 text-white/60 hover:text-white transition-colors"
                   aria-label={s.name}
                 >
                   <s.icon className="w-4 h-4" />
@@ -251,7 +251,7 @@ export default function Footer() {
             <ul className="space-y-2">
               {footerLinks.services.map((link) => (
                 <li key={link.name}>
-                  <Link to={link.href} className="text-sm text-ink-secondary hover:text-white transition-colors">
+                  <Link to={link.href} className="text-sm text-white/60 hover:text-white transition-colors">
                     {link.name}
                   </Link>
                 </li>
@@ -265,7 +265,7 @@ export default function Footer() {
             <ul className="space-y-2">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
-                  <Link to={link.href} className="text-sm text-ink-secondary hover:text-white transition-colors">
+                  <Link to={link.href} className="text-sm text-white/60 hover:text-white transition-colors">
                     {link.name}
                   </Link>
                 </li>
@@ -279,7 +279,7 @@ export default function Footer() {
             <ul className="space-y-2">
               {footerLinks.industries.map((link) => (
                 <li key={link.name}>
-                  <Link to={link.href} className="text-sm text-ink-secondary hover:text-white transition-colors">
+                  <Link to={link.href} className="text-sm text-white/60 hover:text-white transition-colors">
                     {link.name}
                   </Link>
                 </li>
@@ -292,7 +292,7 @@ export default function Footer() {
             <h4 className="text-sm font-semibold text-white mb-4">Awards</h4>
             <ul className="space-y-2 mb-6">
               {awards.map((award) => (
-                <li key={award.name} className="flex items-center gap-2 text-sm text-ink-secondary">
+                <li key={award.name} className="flex items-center gap-2 text-sm text-white/60">
                   <award.icon className="w-3 h-3 text-brand-500 flex-shrink-1" />
                   {award.name}
                 </li>
@@ -301,9 +301,9 @@ export default function Footer() {
             <h4 className="text-sm font-semibold text-white mb-4">Global Offices</h4>
             <ul className="space-y-2">
               {offices.map((office) => (
-                <li key={office.city} className="text-sm text-ink-secondary">
+                <li key={office.city} className="text-sm text-white/60">
                   <span className="text-white">{office.city}</span>, {office.country}
-                  <span className="text-ink-muted text-xs ml-1">({office.role})</span>
+                  <span className="text-white/40 text-xs ml-1">({office.role})</span>
                 </li>
               ))}
             </ul>
@@ -314,18 +314,18 @@ export default function Footer() {
       {/* Bottom Bar */}
       <div className="border-t border-white/10">
         <div className="container-main py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-ink-muted">
+          <p className="text-sm text-white/40">
             &copy; {new Date().getFullYear()} EvolucentSphere Pvt. Ltd. All rights reserved. Flagship Division: ELSxGlobal.
           </p>
           <div className="flex items-center gap-6 flex-wrap">
-            <span className="text-xs text-ink-muted">
+            <span className="text-xs text-white/40">
               BPO &bull; KPO &bull; IT Services &bull; Consulting
             </span>
             {footerLinks.legal.map((link) => (
               <Link
                 key={link.name}
                 to={link.href}
-                className="text-xs text-ink-muted hover:text-white transition-colors"
+                className="text-xs text-white/40 hover:text-white transition-colors"
               >
                 {link.name}
               </Link>
