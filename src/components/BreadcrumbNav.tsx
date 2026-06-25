@@ -46,7 +46,7 @@ export default function BreadcrumbNav() {
   if (breadcrumbs.length === 0) return null;
 
   return (
-    <nav className="bg-surface border-b border-gray-200 py-3" aria-label="breadcrumb">
+    <nav className="bg-surface border-b border-border py-3" aria-label="breadcrumb">
       <div className="container-main">
         <ol className="flex items-center space-x-1 text-sm">
           <li>

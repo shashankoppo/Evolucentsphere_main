@@ -138,7 +138,7 @@ export default function LiveChat() {
                   className={`max-w-3/4 p-3 rounded-lg ${
                     message.type === 'user'
                       ? 'bg-blue-600 text-white'
-                      : 'bg-gray-100'
+                      : 'bg-surface'
                   }`}
                 >
                   <div className="flex items-center space-x-2 mb-1">
@@ -206,7 +206,7 @@ export default function LiveChat() {
               </button>
             </div>
             
-            <div className="mt-2 text-xs text-gray-500 flex items-center justify-between">
+            <div className="mt-2 text-xs text-ink-muted flex items-center justify-between">
               <div className="flex items-center">
                 <Zap className="h-3 w-3 mr-1" />
                 <span>AI Powered</span>

@@ -48,7 +48,7 @@ export default function AdminOverview() {
               <div className={`p-2 rounded-lg ${card.color}`}>
                 <card.icon className="h-6 w-6" />
               </div>
-              <ArrowRight className="h-4 w-4 text-gray-400 group-hover:text-ink-secondary transition-colors" />
+              <ArrowRight className="h-4 w-4 text-ink-muted group-hover:text-ink-secondary transition-colors" />
             </div>
             <div className="text-3xl font-bold text-ink">{card.count}</div>
             <div className="text-sm text-ink-secondary mt-1">{card.name}</div>

@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-
+import ScrollToTop from './components/ScrollToTop';
 import WhatsAppConnect from './components/WhatsAppConnect';
 import { AdminProvider } from './context/AdminContext';
 import ProtectedAdminRoute from './components/ProtectedAdminRoute';
@@ -74,6 +74,7 @@ function Layout({ children, hideFooter = false }: { children: React.ReactNode; h
         {children}
       </main>
       {!hideFooter && <Footer />}
+      <ScrollToTop />
       <WhatsAppConnect />
     </div>
   );

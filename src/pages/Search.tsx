@@ -196,7 +196,7 @@ export default function Search() {
               className={`label cursor-pointer ${
                 filter === 'all'
                   ? 'bg-brand-500 text-white'
-                  : 'bg-gray-100 text-ink-secondary hover:bg-gray-200'
+                  : 'bg-surface text-ink-secondary hover:bg-surface'
               }`}
             >
               All Results ({results.length})
@@ -206,7 +206,7 @@ export default function Search() {
               className={`label cursor-pointer ${
                 filter === 'service'
                   ? 'bg-brand-500 text-white'
-                  : 'bg-gray-100 text-ink-secondary hover:bg-gray-200'
+                  : 'bg-surface text-ink-secondary hover:bg-surface'
               }`}
             >
               Services ({results.filter(r => r.type === 'service').length})
@@ -216,7 +216,7 @@ export default function Search() {
               className={`label cursor-pointer ${
                 filter === 'page'
                   ? 'bg-brand-500 text-white'
-                  : 'bg-gray-100 text-ink-secondary hover:bg-gray-200'
+                  : 'bg-surface text-ink-secondary hover:bg-surface'
               }`}
             >
               Pages ({results.filter(r => r.type === 'page').length})
@@ -234,7 +234,7 @@ export default function Search() {
           {/* No Query */}
           {!query && !loading && (
             <div className="text-center py-12">
-              <SearchIcon className="h-16 w-16 text-gray-400 mx-auto mb-4" />
+              <SearchIcon className="h-16 w-16 text-ink-muted mx-auto mb-4" />
               <h2 className="text-xl font-semibold text-ink mb-2">
                 Enter a search term
               </h2>
@@ -247,7 +247,7 @@ export default function Search() {
           {/* No Results */}
           {query && !loading && filteredResults.length === 0 && (
             <div className="text-center py-12">
-              <SearchIcon className="h-16 w-16 text-gray-400 mx-auto mb-4" />
+              <SearchIcon className="h-16 w-16 text-ink-muted mx-auto mb-4" />
               <h2 className="text-xl font-semibold text-ink mb-2">
                 No results found
               </h2>

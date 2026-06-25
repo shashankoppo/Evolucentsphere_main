@@ -26,7 +26,7 @@ export default function AdminContacts() {
         <div className="text-center section-padding text-ink-secondary">Loading...</div>
       ) : submissions.length === 0 ? (
         <div className="card p-12 text-center">
-          <Users className="h-12 w-12 text-gray-300 mx-auto mb-4" />
+          <Users className="h-12 w-12 text-ink-muted mx-auto mb-4" />
           <p className="text-ink-secondary">No contact submissions yet.</p>
         </div>
       ) : (
@@ -41,7 +41,7 @@ export default function AdminContacts() {
                     {sub.company && <span className="flex items-center"><Building className="h-4 w-4 mr-1" />{sub.company}</span>}
                   </div>
                 </div>
-                <span className="text-xs text-gray-400">
+                <span className="text-xs text-ink-muted">
                   {sub.created_at ? new Date(sub.created_at).toLocaleDateString() : ''}
                 </span>
               </div>

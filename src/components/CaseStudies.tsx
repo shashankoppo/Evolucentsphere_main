@@ -100,7 +100,7 @@ export default function CaseStudies() {
       </section>
 
       {/* Filter */}
-      <section className="py-6 bg-white border-y border-gray-100">
+      <section className="py-6 bg-white border-y border-border">
         <div className="container-main">
           <div className="flex flex-wrap gap-2">
             <button
@@ -108,7 +108,7 @@ export default function CaseStudies() {
               className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
                 selectedIndustry === 'all'
                   ? 'bg-brand-500 text-white'
-                  : 'bg-gray-50 text-ink-secondary hover:bg-gray-100'
+                  : 'bg-surface text-ink-secondary hover:bg-surface'
               }`}
             >
               All
@@ -120,7 +120,7 @@ export default function CaseStudies() {
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
                   selectedIndustry === industry
                     ? 'bg-brand-500 text-white'
-                    : 'bg-gray-50 text-ink-secondary hover:bg-gray-100'
+                    : 'bg-surface text-ink-secondary hover:bg-surface'
                 }`}
               >
                 {industry}

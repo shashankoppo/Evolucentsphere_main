@@ -216,7 +216,7 @@ export default function Sitemap() {
             <div className="max-w-4xl mx-auto">
               <h2 className="text-2xl font-bold text-ink mb-6">XML Sitemap Preview</h2>
               <div className="card">
-                <div className="bg-gray-100 rounded-md p-4 max-h-96 overflow-y-auto">
+                <div className="bg-surface rounded-md p-4 max-h-96 overflow-y-auto">
                   <pre className="text-xs text-ink whitespace-pre-wrap">
                     {xmlSitemap.substring(0, 2000)}
                     {xmlSitemap.length > 2000 && '...'}

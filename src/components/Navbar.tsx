@@ -20,6 +20,11 @@ const navLinks = [
   { name: 'Contact', href: '/contact' },
 ];
 
+function isActiveLink(pathname: string, href: string): boolean {
+  if (href === '/') return pathname === '/';
+  return pathname === href || pathname.startsWith(href + '/');
+}
+
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
@@ -63,7 +68,7 @@ export default function Navbar() {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
-            ? 'bg-white/90 backdrop-blur-xl shadow-soft border-b border-gray-100'
+            ? 'bg-white/95 backdrop-blur-xl shadow-md border-b border-border'
             : 'bg-transparent'
         }`}
       >
@@ -91,10 +96,10 @@ export default function Navbar() {
                 >
                   <Link
                     to={link.href}
-                    className={`flex items-center gap-1 px-3 py-2 text-sm font-medium rounded-lg transition-colors ${
-                      location.pathname === link.href || location.pathname.startsWith(link.href + '/')
-                        ? 'text-brand-500'
-                        : 'text-ink-secondary hover:text-ink hover:bg-gray-50'
+                    className={`nav-link flex items-center gap-1 text-sm ${
+                      isActiveLink(location.pathname, link.href)
+                        ? 'active'
+                        : 'text-ink-secondary'
                     }`}
                   >
                     {link.name}
@@ -116,7 +121,7 @@ export default function Navbar() {
                             <Link
                               key={child.name}
                               to={child.href}
-                              className="flex flex-col gap-0.5 px-4 py-3 rounded-lg hover:bg-gray-50 transition-colors"
+                              className="flex flex-col gap-0.5 px-4 py-3 rounded-lg hover:bg-surface transition-colors"
                             >
                               <span className="text-sm font-semibold text-ink">{child.name}</span>
                               <span className="text-xs text-ink-muted">{child.desc}</span>
@@ -141,7 +146,7 @@ export default function Navbar() {
               </Link>
               <button
                 onClick={() => setIsMobileOpen(!isMobileOpen)}
-                className="lg:hidden p-2 text-ink-secondary hover:text-ink hover:bg-gray-50 rounded-lg transition-colors"
+                className="lg:hidden p-2 text-ink-secondary hover:text-ink hover:bg-surface rounded-lg transition-colors"
                 aria-label="Toggle menu"
               >
                 {isMobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -172,7 +177,7 @@ export default function Navbar() {
               <div className="flex flex-col h-full">
                 <div className="flex items-center justify-between p-4 border-b border-gray-100">
                   <span className="text-sm font-semibold text-ink">Menu</span>
-                  <button onClick={() => setIsMobileOpen(false)} className="p-2 hover:bg-gray-50 rounded-lg">
+                  <button onClick={() => setIsMobileOpen(false)} className="p-2 hover:bg-surface rounded-lg">
                     <X className="w-5 h-5 text-ink-secondary" />
                   </button>
                 </div>
@@ -185,7 +190,7 @@ export default function Navbar() {
                         className={`flex items-center px-4 py-3 text-sm font-medium transition-colors ${
                           location.pathname === link.href
                             ? 'text-brand-500 bg-brand-50'
-                            : 'text-ink hover:bg-gray-50'
+                            : 'text-ink hover:bg-surface'
                         }`}
                         onClick={() => !link.children && setIsMobileOpen(false)}
                       >
@@ -197,7 +202,7 @@ export default function Navbar() {
                             <Link
                               key={child.name}
                               to={child.href}
-                              className="flex flex-col px-4 py-2 text-sm hover:bg-gray-50 transition-colors"
+                              className="flex flex-col px-4 py-2 text-sm hover:bg-surface transition-colors"
                               onClick={() => setIsMobileOpen(false)}
                             >
                               <span className="text-ink">{child.name}</span>

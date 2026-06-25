@@ -31,7 +31,7 @@ export default function AdminInvestorResources() {
         <div className="text-center section-padding text-ink-secondary">Loading...</div>
       ) : resources.length === 0 ? (
         <div className="card p-12 text-center">
-          <FileText className="h-12 w-12 text-gray-300 mx-auto mb-4" />
+          <FileText className="h-12 w-12 text-ink-muted mx-auto mb-4" />
           <p className="text-ink-secondary">No investor resources yet.</p>
         </div>
       ) : (
@@ -45,22 +45,22 @@ export default function AdminInvestorResources() {
                 <th className="text-right px-6 py-3 text-xs font-medium text-ink-secondary uppercase">Actions</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-gray-200">
+            <tbody className="divide-y divide-border">
               {resources.map((resource) => (
-                <tr key={resource.id} className="hover:bg-gray-50">
+                <tr key={resource.id} className="hover:bg-surface">
                   <td className="px-6 py-4">
                     <div className="font-medium text-ink">{resource.title}</div>
                   </td>
                   <td className="px-6 py-4">
                     <span className="label">{resource.type}</span>
                   </td>
-                  <td className="px-6 py-4 text-sm text-gray-500">
+                  <td className="px-6 py-4 text-sm text-ink-muted">
                     {new Date(resource.created_at).toLocaleDateString()}
                   </td>
                   <td className="px-6 py-4 text-right">
                     <div className="flex items-center justify-end space-x-2">
-                      <a href={resource.url} target="_blank" rel="noopener noreferrer" className="p-1.5 text-gray-400 hover:text-blue-600"><Download className="h-4 w-4" /></a>
-                      <button className="p-1.5 text-gray-400 hover:text-blue-600"><Edit className="h-4 w-4" /></button>
+                      <a href={resource.url} target="_blank" rel="noopener noreferrer" className="p-1.5 text-ink-muted hover:text-blue-600"><Download className="h-4 w-4" /></a>
+                      <button className="p-1.5 text-ink-muted hover:text-blue-600"><Edit className="h-4 w-4" /></button>
                       <button className="p-1.5 text-gray-400 hover:text-red-600"><Trash2 className="h-4 w-4" /></button>
                     </div>
                   </td>

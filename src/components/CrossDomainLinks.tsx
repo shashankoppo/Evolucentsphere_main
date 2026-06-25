@@ -282,7 +282,7 @@ export default function CrossDomainLinks({
               <h3 className={`${layout === 'inline' ? 'text-sm' : 'text-lg'} font-bold text-ink group-hover:text-blue-600 transition-colors`}>
                 {link.name}
               </h3>
-              <ExternalLink className={`${layout === 'inline' ? 'h-3 w-3' : 'h-4 w-4'} text-gray-400 group-hover:text-blue-600 transition-colors ${layout === 'grid' ? 'ml-2' : ''}`} />
+              <ExternalLink className={`${layout === 'inline' ? 'h-3 w-3' : 'h-4 w-4'} text-ink-muted group-hover:text-blue-600 transition-colors ${layout === 'grid' ? 'ml-2' : ''}`} />
             </div>
 
             {layout !== 'inline' && (
@@ -358,7 +358,7 @@ export const SEOFooterLinks = () => (
           <strong>EvolucentSphere Pvt. Ltd.</strong> - Delivering comprehensive business solutions 
           across multiple domains and industries worldwide since 2009.
         </p>
-        <div className="mt-4 flex flex-wrap justify-center gap-4 text-sm text-gray-500">
+        <div className="mt-4 flex flex-wrap justify-center gap-4 text-sm text-ink-muted">
           <span>🌍 Global Reach</span>
           <span>🏆 Industry Leadership</span>
           <span>🚀 Innovation Excellence</span>

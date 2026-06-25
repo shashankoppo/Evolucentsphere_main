@@ -134,7 +134,7 @@ export default function Contact() {
                       onChange={handleChange}
                       required
                       placeholder="John Smith"
-                      className="w-full px-3.5 py-2.5 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand-200 focus:border-brand-400 transition-all"
+                      className="w-full px-3.5 py-2.5 border border-border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand-200 focus:border-brand-400 transition-all"
                     />
                   </div>
                   <div>
@@ -146,7 +146,7 @@ export default function Contact() {
                       onChange={handleChange}
                       required
                       placeholder="john@company.com"
-                      className="w-full px-3.5 py-2.5 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand-200 focus:border-brand-400 transition-all"
+                      className="w-full px-3.5 py-2.5 border border-border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand-200 focus:border-brand-400 transition-all"
                     />
                   </div>
                 </div>
@@ -160,7 +160,7 @@ export default function Contact() {
                       onChange={handleChange}
                       required
                       placeholder="Your company"
-                      className="w-full px-3.5 py-2.5 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand-200 focus:border-brand-400 transition-all"
+                      className="w-full px-3.5 py-2.5 border border-border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand-200 focus:border-brand-400 transition-all"
                     />
                   </div>
                   <div>
@@ -169,7 +169,7 @@ export default function Contact() {
                       name="service"
                       value={formData.service}
                       onChange={handleChange}
-                      className="w-full px-3.5 py-2.5 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand-200 focus:border-brand-400 transition-all bg-white"
+                      className="w-full px-3.5 py-2.5 border border-border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand-200 focus:border-brand-400 transition-all bg-white"
                     >
                       <option value="">Select a service</option>
                       <option value="it">IT Services</option>
@@ -188,7 +188,7 @@ export default function Contact() {
                     required
                     rows={4}
                     placeholder="Tell us about your project or challenge..."
-                    className="w-full px-3.5 py-2.5 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand-200 focus:border-brand-400 transition-all resize-none"
+                    className="w-full px-3.5 py-2.5 border border-border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand-200 focus:border-brand-400 transition-all resize-none"
                   />
                 </div>
                 <button

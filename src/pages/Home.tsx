@@ -123,9 +123,9 @@ export default function Home() {
       <Hero />
 
       {/* ─── 2. Quick Stats Bar ─── */}
-      <section className="border-y border-gray-100 bg-white">
+      <section className="border-y border-border bg-white">
         <div className="container-main">
-          <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-gray-100">
+          <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-border">
             {metrics.map((m, i) => (
               <motion.div
                 key={i}
@@ -463,12 +463,12 @@ export default function Home() {
                 <div className="text-2xl font-bold text-ink">30+</div>
                 <div className="text-xs text-ink-muted uppercase tracking-wide">Countries</div>
               </div>
-              <div className="w-px h-8 bg-gray-100" />
+              <div className="w-px h-8 bg-surface" />
               <div className="text-center">
                 <div className="text-2xl font-bold text-ink">5</div>
                 <div className="text-xs text-ink-muted uppercase tracking-wide">Global Offices</div>
               </div>
-              <div className="w-px h-8 bg-gray-100" />
+              <div className="w-px h-8 bg-surface" />
               <div className="text-center">
                 <div className="text-2xl font-bold text-ink">24/7</div>
                 <div className="text-xs text-ink-muted uppercase tracking-wide">Support</div>

@@ -105,21 +105,21 @@ export default function Contact() {
                   <div className="grid sm:grid-cols-2 gap-5">
                     <div>
                       <label className="block text-sm font-medium text-ink mb-1.5">Full Name</label>
-                      <input type="text" name="name" value={formData.name} onChange={handleChange} required placeholder="John Smith" className="w-full px-3.5 py-2.5 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand-200 focus:border-brand-400 transition-all" />
+                      <input type="text" name="name" value={formData.name} onChange={handleChange} required placeholder="John Smith" className="w-full px-3.5 py-2.5 border border-border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand-200 focus:border-brand-400 transition-all" />
                     </div>
                     <div>
                       <label className="block text-sm font-medium text-ink mb-1.5">Email</label>
-                      <input type="email" name="email" value={formData.email} onChange={handleChange} required placeholder="john@company.com" className="w-full px-3.5 py-2.5 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand-200 focus:border-brand-400 transition-all" />
+                      <input type="email" name="email" value={formData.email} onChange={handleChange} required placeholder="john@company.com" className="w-full px-3.5 py-2.5 border border-border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand-200 focus:border-brand-400 transition-all" />
                     </div>
                   </div>
                   <div className="grid sm:grid-cols-2 gap-5">
                     <div>
                       <label className="block text-sm font-medium text-ink mb-1.5">Company</label>
-                      <input type="text" name="company" value={formData.company} onChange={handleChange} required placeholder="Your company" className="w-full px-3.5 py-2.5 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand-200 focus:border-brand-400 transition-all" />
+                      <input type="text" name="company" value={formData.company} onChange={handleChange} required placeholder="Your company" className="w-full px-3.5 py-2.5 border border-border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand-200 focus:border-brand-400 transition-all" />
                     </div>
                     <div>
                       <label className="block text-sm font-medium text-ink mb-1.5">Service Interest</label>
-                      <select name="service" value={formData.service} onChange={handleChange} className="w-full px-3.5 py-2.5 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand-200 focus:border-brand-400 transition-all bg-white">
+                      <select name="service" value={formData.service} onChange={handleChange} className="w-full px-3.5 py-2.5 border border-border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand-200 focus:border-brand-400 transition-all bg-white">
                         <option value="">Select a service</option>
                         <option value="it">IT Services</option>
                         <option value="bpo">BPO Services</option>
@@ -130,7 +130,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-ink mb-1.5">How can we help?</label>
-                    <textarea name="message" value={formData.message} onChange={handleChange} required rows={4} placeholder="Tell us about your project or challenge..." className="w-full px-3.5 py-2.5 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand-200 focus:border-brand-400 transition-all resize-none" />
+                    <textarea name="message" value={formData.message} onChange={handleChange} required rows={4} placeholder="Tell us about your project or challenge..." className="w-full px-3.5 py-2.5 border border-border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand-200 focus:border-brand-400 transition-all resize-none" />
                   </div>
                   <button type="submit" disabled={isSubmitting} className="btn-primary w-full disabled:opacity-60">
                     {isSubmitting ? (

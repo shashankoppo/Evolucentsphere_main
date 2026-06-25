@@ -45,20 +45,20 @@ export default function AdminBlog() {
                 <th className="text-right px-6 py-3 text-xs font-medium text-ink-secondary uppercase">Actions</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-gray-200">
+            <tbody className="divide-y divide-border">
               {posts.map((post) => (
-                <tr key={post.id} className="hover:bg-gray-50">
+                <tr key={post.id} className="hover:bg-surface">
                   <td className="px-6 py-4">
                     <div className="font-medium text-ink">{post.title}</div>
-                    <div className="text-sm text-gray-500 truncate max-w-md">{post.content.substring(0, 80)}...</div>
+                    <div className="text-sm text-ink-muted truncate max-w-md">{post.content.substring(0, 80)}...</div>
                   </td>
                   <td className="px-6 py-4 text-sm text-ink-secondary">{post.author}</td>
-                  <td className="px-6 py-4 text-sm text-gray-500">
+                  <td className="px-6 py-4 text-sm text-ink-muted">
                     {new Date(post.created_at).toLocaleDateString()}
                   </td>
                   <td className="px-6 py-4 text-right">
                     <div className="flex items-center justify-end space-x-2">
-                      <button className="p-1.5 text-gray-400 hover:text-blue-600"><Edit className="h-4 w-4" /></button>
+                      <button className="p-1.5 text-ink-muted hover:text-blue-600"><Edit className="h-4 w-4" /></button>
                       <button className="p-1.5 text-gray-400 hover:text-red-600"><Trash2 className="h-4 w-4" /></button>
                     </div>
                   </td>
