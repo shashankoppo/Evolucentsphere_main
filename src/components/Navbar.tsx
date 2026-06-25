@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, ChevronDown, Brain, ArrowRight } from 'lucide-react';
+import { Menu, X, ChevronDown, Brain, ArrowRight, ExternalLink } from 'lucide-react';
 
 const navLinks = [
   { name: 'Home', href: '/' },
@@ -13,10 +13,40 @@ const navLinks = [
       { name: 'BPO Services', href: '/bpo-services', desc: 'Business process outsourcing' },
       { name: 'KPO Services', href: '/kpo-services', desc: 'Knowledge process outsourcing' },
       { name: 'Consultancy', href: '/consultancy', desc: 'Strategic business consulting' },
+      { name: 'Enterprise IT', href: '/enterprise-it', desc: 'Enterprise infrastructure solutions' },
     ],
   },
-  { name: 'About', href: '/about' },
-  { name: 'Careers', href: '/careers' },
+  {
+    name: 'Industries',
+    href: '/industries',
+    children: [
+      { name: 'Banking & Finance', href: '/industries/banking' },
+      { name: 'Healthcare', href: '/industries/healthcare' },
+      { name: 'Manufacturing', href: '/industries/manufacturing' },
+      { name: 'Retail', href: '/industries/retail' },
+      { name: 'Insurance', href: '/industries/insurance' },
+      { name: 'Government', href: '/industries/government' },
+    ],
+  },
+  {
+    name: 'Company',
+    href: '/about',
+    children: [
+      { name: 'About Us', href: '/about' },
+      { name: 'Careers', href: '/careers' },
+      { name: 'Investor Relations', href: '/investor-relations' },
+      { name: 'Innovation Lab', href: '/ai-lab' },
+    ],
+  },
+  {
+    name: 'Insights',
+    href: '/blog',
+    children: [
+      { name: 'Blog', href: '/blog' },
+      { name: 'Case Studies', href: '/case-studies' },
+      { name: 'Technologies', href: '/technologies' },
+    ],
+  },
   { name: 'Contact', href: '/contact' },
 ];
 
@@ -29,6 +59,7 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
   const location = useLocation();
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -41,6 +72,7 @@ export default function Navbar() {
   useEffect(() => {
     setIsMobileOpen(false);
     setActiveDropdown(null);
+    setMobileExpanded(null);
   }, [location]);
 
   useEffect(() => {
@@ -103,7 +135,9 @@ export default function Navbar() {
                     }`}
                   >
                     {link.name}
-                    {link.children && <ChevronDown className="w-4 h-4 transition-transform" />}
+                    {link.children && (
+                      <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${activeDropdown === link.name ? 'rotate-180' : ''}`} />
+                    )}
                   </Link>
 
                   {/* Dropdown */}
@@ -116,15 +150,20 @@ export default function Navbar() {
                         transition={{ duration: 0.15 }}
                         className="absolute top-full left-0 pt-2 w-72"
                       >
-                        <div className="bg-white rounded-xl shadow-strong border border-gray-100 p-2">
+                        <div className="bg-white rounded-xl shadow-lg border border-border p-2">
                           {link.children.map((child) => (
                             <Link
                               key={child.name}
                               to={child.href}
-                              className="flex flex-col gap-0.5 px-4 py-3 rounded-lg hover:bg-surface transition-colors"
+                              className="flex items-center justify-between px-4 py-3 rounded-lg hover:bg-surface transition-colors group"
                             >
-                              <span className="text-sm font-semibold text-ink">{child.name}</span>
-                              <span className="text-xs text-ink-muted">{child.desc}</span>
+                              <div className="flex flex-col">
+                                <span className="text-sm font-semibold text-ink group-hover:text-brand-500 transition-colors">{child.name}</span>
+                                {child.desc && (
+                                  <span className="text-xs text-ink-muted">{child.desc}</span>
+                                )}
+                              </div>
+                              <ArrowRight className="w-4 h-4 text-ink-muted opacity-0 group-hover:opacity-100 transition-opacity" />
                             </Link>
                           ))}
                         </div>
@@ -141,7 +180,7 @@ export default function Navbar() {
                 to="/contact"
                 className="hidden lg:inline-flex items-center gap-2 btn-primary text-sm"
               >
-                Get Started
+                Get a Proposal
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <button
@@ -172,10 +211,10 @@ export default function Navbar() {
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'spring', damping: 30, stiffness: 300 }}
-              className="absolute right-0 top-0 bottom-0 w-full max-w-sm bg-white shadow-strong"
+              className="absolute right-0 top-0 bottom-0 w-full max-w-sm bg-white shadow-lg"
             >
               <div className="flex flex-col h-full">
-                <div className="flex items-center justify-between p-4 border-b border-gray-100">
+                <div className="flex items-center justify-between p-4 border-b border-border">
                   <span className="text-sm font-semibold text-ink">Menu</span>
                   <button onClick={() => setIsMobileOpen(false)} className="p-2 hover:bg-surface rounded-lg">
                     <X className="w-5 h-5 text-ink-secondary" />
@@ -185,28 +224,39 @@ export default function Navbar() {
                 <div className="flex-1 overflow-y-auto py-2">
                   {navLinks.map((link) => (
                     <div key={link.name}>
-                      <Link
-                        to={link.href}
-                        className={`flex items-center px-4 py-3 text-sm font-medium transition-colors ${
-                          location.pathname === link.href
-                            ? 'text-brand-500 bg-brand-50'
-                            : 'text-ink hover:bg-surface'
-                        }`}
-                        onClick={() => !link.children && setIsMobileOpen(false)}
-                      >
-                        {link.name}
-                      </Link>
-                      {link.children && (
-                        <div className="pl-4">
+                      <div className="flex items-center">
+                        <Link
+                          to={link.href}
+                          className={`flex-1 px-4 py-3 text-sm font-medium transition-colors ${
+                            isActiveLink(location.pathname, link.href)
+                              ? 'text-brand-500 bg-brand-50'
+                              : 'text-ink hover:bg-surface'
+                          }`}
+                          onClick={() => !link.children && setIsMobileOpen(false)}
+                        >
+                          {link.name}
+                        </Link>
+                        {link.children && (
+                          <button
+                            onClick={() => setMobileExpanded(mobileExpanded === link.name ? null : link.name)}
+                            className="px-3 py-3 text-ink-secondary"
+                            aria-label={`Expand ${link.name}`}
+                          >
+                            <ChevronDown className={`w-4 h-4 transition-transform ${mobileExpanded === link.name ? 'rotate-180' : ''}`} />
+                          </button>
+                        )}
+                      </div>
+                      {link.children && mobileExpanded === link.name && (
+                        <div className="pl-4 border-l-2 border-border ml-4">
                           {link.children.map((child) => (
                             <Link
                               key={child.name}
                               to={child.href}
-                              className="flex flex-col px-4 py-2 text-sm hover:bg-surface transition-colors"
+                              className="flex items-center justify-between px-4 py-2 text-sm hover:bg-surface transition-colors group"
                               onClick={() => setIsMobileOpen(false)}
                             >
-                              <span className="text-ink">{child.name}</span>
-                              <span className="text-xs text-ink-muted">{child.desc}</span>
+                              <span className="text-ink-secondary group-hover:text-ink">{child.name}</span>
+                              <ArrowRight className="w-3 h-3 text-ink-muted opacity-0 group-hover:opacity-100 transition-opacity" />
                             </Link>
                           ))}
                         </div>
@@ -215,15 +265,25 @@ export default function Navbar() {
                   ))}
                 </div>
 
-                <div className="p-4 border-t border-gray-100">
+                <div className="p-4 border-t border-border space-y-2">
                   <Link
                     to="/contact"
                     className="btn-primary w-full text-sm"
                     onClick={() => setIsMobileOpen(false)}
                   >
-                    Get Started
+                    Get a Proposal
                     <ArrowRight className="w-4 h-4" />
                   </Link>
+                  <a
+                    href="https://wa.me/918770422622"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-secondary w-full text-sm"
+                    onClick={() => setIsMobileOpen(false)}
+                  >
+                    <ExternalLink className="w-4 h-4" />
+                    WhatsApp Chat
+                  </a>
                 </div>
               </div>
             </motion.div>

@@ -2,10 +2,11 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import {
   Server, Cloud, Shield, Code, Database, Network, Brain, Bot,
-  Globe, Cpu, Settings, MessageCircle, Users, ArrowRight
+  Globe, Cpu, Settings, ArrowRight
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import SEOHead from '../../components/SEOHead';
+import LeadCTA from '../../components/LeadCTA';
 
 const services = [
   {
@@ -336,43 +337,11 @@ export default function ITServices() {
         </div>
       </section>
 
-      {/* Call to Action */}
-      <section className="py-16 lg:py-24 bg-brand-500">
-        <div className="container-main">
-          <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-2xl lg:text-3xl font-bold text-white mb-4">Ready to Transform Your IT Infrastructure?</h2>
-            <p className="text-brand-100 mb-8">
-              Let's discuss how our integrated solutions can help you achieve your business goals
-            </p>
-            <div className="flex flex-wrap justify-center gap-3">
-              <Link to="/contact" className="inline-flex items-center gap-2 px-6 py-3 bg-white text-brand-600 font-semibold text-sm rounded-lg hover:bg-brand-50 transition-colors">
-                Schedule a Consultation
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-              <div className="flex gap-2">
-                <a
-                  href="https://wa.me/1234567890"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-3 bg-green-500 text-white font-semibold text-sm rounded-lg hover:bg-green-600 transition-colors"
-                >
-                  <MessageCircle className="h-4 w-4" />
-                  Support
-                </a>
-                <a
-                  href="https://wa.me/0987654321"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-3 bg-blue-500 text-white font-semibold text-sm rounded-lg hover:bg-blue-600 transition-colors"
-                >
-                  <Users className="h-4 w-4" />
-                  Business
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <LeadCTA
+        title="Ready to Transform Your IT Infrastructure?"
+        subtitle="Our IT experts will analyze your current setup and deliver a roadmap within 24 hours."
+        serviceInterest="IT Services"
+      />
     </div>
   );
 }

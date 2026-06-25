@@ -3,12 +3,13 @@ import { Link, Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { useAdmin } from '../../context/AdminContext';
 import {
   LayoutDashboard, FileText, BookOpen, Users, TrendingUp,
-  LogOut, Menu, X, ChevronRight, Globe
+  LogOut, Menu, X, ChevronRight, Globe, Target
 } from 'lucide-react';
 import SEOHead from '../../components/SEOHead';
 
 const navItems = [
   { name: 'Dashboard', path: '/admin', icon: LayoutDashboard, exact: true },
+  { name: 'Leads', path: '/admin/leads', icon: Target },
   { name: 'Blog Posts', path: '/admin/blog', icon: BookOpen },
   { name: 'Case Studies', path: '/admin/case-studies', icon: TrendingUp },
   { name: 'Contact Submissions', path: '/admin/contacts', icon: Users },

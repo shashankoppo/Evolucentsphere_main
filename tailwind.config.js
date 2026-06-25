@@ -19,6 +19,7 @@ export default {
           800: '#082d6b',
           900: '#051c42',
         },
+        border: '#e2e8f0',
         surface: {
           DEFAULT: '#f8fafc',
           elevated: '#ffffff',

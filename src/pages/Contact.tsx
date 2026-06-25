@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Send, CheckCircle, Mail, Phone, MapPin, MessageCircle, Clock } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { supabase }  from '../lib/supabase';
 import SEOHead from '../components/SEOHead';
 
 export default function Contact() {
@@ -12,10 +13,20 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    await new Promise((r) => setTimeout(r, 1200));
-    setIsSubmitting(false);
-    setIsSent(true);
-    setFormData({ name: '', email: '', company: '', message: '', service: '' });
+    try {
+      await supabase.from('leads').insert({
+        name: formData.name,
+        email: formData.email,
+        company: formData.company,
+        message: formData.message,
+        service_interest: formData.service,
+        source: 'contact-page',
+      });
+      setIsSent(true);
+      setFormData({ name: '', email: '', company: '', message: '', service: '' });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {

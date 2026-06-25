@@ -57,14 +57,15 @@ import Insurance from './pages/Industries/Insurance';
 import Government from './pages/Industries/Government';
 import IndustriesIndex from './pages/Industries/Index';
 
-// Admin Pages
-import AdminLogin from './pages/admin/AdminLogin';
+import AdminLeads from './pages/admin/AdminLeads';
+
 import AdminDashboard from './pages/admin/AdminDashboard';
 import AdminOverview from './pages/admin/AdminOverview';
 import AdminBlog from './pages/admin/AdminBlog';
 import AdminCaseStudies from './pages/admin/AdminCaseStudies';
 import AdminContacts from './pages/admin/AdminContacts';
 import AdminInvestorResources from './pages/admin/AdminInvestorResources';
+import AdminLogin from './pages/admin/AdminLogin';
 
 function Layout({ children, hideFooter = false }: { children: React.ReactNode; hideFooter?: boolean }) {
   return (
@@ -144,6 +145,7 @@ export default function App() {
               <Route path="case-studies" element={<AdminCaseStudies />} />
               <Route path="contacts" element={<AdminContacts />} />
               <Route path="investor-resources" element={<AdminInvestorResources />} />
+              <Route path="leads" element={<AdminLeads />} />
             </Route>
 
             {/* 404 */}
