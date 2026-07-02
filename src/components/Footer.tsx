@@ -1,335 +1,294 @@
-import React, { useState }  from 'react';
+import React from 'react';
+import { Brain, Twitter, Linkedin, Facebook, Instagram, ExternalLink, Mail, Phone, MapPin, Youtube, Github, GraduationCap } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import {
-  Brain,
-  ArrowUpRight,
-  Mail,
-  Phone,
-  MapPin,
-  MessageCircle,
-  Linkedin,
-  Twitter,
-  Facebook,
-  Instagram,
-  Award,
-  Globe,
-  Shield,
-  Star,
-  TrendingUp,
-  Users,
-  Building2,
-  ArrowRight,
-  CheckCircle,
-} from 'lucide-react';
-import { supabase } from '../lib/supabase';
-
-const footerLinks = {
-  services: [
-    { name: 'IT Services', href: '/it-services' },
-    { name: 'Cloud & Infrastructure', href: '/it-services/cloud-infrastructure' },
-    { name: 'Cybersecurity', href: '/it-services/cybersecurity' },
-    { name: 'BPO Services', href: '/bpo-services' },
-    { name: 'KPO Services', href: '/kpo-services' },
-    { name: 'Consultancy', href: '/consultancy' },
-    { name: 'Enterprise IT', href: '/enterprise-it' },
-  ],
-  company: [
-    { name: 'About Us', href: '/about' },
-    { name: 'Careers', href: '/careers' },
-    { name: 'Investor Relations', href: '/investor-relations' },
-    { name: 'AI Lab', href: '/ai-lab' },
-    { name: 'Contact', href: '/contact' },
-  ],
-  industries: [
-    { name: 'Banking & Finance', href: '/industries/banking' },
-    { name: 'Healthcare', href: '/industries/healthcare' },
-    { name: 'Manufacturing', href: '/industries/manufacturing' },
-    { name: 'Retail', href: '/industries/retail' },
-    { name: 'Insurance', href: '/industries/insurance' },
-    { name: 'Government', href: '/industries/government' },
-  ],
-  resources: [
-    { name: 'Blog', href: '/blog' },
-    { name: 'Case Studies', href: '/case-studies' },
-    { name: 'Technologies', href: '/technologies' },
-    { name: 'Sitemap', href: '/sitemap' },
-  ],
-  legal: [
-    { name: 'Privacy Policy', href: '/privacy-policy' },
-    { name: 'Terms of Service', href: '/terms-of-service' },
-    { name: 'Cookie Policy', href: '/cookie-policy' },
-  ],
-};
-
-const awards = [
-  { name: 'Best BPO Provider 2024', icon: Award },
-  { name: 'Top IT Services Firm', icon: Star },
-  { name: 'Excellence in Consulting', icon: Shield },
-  { name: 'Global Innovation Award', icon: Globe },
-];
-
-const socialLinks = [
-  { name: 'LinkedIn', icon: Linkedin, href: 'https://linkedin.com/company/evolucentsphere' },
-  { name: 'Twitter', icon: Twitter, href: 'https://twitter.com/evolucentsphere' },
-  { name: 'Facebook', icon: Facebook, href: 'https://facebook.com/evolucentsphere' },
-  { name: 'Instagram', icon: Instagram, href: 'https://instagram.com/evolucentsphere' },
-];
-
-const offices = [
-  { city: 'Jabalpur', country: 'India', role: 'HQ' },
-  { city: 'Indore', country: 'India', role: 'Delivery Center' },
-  { city: 'Pune', country: 'India', role: 'Tech Hub' },
-  { city: 'Eindhoven', country: 'Netherlands', role: 'EU Office' },
-  { city: 'Chicago', country: 'United States', role: 'Americas Office' },
-];
-
-const investorHighlights = [
-  { label: 'Revenue Growth', value: '+42% YoY', icon: TrendingUp },
-  { label: 'Global Clients', value: '500+', icon: Users },
-  { label: 'Countries', value: '12+', icon: Globe },
-  { label: 'Employees', value: '2,500+', icon: Building2 },
-];
+import { SEOFooterLinks, crossDomainLinks } from './CrossDomainLinks';
+import { config } from '../lib/config';
 
 export default function Footer() {
-  const [email, setEmail] = useState('');
-  const [subscribed, setSubscribed] = useState(false);
-  const [submitting, setSubmitting] = useState(false);
+  const currentYear = new Date().getFullYear();
 
-  const handleSubscribe = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!email || submitting) return;
-    setSubmitting(true);
-    await supabase.from('newsletter_subscribers').insert({ email });
-    setSubscribed(true);
-    setSubmitting(false);
-    setEmail('');
-    setTimeout(() => setSubscribed(false), 4000);
+  // Get links from centralized data
+  const parentCompany = crossDomainLinks.find(link => link.category === 'parent');
+  const mainDivisions = crossDomainLinks.filter(link => link.category === 'division');
+  const techSubdivisions = crossDomainLinks.filter(link =>
+    link.category === 'subdivision' && link.parentDivision === 'ELSxTech'
+  );
+
+  const footerSections = {
+    services: [
+      { name: 'AI & Machine Learning', path: '/it-services/ai-analytics', keywords: 'Artificial Intelligence, Machine Learning, Data Science' },
+      { name: 'Cloud Computing', path: '/it-services/cloud-infrastructure', keywords: 'Cloud Migration, AWS, Azure, Multi-Cloud' },
+      { name: 'Cybersecurity', path: '/it-services/cybersecurity', keywords: 'Security Solutions, Threat Protection, Compliance' },
+      { name: 'Digital Transformation', path: '/it-services/digital-transformation', keywords: 'Business Modernization, Process Automation' },
+      { name: 'Software Development', path: '/it-services/software-development', keywords: 'Custom Applications, Web Development, Mobile Apps' }
+    ],
+    company: [
+      { name: 'About Us', path: '/about' },
+      { name: 'Our Technologies', path: '/technologies' },
+      { name: 'Case Studies', path: '/case-studies' },
+      { name: 'Careers', path: '/careers' },
+      { name: 'Investor Relations', path: '/investor-relations' },
+      { name: 'AI Lab', path: '/ai-lab' }
+    ],
+    industries: [
+      { name: 'Banking & Finance', path: '/industries/banking' },
+      { name: 'Healthcare', path: '/industries/healthcare' },
+      { name: 'Manufacturing', path: '/industries/manufacturing' },
+      { name: 'Retail & E-commerce', path: '/industries/retail' },
+      { name: 'Insurance', path: '/industries/insurance' },
+      { name: 'Government', path: '/industries/government' }
+    ],
+    legal: [
+      { name: 'Privacy Policy', path: '/privacy-policy' },
+      { name: 'Terms of Service', path: '/terms-of-service' },
+      { name: 'Cookie Policy', path: '/cookie-policy' },
+      { name: 'Sitemap', path: '/sitemap' }
+    ]
   };
 
+  const socialLinks = [
+    { name: 'LinkedIn', icon: Linkedin, url: config.app.social.linkedin, color: 'hover:text-blue-600' },
+    { name: 'Twitter', icon: Twitter, url: config.app.social.twitter, color: 'hover:text-blue-400' },
+    { name: 'Facebook', icon: Facebook, url: config.app.social.facebook, color: 'hover:text-blue-500' },
+    { name: 'Instagram', icon: Instagram, url: config.app.social.instagram, color: 'hover:text-pink-500' },
+    { name: 'YouTube', icon: Youtube, url: config.app.social.youtube, color: 'hover:text-red-500' },
+    { name: 'GitHub', icon: Github, url: config.app.social.github, color: 'hover:text-gray-700' }
+  ];
+
   return (
-    <footer className="bg-ink text-white">
-      {/* Investor / Lead Gen Banner */}
-      <div className="border-b border-white/10">
-        <div className="container-main py-12 lg:py-16">
-          <div className="grid lg:grid-cols-2 gap-10 items-center">
-            <div>
-              <span className="label-solid mb-4">For Investors & Partners</span>
-              <h2 className="text-2xl lg:text-3xl font-bold text-white mb-3">
-                Ready to Scale Your Business or Invest in the Future?
-              </h2>
-              <p className="text-white/60 max-w-lg mb-6">
-                EvolucentSphere is a high-growth technology and services company. 
-                Request a consultation, explore our investor resources, or join our partner ecosystem.
-              </p>
-              <div className="flex flex-wrap gap-3">
-                <Link to="/contact" className="btn-primary">
-                  Get a Proposal
-                  <ArrowUpRight className="w-4 h-4" />
-                </Link>
-                <Link to="/investor-relations" className="btn-ghost text-white border border-white/20 hover:bg-white/10">
-                  Investor Relations
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-              </div>
-            </div>
+    <footer className="bg-gray-900 text-white">
+      {/* Cross-Domain Links Section */}
+      <div className="bg-gray-800">
+        <SEOFooterLinks />
+      </div>
 
-            {/* Investor Metrics */}
-            <div className="grid grid-cols-2 gap-3">
-              {investorHighlights.map((item) => (
-                <div key={item.label} className="bg-white/5 border border-white/10 rounded-xl p-4">
-                  <item.icon className="w-5 h-5 text-brand-400 mb-2" />
-                  <div className="text-xl font-bold text-white">{item.value}</div>
-                  <div className="text-xs text-white/40">{item.label}</div>
+      {/* Main Footer Content */}
+      <div className="py-16">
+        <div className="container mx-auto px-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-6 gap-8 mb-12">
+            {/* Company Info */}
+            <div className="lg:col-span-2">
+              <div className="flex items-center space-x-3 mb-6">
+                <Brain className="h-10 w-10 text-purple-400" />
+                <div>
+                  <span className="text-2xl font-bold">EvolucentSphere</span>
+                  <p className="text-sm text-gray-400">Flagship Division: ELSxGlobal</p>
                 </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Newsletter Bar */}
-      <div className="border-b border-white/10 bg-white/[0.03]">
-        <div className="container-main py-8">
-          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
-            <div>
-              <h3 className="text-lg font-semibold text-white mb-1">Stay ahead of the curve</h3>
-              <p className="text-sm text-white/60">
-                Get industry insights, technology trends, and exclusive reports delivered to your inbox.
+              </div>
+              <p className="text-gray-400 mb-6 leading-relaxed">
+                Transforming businesses through innovative AI solutions, digital transformation,
+                and comprehensive outsourcing services via our flagship ELSxGlobal division.
+                EvolucentSphere Pvt. Ltd. delivers excellence across multiple industries globally since 2009.
               </p>
+
+              {/* Contact Information */}
+              <div className="space-y-3 mb-6">
+                <div className="flex items-center text-gray-400">
+                  <Phone className="h-4 w-4 mr-3" />
+                  <div className="flex flex-col">
+                    <span>{config.app.contact.phone}</span>
+                    <span>{config.app.contact.phone2}</span>
+                  </div>
+                </div>
+                <div className="flex items-center text-gray-400">
+                  <Mail className="h-4 w-4 mr-3" />
+                  <span>{config.app.contact.email}</span>
+                </div>
+                <div className="flex items-start text-gray-400">
+                  <MapPin className="h-4 w-4 mr-3 mt-1" />
+                  <div>
+                    <p className="font-medium mb-1">Global Presence:</p>
+                    <ul className="text-sm space-y-1">
+                      {config.app.locations.map((location, index) => (
+                        <li key={index}>{location}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              {/* Social Links */}
+              <div className="flex space-x-4">
+                {socialLinks.map((social) => (
+                  <a
+                    key={social.name}
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`text-gray-400 ${social.color} transition-colors p-2 rounded-lg hover:bg-gray-800`}
+                    aria-label={`Follow EvolucentSphere on ${social.name}`}
+                  >
+                    <social.icon className="h-5 w-5" />
+                  </a>
+                ))}
+              </div>
             </div>
-            <form onSubmit={handleSubscribe} className="flex gap-2 max-w-md w-full">
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Enter your email"
-                className="flex-1 px-4 py-2.5 bg-white/10 border border-white/20 rounded-lg text-sm text-white placeholder:text-white/40 focus:outline-none focus:border-brand-400 transition-colors"
-                required
-              />
-              <button
-                type="submit"
-                disabled={submitting}
-                className="btn-primary shrink-1 text-sm whitespace-nowrap"
-              >
-                {subscribed ? (
-                  <>
-                    <CheckCircle className="w-4 h-4" />
-                    Subscribed
-                  </>
-                ) : (
-                  <>
-                    Subscribe
-                    <ArrowRight className="w-4 h-4" />
-                  </>
+
+            {/* Our Services */}
+            <div>
+              <h3 className="text-lg font-semibold mb-6 text-purple-400">Our Services</h3>
+              <ul className="space-y-3">
+                {footerSections.services.map((service, index) => (
+                  <li key={index}>
+                    <Link
+                      to={service.path}
+                      className="text-gray-400 hover:text-white transition-colors text-sm"
+                      title={service.keywords}
+                    >
+                      {service.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Company */}
+            <div>
+              <h3 className="text-lg font-semibold mb-6 text-purple-400">Company</h3>
+              <ul className="space-y-3">
+                {footerSections.company.map((item, index) => (
+                  <li key={index}>
+                    <Link
+                      to={item.path}
+                      className="text-gray-400 hover:text-white transition-colors text-sm"
+                    >
+                      {item.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Main Divisions */}
+            <div>
+              <h3 className="text-lg font-semibold mb-6 text-purple-400">Our Divisions</h3>
+              <ul className="space-y-3">
+                {parentCompany && (
+                  <li>
+                    <a
+                      href={parentCompany.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-400 hover:text-white transition-colors flex items-center text-sm"
+                    >
+                      {parentCompany.name}
+                      <ExternalLink className="h-3 w-3 ml-1" />
+                    </a>
+                  </li>
                 )}
-              </button>
-            </form>
-          </div>
-        </div>
-      </div>
-
-      {/* Main Footer */}
-      <div className="container-main py-12 lg:py-16">
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 lg:gap-10">
-          {/* Brand + Contact */}
-          <div className="col-span-2 md:col-span-3 lg:col-span-2">
-            <Link to="/" className="flex items-center gap-2.5 mb-4">
-              <div className="flex items-center justify-center w-9 h-9 rounded-lg bg-brand-500 text-white">
-                <Brain className="w-5 h-5" />
-              </div>
-              <div className="flex flex-col leading-none">
-                <span className="text-base font-bold text-white tracking-tight">EvolucentSphere</span>
-                <span className="text-[10px] font-medium text-white/40 tracking-wide">FLAGSHIP DIVISION: ELSxGLOBAL</span>
-              </div>
-            </Link>
-            <p className="text-sm text-white/60 leading-relaxed mb-6 max-w-xs">
-              Delivering comprehensive business solutions through AI-powered technology and strategic outsourcing across Banking, Healthcare, Manufacturing, and Retail.
-            </p>
-
-            <div className="space-y-2 text-sm mb-6">
-              <div className="flex items-center gap-2 text-white/60">
-                <Phone className="w-4 h-4 text-white/40 flex-shrink-0" />
-                <span>+91 (724) 755-8873</span>
-              </div>
-              <div className="flex items-center gap-2 text-white/60">
-                <Phone className="w-4 h-4 text-white/40 flex-shrink-0" />
-                <span>+91 (877) 042-2622</span>
-              </div>
-              <div className="flex items-center gap-2 text-white/60">
-                <Mail className="w-4 h-4 text-white/40 flex-shrink-0" />
-                <span>contact@evolucentsphere.com</span>
-              </div>
-              <div className="flex items-center gap-2 text-white/60">
-                <MessageCircle className="w-4 h-4 text-white/40 flex-shrink-0" />
-                <span>WhatsApp: +91 877-042-2622</span>
-              </div>
-              <div className="flex items-center gap-2 text-white/60">
-                <MapPin className="w-4 h-4 text-white/40 flex-shrink-0" />
-                <span>3223/4A Tech Park, Jabalpur, India</span>
-              </div>
+                {mainDivisions.map((division, index) => (
+                  <li key={index}>
+                    <a
+                      href={division.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-400 hover:text-white transition-colors flex items-center text-sm"
+                    >
+                      {division.name}
+                      <ExternalLink className="h-3 w-3 ml-1" />
+                    </a>
+                  </li>
+                ))}
+              </ul>
             </div>
 
-            <div className="flex items-center gap-3">
-              {socialLinks.map((s) => (
+            {/* Industries */}
+            <div>
+              <h3 className="text-lg font-semibold mb-6 text-purple-400">Industries</h3>
+              <ul className="space-y-3">
+                {footerSections.industries.map((industry, index) => (
+                  <li key={index}>
+                    <Link
+                      to={industry.path}
+                      className="text-gray-400 hover:text-white transition-colors text-sm"
+                    >
+                      {industry.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          {/* ELSxTech Subdivisions */}
+          <div className="border-t border-gray-800 pt-8 mb-8">
+            <h3 className="text-xl font-semibold mb-6 text-center text-purple-400">
+              ELSxTech Specialized Services
+            </h3>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+              {techSubdivisions.map((subdivision, index) => (
                 <a
-                  key={s.name}
-                  href={s.href}
+                  key={index}
+                  href={subdivision.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 rounded-lg bg-white/5 hover:bg-white/10 text-white/60 hover:text-white transition-colors"
-                  aria-label={s.name}
+                  className="text-gray-400 hover:text-white transition-colors text-sm text-center p-3 rounded-lg hover:bg-gray-800 flex items-center justify-center"
                 >
-                  <s.icon className="w-4 h-4" />
+                  <subdivision.icon className="h-4 w-4 mr-2" />
+                  {subdivision.name}
                 </a>
               ))}
             </div>
           </div>
 
-          {/* Services */}
-          <div>
-            <h4 className="text-sm font-semibold text-white mb-4">Services</h4>
-            <ul className="space-y-2">
-              {footerLinks.services.map((link) => (
-                <li key={link.name}>
-                  <Link to={link.href} className="text-sm text-white/60 hover:text-white transition-colors">
-                    {link.name}
+          {/* Bottom Section */}
+          <div className="border-t border-gray-800 pt-8">
+            <div className="flex flex-col lg:flex-row justify-between items-center">
+              <div className="text-gray-400 text-sm mb-6 lg:mb-0 text-center lg:text-left">
+                <p className="mb-2">
+                  © {currentYear} <strong>EvolucentSphere Pvt. Ltd.</strong> All rights reserved. Flagship Division: <strong>ELSxGlobal</strong>
+                </p>
+                <p className="text-xs">
+                  Delivering enterprise solutions through ELSxGlobal across BPO, KPO, IT Services, and Strategic Consulting globally since 2009.
+                </p>
+              </div>
+              <div className="flex flex-wrap justify-center lg:justify-end gap-6 text-sm">
+                {footerSections.legal.map((item, index) => (
+                  <Link
+                    key={index}
+                    to={item.path}
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
+                    {item.name}
                   </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Company */}
-          <div>
-            <h4 className="text-sm font-semibold text-white mb-4">Company</h4>
-            <ul className="space-y-2">
-              {footerLinks.company.map((link) => (
-                <li key={link.name}>
-                  <Link to={link.href} className="text-sm text-white/60 hover:text-white transition-colors">
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Industries */}
-          <div>
-            <h4 className="text-sm font-semibold text-white mb-4">Industries</h4>
-            <ul className="space-y-2">
-              {footerLinks.industries.map((link) => (
-                <li key={link.name}>
-                  <Link to={link.href} className="text-sm text-white/60 hover:text-white transition-colors">
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Awards & Offices */}
-          <div>
-            <h4 className="text-sm font-semibold text-white mb-4">Awards</h4>
-            <ul className="space-y-2 mb-6">
-              {awards.map((award) => (
-                <li key={award.name} className="flex items-center gap-2 text-sm text-white/60">
-                  <award.icon className="w-3 h-3 text-brand-500 flex-shrink-1" />
-                  {award.name}
-                </li>
-              ))}
-            </ul>
-            <h4 className="text-sm font-semibold text-white mb-4">Global Offices</h4>
-            <ul className="space-y-2">
-              {offices.map((office) => (
-                <li key={office.city} className="text-sm text-white/60">
-                  <span className="text-white">{office.city}</span>, {office.country}
-                  <span className="text-white/40 text-xs ml-1">({office.role})</span>
-                </li>
-              ))}
-            </ul>
+                ))}
+                <a
+                  href="/sitemap.xml"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  XML Sitemap
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Bottom Bar */}
-      <div className="border-t border-white/10">
-        <div className="container-main py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-white/40">
-            &copy; {new Date().getFullYear()} EvolucentSphere Pvt. Ltd. All rights reserved. Flagship Division: ELSxGlobal.
-          </p>
-          <div className="flex items-center gap-6 flex-wrap">
-            <span className="text-xs text-white/40">
-              BPO &bull; KPO &bull; IT Services &bull; Consulting
-            </span>
-            {footerLinks.legal.map((link) => (
-              <Link
-                key={link.name}
-                to={link.href}
-                className="text-xs text-white/40 hover:text-white transition-colors"
-              >
-                {link.name}
-              </Link>
-            ))}
+      {/* SEO-Rich Bottom Bar */}
+      <div className="bg-gray-950 py-6">
+        <div className="container mx-auto px-6">
+          <div className="text-center text-xs text-gray-500 space-y-3">
+            <div>
+              <strong>Core Services:</strong> BPO Services, KPO Services, IT Solutions, AI Development,
+              Cloud Computing, Digital Transformation, Business Consulting, Cybersecurity,
+              Data Analytics, Enterprise Solutions, Offshore Development, Global Outsourcing,
+              Customer Support, Back Office Operations, Research Analytics, Software Development
+            </div>
+            <div>
+              <strong>Technology Expertise:</strong> Artificial Intelligence, Machine Learning,
+              Cloud Computing (AWS, Azure, GCP), Cybersecurity, IoT, Blockchain, DevOps,
+              Microservices, API Development, Mobile Apps, Web Development, Data Science
+            </div>
+            <div>
+              <strong>Global Locations:</strong> India (Jabalpur, Indore, Pune) | Netherlands (Eindhoven) |
+              United States (Chicago) | 24/7 Global Service Delivery Across 30+ Countries
+            </div>
+            <div>
+              <strong>Industries Served:</strong> Banking & Finance, Healthcare, Manufacturing,
+              Retail & E-commerce, Insurance, Government, Education, Automotive, Energy & Utilities
+            </div>
           </div>
         </div>
       </div>
