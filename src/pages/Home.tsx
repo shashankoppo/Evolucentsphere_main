@@ -30,7 +30,6 @@ import CaseStudies from '../components/CaseStudies';
 import Awards from '../components/Awards';
 import Resources from '../components/Resources';
 import Testimonials from '../components/Testimonials';
-import Footer from '../components/Footer';
 import Contact from '../components/Contact';
 import SEOHead from '../components/SEOHead';
 
@@ -558,9 +557,6 @@ export default function Home() {
 
       {/* ─── 18. Contact ─── */}
       <Contact />
-
-      {/* ─── 19. Footer (includes CTA + all links) ─── */}
-      <Footer />
     </div>
   );
 }

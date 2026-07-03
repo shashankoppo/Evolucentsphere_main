@@ -10,10 +10,14 @@ const navLinks = [
     href: '/services',
     children: [
       { name: 'IT Services', href: '/it-services', desc: 'Cloud, AI, cybersecurity & more' },
+      { name: 'Software Development', href: '/it-services/software-development', desc: 'Custom software & web applications' },
+      { name: 'Website Development', href: '/it-services/web-development', desc: 'Professional websites & e-commerce' },
+      { name: 'Cloud Infrastructure', href: '/it-services/cloud-infrastructure', desc: 'AWS, Azure, GCP solutions' },
+      { name: 'Cybersecurity', href: '/it-services/cybersecurity', desc: 'Threat protection & compliance' },
+      { name: 'AI & Analytics', href: '/it-services/ai-analytics', desc: 'Machine learning & data science' },
       { name: 'BPO Services', href: '/bpo-services', desc: 'Business process outsourcing' },
       { name: 'KPO Services', href: '/kpo-services', desc: 'Knowledge process outsourcing' },
       { name: 'Consultancy', href: '/consultancy', desc: 'Strategic business consulting' },
-      { name: 'Enterprise IT', href: '/enterprise-it', desc: 'Enterprise infrastructure solutions' },
     ],
   },
   {
@@ -36,6 +40,7 @@ const navLinks = [
       { name: 'Careers', href: '/careers' },
       { name: 'Investor Relations', href: '/investor-relations' },
       { name: 'Innovation Lab', href: '/ai-lab' },
+      { name: 'EdgeFeed EdTech', href: '/edgefeed' },
     ],
   },
   {

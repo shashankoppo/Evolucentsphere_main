@@ -47,6 +47,7 @@ import DigitalExperienceMarketing from './pages/divisions/elsxtech/DigitalExperi
 import IoTEmergingTechnologies from './pages/divisions/elsxtech/IoTEmergingTechnologies';
 import ManagedITServices from './pages/divisions/elsxtech/ManagedITServices';
 import EnterpriseSoftwareSolutions from './pages/divisions/elsxtech/EnterpriseSoftwareSolutions';
+import WebDevelopment from './pages/divisions/elsxtech/WebDevelopment';
 
 // Industry Pages
 import Banking from './pages/Industries/Banking';
@@ -66,6 +67,7 @@ import AdminCaseStudies from './pages/admin/AdminCaseStudies';
 import AdminContacts from './pages/admin/AdminContacts';
 import AdminInvestorResources from './pages/admin/AdminInvestorResources';
 import AdminLogin from './pages/admin/AdminLogin';
+import ContactProElite from './pages/products/ContactProElite';
 
 function Layout({ children, hideFooter = false }: { children: React.ReactNode; hideFooter?: boolean }) {
   return (
@@ -127,6 +129,7 @@ export default function App() {
             <Route path="/it-services/iot-emerging-tech" element={<Layout><IoTEmergingTechnologies /></Layout>} />
             <Route path="/it-services/managed-it" element={<Layout><ManagedITServices /></Layout>} />
             <Route path="/it-services/enterprise-software" element={<Layout><EnterpriseSoftwareSolutions /></Layout>} />
+            <Route path="/it-services/web-development" element={<Layout><WebDevelopment /></Layout>} />
 
             {/* Industry Routes */}
             <Route path="/industries" element={<Layout><IndustriesIndex /></Layout>} />
@@ -136,6 +139,9 @@ export default function App() {
             <Route path="/industries/retail" element={<Layout><Retail /></Layout>} />
             <Route path="/industries/insurance" element={<Layout><Insurance /></Layout>} />
             <Route path="/industries/government" element={<Layout><Government /></Layout>} />
+
+            {/* Product Routes */}
+            <Route path="/products/contactpro-elite" element={<Layout><ContactProElite /></Layout>} />
 
             {/* Admin Routes */}
             <Route path="/admin/login" element={<AdminLogin />} />
