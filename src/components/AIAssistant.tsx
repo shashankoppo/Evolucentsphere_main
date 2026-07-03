@@ -20,6 +20,7 @@ export default function AIAssistant() {
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState('');
   const [isProcessing, setIsProcessing] = useState(false);
+  const [hasInteracted, setHasInteracted] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -43,9 +44,12 @@ export default function AIAssistant() {
     ]);
   }, []);
 
+  // Only scroll within the chat box after user has interacted
   useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-  }, [messages]);
+    if (hasInteracted) {
+      messagesEndRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  }, [messages, hasInteracted]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -61,6 +65,7 @@ export default function AIAssistant() {
     setMessages(prev => [...prev, userMessage]);
     setInput('');
     setIsProcessing(true);
+    setHasInteracted(true);
 
     try {
       const startTime = performance.now();
