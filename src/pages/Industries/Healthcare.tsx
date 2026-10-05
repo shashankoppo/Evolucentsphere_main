@@ -1,5 +1,5 @@
 import React from 'react';
-import { Heart, Shield, Brain, CheckCircle, ArrowRight } from 'lucide-react';
+import { Heart, Shield, Brain, CheckCircle, ArrowRight, Lock, AlertCircle, Clock, Activity } from 'lucide-react';
 import { motion } from 'framer-motion';
 import SEOHead from '../../components/SEOHead';
 
@@ -22,6 +22,55 @@ const services = [
     description: 'HIPAA compliance and healthcare data security solutions',
     features: ['HIPAA Compliance', 'Data Security', 'Audit Management', 'Privacy Protection']
   }
+];
+
+const challenges = [
+  {
+    icon: Lock,
+    title: 'Data Privacy & HIPAA',
+    description: 'Protecting sensitive patient health records from breaches while maintaining compliance with HIPAA, HITECH, and GDPR.'
+  },
+  {
+    icon: AlertCircle,
+    title: 'Interoperability Gaps',
+    description: 'Siloed EHR systems and medical devices that prevent seamless data exchange across care teams and facilities.'
+  },
+  {
+    icon: Clock,
+    title: 'Administrative Burden',
+    description: 'Excessive paperwork and manual processes that reduce clinician time with patients and increase burnout.'
+  },
+  {
+    icon: Activity,
+    title: 'Rising Care Costs',
+    description: 'Containing healthcare costs while improving outcomes amid growing patient volumes and chronic disease management.'
+  }
+];
+
+const solutions = [
+  {
+    title: 'HIPAA-Compliant Data Platform',
+    description: 'End-to-end encrypted health data management with audit trails, access controls, and automated compliance reporting.'
+  },
+  {
+    title: 'FHIR-Based Interoperability',
+    description: 'Standards-based health data exchange that connects EHRs, devices, and applications across the entire care continuum.'
+  },
+  {
+    title: 'Clinical Workflow Automation',
+    description: 'AI-powered documentation, coding, and scheduling that reduces administrative overhead by up to 50%.'
+  },
+  {
+    title: 'Predictive Care Analytics',
+    description: 'Machine learning models that identify high-risk patients, optimize treatment pathways, and reduce readmissions.'
+  }
+];
+
+const metrics = [
+  { value: '99.9%', label: 'HIPAA Compliance' },
+  { value: '50%', label: 'Less Administrative Work' },
+  { value: '35%', label: 'Lower Readmission Rates' },
+  { value: '4x', label: 'Faster Data Exchange' }
 ];
 
 export default function Healthcare() {
@@ -91,6 +140,82 @@ export default function Healthcare() {
                     </div>
                   ))}
                 </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Industry Challenges */}
+      <section className="section-padding surface">
+        <div className="container-main">
+          <div className="text-center mb-12">
+            <span className="label">Industry Challenges</span>
+            <h2 className="text-3xl font-bold text-ink mt-4">Challenges Facing Healthcare Providers</h2>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {challenges.map((challenge, index) => (
+              <motion.div
+                key={index}
+                className="card"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1, duration: 0.6 }}
+              >
+                <challenge.icon className="h-10 w-10 text-blue-600 mb-4" />
+                <h3 className="text-lg font-bold text-ink mb-2">{challenge.title}</h3>
+                <p className="text-ink-secondary text-sm">{challenge.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Our Solutions */}
+      <section className="section-padding bg-white">
+        <div className="container-main">
+          <div className="text-center mb-12">
+            <span className="label">Our Solutions</span>
+            <h2 className="text-3xl font-bold text-ink mt-4">How EvolucentSphere Solves These Challenges</h2>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {solutions.map((solution, index) => (
+              <motion.div
+                key={index}
+                className="card"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1, duration: 0.6 }}
+              >
+                <h3 className="text-lg font-bold text-ink mb-2">{solution.title}</h3>
+                <p className="text-ink-secondary text-sm">{solution.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Key Metrics */}
+      <section className="section-padding surface">
+        <div className="container-main">
+          <div className="text-center mb-12">
+            <span className="label">Key Metrics</span>
+            <h2 className="text-3xl font-bold text-ink mt-4">Real Impact for Healthcare Organizations</h2>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {metrics.map((metric, index) => (
+              <motion.div
+                key={index}
+                className="card text-center"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1, duration: 0.6 }}
+              >
+                <div className="text-3xl font-bold text-blue-600 mb-2">{metric.value}</div>
+                <div className="text-ink-secondary text-sm">{metric.label}</div>
               </motion.div>
             ))}
           </div>

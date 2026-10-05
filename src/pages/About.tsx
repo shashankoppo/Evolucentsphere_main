@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowRight, Users, Award, Globe, Target, Lightbulb, Shield, TrendingUp, Star, MessageCircle } from 'lucide-react';
+import { ArrowRight, Users, Award, Globe, Target, Lightbulb, Shield, TrendingUp, Star, MessageCircle, Loader2, Linkedin } from 'lucide-react';
 import SEOHead from '../components/SEOHead';
+import { dbOperations } from '../lib/db';
+import type { TeamMember } from '../lib/db';
 
 const values = [
   { icon: Users, title: 'People First', desc: 'Empowering teams and clients through continuous growth and learning.' },
@@ -17,6 +19,84 @@ const principles = [
   { icon: TrendingUp, title: 'Learn & Adapt', desc: 'Continuous evolution with technology and market shifts.' },
   { icon: Star, title: 'Deliver Excellence', desc: 'Results that exceed expectations and create real value.' },
 ];
+
+const fallbackTeam = [
+  { name: 'Aarav Sharma', role: 'CEO & Founder', bio: 'Visionary leader with 20+ years driving digital transformation across global enterprises.' },
+  { name: 'Priya Patel', role: 'CTO', bio: 'Architecting AI-first platforms and cloud infrastructure at scale for Fortune 500 clients.' },
+  { name: 'Rohan Mehta', role: 'COO', bio: 'Operations strategist optimizing global delivery across 30+ countries.' },
+  { name: 'Ananya Gupta', role: 'VP, Client Success', bio: 'Ensuring 98% client retention through relationship excellence and value delivery.' },
+];
+
+function LeadershipTeam() {
+  const [team, setTeam] = useState<TeamMember[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const data = await dbOperations.getTeamMembers();
+        if (data && data.length > 0) setTeam(data);
+      } catch {
+        // fallback below
+      } finally {
+        setLoading(false);
+      }
+    })();
+  }, []);
+
+  const display = team.length > 0 ? team : fallbackTeam.map((m, i) => ({ ...m, display_order: i, id: String(i) } as TeamMember));
+
+  return (
+    <section className="section-padding surface">
+      <div className="container-main">
+        <div className="text-center mb-12 lg:mb-16">
+          <span className="label mb-4">Our Team</span>
+          <h2 className="text-3xl lg:text-4xl font-bold text-ink mb-4">Leadership Team</h2>
+          <p className="text-ink-secondary text-lg max-w-2xl mx-auto">
+            Experienced leaders guiding our mission to transform businesses worldwide.
+          </p>
+        </div>
+
+        {loading ? (
+          <div className="flex justify-center">
+            <Loader2 className="w-8 h-8 text-brand-500 animate-spin" />
+          </div>
+        ) : (
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {display.map((member, i) => (
+              <motion.div
+                key={member.id || i}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.08 }}
+                className="card p-6 text-center"
+              >
+                <div className="w-20 h-20 rounded-full bg-brand-50 text-brand-500 mx-auto mb-4 flex items-center justify-center text-2xl font-bold">
+                  {member.name.split(' ').map(n => n[0]).join('').slice(0, 2)}
+                </div>
+                <h3 className="text-base font-semibold text-ink mb-1">{member.name}</h3>
+                <p className="text-sm text-brand-500 font-medium mb-2">{member.role}</p>
+                {member.bio && <p className="text-sm text-ink-secondary mb-3">{member.bio}</p>}
+                {member.linkedin_url && (
+                  <a
+                    href={member.linkedin_url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-sm text-ink-muted hover:text-brand-500 transition-colors"
+                  >
+                    <Linkedin className="w-4 h-4" />
+                    LinkedIn
+                  </a>
+                )}
+              </motion.div>
+            ))}
+          </div>
+        )}
+      </div>
+    </section>
+  );
+}
 
 export default function About() {
   return (
@@ -139,6 +219,9 @@ export default function About() {
           </div>
         </div>
       </section>
+
+      {/* Leadership Team (DB-backed) */}
+      <LeadershipTeam />
 
       {/* Mission & Vision */}
       <section className="section-padding surface">

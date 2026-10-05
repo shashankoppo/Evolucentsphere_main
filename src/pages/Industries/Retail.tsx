@@ -1,5 +1,5 @@
 import React from 'react';
-import { ShoppingCart, Users, Smartphone, CheckCircle, ArrowRight } from 'lucide-react';
+import { ShoppingCart, Users, Smartphone, CheckCircle, ArrowRight, TrendingDown } from 'lucide-react';
 import { motion } from 'framer-motion';
 import SEOHead from '../../components/SEOHead';
 
@@ -22,6 +22,55 @@ const services = [
     description: 'Seamless customer experience across all touchpoints',
     features: ['Mobile Commerce', 'Social Commerce', 'In-store Technology', 'Customer Journey Optimization']
   }
+];
+
+const challenges = [
+  {
+    icon: ShoppingCart,
+    title: 'Cart Abandonment',
+    description: 'Losing revenue to complex checkout flows, unexpected costs, and lack of preferred payment options.'
+  },
+  {
+    icon: TrendingDown,
+    title: 'Inventory Inefficiency',
+    description: 'Stockouts and overstock situations that erode margins and damage customer satisfaction.'
+  },
+  {
+    icon: Users,
+    title: 'Fragmented Customer Data',
+    description: 'Disconnected silos across channels that prevent a unified view of shopper behavior and preferences.'
+  },
+  {
+    icon: Smartphone,
+    title: 'Channel Disconnection',
+    description: 'Inconsistent experiences between online, mobile, and in-store touchpoints that break customer journeys.'
+  }
+];
+
+const solutions = [
+  {
+    title: 'Frictionless Checkout Optimization',
+    description: 'One-click payments, guest checkout, and dynamic pricing that reduce cart abandonment by up to 40%.'
+  },
+  {
+    title: 'AI-Powered Inventory Management',
+    description: 'Demand forecasting and real-time stock optimization that minimizes waste and prevents stockouts across all locations.'
+  },
+  {
+    title: 'Unified Customer Data Platform',
+    description: 'Single shopper profile that merges online and in-store behavior for true 360-degree personalization.'
+  },
+  {
+    title: 'True Omnichannel Commerce',
+    description: 'Seamless buy-online-pickup-in-store, unified loyalty, and consistent experiences across every touchpoint.'
+  }
+];
+
+const metrics = [
+  { value: '40%', label: 'Less Cart Abandonment' },
+  { value: '30%', label: 'Inventory Cost Reduction' },
+  { value: '25%', label: 'Revenue Lift' },
+  { value: '4x', label: 'Customer Retention' }
 ];
 
 export default function Retail() {
@@ -91,6 +140,82 @@ export default function Retail() {
                     </div>
                   ))}
                 </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Industry Challenges */}
+      <section className="section-padding surface">
+        <div className="container-main">
+          <div className="text-center mb-12">
+            <span className="label">Industry Challenges</span>
+            <h2 className="text-3xl font-bold text-ink mt-4">Challenges Facing Modern Retailers</h2>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {challenges.map((challenge, index) => (
+              <motion.div
+                key={index}
+                className="card"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1, duration: 0.6 }}
+              >
+                <challenge.icon className="h-10 w-10 text-blue-600 mb-4" />
+                <h3 className="text-lg font-bold text-ink mb-2">{challenge.title}</h3>
+                <p className="text-ink-secondary text-sm">{challenge.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Our Solutions */}
+      <section className="section-padding bg-white">
+        <div className="container-main">
+          <div className="text-center mb-12">
+            <span className="label">Our Solutions</span>
+            <h2 className="text-3xl font-bold text-ink mt-4">How EvolucentSphere Solves These Challenges</h2>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {solutions.map((solution, index) => (
+              <motion.div
+                key={index}
+                className="card"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1, duration: 0.6 }}
+              >
+                <h3 className="text-lg font-bold text-ink mb-2">{solution.title}</h3>
+                <p className="text-ink-secondary text-sm">{solution.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Key Metrics */}
+      <section className="section-padding surface">
+        <div className="container-main">
+          <div className="text-center mb-12">
+            <span className="label">Key Metrics</span>
+            <h2 className="text-3xl font-bold text-ink mt-4">Real Impact for Retail Businesses</h2>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {metrics.map((metric, index) => (
+              <motion.div
+                key={index}
+                className="card text-center"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1, duration: 0.6 }}
+              >
+                <div className="text-3xl font-bold text-blue-600 mb-2">{metric.value}</div>
+                <div className="text-ink-secondary text-sm">{metric.label}</div>
               </motion.div>
             ))}
           </div>

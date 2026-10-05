@@ -31,6 +31,7 @@ import Awards from '../components/Awards';
 import Resources from '../components/Resources';
 import Testimonials from '../components/Testimonials';
 import Contact from '../components/Contact';
+import ClientsStrip from '../components/ClientsStrip';
 import SEOHead from '../components/SEOHead';
 
 /* ─── Inline data ─── */
@@ -143,54 +144,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ─── 3. Trusted Companies ─── */}
-      <section className="section-padding bg-white">
-        <div className="container-main">
-          <div className="text-center mb-10 lg:mb-14">
-            <motion.span
-              initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="label mb-4"
-            >
-              Trusted Worldwide
-            </motion.span>
-            <motion.h2
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-3xl lg:text-4xl font-bold text-ink mb-4"
-            >
-              Powering Enterprises Across the Globe
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="text-ink-secondary text-lg max-w-2xl mx-auto"
-            >
-              From Fortune 500 banks to fast-growing startups, organizations trust EvolucentSphere to deliver transformative results.
-            </motion.p>
-          </div>
-
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
-            {trustedCompanies.map((company, i) => (
-              <motion.div
-                key={company}
-                initial={{ opacity: 0, y: 12 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.06 }}
-                className="card px-5 py-6 flex items-center justify-center text-center"
-              >
-                <span className="text-sm font-semibold text-ink-secondary">{company}</span>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* ─── 3. Trusted Clients (DB-backed) ─── */}
+      <ClientsStrip />
 
       {/* ─── 4. Our Services ─── */}
       <Services />

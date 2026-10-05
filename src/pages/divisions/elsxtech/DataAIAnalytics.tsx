@@ -2,6 +2,7 @@ import React from 'react';
 import { Brain, BarChart, Database, Cpu, Eye, Zap, TrendingUp, Settings, CheckCircle, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import SEOHead from '../../../components/SEOHead';
+import ROICalculator from '../../../components/ROICalculator';
 
 const services = [
   {
@@ -302,6 +303,39 @@ export default function DataAIAnalytics() {
                 </li>
               </ul>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ROI Calculator */}
+      <section className="section-padding bg-white">
+        <div className="container-main">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+            <div>
+              <span className="text-sm font-semibold text-indigo-600 mb-3 block">AI ROI Calculator</span>
+              <h2 className="text-3xl font-bold text-ink mb-4">
+                Quantify the Value of AI
+              </h2>
+              <p className="text-ink-secondary text-lg mb-8">
+                See how much you could save by automating manual analytics workflows with AI-powered solutions.
+              </p>
+              <div className="space-y-4">
+                {[
+                  { title: '60% Cost Reduction', desc: 'Automate repetitive analytics tasks and reallocate talent to strategic work.' },
+                  { title: '10x Faster Insights', desc: 'ML models process data in minutes, not days, accelerating decision-making.' },
+                  { title: '95% Prediction Accuracy', desc: 'Production-grade models deliver reliable forecasts your business can act on.' },
+                ].map((item, i) => (
+                  <div key={i} className="flex items-start gap-3">
+                    <div className="w-2 h-2 rounded-full bg-indigo-600 mt-2 shrink-0" />
+                    <div>
+                      <h4 className="text-sm font-semibold text-ink">{item.title}</h4>
+                      <p className="text-sm text-ink-secondary">{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <ROICalculator type="ai" />
           </div>
         </div>
       </section>

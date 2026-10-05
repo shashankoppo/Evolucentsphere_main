@@ -1,5 +1,5 @@
 import React from 'react';
-import { Shield, BarChart, Zap, CheckCircle, ArrowRight } from 'lucide-react';
+import { Shield, BarChart, Zap, CheckCircle, ArrowRight, Lock, TrendingDown, Users } from 'lucide-react';
 import { motion } from 'framer-motion';
 import SEOHead from '../../components/SEOHead';
 
@@ -22,6 +22,55 @@ const services = [
     description: 'Cutting-edge financial technology solutions',
     features: ['Blockchain Integration', 'AI-Powered Analytics', 'Robo-Advisory', 'RegTech Solutions']
   }
+];
+
+const challenges = [
+  {
+    icon: Shield,
+    title: 'Regulatory Compliance',
+    description: 'Navigating complex, evolving regulations like Basel III, Dodd-Frank, and MiFID II across multiple jurisdictions.'
+  },
+  {
+    icon: Lock,
+    title: 'Cybersecurity Threats',
+    description: 'Defending against sophisticated financial fraud, data breaches, and ransomware attacks targeting customer assets.'
+  },
+  {
+    icon: TrendingDown,
+    title: 'Legacy System Debt',
+    description: 'Maintaining outdated core banking infrastructure that limits agility and drives up operational costs.'
+  },
+  {
+    icon: Users,
+    title: 'Customer Expectations',
+    description: 'Meeting rising demands for real-time, seamless digital banking experiences across all channels.'
+  }
+];
+
+const solutions = [
+  {
+    title: 'Automated Compliance Engine',
+    description: 'AI-driven regulatory monitoring and reporting that ensures continuous compliance across all jurisdictions with real-time alerts.'
+  },
+  {
+    title: 'Zero-Trust Security Framework',
+    description: 'Multi-layered fraud detection and threat prevention with behavioral analytics and encrypted transaction monitoring.'
+  },
+  {
+    title: 'Cloud-Native Core Modernization',
+    description: 'Microservices-based core banking platform migration that eliminates legacy debt and enables rapid feature delivery.'
+  },
+  {
+    title: 'Omnichannel Digital Banking',
+    description: 'Unified mobile, web, and API-first banking experiences with instant payments and personalized financial insights.'
+  }
+];
+
+const metrics = [
+  { value: '99.9%', label: 'Regulatory Compliance Rate' },
+  { value: '60%', label: 'Faster Fraud Detection' },
+  { value: '45%', label: 'Cost Reduction' },
+  { value: '3x', label: 'Faster Time-to-Market' }
 ];
 
 export default function Banking() {
@@ -92,6 +141,82 @@ export default function Banking() {
                     </div>
                   ))}
                 </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Industry Challenges */}
+      <section className="section-padding surface">
+        <div className="container-main">
+          <div className="text-center mb-12">
+            <span className="label">Industry Challenges</span>
+            <h2 className="text-3xl font-bold text-ink mt-4">Challenges Facing Banking &amp; Financial Services</h2>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {challenges.map((challenge, index) => (
+              <motion.div
+                key={index}
+                className="card"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1, duration: 0.6 }}
+              >
+                <challenge.icon className="h-10 w-10 text-green-600 mb-4" />
+                <h3 className="text-lg font-bold text-ink mb-2">{challenge.title}</h3>
+                <p className="text-ink-secondary text-sm">{challenge.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Our Solutions */}
+      <section className="section-padding bg-white">
+        <div className="container-main">
+          <div className="text-center mb-12">
+            <span className="label">Our Solutions</span>
+            <h2 className="text-3xl font-bold text-ink mt-4">How EvolucentSphere Solves These Challenges</h2>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {solutions.map((solution, index) => (
+              <motion.div
+                key={index}
+                className="card"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1, duration: 0.6 }}
+              >
+                <h3 className="text-lg font-bold text-ink mb-2">{solution.title}</h3>
+                <p className="text-ink-secondary text-sm">{solution.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Key Metrics */}
+      <section className="section-padding surface">
+        <div className="container-main">
+          <div className="text-center mb-12">
+            <span className="label">Key Metrics</span>
+            <h2 className="text-3xl font-bold text-ink mt-4">Real Impact for Financial Institutions</h2>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {metrics.map((metric, index) => (
+              <motion.div
+                key={index}
+                className="card text-center"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1, duration: 0.6 }}
+              >
+                <div className="text-3xl font-bold text-green-600 mb-2">{metric.value}</div>
+                <div className="text-ink-secondary text-sm">{metric.label}</div>
               </motion.div>
             ))}
           </div>

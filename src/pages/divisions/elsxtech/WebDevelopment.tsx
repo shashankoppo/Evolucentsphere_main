@@ -3,6 +3,7 @@ import { Globe, Monitor, Layers, Zap, CheckCircle, ArrowRight, Users, Award, Clo
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import SEOHead from '../../../components/SEOHead';
+import ProjectEstimator from '../../../components/ProjectEstimator';
 
 const services = [
   {
@@ -545,6 +546,40 @@ export default function WebDevelopment() {
             * Pricing is indicative and varies based on specific requirements, features, and complexity.
             Contact us for a detailed project assessment and customized quote.
           </p>
+        </div>
+      </section>
+
+      {/* Project Estimator */}
+      <section className="section-padding bg-gray-50">
+        <div className="container-main">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+            <div>
+              <span className="text-sm font-semibold text-blue-600 mb-3 block">Project Estimator</span>
+              <h2 className="text-3xl font-bold text-ink mb-4">
+                Estimate Your Website Project
+              </h2>
+              <p className="text-ink-secondary text-lg mb-8">
+                Select your project type and complexity to get an indicative budget and timeline.
+                Get a detailed quote sent straight to your inbox.
+              </p>
+              <div className="space-y-4">
+                {[
+                  { title: 'From Landing Pages to SaaS', desc: 'We handle everything from simple marketing sites to complex web applications.' },
+                  { title: 'SEO-Ready & Fast', desc: 'Every site we build is optimized for Core Web Vitals and search engines.' },
+                  { title: 'Ongoing Support', desc: 'Post-launch maintenance, updates, and hosting available.' },
+                ].map((item, i) => (
+                  <div key={i} className="flex items-start gap-3">
+                    <div className="w-2 h-2 rounded-full bg-blue-600 mt-2 shrink-0" />
+                    <div>
+                      <h4 className="text-sm font-semibold text-ink">{item.title}</h4>
+                      <p className="text-sm text-ink-secondary">{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <ProjectEstimator />
+          </div>
         </div>
       </section>
 

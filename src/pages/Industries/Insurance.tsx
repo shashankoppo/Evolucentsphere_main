@@ -1,5 +1,5 @@
 import React from 'react';
-import { Shield, BarChart, FileText, Users, CheckCircle } from 'lucide-react';
+import { Shield, BarChart, FileText, Users, CheckCircle, Clock, AlertTriangle, TrendingDown } from 'lucide-react';
 import { motion } from 'framer-motion';
 import SEOHead from '../../components/SEOHead';
 
@@ -34,6 +34,55 @@ const stats = [
   { value: '60%', label: 'Faster Claims Processing' },
   { value: '40%', label: 'Cost Reduction' },
   { value: '99.5%', label: 'Compliance Accuracy' },
+  { value: '85%', label: 'Customer Satisfaction' }
+];
+
+const challenges = [
+  {
+    icon: Clock,
+    title: 'Slow Claims Processing',
+    description: 'Manual, paper-based claims handling that delays settlements and frustrates policyholders.'
+  },
+  {
+    icon: AlertTriangle,
+    title: 'Fraud Losses',
+    description: 'Sophisticated fraud schemes that drain billions annually and drive up premiums for honest customers.'
+  },
+  {
+    icon: TrendingDown,
+    title: 'Underwriting Inefficiency',
+    description: 'Reliance on historical data and manual risk assessment that leads to inaccurate pricing and lost competitiveness.'
+  },
+  {
+    icon: Users,
+    title: 'Customer Churn',
+    description: 'Poor digital experiences and slow service that drive policyholders to competitors at renewal time.'
+  }
+];
+
+const solutions = [
+  {
+    title: 'AI-Powered Claims Automation',
+    description: 'Intelligent claims triage and document processing that settles simple claims in minutes, not weeks.'
+  },
+  {
+    title: 'Real-Time Fraud Detection',
+    description: 'Machine learning models that flag suspicious claims instantly, reducing fraud losses by up to 60%.'
+  },
+  {
+    title: 'Predictive Underwriting Engine',
+    description: 'Data-driven risk scoring with hundreds of variables that enables precise, competitive pricing in real time.'
+  },
+  {
+    title: 'Digital Customer Engagement',
+    description: 'Omnichannel self-service portals with personalized policy management and automated renewal outreach.'
+  }
+];
+
+const metrics = [
+  { value: '60%', label: 'Faster Claims Processing' },
+  { value: '60%', label: 'Fraud Loss Reduction' },
+  { value: '40%', label: 'Lower Operating Costs' },
   { value: '85%', label: 'Customer Satisfaction' }
 ];
 
@@ -108,6 +157,82 @@ export default function Insurance() {
                     </div>
                   ))}
                 </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Industry Challenges */}
+      <section className="section-padding surface">
+        <div className="container-main">
+          <div className="text-center mb-12">
+            <span className="label">Industry Challenges</span>
+            <h2 className="text-3xl font-bold text-ink mt-4">Challenges Facing Insurance Providers</h2>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {challenges.map((challenge, index) => (
+              <motion.div
+                key={index}
+                className="card"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1, duration: 0.6 }}
+              >
+                <challenge.icon className="h-10 w-10 text-blue-600 mb-4" />
+                <h3 className="text-lg font-bold text-ink mb-2">{challenge.title}</h3>
+                <p className="text-ink-secondary text-sm">{challenge.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Our Solutions */}
+      <section className="section-padding bg-white">
+        <div className="container-main">
+          <div className="text-center mb-12">
+            <span className="label">Our Solutions</span>
+            <h2 className="text-3xl font-bold text-ink mt-4">How EvolucentSphere Solves These Challenges</h2>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {solutions.map((solution, index) => (
+              <motion.div
+                key={index}
+                className="card"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1, duration: 0.6 }}
+              >
+                <h3 className="text-lg font-bold text-ink mb-2">{solution.title}</h3>
+                <p className="text-ink-secondary text-sm">{solution.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Key Metrics */}
+      <section className="section-padding surface">
+        <div className="container-main">
+          <div className="text-center mb-12">
+            <span className="label">Key Metrics</span>
+            <h2 className="text-3xl font-bold text-ink mt-4">Real Impact for Insurance Operations</h2>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {metrics.map((metric, index) => (
+              <motion.div
+                key={index}
+                className="card text-center"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1, duration: 0.6 }}
+              >
+                <div className="text-3xl font-bold text-blue-600 mb-2">{metric.value}</div>
+                <div className="text-ink-secondary text-sm">{metric.label}</div>
               </motion.div>
             ))}
           </div>

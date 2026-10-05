@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight, ArrowUpRight, Cloud, Brain, Shield, Zap, Code, BarChart3, Network, Settings, Monitor, Users, Building, Briefcase } from 'lucide-react';
 import SEOHead from '../components/SEOHead';
+import SolutionFinder from '../components/SolutionFinder';
 
 const divisions = [
   {
@@ -162,12 +163,90 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      {/* Solution Finder */}
+      <section className="section-padding bg-white">
+        <div className="container-main">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+            <div>
+              <motion.span
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="label mb-4"
+              >
+                Solution Finder
+              </motion.span>
+              <motion.h2
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+                className="text-3xl lg:text-4xl font-bold text-ink mb-4"
+              >
+                Not Sure Which Service Fits?
+              </motion.h2>
+              <motion.p
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+                className="text-ink-secondary text-lg mb-8"
+              >
+                Answer four quick questions and we'll recommend the right solutions
+                for your specific business challenge — with a tailored proposal in your inbox.
+              </motion.p>
+              <motion.div
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3 }}
+                className="space-y-4"
+              >
+                {[
+                  { step: '1', text: 'Tell us your biggest challenge' },
+                  { step: '2', text: 'Pick your industry and company size' },
+                  { step: '3', text: 'Get tailored service recommendations' },
+                  { step: '4', text: 'Receive a proposal within 24 hours' },
+                ].map((item, i) => (
+                  <div key={i} className="flex items-center gap-3">
+                    <div className="w-7 h-7 rounded-full bg-brand-50 text-brand-500 text-xs font-bold flex items-center justify-center shrink-0">
+                      {item.step}
+                    </div>
+                    <span className="text-sm text-ink-secondary">{item.text}</span>
+                  </div>
+                ))}
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.4 }}
+                className="mt-8"
+              >
+                <Link to="/contact" className="btn-secondary">
+                  Talk to an Expert
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </motion.div>
+            </div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+            >
+              <SolutionFinder />
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-16 lg:py-24 bg-brand-500">
         <div className="container-main">
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="text-2xl lg:text-3xl font-bold text-white mb-4">
-              Not sure which service fits your needs?
+              Ready to Get Started?
             </h2>
             <p className="text-brand-100 mb-8">
               Our team will help you identify the right solutions for your business challenges.

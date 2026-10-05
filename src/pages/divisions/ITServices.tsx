@@ -7,6 +7,7 @@ import {
 import { Link } from 'react-router-dom';
 import SEOHead from '../../components/SEOHead';
 import LeadCTA from '../../components/LeadCTA';
+import ProjectEstimator from '../../components/ProjectEstimator';
 
 const services = [
   {
@@ -333,6 +334,40 @@ export default function ITServices() {
               <div className="text-3xl font-bold text-brand-500 mb-1">{automationStats.productivity}</div>
               <div className="text-sm text-ink-secondary">Productivity Boost</div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Project Estimator */}
+      <section className="section-padding bg-white">
+        <div className="container-main">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+            <div>
+              <span className="label mb-4">Project Estimator</span>
+              <h2 className="text-3xl lg:text-4xl font-bold text-ink mb-4">
+                Estimate Your Project Scope
+              </h2>
+              <p className="text-ink-secondary text-lg mb-8">
+                Pick your project type and complexity to get an indicative budget,
+                timeline, and team size — then get a detailed quote in your inbox.
+              </p>
+              <div className="space-y-4">
+                {[
+                  { title: 'Transparent Pricing', desc: 'No hidden costs. You see the breakdown before we start.' },
+                  { title: 'Dedicated Teams', desc: 'A scoped team of engineers, designers, and QA assigned to your project.' },
+                  { title: 'Flexible Engagement', desc: 'Fixed-bid, T&M, or dedicated team — whatever fits your needs.' },
+                ].map((item, i) => (
+                  <div key={i} className="flex items-start gap-3">
+                    <div className="w-2 h-2 rounded-full bg-brand-500 mt-2 shrink-0" />
+                    <div>
+                      <h4 className="text-sm font-semibold text-ink">{item.title}</h4>
+                      <p className="text-sm text-ink-secondary">{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <ProjectEstimator />
           </div>
         </div>
       </section>

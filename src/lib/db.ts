@@ -60,6 +60,72 @@ export interface InvestorResource {
   published: boolean;
 }
 
+export interface Client {
+  id: string;
+  name: string;
+  logo_url?: string;
+  industry?: string;
+  website?: string;
+  display_order: number;
+  visible: boolean;
+  created_at: string;
+}
+
+export interface Award {
+  id: string;
+  title: string;
+  organization?: string;
+  year?: string;
+  description?: string;
+  icon: string;
+  display_order: number;
+  visible: boolean;
+  created_at: string;
+}
+
+export interface TeamMember {
+  id: string;
+  name: string;
+  role: string;
+  bio?: string;
+  photo_url?: string;
+  linkedin_url?: string;
+  display_order: number;
+  visible: boolean;
+  created_at: string;
+}
+
+export interface LeadNote {
+  id: string;
+  lead_id: string;
+  note: string;
+  created_at: string;
+}
+
+export interface ToolSubmission {
+  id?: string;
+  tool_type: string;
+  inputs: Record<string, any>;
+  result: Record<string, any>;
+  email?: string;
+  created_at?: string;
+}
+
+export interface Lead {
+  id: string;
+  name: string;
+  email: string;
+  company?: string;
+  phone?: string;
+  service_interest?: string;
+  message?: string;
+  source?: string;
+  status?: string;
+  estimated_budget?: string;
+  tool_source?: string;
+  created_at: string;
+}
+
 // Database operations
 export const dbOperations = {
   async submitContactForm(formData: Omit<ContactForm, 'id' | 'created_at'>) {
@@ -68,7 +134,6 @@ export const dbOperations = {
       .insert([formData])
       .select()
       .maybeSingle();
-
     if (error) throw error;
     return data;
   },
@@ -78,7 +143,6 @@ export const dbOperations = {
       .from('contact_submissions')
       .select('*')
       .order('created_at', { ascending: false });
-
     if (error) throw error;
     return data || [];
   },
@@ -89,7 +153,6 @@ export const dbOperations = {
       .select('*')
       .eq('approved', true)
       .order('created_at', { ascending: false });
-
     if (error) throw error;
     return data || [];
   },
@@ -100,7 +163,6 @@ export const dbOperations = {
       .select('*')
       .eq('published', true)
       .order('created_at', { ascending: false });
-
     if (error) throw error;
     return data || [];
   },
@@ -111,7 +173,6 @@ export const dbOperations = {
       .select('*')
       .eq('published', true)
       .order('created_at', { ascending: false });
-
     if (error) throw error;
     return data || [];
   },
@@ -122,7 +183,82 @@ export const dbOperations = {
       .select('*')
       .eq('published', true)
       .order('created_at', { ascending: false });
+    if (error) throw error;
+    return data || [];
+  },
 
+  async getClients(): Promise<Client[]> {
+    const { data, error } = await supabase
+      .from('clients')
+      .select('*')
+      .eq('visible', true)
+      .order('display_order', { ascending: true });
+    if (error) throw error;
+    return data || [];
+  },
+
+  async getAwards(): Promise<Award[]> {
+    const { data, error } = await supabase
+      .from('awards')
+      .select('*')
+      .eq('visible', true)
+      .order('display_order', { ascending: true });
+    if (error) throw error;
+    return data || [];
+  },
+
+  async getTeamMembers(): Promise<TeamMember[]> {
+    const { data, error } = await supabase
+      .from('team_members')
+      .select('*')
+      .eq('visible', true)
+      .order('display_order', { ascending: true });
+    if (error) throw error;
+    return data || [];
+  },
+
+  async submitToolSubmission(submission: Omit<ToolSubmission, 'id' | 'created_at'>) {
+    const { error } = await supabase.from('tool_submissions').insert([submission]);
+    if (error) throw error;
+  },
+
+  async submitLead(lead: {
+    name: string;
+    email: string;
+    company?: string;
+    phone?: string;
+    service_interest?: string;
+    message?: string;
+    source?: string;
+    estimated_budget?: string;
+    tool_source?: string;
+  }) {
+    const { error } = await supabase.from('leads').insert([lead]);
+    if (error) throw error;
+  },
+
+  async getLeadNotes(leadId: string): Promise<LeadNote[]> {
+    const { data, error } = await supabase
+      .from('lead_notes')
+      .select('*')
+      .eq('lead_id', leadId)
+      .order('created_at', { ascending: false });
+    if (error) throw error;
+    return data || [];
+  },
+
+  async addLeadNote(leadId: string, note: string) {
+    const { error } = await supabase
+      .from('lead_notes')
+      .insert([{ lead_id: leadId, note }]);
+    if (error) throw error;
+  },
+
+  async getToolSubmissions(): Promise<ToolSubmission[]> {
+    const { data, error } = await supabase
+      .from('tool_submissions')
+      .select('*')
+      .order('created_at', { ascending: false });
     if (error) throw error;
     return data || [];
   }
@@ -137,7 +273,6 @@ export const getItemOperations = {
       .eq('id', id)
       .eq('published', true)
       .maybeSingle();
-
     if (error) throw error;
     return data;
   },
@@ -149,7 +284,6 @@ export const getItemOperations = {
       .eq('slug', slug)
       .eq('published', true)
       .maybeSingle();
-
     if (error) throw error;
     return data;
   },
@@ -161,7 +295,6 @@ export const getItemOperations = {
       .eq('id', id)
       .eq('published', true)
       .maybeSingle();
-
     if (error) throw error;
     return data;
   },
@@ -173,7 +306,6 @@ export const getItemOperations = {
       .eq('id', id)
       .eq('published', true)
       .maybeSingle();
-
     if (error) throw error;
     return data;
   }
