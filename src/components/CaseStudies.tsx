@@ -71,7 +71,7 @@ export default function CaseStudies() {
       />
 
       {/* Hero */}
-      <section className="pt-28 lg:pt-36 pb-16 lg:pb-24 bg-white">
+      <section className="pt-28 lg:pt-36 pb-16 lg:pb-24 bg-white dark:bg-slate-900">
         <div className="container-main">
           <div className="max-w-3xl text-center mx-auto">
             <motion.span initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} className="label mb-4">Case Studies</motion.span>
@@ -100,7 +100,7 @@ export default function CaseStudies() {
       </section>
 
       {/* Filter */}
-      <section className="py-6 bg-white border-y border-border">
+      <section className="py-6 bg-white dark:bg-slate-900 border-y border-border">
         <div className="container-main">
           <div className="flex flex-wrap gap-2">
             <button
@@ -194,7 +194,7 @@ export default function CaseStudies() {
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="text-2xl lg:text-3xl font-bold text-white mb-4">Ready to Write Your Success Story?</h2>
             <p className="text-brand-100 mb-8">Join industry leaders who transformed their businesses with our solutions.</p>
-            <Link to="/contact" className="inline-flex items-center gap-2 px-6 py-3 bg-white text-brand-600 font-semibold text-sm rounded-lg hover:bg-brand-50 transition-colors">
+            <Link to="/contact" className="inline-flex items-center gap-2 px-6 py-3 bg-white dark:bg-slate-900 text-brand-600 font-semibold text-sm rounded-lg hover:bg-brand-50 transition-colors">
               Schedule a Consultation
               <ArrowRight className="w-4 h-4" />
             </Link>

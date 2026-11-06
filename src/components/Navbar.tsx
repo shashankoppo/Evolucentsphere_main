@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ChevronDown, Brain, ArrowRight, ExternalLink } from 'lucide-react';
+import ThemeSwitcher from './ThemeSwitcher';
 
 const navLinks = [
   { name: 'Home', href: '/' },
@@ -105,7 +106,7 @@ export default function Navbar() {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
-            ? 'bg-white/95 backdrop-blur-xl shadow-md border-b border-border'
+            ? 'bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl shadow-md border-b border-border'
             : 'bg-transparent'
         }`}
       >
@@ -155,7 +156,7 @@ export default function Navbar() {
                         transition={{ duration: 0.15 }}
                         className="absolute top-full left-0 pt-2 w-72"
                       >
-                        <div className="bg-white rounded-xl shadow-lg border border-border p-2">
+                        <div className="bg-white dark:bg-slate-800 rounded-xl shadow-lg border border-border p-2">
                           {link.children.map((child) => (
                             <Link
                               key={child.name}
@@ -181,6 +182,7 @@ export default function Navbar() {
 
             {/* CTA + Mobile Toggle */}
             <div className="flex items-center gap-3">
+              <ThemeSwitcher />
               <Link
                 to="/contact"
                 className="hidden lg:inline-flex items-center gap-2 btn-primary text-sm"
@@ -216,7 +218,7 @@ export default function Navbar() {
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'spring', damping: 30, stiffness: 300 }}
-              className="absolute right-0 top-0 bottom-0 w-full max-w-sm bg-white shadow-lg"
+              className="absolute right-0 top-0 bottom-0 w-full max-w-sm bg-white dark:bg-slate-900 shadow-lg"
             >
               <div className="flex flex-col h-full">
                 <div className="flex items-center justify-between p-4 border-b border-border">

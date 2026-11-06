@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  darkMode: 'class',
   theme: {
     extend: {
       fontFamily: {
@@ -19,15 +20,15 @@ export default {
           800: '#082d6b',
           900: '#051c42',
         },
-        border: '#e2e8f0',
+        border: 'var(--color-border)',
         surface: {
-          DEFAULT: '#f8fafc',
-          elevated: '#ffffff',
+          DEFAULT: 'var(--color-surface)',
+          elevated: 'var(--color-surface-elevated)',
         },
         ink: {
-          DEFAULT: '#0f172a',
-          secondary: '#475569',
-          muted: '#94a3b8',
+          DEFAULT: 'var(--color-ink)',
+          secondary: 'var(--color-ink-secondary)',
+          muted: 'var(--color-ink-muted)',
         },
       },
       borderRadius: {

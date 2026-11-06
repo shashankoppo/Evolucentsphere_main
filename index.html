@@ -10,6 +10,19 @@
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/manifest.json" />
     
+    <!-- Theme init: prevent flash of wrong theme -->
+    <script>
+      (function() {
+        var stored = localStorage.getItem('evolucentsphere-theme');
+        var resolved;
+        if (stored === 'light') resolved = 'light';
+        else if (stored === 'dark') resolved = 'dark';
+        else resolved = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        if (resolved === 'dark') document.documentElement.classList.add('dark');
+        document.documentElement.style.colorScheme = resolved;
+      })();
+    </script>
+
     <!-- Primary Meta Tags -->
     <title>EvolucentSphere - AI-Powered Business Transformation | ELSxGlobal Flagship Division</title>
     <meta name="title" content="EvolucentSphere - AI-Powered Business Transformation | ELSxGlobal Flagship Division">
