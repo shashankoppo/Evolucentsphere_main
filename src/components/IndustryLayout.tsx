@@ -246,7 +246,7 @@ export default function IndustryLayout({
       </section>
 
       {/* Solutions */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-[var(--color-bg)]">
         <div className="container-main">
           <div className="text-center mb-12">
             <span className="section-label">Our Approach</span>
@@ -305,7 +305,7 @@ export default function IndustryLayout({
 
       {/* FAQ */}
       {faqs.length > 0 && (
-        <section className="section-padding bg-white">
+        <section className="section-padding bg-[var(--color-bg)]">
           <div className="container-main max-w-3xl">
             <div className="text-center mb-10">
               <span className="section-label">FAQ</span>

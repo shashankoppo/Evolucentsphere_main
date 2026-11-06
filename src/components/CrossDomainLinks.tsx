@@ -1,9 +1,13 @@
 import React from 'react';
 import { 
-  ExternalLink, Building, Users, Brain, Briefcase, Globe, Cloud, Shield, 
+  ExternalLink, Building, Users, Briefcase, Globe, Cloud, Shield, 
   Zap, Code, Database, BarChart, Network, Settings, Bot,
-  GraduationCap  // Import the graduation cap icon
+  GraduationCap
 } from 'lucide-react';
+
+const EELogoIcon = ({ className = '' }: { className?: string }) => (
+  <span className={`font-black tracking-[-0.18em] leading-none ${className}`}>ƎE</span>
+);
 
 interface CrossDomainLink {
   name: string;
@@ -59,7 +63,7 @@ const crossDomainLinks: CrossDomainLink[] = [
     name: 'ELSxKPO',
     url: 'https://kpo.elsxglobal.com',
     description: 'Knowledge process outsourcing and advanced analytics',
-    icon: Brain,
+    icon: EELogoIcon,
     category: 'division',
     keywords: [
       'KPO Services', 'Research Analytics', 'Business Intelligence', 'Data Management',
@@ -149,7 +153,7 @@ const crossDomainLinks: CrossDomainLink[] = [
     name: 'Data, AI & Analytics',
     url: 'https://ai.elsxglobal.com',
     description: 'Artificial intelligence, machine learning, and data analytics',
-    icon: Brain,
+    icon: EELogoIcon,
     category: 'subdivision',
     parentDivision: 'ELSxTech',
     keywords: [

@@ -52,8 +52,8 @@ export default function Products() {
                   <div className="flex items-center mb-6">
                     <div className="bg-brand-50 p-3 rounded-lg">
                       {key === 'bpo' && <Package className="h-8 w-8 text-brand-500" />}
-                      {key === 'kpo' && <Brain className="h-8 w-8 text-brand-500" />}
-                      {key === 'edtech' && <Brain className="h-8 w-8 text-brand-500" />}
+                      {key === 'kpo' && <span className="text-2xl font-black tracking-[-0.18em] text-brand-500">ƎE</span>}
+                      {key === 'edtech' && <span className="text-2xl font-black tracking-[-0.18em] text-brand-500">ƎE</span>}
                       {key === 'it' && <Cloud className="h-8 w-8 text-brand-500" />}
                     </div>
                     <div className="ml-4">

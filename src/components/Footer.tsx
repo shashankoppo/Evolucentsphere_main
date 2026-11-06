@@ -1,5 +1,5 @@
 import React from 'react';
-import { Brain, Twitter, Linkedin, Facebook, Instagram, ExternalLink, Mail, Phone, MapPin, Youtube, Github, GraduationCap } from 'lucide-react';
+import { Twitter, Linkedin, Facebook, Instagram, ExternalLink, Mail, Phone, MapPin, Youtube, Github, GraduationCap } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { SEOFooterLinks, crossDomainLinks } from './CrossDomainLinks';
 import { config } from '../lib/config';
@@ -56,9 +56,9 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer className="bg-slate-950 text-slate-100 dark:bg-black">
       {/* Cross-Domain Links Section */}
-      <div className="bg-gray-800">
+      <div className="bg-slate-900 border-b border-slate-800">
         <SEOFooterLinks />
       </div>
 
@@ -69,13 +69,15 @@ export default function Footer() {
             {/* Company Info */}
             <div className="lg:col-span-2">
               <div className="flex items-center space-x-3 mb-6">
-                <Brain className="h-10 w-10 text-purple-400" />
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-500 text-white" aria-hidden="true">
+                  <span className="text-base font-black tracking-[-0.18em] leading-none">ƎE</span>
+                </div>
                 <div>
                   <span className="text-2xl font-bold">EvolucentSphere</span>
-                  <p className="text-sm text-gray-400">Flagship Division: ELSxGlobal</p>
+                  <p className="text-sm text-slate-300">Flagship Division: ELSxGlobal</p>
                 </div>
               </div>
-              <p className="text-gray-400 mb-6 leading-relaxed">
+              <p className="text-slate-300 mb-6 leading-relaxed">
                 Transforming businesses through innovative AI solutions, digital transformation,
                 and comprehensive outsourcing services via our flagship ELSxGlobal division.
                 EvolucentSphere Pvt. Ltd. delivers excellence across multiple industries globally since 2009.
@@ -83,18 +85,18 @@ export default function Footer() {
 
               {/* Contact Information */}
               <div className="space-y-3 mb-6">
-                <div className="flex items-center text-gray-400">
+                <div className="flex items-center text-slate-300">
                   <Phone className="h-4 w-4 mr-3" />
                   <div className="flex flex-col">
                     <span>{config.app.contact.phone}</span>
                     <span>{config.app.contact.phone2}</span>
                   </div>
                 </div>
-                <div className="flex items-center text-gray-400">
+                <div className="flex items-center text-slate-300">
                   <Mail className="h-4 w-4 mr-3" />
                   <span>{config.app.contact.email}</span>
                 </div>
-                <div className="flex items-start text-gray-400">
+                <div className="flex items-start text-slate-300">
                   <MapPin className="h-4 w-4 mr-3 mt-1" />
                   <div>
                     <p className="font-medium mb-1">Global Presence:</p>
@@ -115,7 +117,7 @@ export default function Footer() {
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`text-gray-400 ${social.color} transition-colors p-2 rounded-lg hover:bg-gray-800`}
+                    className={`text-slate-300 ${social.color} transition-colors p-2 rounded-lg hover:bg-slate-800`}
                     aria-label={`Follow EvolucentSphere on ${social.name}`}
                   >
                     <social.icon className="h-5 w-5" />
@@ -126,13 +128,13 @@ export default function Footer() {
 
             {/* Our Services */}
             <div>
-              <h3 className="text-lg font-semibold mb-6 text-purple-400">Our Services</h3>
+              <h3 className="text-lg font-semibold mb-6 text-brand-300">Our Services</h3>
               <ul className="space-y-3">
                 {footerSections.services.map((service, index) => (
                   <li key={index}>
                     <Link
                       to={service.path}
-                      className="text-gray-400 hover:text-white transition-colors text-sm"
+                      className="text-slate-300 hover:text-white transition-colors text-sm"
                       title={service.keywords}
                     >
                       {service.name}
@@ -144,13 +146,13 @@ export default function Footer() {
 
             {/* Company */}
             <div>
-              <h3 className="text-lg font-semibold mb-6 text-purple-400">Company</h3>
+              <h3 className="text-lg font-semibold mb-6 text-brand-300">Company</h3>
               <ul className="space-y-3">
                 {footerSections.company.map((item, index) => (
                   <li key={index}>
                     <Link
                       to={item.path}
-                      className="text-gray-400 hover:text-white transition-colors text-sm"
+                      className="text-slate-300 hover:text-white transition-colors text-sm"
                     >
                       {item.name}
                     </Link>
@@ -161,7 +163,7 @@ export default function Footer() {
 
             {/* Main Divisions */}
             <div>
-              <h3 className="text-lg font-semibold mb-6 text-purple-400">Our Divisions</h3>
+              <h3 className="text-lg font-semibold mb-6 text-brand-300">Our Divisions</h3>
               <ul className="space-y-3">
                 {parentCompany && (
                   <li>
@@ -169,7 +171,7 @@ export default function Footer() {
                       href={parentCompany.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-gray-400 hover:text-white transition-colors flex items-center text-sm"
+                      className="text-slate-300 hover:text-white transition-colors flex items-center text-sm"
                     >
                       {parentCompany.name}
                       <ExternalLink className="h-3 w-3 ml-1" />
@@ -182,7 +184,7 @@ export default function Footer() {
                       href={division.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-gray-400 hover:text-white transition-colors flex items-center text-sm"
+                      className="text-slate-300 hover:text-white transition-colors flex items-center text-sm"
                     >
                       {division.name}
                       <ExternalLink className="h-3 w-3 ml-1" />
@@ -194,13 +196,13 @@ export default function Footer() {
 
             {/* Industries */}
             <div>
-              <h3 className="text-lg font-semibold mb-6 text-purple-400">Industries</h3>
+              <h3 className="text-lg font-semibold mb-6 text-brand-300">Industries</h3>
               <ul className="space-y-3">
                 {footerSections.industries.map((industry, index) => (
                   <li key={index}>
                     <Link
                       to={industry.path}
-                      className="text-gray-400 hover:text-white transition-colors text-sm"
+                      className="text-slate-300 hover:text-white transition-colors text-sm"
                     >
                       {industry.name}
                     </Link>
@@ -211,8 +213,8 @@ export default function Footer() {
           </div>
 
           {/* ELSxTech Subdivisions */}
-          <div className="border-t border-gray-800 pt-8 mb-8">
-            <h3 className="text-xl font-semibold mb-6 text-center text-purple-400">
+          <div className="border-t border-slate-800 pt-8 mb-8">
+            <h3 className="text-xl font-semibold mb-6 text-center text-brand-300">
               ELSxTech Specialized Services
             </h3>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
@@ -222,7 +224,7 @@ export default function Footer() {
                   href={subdivision.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white transition-colors text-sm text-center p-3 rounded-lg hover:bg-gray-800 flex items-center justify-center"
+                  className="text-slate-300 hover:text-white transition-colors text-sm text-center p-3 rounded-lg hover:bg-slate-800 flex items-center justify-center"
                 >
                   <subdivision.icon className="h-4 w-4 mr-2" />
                   {subdivision.name}
@@ -232,9 +234,9 @@ export default function Footer() {
           </div>
 
           {/* Bottom Section */}
-          <div className="border-t border-gray-800 pt-8">
+          <div className="border-t border-slate-800 pt-8">
             <div className="flex flex-col lg:flex-row justify-between items-center">
-              <div className="text-gray-400 text-sm mb-6 lg:mb-0 text-center lg:text-left">
+              <div className="text-slate-300 text-sm mb-6 lg:mb-0 text-center lg:text-left">
                 <p className="mb-2">
                   © {currentYear} <strong>EvolucentSphere Pvt. Ltd.</strong> All rights reserved. Flagship Division: <strong>ELSxGlobal</strong>
                 </p>
@@ -247,7 +249,7 @@ export default function Footer() {
                   <Link
                     key={index}
                     to={item.path}
-                    className="text-gray-400 hover:text-white transition-colors"
+                    className="text-slate-300 hover:text-white transition-colors"
                   >
                     {item.name}
                   </Link>
@@ -256,7 +258,7 @@ export default function Footer() {
                   href="/sitemap.xml"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-slate-300 hover:text-white transition-colors"
                 >
                   XML Sitemap
                 </a>
@@ -267,9 +269,9 @@ export default function Footer() {
       </div>
 
       {/* SEO-Rich Bottom Bar */}
-      <div className="bg-gray-950 py-6">
+      <div className="bg-black/40 py-6">
         <div className="container mx-auto px-6">
-          <div className="text-center text-xs text-gray-500 space-y-3">
+          <div className="text-center text-xs text-slate-400 space-y-3">
             <div>
               <strong>Core Services:</strong> BPO Services, KPO Services, IT Solutions, AI Development,
               Cloud Computing, Digital Transformation, Business Consulting, Cybersecurity,

@@ -83,10 +83,55 @@
     color-scheme: dark;
   }
 
+  .dark .bg-white:not(.text-white) {
+    background-color: var(--color-card-bg) !important;
+  }
+
+  .dark .bg-gray-50,
+  .dark .bg-gray-100 {
+    background-color: var(--color-surface) !important;
+  }
+
+  .dark .bg-gray-200 {
+    background-color: var(--color-border) !important;
+  }
+
+  .dark .text-gray-900,
+  .dark .text-gray-800 {
+    color: var(--color-ink) !important;
+  }
+
+  .dark .text-gray-700,
+  .dark .text-gray-600 {
+    color: var(--color-ink-secondary) !important;
+  }
+
+  .dark .text-gray-500,
+  .dark .text-gray-400 {
+    color: var(--color-ink-muted) !important;
+  }
+
+  .dark .border-gray-100,
+  .dark .border-gray-200,
+  .dark .border-gray-300 {
+    border-color: var(--color-border) !important;
+  }
+
   html {
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  img,
+  svg {
+    max-width: 100%;
   }
 
   body {
@@ -116,6 +161,18 @@
   p {
     color: var(--color-ink-secondary);
     line-height: 1.65;
+    overflow-wrap: anywhere;
+  }
+
+  button,
+  a,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    overflow-wrap: anywhere;
   }
 
   a {
@@ -145,6 +202,7 @@
 
 @layer components {
   .container-main {
+    width: 100%;
     max-width: 1280px;
     margin: 0 auto;
     padding-left: 1rem;

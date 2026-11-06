@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, ChevronDown, Brain, ArrowRight, ExternalLink } from 'lucide-react';
+import { Menu, X, ChevronDown, ArrowRight, ExternalLink } from 'lucide-react';
 import ThemeSwitcher from './ThemeSwitcher';
 
 const navLinks = [
@@ -114,8 +114,8 @@ export default function Navbar() {
           <nav className="flex items-center justify-between h-16 lg:h-20">
             {/* Logo */}
             <Link to="/" className="flex items-center gap-2.5 shrink-0">
-              <div className="flex items-center justify-center w-9 h-9 rounded-lg bg-brand-500 text-white">
-                <Brain className="w-5 h-5" />
+              <div className="flex items-center justify-center w-9 h-9 rounded-lg bg-brand-500 text-white" aria-hidden="true">
+                <span className="text-[15px] font-black tracking-[-0.18em] leading-none">ƎE</span>
               </div>
               <div className="flex flex-col leading-none">
                 <span className="text-base font-bold text-ink tracking-tight">EvolucentSphere</span>
@@ -156,7 +156,7 @@ export default function Navbar() {
                         transition={{ duration: 0.15 }}
                         className="absolute top-full left-0 pt-2 w-72"
                       >
-                        <div className="bg-white dark:bg-slate-800 rounded-xl shadow-lg border border-border p-2">
+                        <div className="bg-surface-elevated rounded-xl shadow-lg border border-border p-2">
                           {link.children.map((child) => (
                             <Link
                               key={child.name}
@@ -218,7 +218,7 @@ export default function Navbar() {
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'spring', damping: 30, stiffness: 300 }}
-              className="absolute right-0 top-0 bottom-0 w-full max-w-sm bg-white dark:bg-slate-900 shadow-lg"
+              className="absolute right-0 top-0 bottom-0 w-full max-w-sm bg-surface-elevated shadow-lg"
             >
               <div className="flex flex-col h-full">
                 <div className="flex items-center justify-between p-4 border-b border-border">

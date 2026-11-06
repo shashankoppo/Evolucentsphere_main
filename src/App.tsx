@@ -82,7 +82,7 @@ import ContactProElite from './pages/products/ContactProElite';
 
 function Layout({ children, hideFooter = false }: { children: React.ReactNode; hideFooter?: boolean }) {
   return (
-    <div className="flex flex-col min-h-screen bg-white">
+    <div className="flex flex-col min-h-screen bg-[var(--color-bg)]">
       <Navbar />
       <main className="flex-grow">
         {children}
