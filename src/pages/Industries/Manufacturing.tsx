@@ -1,242 +1,117 @@
-import React from 'react';
-import { Cog, Bot, BarChart, CheckCircle, ArrowRight, AlertTriangle, Eye, Network, TrendingDown } from 'lucide-react';
-import { motion } from 'framer-motion';
-import SEOHead from '../../components/SEOHead';
+import { Cog, Bot, BarChart, AlertTriangle, Eye, Network, TrendingDown } from 'lucide-react';
+import IndustryLayout from '../../components/IndustryLayout';
+import { getRelatedIndustries } from '../../lib/industries';
 
 const services = [
   {
     icon: Cog,
     title: 'Smart Manufacturing',
-    description: 'Industry 4.0 solutions for intelligent manufacturing',
-    features: ['IoT Integration', 'Predictive Maintenance', 'Quality Control', 'Production Optimization']
+    description: 'Industry 4.0 solutions connecting machines, sensors, and analytics for intelligent production.',
+    features: ['IoT Sensor Integration', 'Predictive Maintenance', 'Automated Quality Control', 'Production Optimization'],
   },
   {
     icon: Bot,
     title: 'Industrial Automation',
-    description: 'Robotic process automation for manufacturing operations',
-    features: ['Robotic Systems', 'Process Automation', 'Quality Assurance', 'Safety Systems']
+    description: 'Robotic process automation and intelligent systems for manufacturing operations.',
+    features: ['Robotic Systems Integration', 'Process Automation', 'Quality Assurance AI', 'Safety Systems'],
   },
   {
     icon: BarChart,
     title: 'Manufacturing Analytics',
-    description: 'Data-driven insights for operational excellence',
-    features: ['Production Analytics', 'Supply Chain Optimization', 'Performance Monitoring', 'Cost Analysis']
-  }
+    description: 'Data-driven insights that optimize OEE, reduce waste, and maximize yield.',
+    features: ['Production Analytics', 'Supply Chain Optimization', 'Performance Monitoring', 'Cost Analysis'],
+  },
 ];
 
 const challenges = [
   {
     icon: AlertTriangle,
     title: 'Unplanned Downtime',
-    description: 'Unexpected equipment failures that halt production lines and cost thousands per hour in lost output.'
+    description: 'Unexpected equipment failures that halt production lines and cost thousands per hour in lost output.',
   },
   {
     icon: Eye,
     title: 'Quality Control Gaps',
-    description: 'Manual inspection processes that miss defects, drive rework costs, and damage brand reputation.'
+    description: 'Manual inspection processes that miss defects, drive rework costs, and damage brand reputation.',
   },
   {
     icon: Network,
     title: 'Disconnected Operations',
-    description: 'Isolated machines and systems that prevent real-time visibility into production performance and supply chains.'
+    description: 'Isolated machines and systems that prevent real-time visibility into production performance and supply chains.',
   },
   {
     icon: TrendingDown,
     title: 'Rising Input Costs',
-    description: 'Volatility in raw material and energy prices squeezing margins on every production run.'
-  }
+    description: 'Volatility in raw material and energy prices squeezing margins on every production run.',
+  },
 ];
 
 const solutions = [
   {
     title: 'Predictive Maintenance AI',
-    description: 'IoT sensor analytics that predict equipment failures before they occur, eliminating unplanned downtime.'
+    description: 'IoT sensor analytics that predict equipment failures before they occur, reducing unplanned downtime by 50% and extending asset lifespan.',
   },
   {
     title: 'Computer Vision Quality Inspection',
-    description: 'AI-powered defect detection on production lines with 99% accuracy and 24/7 real-time monitoring.'
+    description: 'AI-powered defect detection on production lines with 99% accuracy and 24/7 real-time monitoring, replacing manual inspection entirely.',
   },
   {
     title: 'Connected Factory Platform',
-    description: 'Unified IoT data layer that provides real-time visibility across machines, lines, and entire facilities.'
+    description: 'Unified IoT data layer that provides real-time visibility across machines, lines, and entire facilities — accessible from a single dashboard.',
   },
   {
     title: 'Resource Optimization Engine',
-    description: 'AI-driven production planning that minimizes waste, optimizes energy use, and maximizes yield per run.'
-  }
+    description: 'AI-driven production planning that minimizes waste, optimizes energy use, and maximizes yield per run, reducing production costs by 30%.',
+  },
 ];
 
 const metrics = [
   { value: '50%', label: 'Less Unplanned Downtime' },
   { value: '99%', label: 'Defect Detection Accuracy' },
   { value: '30%', label: 'Lower Production Costs' },
-  { value: '25%', label: 'Higher OEE' }
+  { value: '25%', label: 'Higher OEE' },
+];
+
+const faqs = [
+  {
+    question: 'What is Industry 4.0 and how do your solutions fit in?',
+    answer: 'Industry 4.0 refers to the fourth industrial revolution — the integration of IoT, AI, cloud computing, and big data into manufacturing. Our smart manufacturing platform connects your machines, analyzes production data in real time, and uses AI to optimize every aspect of operations.',
+  },
+  {
+    question: 'Can you integrate with our existing factory equipment?',
+    answer: 'Yes. Our IoT platform supports legacy equipment through retrofit sensors, PLC integration, and industrial protocols like OPC-UA, MQTT, and Modbus. You do not need to replace existing machinery to benefit from smart manufacturing.',
+  },
+  {
+    question: 'How quickly can we see ROI from predictive maintenance?',
+    answer: 'Most clients see measurable ROI within 3-6 months. By preventing a single major equipment failure, the system typically pays for itself. Over the first year, clients average 50% reduction in unplanned downtime and 20% lower maintenance costs.',
+  },
+  {
+    question: 'Do you support both discrete and process manufacturing?',
+    answer: 'Yes. Our platform handles both discrete manufacturing (automotive, electronics, consumer goods) and process manufacturing (chemicals, pharmaceuticals, food and beverage) with industry-specific analytics and compliance modules.',
+  },
 ];
 
 export default function Manufacturing() {
   return (
-    <div className="min-h-screen pt-20">
-      <SEOHead 
-        title="Manufacturing Technology Solutions | ELSxGlobal"
-        description="Industry 4.0 smart manufacturing solutions including IoT integration, industrial automation, and manufacturing analytics for operational excellence."
-        keywords={[
-          'Smart Manufacturing',
-          'Industry 4.0',
-          'Industrial IoT',
-          'Manufacturing Automation',
-          'Predictive Maintenance',
-          'Quality Control',
-          'Production Optimization'
-        ]}
-        serviceCategory="tech"
-        targetIndustries={['Manufacturing']}
-      />
-
-      {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-b from-orange-50 to-white">
-        <div className="container-main">
-          <div className="max-w-4xl mx-auto text-center">
-            <motion.h1 
-              className="text-4xl md:text-5xl font-bold text-ink mb-6"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              Smart Manufacturing Solutions
-            </motion.h1>
-            <motion.p 
-              className="text-xl text-ink-secondary mb-12"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.6 }}
-            >
-              Transform your manufacturing operations with Industry 4.0 solutions, 
-              IoT integration, and intelligent automation systems.
-            </motion.p>
-          </div>
-        </div>
-      </section>
-
-      {/* Services */}
-      <section className="section-padding">
-        <div className="container-main">
-          <div className="grid md:grid-cols-3 gap-8">
-            {services.map((service, index) => (
-              <motion.div
-                key={index}
-                className="card"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1, duration: 0.6 }}
-              >
-                <service.icon className="h-12 w-12 text-orange-600 mb-6" />
-                <h3 className="text-xl font-bold text-ink mb-4">{service.title}</h3>
-                <p className="text-ink-secondary mb-6">{service.description}</p>
-                <div className="space-y-2">
-                  {service.features.map((feature, idx) => (
-                    <div key={idx} className="flex items-center text-ink-secondary">
-                      <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
-                      {feature}
-                    </div>
-                  ))}
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Industry Challenges */}
-      <section className="section-padding surface">
-        <div className="container-main">
-          <div className="text-center mb-12">
-            <span className="label">Industry Challenges</span>
-            <h2 className="text-3xl font-bold text-ink mt-4">Challenges Facing Modern Manufacturers</h2>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {challenges.map((challenge, index) => (
-              <motion.div
-                key={index}
-                className="card"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1, duration: 0.6 }}
-              >
-                <challenge.icon className="h-10 w-10 text-orange-600 mb-4" />
-                <h3 className="text-lg font-bold text-ink mb-2">{challenge.title}</h3>
-                <p className="text-ink-secondary text-sm">{challenge.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Our Solutions */}
-      <section className="section-padding bg-white">
-        <div className="container-main">
-          <div className="text-center mb-12">
-            <span className="label">Our Solutions</span>
-            <h2 className="text-3xl font-bold text-ink mt-4">How EvolucentSphere Solves These Challenges</h2>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {solutions.map((solution, index) => (
-              <motion.div
-                key={index}
-                className="card"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1, duration: 0.6 }}
-              >
-                <h3 className="text-lg font-bold text-ink mb-2">{solution.title}</h3>
-                <p className="text-ink-secondary text-sm">{solution.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Key Metrics */}
-      <section className="section-padding surface">
-        <div className="container-main">
-          <div className="text-center mb-12">
-            <span className="label">Key Metrics</span>
-            <h2 className="text-3xl font-bold text-ink mt-4">Real Impact for Manufacturing Operations</h2>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {metrics.map((metric, index) => (
-              <motion.div
-                key={index}
-                className="card text-center"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1, duration: 0.6 }}
-              >
-                <div className="text-3xl font-bold text-orange-600 mb-2">{metric.value}</div>
-                <div className="text-ink-secondary text-sm">{metric.label}</div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Call to Action */}
-      <section className="section-padding bg-brand-500">
-        <div className="container-main">
-          <div className="max-w-4xl mx-auto text-center text-white">
-            <h2 className="text-3xl font-bold mb-6">Modernize Your Manufacturing</h2>
-            <p className="text-xl mb-8">
-              Embrace Industry 4.0 with our smart manufacturing solutions and automation technologies.
-            </p>
-            <button className="btn-primary flex items-center justify-center mx-auto group">
-              Explore Manufacturing Solutions
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-            </button>
-          </div>
-        </div>
-      </section>
-    </div>
+    <IndustryLayout
+      title="Manufacturing"
+      pageTitle="Smart Manufacturing & Industry 4.0 Solutions | ELSxGlobal"
+      description="Industry 4.0 smart manufacturing solutions including IoT integration, industrial automation, predictive maintenance, and manufacturing analytics for operational excellence."
+      keywords={['Smart Manufacturing', 'Industry 4.0', 'Industrial IoT', 'Manufacturing Automation', 'Predictive Maintenance', 'Quality Control AI', 'Production Optimization', 'Connected Factory', 'OEE Optimization', 'Computer Vision Inspection']}
+      heroImage="https://images.pexels.com/photos/36423820/pexels-photo-36423820.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+      heroImageAlt="Industrial machinery in an operational factory"
+      accentColor="orange"
+      tagline="Transform your factory with Industry 4.0 solutions — IoT-connected machines, AI-powered quality inspection, and predictive maintenance that eliminates unplanned downtime."
+      services={services}
+      challenges={challenges}
+      solutions={solutions}
+      metrics={metrics}
+      faqs={faqs}
+      relatedIndustries={getRelatedIndustries('/industries/manufacturing')}
+      ctaTitle="Modernize Your Manufacturing Operations"
+      ctaDescription="Embrace Industry 4.0 with our smart manufacturing, IoT, and automation solutions designed to boost OEE and cut costs."
+      ctaButtonText="Explore Manufacturing Solutions"
+      targetIndustry="Manufacturing"
+    />
   );
 }

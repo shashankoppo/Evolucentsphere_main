@@ -356,7 +356,7 @@ export default function DataAIAnalytics() {
         </div>
       </section>
 
-      <style jsx>{`
+      <style>{`
         .bg-grid-pattern {
           background-image: linear-gradient(to right, rgba(99, 102, 241, 0.1) 1px, transparent 1px),
                           linear-gradient(to bottom, rgba(99, 102, 241, 0.1) 1px, transparent 1px);

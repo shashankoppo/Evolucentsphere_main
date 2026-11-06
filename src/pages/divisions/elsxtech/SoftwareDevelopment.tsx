@@ -654,7 +654,7 @@ export default function SoftwareDevelopment() {
         </div>
       </section>
 
-      <style jsx>{`
+      <style>{`
         .bg-grid-pattern {
           background-image: linear-gradient(to right, rgba(34, 197, 94, 0.1) 1px, transparent 1px),
                           linear-gradient(to bottom, rgba(34, 197, 94, 0.1) 1px, transparent 1px);

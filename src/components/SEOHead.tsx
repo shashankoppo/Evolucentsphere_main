@@ -157,6 +157,7 @@ interface SEOProps {
   serviceCategory?: 'bpo' | 'kpo' | 'tech' | 'consultancy' | 'cloud' | 'cybersecurity' | 'digitalTransformation' | 'ai';
   targetIndustries?: string[];
   relatedServices?: string[];
+  faq?: { question: string; answer: string }[];
   children?: React.ReactNode;
 }
 
@@ -177,6 +178,7 @@ export default function SEOHead({
   serviceCategory,
   targetIndustries = [],
   relatedServices = [],
+  faq = [],
   children,
 }: SEOProps) {
   const location = useLocation();
@@ -452,6 +454,23 @@ export default function SEOHead({
     schemas.push(articleSchema);
   }
 
+  // FAQ Schema
+  if (faq.length > 0) {
+    const faqSchema = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": faq.map((item) => ({
+        "@type": "Question",
+        "name": item.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.answer
+        }
+      }))
+    };
+    schemas.push(faqSchema);
+  }
+
   // Breadcrumbs Schema
   if (breadcrumbs && breadcrumbs.length > 0) {
     const breadcrumbSchema = {
@@ -489,19 +508,13 @@ export default function SEOHead({
       {/* --- Business Information --- */}
       <meta name="company" content={siteConfig.parentCompany} />
       <meta name="division" content={siteConfig.siteName} />
-      <meta name="geo.region" content="IN-KA" />
-      <meta name="geo.placename" content="Bangalore" />
-      <meta name="geo.position" content="12.9716;77.5946" />
-      <meta name="ICBM" content="12.9716, 77.5946" />
-      
-      {/* --- Enhanced Business Schema --- */}
-      <meta name="business:contact_data:phone_number" content="+917247558873, +918770422622" />
-      <meta name="business:contact_data:email" content="contact@evolucentsphere.com" />
-      <meta name="business:contact_data:website" content={siteConfig.siteUrl} />
       <meta name="geo.region" content="IN-MP" />
       <meta name="geo.placename" content="Jabalpur" />
       <meta name="geo.position" content="23.1815;79.9864" />
       <meta name="ICBM" content="23.1815, 79.9864" />
+      <meta name="business:contact_data:phone_number" content="+917247558873, +918770422622" />
+      <meta name="business:contact_data:email" content="contact@evolucentsphere.com" />
+      <meta name="business:contact_data:website" content={siteConfig.siteUrl} />
       
       {/* --- Open Graph / Facebook --- */}
       <meta property="og:title" content={pageTitle} />
@@ -540,8 +553,7 @@ export default function SEOHead({
 
       {/* --- PWA / Mobile --- */}
       <link rel="icon" href={siteConfig.favicon} type="image/x-icon" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <meta name="theme-color" content="#7C3AED" />
+      <meta name="theme-color" content="#0f5ad5" />
       <meta name="apple-mobile-web-app-capable" content="yes" />
       <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
       <meta name="apple-mobile-web-app-title" content={siteConfig.siteName} />

@@ -1,243 +1,117 @@
-import React from 'react';
-import { Shield, BarChart, Zap, CheckCircle, ArrowRight, Lock, TrendingDown, Users } from 'lucide-react';
-import { motion } from 'framer-motion';
-import SEOHead from '../../components/SEOHead';
+import { Shield, BarChart, Zap, Lock, TrendingDown, Users } from 'lucide-react';
+import IndustryLayout from '../../components/IndustryLayout';
+import { getRelatedIndustries } from '../../lib/industries';
 
 const services = [
   {
     icon: Shield,
-    title: 'Digital Banking Solutions',
-    description: 'Secure and scalable digital banking platforms',
-    features: ['Mobile Banking', 'Online Banking', 'Payment Processing', 'Fraud Detection']
+    title: 'Digital Banking Platforms',
+    description: 'Secure, scalable mobile and online banking experiences built for modern financial institutions.',
+    features: ['Mobile Banking Apps', 'Internet Banking Portals', 'Payment Gateway Integration', 'Real-time Fraud Detection'],
   },
   {
     icon: BarChart,
-    title: 'Risk Management',
-    description: 'Advanced risk assessment and management systems',
-    features: ['Credit Risk Analysis', 'Market Risk', 'Operational Risk', 'Regulatory Compliance']
+    title: 'Risk & Compliance Management',
+    description: 'AI-driven risk assessment and automated regulatory reporting across Basel III, Dodd-Frank, and MiFID II.',
+    features: ['Credit Risk Analytics', 'Market Risk Modeling', 'Operational Risk Monitoring', 'Automated Regulatory Filing'],
   },
   {
     icon: Zap,
     title: 'Fintech Innovation',
-    description: 'Cutting-edge financial technology solutions',
-    features: ['Blockchain Integration', 'AI-Powered Analytics', 'Robo-Advisory', 'RegTech Solutions']
-  }
+    description: 'Next-generation financial products including blockchain payments, robo-advisory, and embedded finance.',
+    features: ['Blockchain Payment Rails', 'AI-Powered Robo-Advisory', 'RegTech Automation', 'Open Banking APIs'],
+  },
 ];
 
 const challenges = [
   {
     icon: Shield,
-    title: 'Regulatory Compliance',
-    description: 'Navigating complex, evolving regulations like Basel III, Dodd-Frank, and MiFID II across multiple jurisdictions.'
+    title: 'Regulatory Complexity',
+    description: 'Navigating evolving regulations like Basel III, Dodd-Frank, and MiFID II across multiple jurisdictions with limited compliance resources.',
   },
   {
     icon: Lock,
     title: 'Cybersecurity Threats',
-    description: 'Defending against sophisticated financial fraud, data breaches, and ransomware attacks targeting customer assets.'
+    description: 'Defending against sophisticated financial fraud, data breaches, and ransomware targeting customer assets and trust.',
   },
   {
     icon: TrendingDown,
-    title: 'Legacy System Debt',
-    description: 'Maintaining outdated core banking infrastructure that limits agility and drives up operational costs.'
+    title: 'Legacy Core Systems',
+    description: 'Outdated core banking infrastructure that drives up maintenance costs and blocks rapid feature delivery.',
   },
   {
     icon: Users,
-    title: 'Customer Expectations',
-    description: 'Meeting rising demands for real-time, seamless digital banking experiences across all channels.'
-  }
+    title: 'Rising Customer Expectations',
+    description: 'Meeting demands for real-time, seamless, personalized digital banking across every channel and device.',
+  },
 ];
 
 const solutions = [
   {
     title: 'Automated Compliance Engine',
-    description: 'AI-driven regulatory monitoring and reporting that ensures continuous compliance across all jurisdictions with real-time alerts.'
+    description: 'AI-driven regulatory monitoring and reporting that ensures continuous compliance across all jurisdictions with real-time alerts and audit-ready documentation.',
   },
   {
     title: 'Zero-Trust Security Framework',
-    description: 'Multi-layered fraud detection and threat prevention with behavioral analytics and encrypted transaction monitoring.'
+    description: 'Multi-layered fraud detection and threat prevention with behavioral analytics, encrypted transaction monitoring, and automated incident response.',
   },
   {
     title: 'Cloud-Native Core Modernization',
-    description: 'Microservices-based core banking platform migration that eliminates legacy debt and enables rapid feature delivery.'
+    description: 'Microservices-based core banking migration that eliminates legacy debt, reduces maintenance costs by 45%, and enables weekly feature releases.',
   },
   {
     title: 'Omnichannel Digital Banking',
-    description: 'Unified mobile, web, and API-first banking experiences with instant payments and personalized financial insights.'
-  }
+    description: 'Unified mobile, web, and API-first banking experiences with instant payments, personalized financial insights, and seamless onboarding.',
+  },
 ];
 
 const metrics = [
   { value: '99.9%', label: 'Regulatory Compliance Rate' },
   { value: '60%', label: 'Faster Fraud Detection' },
   { value: '45%', label: 'Cost Reduction' },
-  { value: '3x', label: 'Faster Time-to-Market' }
+  { value: '3x', label: 'Faster Time-to-Market' },
+];
+
+const faqs = [
+  {
+    question: 'What banking regulations do your solutions support?',
+    answer: 'Our compliance automation covers Basel III, Dodd-Frank, MiFID II, PCI DSS, SOX, and AML/KYC requirements. The engine adapts to jurisdiction-specific rules and updates automatically as regulations evolve.',
+  },
+  {
+    question: 'Can you modernize our core banking system without downtime?',
+    answer: 'Yes. We use a strangler-fig migration approach that incrementally replaces legacy components with cloud-native microservices, allowing old and new systems to run in parallel until full cutover.',
+  },
+  {
+    question: 'How does your fraud detection system work?',
+    answer: 'Our AI models analyze transaction patterns, device fingerprints, geolocation, and behavioral biometrics in real time. Suspicious transactions are flagged or blocked within milliseconds, reducing fraud losses by up to 60%.',
+  },
+  {
+    question: 'Do you offer solutions for neobanks and digital-only banks?',
+    answer: 'Absolutely. Our cloud-native banking platform is ideal for neobanks — it provides core banking, payments, KYC/AML, and customer onboarding out of the box, launchable in weeks rather than months.',
+  },
 ];
 
 export default function Banking() {
   return (
-    <div className="min-h-screen pt-20">
-      <SEOHead 
-        title="Banking & Financial Services Solutions | ELSxGlobal"
-        description="Comprehensive digital banking solutions, risk management, fintech innovation, and regulatory compliance services for financial institutions."
-        keywords={[
-          'Digital Banking',
-          'Financial Services',
-          'Risk Management',
-          'Fintech Solutions',
-          'Banking Technology',
-          'Financial Compliance',
-          'Payment Processing',
-          'Fraud Detection'
-        ]}
-        serviceCategory="tech"
-        targetIndustries={['Banking and Finance']}
-      />
-
-      {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-b from-green-50 to-white">
-        <div className="container-main">
-          <div className="max-w-4xl mx-auto text-center">
-            <motion.h1 
-              className="text-4xl md:text-5xl font-bold text-ink mb-6"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              Banking & Financial Services
-            </motion.h1>
-            <motion.p 
-              className="text-xl text-ink-secondary mb-12"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.6 }}
-            >
-              Transform your financial institution with our comprehensive digital banking solutions, 
-              risk management systems, and innovative fintech platforms.
-            </motion.p>
-          </div>
-        </div>
-      </section>
-
-      {/* Services */}
-      <section className="section-padding">
-        <div className="container-main">
-          <div className="grid md:grid-cols-3 gap-8">
-            {services.map((service, index) => (
-              <motion.div
-                key={index}
-                className="card"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1, duration: 0.6 }}
-              >
-                <service.icon className="h-12 w-12 text-green-600 mb-6" />
-                <h3 className="text-xl font-bold text-ink mb-4">{service.title}</h3>
-                <p className="text-ink-secondary mb-6">{service.description}</p>
-                <div className="space-y-2">
-                  {service.features.map((feature, idx) => (
-                    <div key={idx} className="flex items-center text-ink-secondary">
-                      <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
-                      {feature}
-                    </div>
-                  ))}
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Industry Challenges */}
-      <section className="section-padding surface">
-        <div className="container-main">
-          <div className="text-center mb-12">
-            <span className="label">Industry Challenges</span>
-            <h2 className="text-3xl font-bold text-ink mt-4">Challenges Facing Banking &amp; Financial Services</h2>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {challenges.map((challenge, index) => (
-              <motion.div
-                key={index}
-                className="card"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1, duration: 0.6 }}
-              >
-                <challenge.icon className="h-10 w-10 text-green-600 mb-4" />
-                <h3 className="text-lg font-bold text-ink mb-2">{challenge.title}</h3>
-                <p className="text-ink-secondary text-sm">{challenge.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Our Solutions */}
-      <section className="section-padding bg-white">
-        <div className="container-main">
-          <div className="text-center mb-12">
-            <span className="label">Our Solutions</span>
-            <h2 className="text-3xl font-bold text-ink mt-4">How EvolucentSphere Solves These Challenges</h2>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {solutions.map((solution, index) => (
-              <motion.div
-                key={index}
-                className="card"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1, duration: 0.6 }}
-              >
-                <h3 className="text-lg font-bold text-ink mb-2">{solution.title}</h3>
-                <p className="text-ink-secondary text-sm">{solution.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Key Metrics */}
-      <section className="section-padding surface">
-        <div className="container-main">
-          <div className="text-center mb-12">
-            <span className="label">Key Metrics</span>
-            <h2 className="text-3xl font-bold text-ink mt-4">Real Impact for Financial Institutions</h2>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {metrics.map((metric, index) => (
-              <motion.div
-                key={index}
-                className="card text-center"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1, duration: 0.6 }}
-              >
-                <div className="text-3xl font-bold text-green-600 mb-2">{metric.value}</div>
-                <div className="text-ink-secondary text-sm">{metric.label}</div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Call to Action */}
-      <section className="section-padding bg-brand-500">
-        <div className="container-main">
-          <div className="max-w-4xl mx-auto text-center text-white">
-            <h2 className="text-3xl font-bold mb-6">Transform Your Financial Services</h2>
-            <p className="text-xl mb-8">
-              Partner with us to modernize your banking operations and enhance customer experiences.
-            </p>
-            <button className="btn-primary flex items-center justify-center mx-auto group">
-              Schedule Consultation
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-            </button>
-          </div>
-        </div>
-      </section>
-    </div>
+    <IndustryLayout
+      title="Banking & Finance"
+      pageTitle="Banking & Financial Services Solutions | ELSxGlobal"
+      description="Digital banking platforms, risk management, fintech innovation, and regulatory compliance services for banks and financial institutions."
+      keywords={['Digital Banking', 'Financial Services', 'Risk Management', 'Fintech Solutions', 'Banking Technology', 'Financial Compliance', 'Payment Processing', 'Fraud Detection', 'Core Banking Modernization', 'Open Banking API']}
+      heroImage="https://images.pexels.com/photos/11363562/pexels-photo-11363562.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+      heroImageAlt="Credit and debit cards representing digital banking technology"
+      accentColor="green"
+      tagline="Transform your financial institution with secure digital banking platforms, AI-driven risk management, and innovative fintech solutions built for the regulatory realities of modern banking."
+      services={services}
+      challenges={challenges}
+      solutions={solutions}
+      metrics={metrics}
+      faqs={faqs}
+      relatedIndustries={getRelatedIndustries('/industries/banking')}
+      ctaTitle="Transform Your Financial Services"
+      ctaDescription="Partner with us to modernize your banking operations, enhance customer experiences, and stay ahead of regulatory demands."
+      ctaButtonText="Schedule Consultation"
+      targetIndustry="Banking and Finance"
+    />
   );
 }

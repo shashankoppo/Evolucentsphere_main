@@ -265,7 +265,7 @@ export default function DigitalTransformation() {
         </div>
       </section>
 
-      <style jsx>{`
+      <style>{`
         .bg-grid-pattern {
           background-image: linear-gradient(to right, rgba(147, 51, 234, 0.1) 1px, transparent 1px),
                           linear-gradient(to bottom, rgba(147, 51, 234, 0.1) 1px, transparent 1px);

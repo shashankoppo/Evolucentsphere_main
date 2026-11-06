@@ -224,7 +224,7 @@ export default function CybersecuritySolutions() {
         </div>
       </section>
 
-      <style jsx>{`
+      <style>{`
         .bg-grid-pattern {
           background-image: linear-gradient(to right, rgba(239, 68, 68, 0.1) 1px, transparent 1px),
                           linear-gradient(to bottom, rgba(239, 68, 68, 0.1) 1px, transparent 1px);

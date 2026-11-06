@@ -1,255 +1,123 @@
-import React from 'react';
-import { Shield, BarChart, FileText, Users, CheckCircle, Clock, AlertTriangle, TrendingDown } from 'lucide-react';
-import { motion } from 'framer-motion';
-import SEOHead from '../../components/SEOHead';
+import { Shield, BarChart, FileText, Users, Clock, AlertTriangle, TrendingDown } from 'lucide-react';
+import IndustryLayout from '../../components/IndustryLayout';
+import { getRelatedIndustries } from '../../lib/industries';
 
 const services = [
   {
     icon: Shield,
     title: 'Claims Processing Automation',
-    description: 'AI-powered claims management and fraud detection',
-    features: ['Automated Claims Triage', 'Fraud Detection AI', 'Document Processing', 'Settlement Optimization']
+    description: 'AI-powered claims management with intelligent triage, document processing, and fraud detection.',
+    features: ['Automated Claims Triage', 'Fraud Detection AI', 'Document Processing', 'Settlement Optimization'],
   },
   {
     icon: BarChart,
     title: 'Underwriting Analytics',
-    description: 'Data-driven risk assessment and pricing models',
-    features: ['Predictive Risk Scoring', 'Dynamic Pricing', 'Portfolio Analytics', 'Loss Ratio Optimization']
+    description: 'Data-driven risk assessment and dynamic pricing models that improve loss ratios.',
+    features: ['Predictive Risk Scoring', 'Dynamic Pricing Models', 'Portfolio Analytics', 'Loss Ratio Optimization'],
   },
   {
     icon: FileText,
     title: 'Regulatory Compliance',
-    description: 'Automated compliance monitoring and reporting',
-    features: ['Solvency II Compliance', 'IWAY Reporting', 'Audit Trail Management', 'Policy Lifecycle Tracking']
+    description: 'Automated compliance monitoring and reporting for Solvency II, IFRS 17, and NAIC requirements.',
+    features: ['Solvency II Compliance', 'IFRS 17 Reporting', 'Audit Trail Management', 'Policy Lifecycle Tracking'],
   },
   {
     icon: Users,
-    title: 'Customer Experience',
-    description: 'Digital-first insurance customer engagement',
-    features: ['Omnichannel Engagement', 'Self-Service Portals', 'Policy Management', 'Renewal Automation']
-  }
-];
-
-const stats = [
-  { value: '60%', label: 'Faster Claims Processing' },
-  { value: '40%', label: 'Cost Reduction' },
-  { value: '99.5%', label: 'Compliance Accuracy' },
-  { value: '85%', label: 'Customer Satisfaction' }
+    title: 'Digital Customer Experience',
+    description: 'Digital-first insurance engagement with self-service portals and automated renewals.',
+    features: ['Omnichannel Engagement', 'Self-Service Portals', 'Policy Management', 'Renewal Automation'],
+  },
 ];
 
 const challenges = [
   {
     icon: Clock,
     title: 'Slow Claims Processing',
-    description: 'Manual, paper-based claims handling that delays settlements and frustrates policyholders.'
+    description: 'Manual, paper-based claims handling that delays settlements and frustrates policyholders at their moment of need.',
   },
   {
     icon: AlertTriangle,
     title: 'Fraud Losses',
-    description: 'Sophisticated fraud schemes that drain billions annually and drive up premiums for honest customers.'
+    description: 'Sophisticated fraud schemes that drain billions annually and drive up premiums for honest customers.',
   },
   {
     icon: TrendingDown,
     title: 'Underwriting Inefficiency',
-    description: 'Reliance on historical data and manual risk assessment that leads to inaccurate pricing and lost competitiveness.'
+    description: 'Reliance on historical data and manual risk assessment that leads to inaccurate pricing and lost competitiveness.',
   },
   {
     icon: Users,
     title: 'Customer Churn',
-    description: 'Poor digital experiences and slow service that drive policyholders to competitors at renewal time.'
-  }
+    description: 'Poor digital experiences and slow service that drive policyholders to competitors at renewal time.',
+  },
 ];
 
 const solutions = [
   {
     title: 'AI-Powered Claims Automation',
-    description: 'Intelligent claims triage and document processing that settles simple claims in minutes, not weeks.'
+    description: 'Intelligent claims triage and document processing that settles simple claims in minutes, not weeks — boosting policyholder satisfaction and reducing adjuster workload by 60%.',
   },
   {
     title: 'Real-Time Fraud Detection',
-    description: 'Machine learning models that flag suspicious claims instantly, reducing fraud losses by up to 60%.'
+    description: 'Machine learning models that flag suspicious claims instantly using pattern recognition, network analysis, and behavioral scoring — reducing fraud losses by up to 60%.',
   },
   {
     title: 'Predictive Underwriting Engine',
-    description: 'Data-driven risk scoring with hundreds of variables that enables precise, competitive pricing in real time.'
+    description: 'Data-driven risk scoring with hundreds of variables — including telematics, IoT, and alternative data — that enables precise, competitive pricing in real time.',
   },
   {
     title: 'Digital Customer Engagement',
-    description: 'Omnichannel self-service portals with personalized policy management and automated renewal outreach.'
-  }
+    description: 'Omnichannel self-service portals with personalized policy management, automated renewal outreach, and instant claims status — driving 85% customer satisfaction.',
+  },
 ];
 
 const metrics = [
   { value: '60%', label: 'Faster Claims Processing' },
   { value: '60%', label: 'Fraud Loss Reduction' },
   { value: '40%', label: 'Lower Operating Costs' },
-  { value: '85%', label: 'Customer Satisfaction' }
+  { value: '85%', label: 'Customer Satisfaction' },
+];
+
+const faqs = [
+  {
+    question: 'How does your AI claims automation handle different claim types?',
+    answer: 'Our AI triage engine classifies claims by complexity and routes them appropriately. Simple claims (e.g., minor auto damage) can be auto-settled with photo AI. Complex claims are routed to specialized adjusters with AI-assisted documentation and fraud scoring.',
+  },
+  {
+    question: 'What insurance regulations do your compliance tools support?',
+    answer: 'We support Solvency II, IFRS 17, NAIC statutory reporting, GDPR, and state-specific requirements. The compliance engine automatically generates regulatory filings, maintains audit trails, and alerts teams to regulatory changes.',
+  },
+  {
+    question: 'Can your underwriting AI integrate with our existing policy administration system?',
+    answer: 'Yes. Our underwriting engine integrates with major policy administration systems including Guidewire, Duck Creek, and custom platforms via REST APIs. Risk scores and pricing recommendations flow directly into your existing workflows.',
+  },
+  {
+    question: 'How quickly can you deploy a digital customer portal?',
+    answer: 'Our configurable digital portal can be deployed in 8-12 weeks, including branding, policy management, claims submission, and payment integration. The portal is white-labeled and integrates with your existing backend systems.',
+  },
 ];
 
 export default function Insurance() {
   return (
-    <div className="min-h-screen pt-20">
-      <SEOHead
-        title="Insurance Industry Solutions | ELSxGlobal"
-        description="Transform insurance operations with AI-powered claims processing, underwriting analytics, and regulatory compliance solutions."
-        keywords={['Insurance Technology', 'Claims Automation', 'Underwriting AI', 'InsurTech', 'Risk Analytics']}
-        serviceCategory="tech"
-        targetIndustries={['Insurance']}
-      />
-
-      <section className="section-padding bg-gradient-to-b from-blue-50 to-white">
-        <div className="container-main">
-          <div className="max-w-4xl mx-auto text-center">
-            <motion.h1
-              className="text-4xl md:text-5xl font-bold text-ink mb-6"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-            >
-              Insurance Industry Solutions
-            </motion.h1>
-            <motion.p
-              className="text-xl text-ink-secondary mb-12"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-            >
-              Modernize insurance operations with AI-driven automation, predictive analytics, and seamless digital experiences.
-            </motion.p>
-            <div className="grid md:grid-cols-4 gap-6">
-              {stats.map((stat, i) => (
-                <motion.div
-                  key={i}
-                  className="card"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.4 + i * 0.1 }}
-                >
-                  <div className="text-2xl font-bold text-blue-600">{stat.value}</div>
-                  <div className="text-ink-secondary text-sm">{stat.label}</div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="section-padding">
-        <div className="container-main">
-          <h2 className="text-3xl font-bold text-ink text-center mb-12">Our Insurance Solutions</h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            {services.map((service, i) => (
-              <motion.div
-                key={i}
-                className="card hover:shadow-xl transition-shadow"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-              >
-                <service.icon className="h-12 w-12 text-blue-600 mb-6" />
-                <h3 className="text-xl font-bold text-ink mb-4">{service.title}</h3>
-                <p className="text-ink-secondary mb-6">{service.description}</p>
-                <div className="space-y-2">
-                  {service.features.map((feature, idx) => (
-                    <div key={idx} className="flex items-center text-ink-secondary">
-                      <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
-                      {feature}
-                    </div>
-                  ))}
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Industry Challenges */}
-      <section className="section-padding surface">
-        <div className="container-main">
-          <div className="text-center mb-12">
-            <span className="label">Industry Challenges</span>
-            <h2 className="text-3xl font-bold text-ink mt-4">Challenges Facing Insurance Providers</h2>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {challenges.map((challenge, index) => (
-              <motion.div
-                key={index}
-                className="card"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1, duration: 0.6 }}
-              >
-                <challenge.icon className="h-10 w-10 text-blue-600 mb-4" />
-                <h3 className="text-lg font-bold text-ink mb-2">{challenge.title}</h3>
-                <p className="text-ink-secondary text-sm">{challenge.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Our Solutions */}
-      <section className="section-padding bg-white">
-        <div className="container-main">
-          <div className="text-center mb-12">
-            <span className="label">Our Solutions</span>
-            <h2 className="text-3xl font-bold text-ink mt-4">How EvolucentSphere Solves These Challenges</h2>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {solutions.map((solution, index) => (
-              <motion.div
-                key={index}
-                className="card"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1, duration: 0.6 }}
-              >
-                <h3 className="text-lg font-bold text-ink mb-2">{solution.title}</h3>
-                <p className="text-ink-secondary text-sm">{solution.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Key Metrics */}
-      <section className="section-padding surface">
-        <div className="container-main">
-          <div className="text-center mb-12">
-            <span className="label">Key Metrics</span>
-            <h2 className="text-3xl font-bold text-ink mt-4">Real Impact for Insurance Operations</h2>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {metrics.map((metric, index) => (
-              <motion.div
-                key={index}
-                className="card text-center"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1, duration: 0.6 }}
-              >
-                <div className="text-3xl font-bold text-blue-600 mb-2">{metric.value}</div>
-                <div className="text-ink-secondary text-sm">{metric.label}</div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section-padding bg-brand-500">
-        <div className="container-main">
-          <div className="max-w-4xl mx-auto text-center text-white">
-            <h2 className="text-3xl font-bold mb-6">Ready to Transform Your Insurance Operations?</h2>
-            <p className="text-xl mb-8">Let us help you modernize claims, underwriting, and customer engagement.</p>
-            <a href="/contact" className="btn-primary inline-block">
-              Schedule a Consultation
-            </a>
-          </div>
-        </div>
-      </section>
-    </div>
+    <IndustryLayout
+      title="Insurance"
+      pageTitle="Insurance Industry Solutions | ELSxGlobal"
+      description="AI-powered insurance solutions including claims automation, underwriting analytics, fraud detection, and regulatory compliance for insurers."
+      keywords={['Insurance Technology', 'Claims Automation', 'Underwriting AI', 'InsurTech', 'Risk Analytics', 'Fraud Detection', 'Solvency II Compliance', 'Policy Administration', 'Digital Insurance', 'Customer Engagement']}
+      heroImage="https://images.pexels.com/photos/7734574/pexels-photo-7734574.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+      heroImageAlt="Signing an insurance policy document"
+      accentColor="sky"
+      tagline="Modernize insurance operations with AI-driven claims automation, predictive underwriting, real-time fraud detection, and seamless digital customer experiences."
+      services={services}
+      challenges={challenges}
+      solutions={solutions}
+      metrics={metrics}
+      faqs={faqs}
+      relatedIndustries={getRelatedIndustries('/industries/insurance')}
+      ctaTitle="Ready to Transform Your Insurance Operations?"
+      ctaDescription="Let us help you modernize claims, underwriting, fraud detection, and customer engagement with AI-powered solutions."
+      ctaButtonText="Schedule a Consultation"
+      targetIndustry="Insurance"
+    />
   );
 }
